@@ -1,0 +1,1 @@
+{"version":3,"file":"remove_link.js","sourceRoot":"","sources":["../../src/toolbar/remove_link.ts"],"names":[],"mappings":";;;;;AAAA,6DAAqC;AAGrC,mBAAwB,MAAkB;IACtC,OAAO;QACL,WAAW,EAAG;YACZ,OAAO,EAAG,aAAa;YACvB,GAAG,EAAG,mBAAS,CAAC,OAAO,CAAC,aAAa,CAAC;YACtC,IAAI,EAAG,aAAa;SACrB;KACF,CAAA;AACL,CAAC;AARD,4BAQC"}

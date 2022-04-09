@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>Toolbar</h2>
+<p>Toobar is the collection of <a href="/toolbaritem.html">ToolbarItem</a> to interact with SubEditor.</p>
+<pre><code class="language-js">
+<span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, {
+    toolbarList : [<span class="hljs-string">&quot;undo&quot;</span>,<span class="hljs-string">&quot;redo&quot;</span>,<span class="hljs-string">&quot;text&quot;</span>,<span class="hljs-string">&quot;format&quot;</span>,<span class="hljs-string">&quot;link&quot;</span>,<span class="hljs-string">&quot;remove_format&quot;</span>,<span class="hljs-string">&quot;indent&quot;</span>,<span class="hljs-string">&quot;outdent&quot;</span>,<span class="hljs-string">&quot;color&quot;</span>,<span class="hljs-string">&quot;backgroundcolor&quot;</span>,<span class="hljs-string">&quot;align&quot;</span>,<span class="hljs-string">&quot;ol&quot;</span>,<span class="hljs-string">&quot;ul&quot;</span>,<span class="hljs-string">&quot;image&quot;</span>, <span class="hljs-string">&quot;library&quot;</span>,<span class="hljs-string">&quot;table&quot;</span>,<span class="hljs-string">&quot;hr&quot;</span>,<span class="hljs-string">&quot;source&quot;</span>,<span class="hljs-string">&quot;fullscreen&quot;</span>]
+});
+
+<span class="hljs-comment">//dom element of toolbar:</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-property">refToolbar</span>);
+
+<span class="hljs-comment">//toolbar class for features and methods:</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-property">toolbar</span>);
+</code></pre>
+<h3>refToolbar</h3>
+<p>ToolbarItem rendered in the same order as declared in toolbarList.</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditorToolbar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+</code></pre>
+<h3>Toolbar methods</h3>
+<h4>addItem(item : ToolbarItem | string | Function)</h4>
+<p>Add an item into toolbar during runtime. If a function is provide, it should return a ToolbarItem object.</p>
+<h4>enableShadow(allowCmds : string[])</h4>
+<p>Overlay a shadow on toolbar and only show items that are allowed. For example, in source code mode, only source code icon is enabled.</p>
+<h4>disableShadow()</h4>
+<p>Hide the shadow.</p>
+<h4>hasShadow()</h4>
+<p>return true if the shadow is visible.</p>
+<h4>hideDropdown()</h4>
+<p>Hide the dropdown content.</p>
+<h4>insertCloseButton(itemEl : HTMLElement)</h4>
+<p>Insert close button on top right corner to the toobar item dropdown content.</p>
+<h4>removeCloseButton(itemEl : HTMLElement)</h4>
+<p>Remove the inserted close button.</p>
+<h4>adjustContentPosition(content : HTMLElement)</h4>
+<p>If the toobar item has custom dropdown content enabled. This function will center the dropdown content to the toobar icon.</p>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

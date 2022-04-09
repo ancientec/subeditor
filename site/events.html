@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>Events</h2>
+<p>Typical event object contains three parts,</p>
+<ul>
+<li>event : name of the event</li>
+<li>target : a set of limitation or triggering elements</li>
+<li>callback: a triggering function</li>
+</ul>
+<pre><code class="language-js">    {
+        event : <span class="hljs-string">&quot;eventName&quot;</span>,
+        target : [<span class="hljs-string">&quot;some_limit&quot;</span>],
+        callback : (editor :<span class="hljs-title class_">SubEditor</span>, cmd : string, some_args...) {
+
+        }
+    }
+</code></pre>
+<h3>onCommand</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string, fn : Function)</em></p>
+<p>onCommand events are primarily used to be triggered from toolbar. The following example will register the undo command.</p>
+<ul>
+<li>event: name of event</li>
+<li>target: the list of command names</li>
+<li>callback:</li>
+</ul>
+<pre><code class="language-js">    {
+        event : <span class="hljs-string">&quot;onCommand&quot;</span>,
+        target : [<span class="hljs-string">&quot;undo&quot;</span>],
+        callback : <span class="hljs-function">(<span class="hljs-params">editor : SubEditor, cmd : string, value : any</span>) =&gt;</span> {
+            editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Undo</span>());
+        }
+    }
+
+<span class="hljs-comment">//clicking undo icon will have the same effect as running this code.</span>
+<span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">command</span>(<span class="hljs-string">&quot;undo&quot;</span>,[]);
+
+</code></pre>
+<h3>registerSvg</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string, fn : Function)</em></p>
+<p>onCommand events are primarily used to be triggered from toolbar. The following example will register the undo icon for later use. The svg icon will be available for all instances initialized after this point.</p>
+<ul>
+<li>event: name of event</li>
+<li>target: the list of command names</li>
+<li>callback:</li>
+</ul>
+<pre><code class="language-js">    {
+        event : <span class="hljs-string">&quot;registerSvg&quot;</span>,
+        target : [],
+        callback : () : {[<span class="hljs-attr">key</span>: string]: string} =&gt; {
+            <span class="hljs-keyword">return</span> {<span class="hljs-string">&quot;mynewicon&quot;</span> : <span class="hljs-string">&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;...&lt;/svg&gt;&#x27;</span>};
+        }
+    }
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&#x27;mynewicon&#x27;</span>]);
+<span class="hljs-comment">//&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;...&lt;/svg&gt;</span>
+
+</code></pre>
+<h3>registerCss</h3>
+<p>The callback of registerCss should return a string key and a string value. Registering using same string key will replace previous.</p>
+<ul>
+<li>event: name of event</li>
+<li>target: []</li>
+<li>callback: return {[key: string]: string}</li>
+</ul>
+<pre><code class="language-js">    [{
+        event : <span class="hljs-string">&quot;registerCss&quot;</span>,
+        target : [],
+        callback : () : {[<span class="hljs-attr">key</span>: string]: string} =&gt; {
+            <span class="hljs-keyword">return</span> {<span class="hljs-string">&quot;image&quot;</span> : <span class="hljs-string">&quot;.se-button{border-color:red;}&quot;</span>};
+        }
+    },
+    {
+        <span class="hljs-comment">//this will replace above</span>
+        event : <span class="hljs-string">&quot;registerCss&quot;</span>,
+        target : [],
+        callback : () : {[<span class="hljs-attr">key</span>: string]: string} =&gt; {
+            <span class="hljs-keyword">return</span> {<span class="hljs-string">&quot;image&quot;</span> : <span class="hljs-string">&quot;.se-button{border-color:blue;}&quot;</span>};
+        }
+    },
+    {
+        <span class="hljs-comment">//this will be a new one</span>
+        event : <span class="hljs-string">&quot;registerCss&quot;</span>,
+        target : [],
+        callback : () : {[<span class="hljs-attr">key</span>: string]: string} =&gt; {
+            <span class="hljs-keyword">return</span> {<span class="hljs-string">&quot;image_button_width&quot;</span> : <span class="hljs-string">&quot;.se-button{border-width:2px;}&quot;</span>};
+        }
+    }]
+</code></pre>
+<h3>registerLanguage</h3>
+<p>Plugin can define new language string or add new languages to SubEditor using this method. The callback of registerLanguage should return {language_name_key:{[key: string]: string}}.</p>
+<ul>
+<li>event: registerLanguage</li>
+<li>target: []</li>
+<li>callback: return {[key: string]:{[key: string]: string}}</li>
+</ul>
+<pre><code class="language-js">    {
+        event : <span class="hljs-string">&quot;registerLanguage&quot;</span>,
+        target : [],
+        callback : () : {[<span class="hljs-attr">key</span>: string]:{[<span class="hljs-attr">key</span>: string]: string}} =&gt; {
+            <span class="hljs-keyword">return</span> {
+                <span class="hljs-string">&quot;en&quot;</span> : {
+                    <span class="hljs-string">&quot;upload&quot;</span> : <span class="hljs-string">&quot;upload&quot;</span>
+                },
+                <span class="hljs-string">&quot;fr&quot;</span> : 
+                {
+                    <span class="hljs-string">&quot;upload&quot;</span> : <span class="hljs-string">&quot;télécharger&quot;</span>
+                },
+                <span class="hljs-string">&quot;pt&quot;</span> : 
+                {
+                    <span class="hljs-string">&quot;upload&quot;</span> : <span class="hljs-string">&quot;recobrar&quot;</span>
+                }
+            };
+        }
+    }
+</code></pre>
+<h3>registerToolbarItem</h3>
+<p>ToolbarItem creates an icon to be shown on toolbar and further define the action interacting with the icon. ToolbarItem created with this method will replace default ToolbarItem of the same name, but will be replaced by SubEditor.presetToolbarItem.</p>
+<pre><code class="language-js"><span class="hljs-comment">// interface of ToolbarItem</span>
+<span class="hljs-keyword">export</span> interface <span class="hljs-title class_">ToolbarItem</span> {
+  command : string;
+  svg : string;
+  dropdowncontent? : string;
+  tips? : string;
+  onRender? : <span class="hljs-title class_">Function</span>;
+}
+
+</code></pre>
+<ul>
+<li>event: registerToolbarItem</li>
+<li>target: []</li>
+<li>callback: return {[key: string]: ToolbarItem}</li>
+</ul>
+<h3>onKeyDown</h3>
+<p>This KeyDown event fires when any of the key combinations set in target is detected.</p>
+<ul>
+<li>event: onKeyDown</li>
+<li>target: [&quot;key_combination&quot;]</li>
+<li>callback: (editor :SubEditor, e : KeyboardEvent)</li>
+</ul>
+<pre><code class="language-js">    <span class="hljs-comment">//undo as an example:</span>
+    {
+    event : <span class="hljs-string">&quot;onKeyDown&quot;</span>,
+    target : [<span class="hljs-string">&quot;mod+z&quot;</span>],
+    callback : <span class="hljs-function">(<span class="hljs-params">editor :SubEditor, e : KeyboardEvent</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span>(!hotkey.<span class="hljs-title function_">isUndoHotKey</span>(e)) <span class="hljs-keyword">return</span>;
+        e.<span class="hljs-title function_">preventDefault</span>();
+        e.<span class="hljs-title function_">stopPropagation</span>();
+        editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Undo</span>());
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+</code></pre>
+<h3>onKeyUp</h3>
+<p>This KeyUp event fires when any of the key combinations set in target is detected.</p>
+<ul>
+<li>event: onKeyUp</li>
+<li>target: [&quot;key_combination&quot;]</li>
+<li>callback: (editor :SubEditor, e : KeyboardEvent)</li>
+</ul>
+<h3>onClick</h3>
+<p>This click event fires when clicking inside content is detected.</p>
+<ul>
+<li>event: onClick</li>
+<li>target: []</li>
+<li>callback: (editor :SubEditor, e : MouseEvent)</li>
+</ul>
+<h3>onMouseUp</h3>
+<p>This mouseup event fires when mouseup inside content is detected.</p>
+<ul>
+<li>event: onMouseUp</li>
+<li>target: []</li>
+<li>callback: (editor :SubEditor, e : MouseEvent)</li>
+</ul>
+<h3>onBlur</h3>
+<p>This blur event fires when content lose focus.</p>
+<ul>
+<li>event: onBlur</li>
+<li>target: []</li>
+<li>callback: (editor :SubEditor, e : FocusEvent)</li>
+</ul>
+<h3>onPaste</h3>
+<p>This is an event design specifically for clean up pasted html code. It should only be implemented once.</p>
+<ul>
+<li>event: onPaste</li>
+<li>target: []</li>
+<li>callback: (editor :SubEditor, e : ClipboardEvent)</li>
+</ul>
+<h3>onFeatureChange</h3>
+<p>Feature is the parsed object representation of current focus element in node, node names can optionally be set in target to subscribe only assigned elements.</p>
+<ul>
+<li>event: onFeatureChange</li>
+<li>target: []</li>
+<li>target: [&quot;LI&quot;, &quot;OL&quot;,&quot;UL&quot;]</li>
+<li>target: [&quot;IMG&quot;]</li>
+<li>target: [&quot;TABLE&quot;, &quot;TD&quot;, &quot;TH&quot;]</li>
+<li>callback: (editor :SubEditor, feature : Feature)</li>
+</ul>
+<h3>onSelectionChange</h3>
+<p>This event usually fired after onFeatureChange but it will trigger even when moving cursor in the same element. Returned selection is serialized and this event is useful for implementing collaborate editing.</p>
+<ul>
+<li>event: onFeatureChange</li>
+<li>target: []</li>
+<li>callback: (editor :SubEditor, selection : SelectionSlim)</li>
+</ul>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

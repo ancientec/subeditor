@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mocha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../dist/subeditor.full.js"></script>
+
+    <script class="mocha-init">
+        mocha.setup('bdd');
+    </script>
+
+
+</head>
+<body>
+
+    
+    <h1>editor 1 : insert into div</h1>
+    <div id="editor1">
+
+    </div>
+
+    <h1>editor 2 : attach to textarea</h1>
+    <form>
+        <textarea id="editor2" style="width:500px;height:300px"><p>editor2 : 123,abc</p></textarea>
+    </form>
+
+    <div id="outside"> <p>end of editor2</p></div>
+    
+    <div id="mocha"></div>
+
+<script>
+
+</script>
+        <!-- ------------------------------------ -->
+        <script src="./test.js"></script>
+        <script src="./test_fullscreen.js"></script> 
+        <script src="./test_select_nodes.js"></script> 
+        <script src="./test_hr.js"></script>
+        <script src="./test_color.js"></script>
+        <script src="./test_source.js"></script>
+        <script src="./test_align.js"></script>
+        <script src="./test_text.js"></script>
+        <script src="./test_indent.js"></script>
+        <script src="./test_format.js"></script>
+        <script src="./test_p.js"></script>
+        <script src="./test_code.js"></script>
+        <script src="./test_blockquote.js"></script>
+        <script src="./test_remove_format.js"></script>
+        <script src="./test_link.js"></script>
+        <script src="./test_paste.js"></script>
+        <script src="./test_list.js"></script>
+        <script src="./test_table.js"></script>
+        <script src="./test_image.js"></script>
+        <!-- ------------------------------------ -->
+        <script type="module">
+            mocha.run();
+        </script>
+</body>
+</html>

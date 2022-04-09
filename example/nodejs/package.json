@@ -1,0 +1,7 @@
+{
+    "name": "subeditor-upload-example",
+    "version": "1.0.0",
+    "dependencies": {
+        "busboy": "^1.4.0"
+    }
+}

@@ -1,0 +1,154 @@
+
+.SubEditorDialog {
+    box-sizing: border-box;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+}
+.SubEditorDialog.is-active {
+    display: flex;
+}
+.SubEditorDialog {
+    z-index: 10000;
+}
+.SubEditorDialog .background {
+    box-sizing: border-box;
+    background-color: rgba(10,10,10,.6);
+}
+.background {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.SubEditorDialog .card {
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+}
+.card, .content {
+    box-sizing: border-box;
+    margin: 0 20px;
+    position: relative;
+    width: 100%;
+}
+.card-title {
+    color: #363636;
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.delete, .close {
+    user-select: none;
+    background-color: rgba(10,10,10,.2);
+    border: 0;
+    border-radius: 290486px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    outline: 0;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+}
+.card-head, .card-foot {
+    box-sizing: border-box;
+    border: none;
+    background: #fff;
+}
+.card-head {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.card-foot, .card-head {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+}
+.card-foot {
+    justify-content: flex-end;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.card-body {
+    background-color: #fff;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+    padding: 20px;
+    display: block;
+}
+
+.SubEditorDialog .button{
+    user-select: none;
+    align-items: center;
+    border: 1px solid transparent;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.25em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding: calc(.375em - 1px) calc(.625em - 1px);
+    position: relative;
+    vertical-align: top;
+    background-color: #fff;
+    border-color: transparent;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+}
+
+.button.is-info, .button.is-info.is-hovered, .button.is-info:hover {
+    border-color: transparent;
+    color: #fff;
+}
+.button.is-info {
+    background-color: #29b6f6;
+}
+
+.card-foot .button:not(:last-child) {
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 769px), print {
+
+    .card, .body {
+        margin: 0 auto;
+        max-height: calc(100vh - 40px);
+        width: 100vw - 40px;
+    }
+}

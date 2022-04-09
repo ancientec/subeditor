@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>Language</h2>
+<p>Default language for SubEditor is en. You may provide your own translation by translating the following json.</p>
+<pre><code class="language-js">
+{
+    <span class="hljs-string">&quot;bold&quot;</span> : <span class="hljs-string">&quot;bold&quot;</span>,
+    <span class="hljs-string">&quot;italic&quot;</span> : <span class="hljs-string">&quot;italic&quot;</span>,
+    <span class="hljs-string">&quot;underline&quot;</span> : <span class="hljs-string">&quot;underline&quot;</span>,
+    <span class="hljs-string">&quot;blockquote&quot;</span> : <span class="hljs-string">&quot;blockquote&quot;</span>,
+    <span class="hljs-string">&quot;paragraph&quot;</span> : <span class="hljs-string">&quot;paragraph&quot;</span>,
+    <span class="hljs-string">&quot;Normal&quot;</span> : <span class="hljs-string">&quot;Normal&quot;</span>,
+    <span class="hljs-string">&quot;Heading 1&quot;</span> : <span class="hljs-string">&quot;Heading 1&quot;</span>,
+    <span class="hljs-string">&quot;Heading 2&quot;</span> : <span class="hljs-string">&quot;Heading 2&quot;</span>,
+    <span class="hljs-string">&quot;Heading 3&quot;</span> : <span class="hljs-string">&quot;Heading 3&quot;</span>,
+    <span class="hljs-string">&quot;Heading 4&quot;</span> : <span class="hljs-string">&quot;Heading 4&quot;</span>,
+    <span class="hljs-string">&quot;Heading 5&quot;</span> : <span class="hljs-string">&quot;Heading 5&quot;</span>,
+    <span class="hljs-string">&quot;Heading 6&quot;</span> : <span class="hljs-string">&quot;Heading 6&quot;</span>,
+    <span class="hljs-string">&quot;Code&quot;</span> : <span class="hljs-string">&quot;Code&quot;</span>,
+    <span class="hljs-string">&quot;text color&quot;</span> : <span class="hljs-string">&quot;text color&quot;</span>,
+    <span class="hljs-string">&quot;background color&quot;</span> : <span class="hljs-string">&quot;background color&quot;</span>,
+    <span class="hljs-string">&quot;SET TEXT COLOR&quot;</span> : <span class="hljs-string">&quot;SET COLOR&quot;</span>,
+    <span class="hljs-string">&quot;SET BACKGROUND COLOR&quot;</span> : <span class="hljs-string">&quot;SET COLOR&quot;</span>,
+    <span class="hljs-string">&quot;fullscreen&quot;</span> : <span class="hljs-string">&quot;fullscreen&quot;</span>,
+    <span class="hljs-string">&quot;exit fullscreen&quot;</span> : <span class="hljs-string">&quot;exit fullscreen&quot;</span>,
+    <span class="hljs-string">&quot;table&quot;</span> : <span class="hljs-string">&quot;table&quot;</span>,
+    <span class="hljs-string">&quot;align&quot;</span> : <span class="hljs-string">&quot;align&quot;</span>,
+    <span class="hljs-string">&quot;align left&quot;</span> : <span class="hljs-string">&quot;align left&quot;</span>,
+    <span class="hljs-string">&quot;align center&quot;</span> : <span class="hljs-string">&quot;align center&quot;</span>,
+    <span class="hljs-string">&quot;align right&quot;</span> : <span class="hljs-string">&quot;align right&quot;</span>,
+    <span class="hljs-string">&quot;align justify&quot;</span> : <span class="hljs-string">&quot;align justify&quot;</span>,
+    <span class="hljs-string">&quot;horizontal line&quot;</span> : <span class="hljs-string">&quot;horizontal line&quot;</span>,
+    <span class="hljs-string">&quot;view source&quot;</span> : <span class="hljs-string">&quot;view source&quot;</span>,
+    <span class="hljs-string">&quot;strikethrough&quot;</span> : <span class="hljs-string">&quot;strikethrough&quot;</span>,
+    <span class="hljs-string">&quot;superscript&quot;</span> : <span class="hljs-string">&quot;superscript&quot;</span>,
+    <span class="hljs-string">&quot;subscript&quot;</span> : <span class="hljs-string">&quot;subscript&quot;</span>,
+    <span class="hljs-string">&quot;indent&quot;</span> : <span class="hljs-string">&quot;indent&quot;</span>,
+    <span class="hljs-string">&quot;outdent&quot;</span> : <span class="hljs-string">&quot;outdent&quot;</span>,
+    <span class="hljs-string">&quot;format&quot;</span> : <span class="hljs-string">&quot;format&quot;</span>,
+    <span class="hljs-string">&quot;remove format&quot;</span> : <span class="hljs-string">&quot;remove format&quot;</span>,
+    <span class="hljs-string">&quot;link&quot;</span> : <span class="hljs-string">&quot;link&quot;</span>,
+    <span class="hljs-string">&quot;url&quot;</span> : <span class="hljs-string">&quot;URL&quot;</span>,
+    <span class="hljs-string">&quot;text&quot;</span> : <span class="hljs-string">&quot;TEXT&quot;</span>,
+    <span class="hljs-string">&quot;link target&quot;</span> : <span class="hljs-string">&quot;TARGET&quot;</span>,
+    <span class="hljs-string">&quot;remove&quot;</span> : <span class="hljs-string">&quot;REMOVE&quot;</span>,
+    <span class="hljs-string">&quot;insert&quot;</span> : <span class="hljs-string">&quot;INSERT&quot;</span>,
+    <span class="hljs-string">&quot;update&quot;</span> : <span class="hljs-string">&quot;UPDATE&quot;</span>,
+    <span class="hljs-string">&quot;open in new tab&quot;</span> : <span class="hljs-string">&quot; (open in new tab)&quot;</span>,
+    <span class="hljs-string">&quot;list&quot;</span> : <span class="hljs-string">&quot;list&quot;</span>,
+    <span class="hljs-string">&quot;ordered list&quot;</span> : <span class="hljs-string">&quot;ordered list&quot;</span>,
+    <span class="hljs-string">&quot;unordered list&quot;</span> : <span class="hljs-string">&quot;unordered list&quot;</span>,
+    <span class="hljs-string">&quot;remove list&quot;</span> : <span class="hljs-string">&quot;remove list&quot;</span>,
+    <span class="hljs-string">&quot;image&quot;</span> : <span class="hljs-string">&quot;image&quot;</span>,
+    <span class="hljs-string">&quot;uploading&quot;</span> : <span class="hljs-string">&quot;uploading&quot;</span>,
+    <span class="hljs-string">&quot;upload failed&quot;</span> : <span class="hljs-string">&quot;upload failed&quot;</span>,
+    <span class="hljs-string">&quot;drop or click to upload image&quot;</span> : <span class="hljs-string">&quot;drop or click to upload image&quot;</span>,
+    <span class="hljs-string">&quot;please select the appropriate file types:&quot;</span> : <span class="hljs-string">&quot;please select the appropriate file types:&quot;</span>,
+    <span class="hljs-string">&quot;max allowed size per file should be &quot;</span> : <span class="hljs-string">&quot;max allowed size per file should be &quot;</span>,
+    <span class="hljs-string">&quot;max allowed size of all files in total should be &quot;</span> : <span class="hljs-string">&quot;max allowed size of all files in total should be &quot;</span>,
+    <span class="hljs-string">&quot;UPLOADING...&quot;</span> : <span class="hljs-string">&quot;UPLOADING...&quot;</span>,
+    <span class="hljs-string">&quot;START OVER&quot;</span> : <span class="hljs-string">&quot;START OVER&quot;</span>
+    
+}
+
+</code></pre>
+<h3>presetLang(langList : {[key: string]:{[key: string]: string}})</h3>
+<p><em>method: static</em><br>
+<em>params: (langList : {[key: string]:{[key: string]: string}})</em></p>
+<p>add or change language, this will affect all instances.</p>
+<pre><code class="language-js"><span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetLang</span>({ 
+    fr : {
+        <span class="hljs-comment">//some translations</span>
+        }
+});
+
+<span class="hljs-comment">//creating an instance of SubEditor using fr as display language</span>
+<span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, {lang : <span class="hljs-string">&quot;fr&quot;</span>});
+
+</code></pre>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

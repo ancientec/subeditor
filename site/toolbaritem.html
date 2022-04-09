@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>ToolbarItem</h2>
+<p>ToolbarItem has three variants:</p>
+<ul>
+<li>simple button with command action</li>
+<li>dropdown sub-menu</li>
+<li>dropdown custom content</li>
+</ul>
+<pre><code class="language-js">
+interface <span class="hljs-title class_">ToolbarItem</span> {
+  command : string;
+  svg : string;
+  dropdowncontent? : string;
+  tips? : string;
+  onRender? : <span class="hljs-title class_">Function</span>;
+}
+
+</code></pre>
+<h3>Simple Button Command</h3>
+<p>Rendering a svg button, trigger onCommand action when clicking the button.</p>
+<ul>
+<li>command: defined by plugins</li>
+<li>svg: use default icon or provide your own svg as string</li>
+<li>tips: the text to display when hover on icon, it will automatically find matching translation.</li>
+</ul>
+<pre><code class="language-js">
+    {
+        command : <span class="hljs-string">&quot;bold&quot;</span>,
+        svg : <span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;b&quot;</span>],
+        tips : <span class="hljs-string">&quot;bold&quot;</span>
+    }
+
+</code></pre>
+<p>The following example produce same result as above, action clicking on item button is defined specifically in onRender().</p>
+<pre><code class="language-js">    {
+        command : <span class="hljs-string">&quot;bold&quot;</span>,
+        svg : <span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;b&quot;</span>],
+        tips : <span class="hljs-string">&quot;bold&quot;</span>,
+        onRender : <span class="hljs-function">(<span class="hljs-params">_editor : SubEditor, el : HTMLElement</span>) =&gt;</span> {
+          el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> cmd = el.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;data-command&quot;</span>) <span class="hljs-keyword">as</span> string;
+            _editor.<span class="hljs-title function_">command</span>(cmd,[]);
+          });
+        }
+    }
+</code></pre>
+<p>Result html markups:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;se-button se-ToolbarItem&quot;</span> <span class="hljs-attr">data-command</span>=<span class="hljs-string">&quot;bold&quot;</span> <span class="hljs-attr">data-tips</span>=<span class="hljs-string">&quot;bold&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;se-icon&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 24 24&quot;</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M7 5v14h7A3.6 3.6 0 0017 16A3.6 3.6 0 0015 12A3.6 3.6 0 0017 8.5A3.6 3.6 0 0014 5h-7ZM9 7h4.5A2.1 2.1 0 0114.5 9A2.1 2.1 0 0113.5 11h-4.5v-4ZM9 13h4.5A2.1 2.1 0 0114.5 15.5A2.1 2.1 0 0113.5 17h-4.5v-4Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+</code></pre>
+<h3>Dropdown Sub-Menu</h3>
+<p>Dropdown menu can be created by providing the necessary html markup in dropdowncontent. By adding &quot;horizontal&quot; to se-dropdown-content class will render the sub-menu horizontally. By default clicking on the subeditor.refToolbar.querySelector(&quot;.se-dropdown-trigger button&quot;) will automatically show sub-menu. The buttons in sub-menu will need to define in onRender().</p>
+<pre><code class="language-js">
+{
+        command : <span class="hljs-string">&quot;align&quot;</span>,
+        svg : <span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;align_left&quot;</span>],
+        tips : <span class="hljs-string">&quot;align&quot;</span>,
+        dropdowncontent : <span class="hljs-string">&#x27;&lt;div class=&quot;se-dropdown se-ToolbarItem&quot; data-tips=&quot;align&quot;&gt;&lt;div class=&quot;se-dropdown-trigger&quot;&gt;&lt;button class=&quot;se-button&quot; aria-haspopup=&quot;true&quot; aria-controls=&quot;dropdown-menu-align&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;se-icon&quot;&gt;&#x27;</span>+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;align_left&quot;</span>]+<span class="hljs-string">&#x27;&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;se-dropdown-menu&quot; id=&quot;dropdown-menu-align&quot; role=&quot;menu&quot;&gt;&lt;div class=&quot;se-dropdown-content horizontal&quot;&gt;&lt;span class=&quot;se-button se-ToolbarItem&quot; data-command=&quot;align&quot; data-value=&quot;left&quot; data-tips=&quot;align left&quot;&gt;&lt;span class=&quot;se-icon&quot;&gt;&#x27;</span>+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;align_left&quot;</span>]+<span class="hljs-string">&#x27;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;se-button se-ToolbarItem&quot; data-command=&quot;align&quot; data-value=&quot;center&quot; data-tips=&quot;align center&quot;&gt;&lt;span class=&quot;se-icon&quot;&gt;&#x27;</span>+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;align_center&quot;</span>]+<span class="hljs-string">&#x27;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;se-button se-ToolbarItem&quot; data-command=&quot;align&quot; data-value=&quot;right&quot; data-tips=&quot;align right&quot;&gt;&lt;span class=&quot;se-icon&quot;&gt;&#x27;</span>+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;align_right&quot;</span>]+<span class="hljs-string">&#x27;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;se-button ToolbarItem&quot; data-command=&quot;align&quot; data-value=&quot;justify&quot; data-tips=&quot;align justify&quot;&gt;&lt;span class=&quot;se-icon&quot;&gt;&#x27;</span>+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;align_justify&quot;</span>]+<span class="hljs-string">&#x27;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&#x27;</span>,
+        onRender : <span class="hljs-function">(<span class="hljs-params">_editor : SubEditor, el : HTMLElement</span>) =&gt;</span> {
+            <span class="hljs-comment">//look for each button in sub-menu and </span>
+          el.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;.se-button[data-command]&#x27;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">btn</span> =&gt;</span> {
+            btn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+              e.<span class="hljs-title function_">preventDefault</span>();
+              e.<span class="hljs-title function_">stopPropagation</span>();
+              _editor.<span class="hljs-title function_">command</span>(<span class="hljs-string">&quot;align&quot;</span>,[btn.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;data-value&quot;</span>) <span class="hljs-keyword">as</span> string]);
+              <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            });
+          });
+          <span class="hljs-comment">//subscribe to onFeatureChange event to highlight the button if the current content at cursor has matching style</span>
+          _editor.<span class="hljs-property">event</span>.<span class="hljs-title function_">register</span>([{ event : <span class="hljs-string">&quot;onFeatureChange&quot;</span>, target : [], callback : <span class="hljs-function">() =&gt;</span> {
+            el.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;.se-button&#x27;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">btn</span> =&gt;</span> {
+              btn.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&#x27;is-featured&#x27;</span>);
+              <span class="hljs-keyword">if</span>(btn.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;data-value&quot;</span>) === _editor.<span class="hljs-property">feature</span>?.<span class="hljs-property">align</span>) {
+                btn.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&#x27;is-featured&#x27;</span>);
+              }
+            });
+        
+          }}]);
+          <span class="hljs-comment">//end of feature change</span>
+        }
+      }
+
+</code></pre>
+<h3>Dropdown Custom Content</h3>
+<p>By capturing the onclick event in onRender(), custom content can be created base on different condition. For more detail example, please check out the source code at /src/toolbar/(image, link, table, color).</p>
+<pre><code class="language-js">
+    {
+        command : <span class="hljs-string">&quot;table&quot;</span>,
+        svg : <span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;table&quot;</span>],
+        tips : <span class="hljs-string">&quot;table&quot;</span>,
+        onRender : <span class="hljs-function">(<span class="hljs-params">_editor : SubEditor, el : HTMLElement</span>) =&gt;</span> {
+          el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+
+            <span class="hljs-comment">//subscribe to onClick event:</span>
+            el.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.se-dropdown-trigger &gt; button&#x27;</span>)?.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+                <span class="hljs-comment">//determine if dropdown is open by checking is-active class</span>
+                <span class="hljs-keyword">if</span>(el.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.se-dropdown-menu&#x27;</span>)!.<span class="hljs-property">classList</span>.<span class="hljs-title function_">contains</span>(<span class="hljs-string">&quot;is-active&quot;</span>)) {
+
+                    <span class="hljs-comment">//your own code</span>
+                    <span class="hljs-comment">//example: for table, if we are already in table, render submenu for table opertions such as merge/unmerge</span>
+                    <span class="hljs-comment">// if we are not currently in table, render an UI allowing user to create a new table by choosing number of columns and rows</span>
+
+                }
+            });
+
+          });
+        }
+    }
+
+</code></pre>
+<h3>presetToolbarItem( name : string, item : Function)</h3>
+<p>This method takes a function that accepts an editor instance and returns a ToolbarItem. Item set by presetToolbarItem will have the highest priority, it shall replace the item set by plugin (registerToolbarItem) and default item with same name.</p>
+<pre><code class="language-js">
+    <span class="hljs-comment">//take advantage of _editor.ln() to provide localized language string when rendering content</span>
+    <span class="hljs-keyword">var</span> newbold = <span class="hljs-keyword">function</span>(<span class="hljs-params">_editor</span>) {
+        <span class="hljs-keyword">return</span> {
+        command : <span class="hljs-string">&quot;bold&quot;</span>,
+        svg : <span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>[<span class="hljs-string">&quot;b&quot;</span>],
+        tips : <span class="hljs-string">&quot;bold&quot;</span>
+        }
+    };
+    <span class="hljs-comment">//create a new ToolbarItem name newbold</span>
+    <span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetToolbarItem</span>(<span class="hljs-string">&quot;newbold&quot;</span>, newbold);
+
+    <span class="hljs-comment">//can be used now:</span>
+    <span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elem, {
+        toolbarList : [<span class="hljs-string">&quot;newbold&quot;</span>],
+        pluginList : [<span class="hljs-string">&quot;bold&quot;</span>] <span class="hljs-comment">// bold plugin is required for onCommand(&quot;bold&quot;, []) to work</span>
+    });
+
+</code></pre>
+<h3>Runtime Registration</h3>
+<p>It is possible to pass the above function directly into toolbarList.</p>
+<pre><code class="language-js">
+    <span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elem, {
+        toolbarList : [newbold],
+        pluginList : [<span class="hljs-string">&quot;bold&quot;</span>] <span class="hljs-comment">// bold plugin is required for onCommand(&quot;bold&quot;, []) to work</span>
+    });
+
+</code></pre>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

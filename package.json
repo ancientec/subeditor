@@ -1,0 +1,44 @@
+{
+    "name": "subeditor",
+    "description": "An alternative wysiwyg html editor designed for modern and old javascript",
+    "version": "0.5.0",
+    "keywords": [
+        "wysiwyg",
+        "html",
+        "editor"
+    ],
+    "author": "Ancientec Co., Ltd.",
+    "main": "dist/subeditor.js",
+    "types": "dist/subeditor.d.ts",
+    "license": "MIT",
+    "repository": "https://github.com/ancientec/subeditor",
+    "scripts": {
+        "clean": "node src/scripts/clean.js",
+        "clean:all": "npm run clean && (rm -r ./node_modules || true)",
+        "build-csssvg": "node src/scripts/build.js && node src/scripts/svg-path-editor.js",
+        "build": "npm run build-csssvg && npm run clean &&  tsc && npm run esbuild-browser && npm run esbuild-doc",
+        "esbuild-browser": "esbuild src/browser.js --bundle --minify --outfile=dist/subeditor.min.js && esbuild src/browser.js --bundle --outfile=dist/subeditor.full.js",
+        "esbuild-doc": "esbuild src/browser.js --bundle --minify --outfile=docs/js/subeditor.min.js && esbuild src/browser.js --bundle --outfile=docs/js/subeditor.full.js && node doc-scripts/doc.js doc-scripts/config.json build",
+        "docs": "node doc-scripts/doc.js doc-scripts/config.json preview",
+        "test": "echo 'use browser to open tests/index.html'"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.21",
+        "@types/is-hotkey": "^0.1.5",
+        "@types/mocha": "^9.0.0",
+        "chai": "^4.1.2",
+        "esbuild": "^0.12.22",
+        "eslint": "^6.3.0",
+        "mocha": "^9.0.0",
+        "source-map-support": "^0.5.12",
+        "ts-node": "^10.0.0",
+        "typedoc": "^0.21.6",
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "@ancientec/selection-serializer": "^1.0.3",
+        "is-hotkey": "^0.2.0",
+        "textdiff-create": "^1.0.5",
+        "textdiff-patch": "^1.0.5"
+    }
+}

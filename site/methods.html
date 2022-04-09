@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>Variables</h2>
+<p>SubEditor will render itself in the following format:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditor&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditorToolbar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditorContentContainer&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditorContent&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditorFooter&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;SubEditorTextarea&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3>refEditor</h3>
+<p>dom element of SubEditor.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.SubEditor&quot;</span>) === subeditor.<span class="hljs-property">refEditor</span>);
+<span class="hljs-comment">//true</span>
+</code></pre>
+<h3>refTextarea</h3>
+<p>The shadow textarea that contains the content for source editing, the value is updated as the editor content changes. If a textarea element is provide to initialize SubEditor, refTextarea will be same as the initialized element.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.SubEditorTextarea&quot;</span>) === subeditor.<span class="hljs-property">refTextarea</span>);
+<span class="hljs-comment">//true</span>
+<span class="hljs-keyword">if</span>(elm.<span class="hljs-property">nodeName</span> === <span class="hljs-string">&quot;TEXTAREA&quot;</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elm === subeditor.<span class="hljs-property">refTextarea</span>);
+    <span class="hljs-comment">//true</span>
+}
+</code></pre>
+<h3>refToolbar</h3>
+<p>dom element of toobar.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.SubEditorToolbar&quot;</span>) === subeditor.<span class="hljs-property">refToolbar</span>);
+<span class="hljs-comment">//true</span>
+</code></pre>
+<h3>refContent</h3>
+<p>dom element of content.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.SubEditorContent&quot;</span>) === subeditor.<span class="hljs-property">refContent</span>);
+<span class="hljs-comment">//true</span>
+</code></pre>
+<h3>refFooter</h3>
+<p>dom element of footer.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.SubEditorFooter&quot;</span>) === subeditor.<span class="hljs-property">refFooter</span>);
+<span class="hljs-comment">//true</span>
+</code></pre>
+<h3>version</h3>
+<p>current version (static). In case of breaking changes, plugin developer can use version to determine behaviors base on different versions.</p>
+<pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">version</span>);
+<span class="hljs-comment">//0.5.0</span>
+</code></pre>
+<h3>svgList</h3>
+<p>list of svg icons for ui (static). Icons can be added or replaced by editing this value directly or using the method SubEditor.presetSvg. Changing this will affect all instances of SubEditor.</p>
+<pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">svgList</span>);
+<span class="hljs-comment">// { i : &quot;&lt;svg&gt;&lt;/svg&gt;&quot; ....}</span>
+</code></pre>
+<h3>langList</h3>
+<p>list of translation languages (static). Languages can be added or updated by editing this value directly or using the method SubEditor.presetLang. Changing this will affect all instances of SubEditor.</p>
+<pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">langList</span>);
+<span class="hljs-comment">// { en : {&quot;bold&quot; : &quot;bold&quot;,...} ....}</span>
+</code></pre>
+<h3>presetToolbarItem( name : string, item : Function)</h3>
+<p>This method takes a function that accepts an editor instance and returns a ToolbarItem. Item set by presetToolbarItem will have the highest priority, it shall replace the item set by plugin (registerToolbarItem) and default item with same name.</p>
+<h3>presetPluginList</h3>
+<p>list of user defined plugins (static), available globally and shared across all instances. Using same name will overwrite the default plugin. Use the method SubEditor.presetPlugin(pluginName : string, plugin : SubEditorEvent[]).</p>
+<h3>presetCssString</h3>
+<p>user defined css in string format (static), available globally and shared across all instances. Use the method SubEditor.presetCss(cssString : string).</p>
+<h3>cfgList</h3>
+<p>Stores config variables for plugins.</p>
+<h3>cachedList</h3>
+<p>Stores temporary variables, to be passed between plugins or in UI flow.</p>
+<h3>selection</h3>
+<p>Serialized value of current selection, this is updated on every selection change.<br>
+The serialized object uses <a href="https://github.com/ancientec/selection-serializer">Selection Serializer</a>.</p>
+<h3>feature</h3>
+<p>An analysed dom object representation at current cursor. Default null and will change upon selection change.</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Feature</span> {
+    path : string[] = [];
+    pathNode : <span class="hljs-title class_">HTMLElement</span>[] = [];
+    node : <span class="hljs-title class_">HTMLElement</span> | <span class="hljs-literal">undefined</span> = <span class="hljs-literal">undefined</span>;
+    nodeName : string = <span class="hljs-string">&quot;&quot;</span>;
+    formatEL : string = <span class="hljs-string">&quot;&quot;</span>;
+    
+    color : string = <span class="hljs-string">&quot;&quot;</span>;
+    background : string = <span class="hljs-string">&quot;&quot;</span>;
+    indent : string = <span class="hljs-string">&quot;&quot;</span>;
+    align : string = <span class="hljs-string">&quot;&quot;</span>;
+
+    bold = <span class="hljs-literal">false</span>;
+    italic = <span class="hljs-literal">false</span>;
+    underline = <span class="hljs-literal">false</span>;
+    strikethrough = <span class="hljs-literal">false</span>;
+    subscript = <span class="hljs-literal">false</span>;
+    superscript = <span class="hljs-literal">false</span>;
+
+    a : <span class="hljs-title class_">FeatureLink</span> = {
+        href : <span class="hljs-string">&quot;&quot;</span>,
+        target : <span class="hljs-string">&quot;&quot;</span>,
+        node : <span class="hljs-literal">undefined</span>,
+    };
+    img : <span class="hljs-title class_">FeatureImage</span> = {
+        src : <span class="hljs-string">&quot;&quot;</span>,
+        width : <span class="hljs-string">&quot;&quot;</span>,
+        height : <span class="hljs-string">&quot;&quot;</span>,
+        node : <span class="hljs-literal">undefined</span>
+    };
+    video? : <span class="hljs-title class_">FeatureVideo</span> = {
+        controls : boolean,
+        autoplay : boolean,
+        width : <span class="hljs-string">&quot;&quot;</span>,
+        height : <span class="hljs-string">&quot;&quot;</span>,
+        node : <span class="hljs-title class_">HTMLElement</span> | <span class="hljs-literal">undefined</span>,
+        sources : <span class="hljs-title class_">FeatureSource</span>[]
+    };
+    audio? : <span class="hljs-title class_">FeatureAudio</span> = {
+        controls : boolean,
+        autoplay : boolean,
+        width : <span class="hljs-string">&quot;&quot;</span>,
+        height : <span class="hljs-string">&quot;&quot;</span>,
+        node : <span class="hljs-title class_">HTMLElement</span> | <span class="hljs-literal">undefined</span>,
+        sources : <span class="hljs-title class_">FeatureSource</span>[]
+    };
+    
+}
+</code></pre>
+<h2>Methods</h2>
+<h3>command(cmd : string, value : any[] = [])</h3>
+<p><em>method: non-static</em><br>
+<em>params: (type : string, value : any[] = [])</em></p>
+<p>trigger plugin command.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">command</span>(<span class="hljs-string">&quot;hr&quot;</span>,[]);
+<span class="hljs-comment">//add an hr into content</span>
+</code></pre>
+<h3>destroy()</h3>
+<p><em>method: non-static</em><br>
+<em>params: none</em></p>
+<p>destroy and clean up current instance.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">destroy</span>();
+</code></pre>
+<h3>ln(key : string)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string)</em></p>
+<p>return the translated language value.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, {lang : <span class="hljs-string">&quot;zhCN&quot;</span>});
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-title function_">ln</span>(<span class="hljs-string">&quot;exit fullscreen&quot;</span>));
+<span class="hljs-comment">//退出全屏</span>
+</code></pre>
+<h3>registerCallback(key : string, fn : Function)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string, fn : Function)</em></p>
+<p>register callback function for use later.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">registerCallback</span>(<span class="hljs-string">&quot;logme&quot;</span>, <span class="hljs-function">(<span class="hljs-params">str</span>) =&gt;</span> { <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str);});
+</code></pre>
+<h3>getCallback(key : string, args : any = undefined)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string, args : any = undefined)</em></p>
+<p>register callback function for use later.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">getCallback</span>(<span class="hljs-string">&quot;logme&quot;</span>, <span class="hljs-string">&quot;output to console&quot;</span>);
+<span class="hljs-comment">//output to console</span>
+</code></pre>
+<h3>initPlugins(plugins : (SubEditorEvent[] | string)[])</h3>
+<p><em>method: non-static</em><br>
+<em>params: (plugins : (SubEditorEvent[] | string)[])</em></p>
+<p>add plugin to the editor after initialization, available only to current instance. Use string value to enable default preset, or include your own plugin code.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-comment">//enable default redo plugin:</span>
+subeditor.<span class="hljs-title function_">initPlugins</span>([<span class="hljs-string">&quot;redo&quot;</span>]);
+
+<span class="hljs-comment">//or register a &quot;redo&quot; command with full code, please note that you should not register same event twice</span>
+editor.<span class="hljs-title function_">initPlugins</span>([
+    {
+        event : <span class="hljs-string">&quot;onCommand&quot;</span>,
+        target : [<span class="hljs-string">&quot;redo&quot;</span>],
+        callback : <span class="hljs-function">(<span class="hljs-params">editor :SubEditor, type : string, value : any</span>) =&gt;</span> {
+            editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Redo</span>());
+        }
+    }]);
+</code></pre>
+<h3>presetPlugin(pluginName : string, plugin : SubEditorEvent[])</h3>
+<p><em>method: static</em><br>
+<em>params: (pluginName : string, plugin : SubEditorEvent[])</em></p>
+<p>pre-define a plugin available globally and share among all instances. Using the same name will replace default plugin. List of all default plugins are:<br>
+&quot;fullscreen&quot;,&quot;hr&quot;, &quot;color&quot;,&quot;source&quot;,&quot;align&quot;,&quot;text&quot;,&quot;undo&quot;,&quot;redo&quot;,&quot;indent&quot;,&quot;format&quot;,&quot;remove_format&quot;,&quot;link&quot;, &quot;paste&quot;,&quot;list&quot;, &quot;table&quot;,&quot;image&quot;</p>
+<h3>handleFeature()</h3>
+<p><em>method: non-static</em><br>
+<em>params: none</em></p>
+<p>Parse the current selection state of editor content.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">handleFeature</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-property">feature</span>);
+<span class="hljs-comment">/* null or:
+ Feature {
+    path : string[] = [];
+    pathNode : HTMLElement[] = [];
+    node : HTMLElement | undefined = undefined;
+    nodeName : string = &quot;&quot;;
+    formatEL : string = &quot;&quot;;
+    
+    color : string = &quot;&quot;;
+    background : string = &quot;&quot;;
+    indent : string = &quot;&quot;;
+    align : string = &quot;&quot;;
+
+    bold = false;
+    italic = false;
+    underline = false;
+    strikethrough = false;
+    subscript = false;
+    superscript = false;
+
+    a : FeatureLink = {
+        href : &quot;&quot;,
+        target : &quot;&quot;,
+        node : undefined,
+    };
+    img : FeatureImage = {
+        src : &quot;&quot;,
+        width : &quot;&quot;,
+        height : &quot;&quot;,
+        node : undefined
+    };
+    video? : FeatureVideo = {
+        controls : boolean,
+        autoplay : boolean,
+        width : &quot;&quot;,
+        height : &quot;&quot;,
+        node : HTMLElement | undefined,
+        sources : FeatureSource[]
+    };
+    audio? : FeatureAudio = {
+        controls : boolean,
+        autoplay : boolean,
+        width : &quot;&quot;,
+        height : &quot;&quot;,
+        node : HTMLElement | undefined,
+        sources : FeatureSource[]
+    };
+    
+}
+*/</span>
+</code></pre>
+<h3>restoreSelection(sel : SelectionSlimState | undefined = undefined)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (sel : SelectionSlimState | undefined = undefined)</em></p>
+<p>restore the selection to the provided serialized selection state.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">changeValue</span>(<span class="hljs-string">&quot;&lt;h1&gt;title&lt;/h1&gt;&quot;</span>);
+<span class="hljs-keyword">var</span> cachedSelection = editor.<span class="hljs-property">selection</span>;
+<span class="hljs-comment">//assuming cursor or focus has moved, reset it back to cached</span>
+subeditor.<span class="hljs-title function_">restoreSelection</span>(cachedSelection);
+</code></pre>
+<h3>getSelectionRange()</h3>
+<p><em>method: non-static</em><br>
+<em>params: none</em></p>
+<p>return the selection and range.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-title function_">getSelectionRange</span>());
+<span class="hljs-comment">// {selection : object, range : object}</span>
+</code></pre>
+<h3>setCache(key : string, value : any)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string, value : any)</em></p>
+<p>save variable for use later.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">setCache</span>(<span class="hljs-string">&quot;myVar&quot;</span>, <span class="hljs-string">&quot;test123&quot;</span>);
+</code></pre>
+<h3>getCache(key : string)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string)</em></p>
+<p>get cached variable.</p>
+<pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-title function_">getCache</span>(<span class="hljs-string">&quot;myVar&quot;</span>));
+<span class="hljs-comment">//test123</span>
+</code></pre>
+<h3>setCfg(key : string, value : any)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string, value : any)</em></p>
+<p>set or change config variable.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-comment">//limit the number of files to be handled in image upload</span>
+subeditor.<span class="hljs-title function_">setCfg</span>(<span class="hljs-string">&quot;image.upload.accept.files&quot;</span>, <span class="hljs-number">1</span>);
+</code></pre>
+<h3>getCfg(key : string)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (key : string)</em></p>
+<p>get current cfg variable.</p>
+<pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-title function_">getCache</span>(<span class="hljs-string">&quot;image.upload.accept.files&quot;</span>));
+<span class="hljs-comment">//1</span>
+</code></pre>
+<h3>enableFooter(height: number)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (height: number)</em></p>
+<p>disable and hide footer</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">enableFooter</span>(<span class="hljs-number">15</span>);
+<span class="hljs-comment">//show a footer of height = 15</span>
+</code></pre>
+<h3>disableFooter()</h3>
+<p><em>method: non-static</em><br>
+<em>params: none</em></p>
+<p>disable and hide footer</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">disableFooter</span>();
+</code></pre>
+<h3>setAutoGrow(grow : boolean)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (grow : boolean)</em></p>
+<p>enable or disable content height auto grow</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">setAutoGrow</span>(<span class="hljs-literal">true</span>);
+
+</code></pre>
+<h3>presetLang(langList : {[key: string]:{[key: string]: string}})</h3>
+<p><em>method: static</em><br>
+<em>params: (langList : {[key: string]:{[key: string]: string}})</em></p>
+<p>add or change language, this will affect all instances.</p>
+<pre><code class="language-js"><span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetLang</span>({ 
+    fr : {
+        <span class="hljs-comment">//some translations</span>
+        }
+});
+</code></pre>
+<h3>presetSvg(_svg : {[key: string]: string})</h3>
+<p><em>method: static</em><br>
+<em>params: (_svg : {[key: string]: string})</em></p>
+<p>add or change svg icon, this will affect all instances.</p>
+<pre><code class="language-js"><span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetSvg</span>({ 
+    italic : <span class="hljs-string">&#x27;&lt;svg viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M12 9l-2 10h2l2-10Zm0.75-3a1 1 0 001 1a1 1 0 10-1-1Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&#x27;</span>
+});
+</code></pre>
+<h3>presetCss(cssString: string)</h3>
+<p><em>method: static</em><br>
+<em>params: (cssString: string)</em></p>
+<p>Css will inject into document head upon each initialization. Css will take the following order:</p>
+<ol>
+<li>default css</li>
+<li>plugin css via registerCss event</li>
+<li>preset css</li>
+<li>option css</li>
+</ol>
+<p>Styles are shared among all instances, initialization will refresh the style if it detect changes.</p>
+<pre><code class="language-js"><span class="hljs-comment">//replace existing preset css string</span>
+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetCss</span>(<span class="hljs-string">&quot;.SubEditorContent {border:1px solid red}&quot;</span>);
+<span class="hljs-comment">//or if you already have some defined before but want to append more:</span>
+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetCss</span>(<span class="hljs-title class_">SubEditor</span>.<span class="hljs-property">presetCssString</span> + <span class="hljs-string">&quot;.SubEditorContent {border:1px solid red}&quot;</span>);
+</code></pre>
+<h3>changeValue(str : string)</h3>
+<p><em>method: non-static</em><br>
+<em>params: (str : string)</em></p>
+<p>change the content.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+subeditor.<span class="hljs-title function_">changeValue</span>(<span class="hljs-string">&quot;&lt;h1&gt;New Content&lt;/h1&gt;&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-title function_">value</span>());
+<span class="hljs-comment">//&lt;h1&gt;New Content&lt;/h1&gt;</span>
+</code></pre>
+<h3>triggerChange()</h3>
+<p><em>method: non-static</em><br>
+<em>params: none</em></p>
+<p>if content is modified in code, triggerChange will need to be called to create a changed copy.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, {onChange : <span class="hljs-function">(<span class="hljs-params">changed</span>) =&gt;</span> {<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;changed: &quot;</span>,changed);}});
+subeditor.<span class="hljs-title function_">changeValue</span>(<span class="hljs-string">&quot;&lt;h1&gt;New Content&lt;/h1&gt;&quot;</span>);
+subeditor.<span class="hljs-title function_">triggerChange</span>();
+<span class="hljs-comment">//changed: {key : 1, content : &#x27;&lt;h1&gt;New Content&lt;/h1&gt;&#x27;, change : {delta : array, selection : object}}</span>
+</code></pre>
+<h3>value()</h3>
+<p><em>method: non-static</em><br>
+<em>params: none</em></p>
+<p>return the content value in string.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(subeditor.<span class="hljs-title function_">value</span>());
+</code></pre>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

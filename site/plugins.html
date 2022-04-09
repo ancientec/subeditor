@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>Plugins</h2>
+<p>A plugin in SubEditor is an array of events registered under a string name. To understand the events please visit: <a href="/events.html">event page</a> for details. The list of default build-in plugins are:</p>
+<ul>
+<li><strong>fullscreen</strong>: allow to toggle editor into fullscreen.</li>
+<li><strong>hr</strong>: insert horizontal line at cursor.</li>
+<li><strong>color</strong>: text color and background color.</li>
+<li><strong>source</strong>: view and editor html source code of current content.</li>
+<li><strong>align</strong>: align text left, right, center, or justify.</li>
+<li><strong>text</strong>: common text style such as**: &quot;bold&quot;, &quot;italic&quot;,&quot;underline&quot;,&quot;strikethrough&quot;,&quot;subscript&quot;,&quot;superscript&quot;</li>
+<li><strong>undo</strong>: captures &quot;cmd+z&quot; and &quot;ctrl+z&quot;, reverts content back to last changed version.</li>
+<li><strong>redo</strong>: captures &quot;ctrl+y&quot; and &quot;cmd+shift+z&quot;, move content into next changed version if it was previous reverted.</li>
+<li><strong>indent</strong>: text indent and outdent by using padding</li>
+<li><strong>format</strong>: Normal(p),h1,h2,h3,h4,h5,h6,blockquote, code</li>
+<li><strong>remove_format</strong>:  remove color and all of the following tags: &quot;H1&quot;,&quot;H2&quot;,&quot;H3&quot;,&quot;H4&quot;,&quot;H5&quot;,&quot;H6&quot;,&quot;CODE&quot;,&quot;B&quot;,&quot;STRONG&quot;,&quot;I&quot;,&quot;EM&quot;,&quot;U&quot;,&quot;PRE&quot;,&quot;BLOCKQUOTE&quot;,&quot;A&quot;,&quot;STRIKE&quot;,&quot;SUB&quot;,&quot;SUP&quot;,&quot;SPAN&quot;.</li>
+<li><strong>link</strong>: create and insert url link.</li>
+<li><strong>paste</strong>: cleanup html code and insert the pasted content into editor.</li>
+<li><strong>list</strong>: create order and unorder list</li>
+<li><strong>table</strong>: create table</li>
+<li><strong>image</strong>: allow to create image by url, upload or view in a library. This plugin require additional configuration and server side support, please visit: <a href="/image_plugin.html">image plugin page</a> for details.</li>
+</ul>
+<h3>Developing Custom Plugin</h3>
+<p>simply declare the name of the plugin (and associated toolbar) during initialization to start using.</p>
+<pre><code class="language-js">
+<span class="hljs-keyword">var</span> myownplugin = [{
+    event : <span class="hljs-string">&quot;onCommand&quot;</span>,
+    target : [<span class="hljs-string">&quot;log&quot;</span>],
+    callback : (editor, logstr) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(logstr);
+    }
+}];
+<span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm,  {
+        onChange : <span class="hljs-keyword">function</span>(<span class="hljs-params">change</span>) { <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(change);},
+        lang : <span class="hljs-string">&quot;en&quot;</span>,
+        pluginList : [myownplugin, <span class="hljs-string">&quot;fullscreen&quot;</span>,<span class="hljs-string">&quot;hr&quot;</span>, <span class="hljs-string">&quot;color&quot;</span>,<span class="hljs-string">&quot;source&quot;</span>,<span class="hljs-string">&quot;align&quot;</span>,<span class="hljs-string">&quot;text&quot;</span>,<span class="hljs-string">&quot;undo&quot;</span>,<span class="hljs-string">&quot;redo&quot;</span>,<span class="hljs-string">&quot;indent&quot;</span>,<span class="hljs-string">&quot;format&quot;</span>,<span class="hljs-string">&quot;remove_format&quot;</span>,<span class="hljs-string">&quot;link&quot;</span>, <span class="hljs-string">&quot;paste&quot;</span>,<span class="hljs-string">&quot;list&quot;</span>, <span class="hljs-string">&quot;table&quot;</span>,<span class="hljs-string">&quot;image&quot;</span>],
+        toolbarList : [<span class="hljs-string">&quot;undo&quot;</span>,<span class="hljs-string">&quot;redo&quot;</span>,<span class="hljs-string">&quot;text&quot;</span>,<span class="hljs-string">&quot;format&quot;</span>,<span class="hljs-string">&quot;link&quot;</span>,<span class="hljs-string">&quot;remove_format&quot;</span>,<span class="hljs-string">&quot;indent&quot;</span>,<span class="hljs-string">&quot;outdent&quot;</span>,<span class="hljs-string">&quot;color&quot;</span>,<span class="hljs-string">&quot;backgroundcolor&quot;</span>,<span class="hljs-string">&quot;align&quot;</span>,<span class="hljs-string">&quot;ol&quot;</span>,<span class="hljs-string">&quot;ul&quot;</span>,<span class="hljs-string">&quot;image&quot;</span>, <span class="hljs-string">&quot;library&quot;</span>,<span class="hljs-string">&quot;table&quot;</span>,<span class="hljs-string">&quot;hr&quot;</span>,<span class="hljs-string">&quot;source&quot;</span>,<span class="hljs-string">&quot;fullscreen&quot;</span>]
+    
+    });
+</code></pre>
+<h3>initPlugins(plugins : (SubEditorEvent[] | string)[])</h3>
+<p><em>method: non-static</em><br>
+<em>params: (plugins : (SubEditorEvent[] | string)[])</em></p>
+<p>add plugin to the editor after initialization, available only to current instance. Use string value to enable default preset, or include your own plugin code.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm, options);
+<span class="hljs-comment">//enable default redo plugin:</span>
+subeditor.<span class="hljs-title function_">initPlugins</span>([<span class="hljs-string">&quot;redo&quot;</span>]);
+
+<span class="hljs-comment">//register a &quot;redo&quot; plugin </span>
+editor.<span class="hljs-title function_">initPlugins</span>([
+    {
+        event : <span class="hljs-string">&quot;onCommand&quot;</span>,
+        target : [<span class="hljs-string">&quot;redo&quot;</span>],
+        callback : <span class="hljs-function">(<span class="hljs-params">editor :SubEditor, type : string, value : any</span>) =&gt;</span> {
+            editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Redo</span>());
+        }
+    },
+    {
+    event : <span class="hljs-string">&quot;onKeyDown&quot;</span>,
+    target : [<span class="hljs-string">&quot;mod+y&quot;</span>,<span class="hljs-string">&quot;cmd+shift+z&quot;</span>],
+    callback : <span class="hljs-function">(<span class="hljs-params">editor :SubEditor, e : KeyboardEvent</span>) =&gt;</span> {
+        e.<span class="hljs-title function_">preventDefault</span>();
+        e.<span class="hljs-title function_">stopPropagation</span>();
+        editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Redo</span>());
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+}]);
+</code></pre>
+<h3>presetPlugin(pluginName : string, plugin : SubEditorEvent[])</h3>
+<p><em>method: static</em><br>
+<em>params: (pluginName : string, plugin : SubEditorEvent[])</em></p>
+<p>pre-define a plugin available globally and share among all instances. Using the same name will replace default plugin.</p>
+<pre><code class="language-js">
+<span class="hljs-keyword">var</span> myredoplugin = [
+    {
+        event : <span class="hljs-string">&quot;onCommand&quot;</span>,
+        target : [<span class="hljs-string">&quot;redo&quot;</span>],
+        callback : <span class="hljs-function">(<span class="hljs-params">editor, type, value</span>) =&gt;</span> {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;myredoplugin&quot;</span>);
+            editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Redo</span>());
+        }
+    },
+    {
+    event : <span class="hljs-string">&quot;onKeyDown&quot;</span>,
+    target : [<span class="hljs-string">&quot;mod+y&quot;</span>,<span class="hljs-string">&quot;cmd+shift+z&quot;</span>],
+    callback : <span class="hljs-function">(<span class="hljs-params">editor, e</span>) =&gt;</span> {
+        e.<span class="hljs-title function_">preventDefault</span>();
+        e.<span class="hljs-title function_">stopPropagation</span>();
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;myredoplugin&quot;</span>);
+        editor.<span class="hljs-title function_">handleChange</span>(editor.<span class="hljs-property">history</span>.<span class="hljs-title class_">Redo</span>());
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+}];
+
+<span class="hljs-comment">//make the above redo available:</span>
+<span class="hljs-title class_">SubEditor</span>.<span class="hljs-title function_">presetPlugin</span>(<span class="hljs-string">&quot;redo&quot;</span>, myredoplugin);
+
+<span class="hljs-comment">//redo=myredoplugin</span>
+<span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm,  {
+        pluginList : [<span class="hljs-string">&quot;redo&quot;</span>],
+        toolbarList : [<span class="hljs-string">&quot;redo&quot;</span>]
+    
+});
+
+<span class="hljs-comment">//alternatively:</span>
+<span class="hljs-keyword">var</span> subeditor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elm,  {
+        pluginList : [myredoplugin],
+        toolbarList : [<span class="hljs-string">&quot;redo&quot;</span>]
+    
+});
+
+</code></pre>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

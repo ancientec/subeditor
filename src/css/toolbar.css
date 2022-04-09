@@ -1,0 +1,211 @@
+.SubEditorToolbar {
+    margin:0;
+    border-bottom:1px solid #dbdbdb;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    color: #363636;
+    background-color: #fff;
+    width:100%;
+    position: relative;
+}
+.SubEditorToolbar, .SubEditorToolbar  * {
+    user-select: none;
+}
+.SubEditorToolbar{ align-items: center;display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.SubEditorToolbar .se-dropdown {
+    display: inline-flex;
+    position: relative;
+    vertical-align: top;
+    height: 2.25em;
+    border-color: transparent; 
+    border-width: 1px; 
+    cursor: pointer; 
+    justify-content: center; padding: calc(0.375 em - 1 px)  0.75em;
+    text-align: center;
+}    
+.SubEditorToolbar .se-dropdown-trigger{
+    position: relative;
+}
+.SubEditorToolbar .se-button{
+    margin: 0;
+    align-items: center;
+    border: 1px solid transparent;
+    display: inline-flex;
+    vertical-align: top;
+    background-color: #fff;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(.375em - 1px) .75em;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;
+    box-shadow: none;
+}
+.SubEditorToolbar .se-button .se-icon{
+    margin:0 calc(-.375em - 1px);
+    height: 24px;
+    width: 24px;
+    align-items: center; 
+    display: inline-flex;
+    justify-content: center;
+}
+.SubEditorToolbar .se-button .se-icon svg {
+    height: 24px;
+    width: 24px;
+}
+.SubEditorToolbar .se-dropdown-trigger .se-button * {pointer-events: none;}
+.SubEditorToolbar .se-dropdown-menu{
+    min-width: unset;
+    left: 0;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    z-index: 20;
+    display: none;
+    background-color: #fff;
+}
+
+.SubEditorToolbar .se-ToolbarItem.is-active .se-dropdown-menu {
+    display:block
+}
+.SubEditorToolbar .se-dropdown-content{
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+    padding: 0;
+    transform-origin: top left;
+    position:relative;
+    background-color: #fff;
+}
+.SubEditorToolbar .se-dropdown-content .padding {
+    padding: 15px;
+}
+.SubEditorToolbar .se-dropdown-content .se-dropdown-item {
+    cursor: pointer;height:unset;margin-bottom:0;
+    margin: 0;
+
+    align-items: center;
+    border: 1px solid transparent;
+    display: inline-flex;
+    vertical-align: top;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    white-space: nowrap;
+    width: 100%;
+    box-shadow: none;
+    height: unset;
+    margin-right: -1px;
+    box-sizing: border-box;
+}
+.SubEditorToolbar .se-dropdown-content.se-control .se-dropdown-item {
+    padding:10px 5px;
+}
+.SubEditorToolbar .se-dropdown-content .se-dropdown-item input {
+    padding: calc(0.5em - 1px) calc(0.75em - 1px);
+    transition: all 300ms;
+    font-size: 1rem;
+    height: 2.5em;
+    line-height: 2.5em;
+    border: solid 1px #ccc;
+    width:200px;
+}
+.SubEditorToolbar .se-dropdown-content .se-button {
+    height: 30px;
+    line-height: 1;
+}
+.SubEditorToolbar .se-dropdown-content .se-button.close-dropdown {
+    position: absolute;
+    right:1px;
+    top:1px;
+}
+.SubEditorToolbar .se-dropdown-content .se-button.alert {
+    background-color: rgb(244,67,54,1);
+    color: #fff;
+}
+.SubEditorToolbar .se-dropdown-content .se-button:hover {
+    background-color: #dbdbdb;
+}
+.SubEditorToolbar .se-dropdown-content .se-button.alert:hover {
+    background-color: rgb(244,67,54,0.7);
+}
+
+.SubEditorToolbar .se-dropdown-content .se-dropdown-item input:focus {
+    border: solid 1px #2196f3;
+}
+.SubEditorToolbar .se-dropdown-content .se-dropdown-item input+label {
+    position: absolute;
+    top: -1px;
+    left: 12px;
+    padding:3px 2px;
+    font-size: 0.8em;
+    color: #333;
+    transition: all 0.5s ease;
+    z-index: 3;
+    display: block;
+    cursor: text;
+    background-color: #fff;
+}
+.SubEditorToolbar .is-featured{border-color: transparent;color: #363636;background-color: #efefef;}
+
+.SubEditorToolbar .se-dropdown-content .se-dropdown-item > * {white-space:  nowrap;margin : 0}
+.SubEditorToolbar .se-dropdown-trigger{position: relative;}
+.SubEditorToolbar .se-dropdown-content.horizontal {display: flex;flex-wrap: nowrap;align-items: center;justify-content: flex-start;}
+
+.SubEditorToolbar > .se-button:hover, 
+.SubEditorToolbar .se-dropdown-trigger .se-button:hover, 
+.SubEditorToolbar .se-dropdown-content .se-dropdown-item.hover:hover,
+.SubEditorToolbar .se-dropdown-content .se-button.se-ToolbarItem:hover{background-color: #e0e0e0;}
+.SubEditorToolbar .se-dropdown-content .se-button.se-dropdown-item.borderbottom{border-bottom: 1px solid #dbdbdb;border-radius: 0px;}
+
+.SubEditorToolbar >.se-tips{
+    z-index: 9999;
+    position: absolute;
+    top: -1.6em;
+    left: 0px;
+    line-height: 1.2em;
+    display: none;
+    padding: 2px 10px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+.SubEditorToolbar .se-Shadow {
+    position:absolute;
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(255,255,255,.6);
+    z-index: 100;
+    display: none;
+}
+.SubEditorToolbar.EnableShadow .se-Shadow{
+    display: block;
+}
+.SubEditorToolbar .se-ToolbarItem.AboveShadow {
+    z-index: 110;
+}
+
+.ToolbarTable td{padding-left: 5px;padding-right: 5px;width:10px; height:10px;border:1px solid #dbdbdb;margin:1px;}
+.ToolbarTable td.active,.ToolbarTable td:hover{background-color: #e0e0e0;}
+.ToolbarTable .title{text-align: center;font-size: 12px}

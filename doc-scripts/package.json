@@ -1,0 +1,12 @@
+{
+    "name": "doc-site-script",
+    "version": "1.0.0",
+    "devDependencies": {
+        "fs-extra": "^10.0.1",
+        "highlight.js": "^11.5.0",
+        "markdown-it": "^12.3.2"
+    },
+    "dependencies": {
+        "mime": "^3.0.0"
+    }
+}

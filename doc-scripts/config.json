@@ -1,0 +1,43 @@
+{
+    "previewPort" : 3000,
+    "sourcePath" : "../docs",
+    "buildPath" : "../site",
+    "version" : "0.5.0",
+    "name" : "SubEditor",
+    "logo" : "",
+    "title" : "SubEditor: free opensource wysiwyg html editor",
+    "description" : "An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript",
+    "github" : "https://github.com/ancientec/subeditor",
+    "lang" : {
+        "en" : {
+            "name" : "English",
+            "template" : "template.html", 
+            "landing" : "landing.html", 
+            "title_suffix" : " | SubEditor: free opensource wysiwyg html editor",
+            "sidemenu" : 
+            [
+                {"page" : "install.md", "title" : "Installation"},
+                {"page" : "usage.md", "title" : "Usage"},
+                {"page" : "options.md", "title" : "Options"},
+                {"page" : "demo.html", "title" : "Demo"},
+                {"page" : "methods.md", "title" : "Variables & Methods"},
+                {"page" : "plugins.md", "title" : "Plugins",
+                    
+                    "pages" : [
+                        {"page" : "upload.md", "title" : "Upload"},
+                        {"page" : "library.md", "title" : "Library"}
+                    ]
+                },
+                {"page" : "events.md", "title" : "Events"},
+                {"page" : "toolbar.md", "title" : "Toolbar",
+                    
+                    "pages" : [
+                        {"page" : "toolbaritem.md", "title" : "ToolbarItem"}
+                    ]
+                },
+                {"page" : "css.md", "title" : "CSS"},
+                {"page" : "language.md", "title" : "Language"}
+            ]
+        }
+    }
+}

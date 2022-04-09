@@ -1,0 +1,25 @@
+#dropdown-menu-color .se-dropdown-content .padding > div,#dropdown-menu-background .se-dropdown-content .padding > div {
+    display: flex;
+}
+#dropdown-menu-color .se-dropdown-content .padding > div > *,#dropdown-menu-background .se-dropdown-content .padding > div > * {
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-spacing: 0;
+}
+#dropdown-menu-color table,#dropdown-menu-background table {
+flex-grow: 1;
+flex-shrink: 1;
+border-spacing: 0;
+}
+#dropdown-menu-color table td div,#dropdown-menu-background table td div {
+    cursor:pointer;
+    width:16px;
+    height:16px;
+    padding: 2px;
+    border: 1px solid #dbdbdb;
+}
+#dropdown-menu-color table td div:hover,#dropdown-menu-background table td div:hover{
+    border-color:#999;
+}
+
+

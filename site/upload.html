@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SubEditor: free opensource wysiwyg html editor</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css"/>
+    <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+
+</script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://subeditor.org">
+            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+          </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item github" href="https://github.com/ancientec/subeditor">
+                
+<svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20"><path fill="rgb(149, 157, 165)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+              <a class="navbar-item" href="install.html">
+                documents
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable translation ">
+                <a class="navbar-link">
+                  Translations
+                </a>
+        
+                <div class="navbar-dropdown "></div>
+              </div>
+    </nav>
+<main>
+<aside><ul class="menu-list"><li><a href="install.html">Installation</a></li><li><a href="usage.html">Usage</a></li><li><a href="options.html">Options</a></li><li><a href="demo.html">Demo</a></li><li><a href="methods.html">Variables & Methods</a></li><li><a href="plugins.html">Plugins</a><ul><li><a href="upload.html">Upload</a></li><li><a href="library.html">Library</a></li></ul><li><a href="events.html">Events</a></li><li><a href="toolbar.html">Toolbar</a><ul><li><a href="toolbaritem.html">ToolbarItem</a></li></ul><li><a href="css.html">CSS</a></li><li><a href="language.html">Language</a></li></ul></aside>
+<div class="maincontent"><h2>Upload</h2>
+<p>Uploading requires extra config variables and server setup. Please visit /example for samples of server script in PHP and nodejs. This feature support drop and upload progress</p>
+<h2>Config Variables</h2>
+<pre><code class="language-js">
+<span class="hljs-comment">//optional:</span>
+<span class="hljs-keyword">var</span> <span class="hljs-title function_">elFunc</span> = (<span class="hljs-params">o</span>) =&gt; {
+    <span class="hljs-comment">//o is the result from your server, can be in any format but should contain the file type to determine which format to insert into editor</span>
+    <span class="hljs-keyword">if</span>(o.<span class="hljs-property">Type</span>.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&quot;image/&quot;</span>) !== -<span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">const</span> _node = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;img&quot;</span>);
+        _node.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;data-action&quot;</span>, <span class="hljs-string">&quot;upload&quot;</span>);
+        _node.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;src&quot;</span>, o.<span class="hljs-property">URL</span>);
+        _node.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;style&quot;</span>,<span class="hljs-string">&quot;max-width:100%&quot;</span>);
+        <span class="hljs-keyword">return</span> _node;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">const</span> _node = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;a&quot;</span>);
+        _node.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;data-action&quot;</span>, <span class="hljs-string">&quot;upload&quot;</span>);
+        _node.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;href&quot;</span>, o.<span class="hljs-property">URL</span>);
+        _node.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;target&quot;</span>,<span class="hljs-string">&quot;_blank&quot;</span>);
+        _node.<span class="hljs-property">innerHTML</span> = o.<span class="hljs-property">Name</span>;
+        <span class="hljs-keyword">return</span> _node;
+    }
+};
+
+<span class="hljs-keyword">var</span> cfg = {};
+cfg[<span class="hljs-string">&quot;image.features&quot;</span>] = [<span class="hljs-string">&quot;url&quot;</span>,<span class="hljs-string">&quot;upload&quot;</span>,<span class="hljs-string">&quot;library&quot;</span>];
+cfg[<span class="hljs-string">&quot;image.accept.types&quot;</span>] = <span class="hljs-string">&quot;text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp&quot;</span>;
+cfg[<span class="hljs-string">&quot;image.upload.url&quot;</span>] = <span class="hljs-string">&quot;upload.php&quot;</span>;
+cfg[<span class="hljs-string">&quot;image.upload.accept.files&quot;</span>] =  <span class="hljs-number">0</span>;
+cfg[<span class="hljs-string">&quot;image.upload.max.size&quot;</span>] = <span class="hljs-number">2.5</span>;
+cfg[<span class="hljs-string">&quot;image.upload.max.size.per.file&quot;</span>] = <span class="hljs-number">0.5</span>;
+cfg[<span class="hljs-string">&quot;image.upload.handler&quot;</span>] =  <span class="hljs-function">(<span class="hljs-params">file, responseText, callback</span>) =&gt;</span> {
+    <span class="hljs-keyword">var</span> o = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(responseText);
+    <span class="hljs-title function_">callback</span>(o.<span class="hljs-property">URL</span>, o.<span class="hljs-property">Thumb</span>, o, <span class="hljs-function">() =&gt;</span> {<span class="hljs-keyword">return</span> <span class="hljs-title function_">elFunc</span>(o)});
+};
+
+
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">SubEditor</span>(elem, {cfgList : cfg});
+
+</code></pre>
+<h3>image.features</h3>
+<p>Enable url, upload,or library features on submenu in toolbar.</p>
+<h3>image.accept.types</h3>
+<p>Mime types accepted for upload.</p>
+<h3>image.upload.url</h3>
+<p>The server URL for uploading files. Each request will handle one file.</p>
+<h3>image.upload.accept.files</h3>
+<p>Limit number of files per batch, default 0 for unlimited.</p>
+<h3>image.upload.max.size</h3>
+<p>The total allowed file sizes in MB per batch.</p>
+<h3>image.upload.max.size.per.file</h3>
+<p>The maximum file size in MB per single file.</p>
+<h3>image.upload.handler</h3>
+<p>This function is designed to process server repsonse after upload, and update SubEditor.</p>
+<h4>Callback(url : string, thumb : string, obj : any, elFunc : Function | undefined)</h4>
+<ul>
+<li>url: the url of uploaded file</li>
+<li>thumb(optional): thumbnail url of uploaded file</li>
+<li>obj(optional): the obj representation of uploaded file</li>
+<li>elFunc: the user-defined dom element for inserting into SubEditor. By default SubEditor will create image element and hyperlink for non image</li>
+</ul>
+
+
+
+  <div class="foot_paging columns">
+    <div class="column prev">
+      <a class="button is-link" href="#"><em>←</em> <span><em>Previous</em><strong></strong></span></a>
+    </div>
+    <div class="column next">
+      <a class="button is-link" href="install.html"> <span><em>Next</em><strong>Installation</strong></span><em>→</em></a>
+    </div>
+  </div>
+</div>
+</main>
+<a role="button" id="sidebar_toggle_button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('main').classList.toggle('sidebar_close')">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+<script>
+  function inEditor(el) {
+    var p = el;
+    while(p = p.parentElement) {
+      if(p.classList.contains("SubEditor")) return true;
+    }
+    return false;
+  }
+  document.querySelectorAll("aside ul li a").forEach(s => {
+    s.classList.remove("is-active");
+    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
+  });
+  document.querySelectorAll("table").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
+  });
+  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
+    if(!inEditor(t) && !t.classList.contains("title")) {
+      t.classList.add("title");
+      t.classList.add("is-"+t.nodeName.replace("H",""));
+    }
+  });
+</script>
+</body>
+</html>

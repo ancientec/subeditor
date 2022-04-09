@@ -1,0 +1,110 @@
+<h2>Demo</h2>
+
+<h3>editor 1 : attach to textarea</h3>
+<form>
+    <textarea id="editor1" style="width:500px;height:300px">
+        <h3>Welcome to SubEditor</h3>
+        <ul><li>Framework independent wysiwyg editor</li><li>Lightweight and single js file</li><li>Easy to implement</li><li>Full features and well documented</li><li>open source and MIT license</li></ul>
+    </textarea>
+</form>
+
+<p>For demo purpose, uploading files are limited to 2.5mb in total ( 500kb per file single). All uploaded files are deleted every 3 hours at 0 minute. </p>
+
+<h3>editor 2 : insert into div</h3>
+<div id="editor2">
+
+</div>
+<script type="text/javascript" src="js/subeditor.min.js"></script>
+<script>
+
+var elFunc = (o) => {
+    if(o.Type.indexOf("image/") !== -1) {
+        const _node = document.createElement("img");
+        _node.setAttribute("data-action", "upload");
+        _node.setAttribute("src", o.URL);
+        _node.setAttribute("style","max-width:100%");
+        return _node;
+    } else {
+        const _node = document.createElement("a");
+        _node.setAttribute("data-action", "upload");
+        _node.setAttribute("href", o.URL);
+        _node.setAttribute("target","_blank");
+        _node.innerHTML = o.Name;
+        return _node;
+    }
+};
+var cfg = {};
+cfg["image.features"] = ["url","upload","library"];
+cfg["image.accept.types"] = "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp";
+cfg["image.upload.url"] = "upload.php";
+cfg["image.upload.accept.files"] =  0;
+cfg["image.upload.max.size"] = 2.5;
+cfg["image.upload.max.size.per.file"] = 0.5;
+cfg["image.upload.handler"] =  (file, responseText, callback) => {
+    var o = JSON.parse(responseText);
+    callback(o.URL, o.Thumb, o, () => {return elFunc(o)});
+};
+
+
+cfg["image.library.per.page"] = 10;
+cfg["image.library.allow.paging"] = true;
+cfg["image.library.allow.search"] = true;
+cfg["image.library.fetch"] = (page, perpage, keyword, callback) => {
+    var library_results = {};
+    fetch("library.php?page="+page+"&perpage="+perpage+"&keyword="+encodeURIComponent(keyword), {method: 'get',headers: {'Accept': 'application/json'}}).then((response) => {
+        return response.json();
+        }).then((output) => {
+        library_results = output;
+        }).catch((err) => { 
+        console.log(err);
+        }).finally(() => {
+        if(Object.keys(library_results).length) {
+            //has result for test, reformat it:
+            var data = [];
+            library_results.Data.forEach(d => {
+                data.push({name : d.author, thumb : d.download_url, url : d.download_url, type : "image/jpeg"});
+            });
+            callback(library_results.Pages.Total, data);
+        }
+    });
+};
+
+
+var changeFn = (change) => {
+        console.log(change);
+};
+var editor1,editor2;
+var destroyEditor1 = () => {
+    editor1.destroy();
+};
+var destroyEditor2 = () => {
+    editor2.destroy();
+};
+var initEditor1 = (opts) => {
+    editor1 = new SubEditor(document.querySelector('#editor1'), Object.assign({}, {
+        
+        cfgList : cfg,
+        pluginList : ["fullscreen","hr", "color","source","align","text","undo","redo","indent","format","remove_format","link", "paste","list", "table","image"],
+        onChange : function(change) {changeFn(change); },
+        toolbarList : ["undo","redo","text","format","link","remove_format","indent","outdent","color","backgroundcolor","align","ol","ul","image", "library","table","hr","source","fullscreen"]
+    
+    }, opts || {}));
+};
+var initEditor2 = (opts) => {
+    editor2 = new SubEditor(document.querySelector('#editor2'),  Object.assign({}, {
+        onChange : function(change) { changeFn(change);},
+        width : 750, 
+        height:250,
+        value : document.querySelector('#editor1').value,
+        autoGrow : true,
+        cfgList : cfg,
+        pluginList : ["fullscreen","hr", "color","source","align","text","undo","redo","indent","format","remove_format","link", "paste","list", "table","image"],
+        toolbarList : ["undo","redo","text","format","link","remove_format","indent","outdent","color","backgroundcolor","align","ol","ul","image", "library","table","hr","source","fullscreen"]
+    
+    }, opts || {}));
+};
+
+initEditor1();
+
+initEditor2();
+</script>
