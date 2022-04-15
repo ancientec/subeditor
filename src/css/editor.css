@@ -7,7 +7,16 @@
 .SubEditor.AutoGrow {height: auto;}
 .SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}
 
-.SubEditorContent, .SubEditorSource {display:inline-block;min-height: 200px;width:100%;box-shadow: none;border:none;outline: none;}
+.SubEditorContent, .SubEditorSource {
+    all: revert;
+    text-align: start;
+    display:inline-block;
+    min-height: 200px;
+    width:100%;
+    box-shadow: none;
+    border:none;
+    outline: none;
+}
 .SubEditorContent:focus, .SubEditorSource:focus{box-shadow: none;border:none;outline: none;}
 .SubEditorContent img {max-width: 100%;}
 .SubEditorTextarea {
