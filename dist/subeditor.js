@@ -35,7 +35,7 @@ class SubEditor {
         this.debounceChange = () => { };
         //private debounceFeature: () => void = () => {};
         this.onChange = () => { };
-        this.dobounceFeatureSelectionFocusNode = null;
+        //private dobounceFeatureSelectionFocusNode : HTMLElement | null = null;
         this.event = new event_1.default(this);
         this.feature = null;
         this.dom = dom_1.default;
@@ -167,14 +167,13 @@ class SubEditor {
         const sel = dom_1.default.getSelection();
         if (!sel || !(sel === null || sel === void 0 ? void 0 : sel.focusNode) || !this.refContent.contains(sel.focusNode))
             return;
-        const focusNode = sel.focusNode.nodeType === 3 ? sel.focusNode.parentElement : sel.focusNode;
-        if (this.dobounceFeatureSelectionFocusNode === focusNode)
-            return;
+        //const focusNode = sel.focusNode.nodeType === 3 ? sel.focusNode.parentElement! : sel.focusNode as HTMLElement;
+        //if(this.dobounceFeatureSelectionFocusNode === focusNode) return;
         const feature = (0, feature_1.default)(sel.focusNode, this.refContent);
         if (this.feature === feature)
             return;
         this.feature = feature;
-        this.dobounceFeatureSelectionFocusNode = feature.node;
+        //this.dobounceFeatureSelectionFocusNode = feature.node as HTMLElement;
         this.event.trigger("onFeatureChange", this.feature.nodeName, [this, this.feature]);
     }
     initEvents() {
@@ -342,6 +341,9 @@ class SubEditor {
     static presetCss(cssString = "") {
         SubEditor.presetCssString = cssString;
     }
+    static lastCss() {
+        return SubEditor.lastCssString;
+    }
     static initCss(cssString = "", skipCss = false) {
         let pluginCss = "";
         const SubEditorStyle = document.querySelector("#SubEditorStyle");
@@ -349,6 +351,7 @@ class SubEditor {
             return;
         Object.keys(SubEditor.pluginCSS).forEach(p => pluginCss += SubEditor.pluginCSS[p]);
         const styleStr = css_1.default + "\n" + pluginCss + "\n" + SubEditor.presetCssString + "\n" + cssString;
+        SubEditor.lastCssString = styleStr;
         for (let i = 0; i < document.styleSheets.length; i++) {
             if (document.styleSheets[i].title && document.styleSheets[i].title === "SubEditorStyle") {
                 //already found defined style sheets
@@ -378,19 +381,21 @@ class SubEditor {
             this.handleChange(this.history.Next());
         }
     }
-    handleChange(change) {
-        this.event.trigger("onBeforeChange", "", [this]);
+    handleChange(changed) {
+        this.event.trigger("onBeforeChange", "", [this, changed]);
         if (this.refTextarea.style.display === "none") {
             this.refTextarea.value = this.refContent.innerHTML;
         }
-        if (change && this.onChange)
-            this.onChange(change);
+        if (changed && this.onChange)
+            this.onChange(changed);
     }
 }
 exports.default = SubEditor;
 SubEditor.svgList = {};
 SubEditor.langList = {};
 SubEditor.presetPluginList = {};
+//the last generated css string after init
+SubEditor.lastCssString = "";
 SubEditor.presetCssString = "";
 SubEditor.pluginCSS = {};
 //# sourceMappingURL=subeditor.js.map

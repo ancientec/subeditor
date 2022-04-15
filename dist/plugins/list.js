@@ -143,6 +143,8 @@ exports.default = [
                 (_b = editor.refContent.firstChild) === null || _b === void 0 ? void 0 : _b.appendChild(document.createElement("li"));
                 range.selectNode(editor.refContent.firstChild.firstChild);
                 range.collapse(true);
+                editor.handleFeature();
+                editor.triggerChange();
                 return;
             }
             const firstNode = nodes[0].node, firstPath = editor.dom.nodeParentUntil(firstNode, editor.refContent);
@@ -161,6 +163,7 @@ exports.default = [
                     }
                 });
                 focusNode();
+                editor.handleFeature();
                 editor.triggerChange();
                 return;
             }
@@ -204,6 +207,7 @@ exports.default = [
                     }
                 });
                 focusNode();
+                editor.handleFeature();
                 editor.triggerChange();
                 return;
             }
@@ -224,6 +228,7 @@ exports.default = [
                 lastPlaceholder === null || lastPlaceholder === void 0 ? void 0 : lastPlaceholder.appendChild(el.parentElement);
             });
             editor.dom.setCaretAt(lastPlaceholder.lastChild.lastChild, 0);
+            editor.handleFeature();
             editor.triggerChange();
         }
     }

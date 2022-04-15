@@ -1,6 +1,14 @@
 import SubEditor from "../subeditor";
 import { SubEditorEvent } from "../event";
 
+const extractTextInPath = (el : Node) =>  {
+    if(el.nodeType === 3) return el;
+    const nodes = Array.from((el as HTMLElement).childNodes).filter(child => child.nodeType === 3)
+    .filter(child => child.textContent!.trim())
+    .map(textNode => textNode);
+    return nodes[0] || null;
+}
+  
 const clonePath = (paths : Node[], content : string | null = null) : Node => {
     if(paths[paths.length-1].nodeType === Node.TEXT_NODE) {
         return document.createTextNode(content ? content : paths[paths.length-1].textContent!) as Node;
@@ -17,6 +25,7 @@ const replaceNode = (node : HTMLElement, tag : string) => {
     const n = document.createElement(tag);
     Array.from(node.childNodes).forEach(c => n.appendChild(c));
     node.replaceWith(n);
+    return n;
 }
 const usableParent = (node : Node, editor : SubEditor) => {
     const path : Node[] = [];
@@ -509,6 +518,7 @@ export default [
         callback : (editor :SubEditor) => {
             const {range} = editor.getSelectionRange();
             const nodes = editor.dom.selectDeepNodesInRange(range);
+            const endContainer = range.endContainer, endOffset = range.endOffset;
             if(nodes.length === 1) {
                 const n = nodes[0];
                 //special cases:
@@ -542,12 +552,13 @@ export default [
                         editor.dom.wrapNode(paths[paths.length-1], document.createElement("p"));
                     } else if(paths[paths.length-1].parentElement!.nodeName === 'CODE') {
                         if(paths[paths.length-1].parentElement!.parentElement!.nodeName === "PRE") editor.dom.unwrapNode(paths[paths.length-1].parentElement!.parentElement!);
-                        replaceNode(paths[paths.length-1].parentElement!, "P");
+                        nodes[0].node = replaceNode(paths[paths.length-1].parentElement!, "P");
                     } else if (["H1","H2","H3","H4","H5","H6"].indexOf(paths[paths.length-1].parentElement!.nodeName) !== -1) {
-                        replaceNode(paths[paths.length-1].parentElement!, "P");
+                        nodes[0].node = replaceNode(paths[paths.length-1].parentElement!, "P");
                     } else {
                         editor.dom.wrapNode(paths[paths.length-1], document.createElement("p"));
                     }
+                    editor.dom.setCaretAt(endContainer,endOffset);
                 } else {
                     const str = n.node.textContent!.substring(n.startOffset!,n.endOffset);
                     const strBegin = n.node.textContent!.substring(0,n.startOffset);
@@ -576,12 +587,15 @@ export default [
                     if(!strBegin) {
                         paths[paths.length-1].parentElement!.removeChild(paths[paths.length-1]);
                     }
+                    const end = extractTextInPath(pMiddle);
+                    editor.dom.setCaretAt(end,(end.textContent || "").length);
+                    
                 }
                 editor.triggerChange();
                 return;
             }
             let lastPlaceholdler : HTMLParagraphElement | null = null;
-            nodes.forEach(n => {
+            nodes.forEach((n, index) => {
                 if(n.node.nodeName === "HR") return;
                 const paths = usableParent(n.node, editor);
                 if(paths[paths.length-1].parentElement!.nodeName === "P") return;
@@ -637,10 +651,10 @@ export default [
                 }
 
                 if (["H1","H2","H3","H4","H5","H6"].indexOf(paths[paths.length-1].parentElement!.nodeName) !== -1) {
-                    replaceNode(paths[paths.length-1].parentElement as HTMLElement, "P");
+                    nodes[index].node = replaceNode(paths[paths.length-1].parentElement as HTMLElement, "P");
                 } else if(paths[paths.length-1].parentElement!.nodeName === "CODE") {
                     if(paths[paths.length-1].parentElement!.parentElement!.nodeName === "PRE") editor.dom.unwrapNode(paths[paths.length-1].parentElement!.parentElement!);
-                    replaceNode(paths[paths.length-1].parentElement as HTMLElement, "P");
+                    nodes[index].node = replaceNode(paths[paths.length-1].parentElement as HTMLElement, "P");
                 }else if(lastPlaceholdler && lastPlaceholdler === paths[paths.length-1].previousSibling) {
                     lastPlaceholdler?.appendChild(paths[paths.length-1]);
                 } else {
@@ -660,10 +674,10 @@ export default [
         const {range} = editor.getSelectionRange();
         const nodes = editor.dom.selectDeepNodesInRange(range);
         const tag = cmd.toUpperCase();
+        let endContainer = range.endContainer, endOffset = range.endOffset;
         //determine if we are wrapping or unwrap:
         const firstTextNode = nodes.find(n => n.node.nodeType === Node.TEXT_NODE);
         const action = formatAction(firstTextNode?.node as Node, tag);
-
         if(nodes[0].node === editor.refContent && nodes[0].collapsed) {
             const placeholder = document.createElement(cmd);
             placeholder.appendChild(document.createElement("br"));
@@ -676,7 +690,7 @@ export default [
             return;
         }
         
-        nodes.forEach(n => {
+        nodes.forEach( (n, index) => {
             const parent = usableParent(n.node, editor);
             const node_action = formatAction(n.node, tag);
 
@@ -693,7 +707,8 @@ export default [
                 const el = document.createElement(tag);
                 if(cachedParent.nodeName === "P") {
                     if(n.collapsed && cachedParent.childNodes.length === 1) {
-                        return replaceNode(cachedParent, tag);
+                        nodes[index].node = replaceNode(cachedParent, tag);
+                        return;
                     }
                     const p = document.createElement("P");
                     let x = parent[parent.length-1];
@@ -704,7 +719,9 @@ export default [
                     
                     if(!n.collapsed && n.partial) {
                         //extract partial text
-                        el.appendChild(document.createTextNode(n.node.textContent!.substring(n.startOffset!,n.endOffset)));
+                        endContainer = document.createTextNode(n.node.textContent!.substring(n.startOffset!,n.endOffset));
+                        endOffset = (endContainer.textContent || "").length;
+                        el.appendChild(endContainer);
                         const partBeginning = n.node.textContent!.substring(0, n.startOffset) || "", partEnding = n.node.textContent!.substring(n.endOffset!) || "";
                         if (partBeginning !== "") {
                             n.node.textContent = partBeginning;
@@ -740,7 +757,9 @@ export default [
                 } else {
                     if(!n.collapsed && n.partial) {
                         //extract partial text
-                        el.appendChild(document.createTextNode(n.node.textContent!.substring(n.startOffset!,n.endOffset)));
+                        endContainer = document.createTextNode(n.node.textContent!.substring(n.startOffset!,n.endOffset));
+                        endOffset = (endContainer.textContent || "").length;
+                        el.appendChild(endContainer);
                         const partBeginning = n.node.textContent!.substring(0, n.startOffset) || "", partEnding = n.node.textContent!.substring(n.endOffset!) || "";
                         editor.dom.nodesInsertAfter([el],n.node);
                         if (partBeginning !== "") {
@@ -763,14 +782,14 @@ export default [
                 }
                 
             } else if (node_action.action === "replace") {
-                replaceNode(node_action.node as HTMLElement, tag);
+                nodes[index].node = replaceNode(node_action.node as HTMLElement, tag);
             }
         });
-        if(nodes[nodes.length - 1].isVoid) {
+        if(endContainer) {
+            editor.dom.setCaretAt(endContainer, endOffset);
+        } else if(nodes[nodes.length - 1].isVoid) {
             //next of this element
             editor.dom.setCaretAt(nodes[nodes.length - 1].node, 1);
-        } else {
-            editor.dom.setCaretAt(range.endContainer, range.endOffset);
         }
         
         editor.triggerChange();

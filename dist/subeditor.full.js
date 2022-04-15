@@ -981,7 +981,7 @@
   };
 
   // src/css/index.ts
-  var css_default = ".SubEditor, .SubEditor  * {box-sizing: border-box;}.SubEditor {border:1px solid #dbdbdb;background-color: #fff;position: relative;}.SubEditorContentContainer {overflow-y: auto;padding:10px;}.SubEditor.AutoGrow {height: auto;}.SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}.SubEditorContent, .SubEditorSource {display:inline-block;min-height: 200px;width:100%;box-shadow: none;border:none;outline: none;}.SubEditorContent:focus, .SubEditorSource:focus{box-shadow: none;border:none;outline: none;}.SubEditorContent img {max-width: 100%;}.SubEditorTextarea {display:none;resize: none;width: 100%;min-height: 100px;padding:10px;overflow: hidden;box-sizing: border-box;}.SubEditor .SubEditorFooter {display: none;border-top: 1px solid #dbdbdb;}.SubEditor > .SubEditorTooltip{user-select: none;z-index: 9999;position: absolute;line-height: 1.2em;display: none;padding: 2px 10px;box-shadow:1px 1px 3px gray;border-radius:5px;background: #fff;white-space: nowrap;}.SubEditor .se-button {box-shadow:none}.SubEditorContent table {border: none;border-collapse: collapse;empty-cells: show;max-width: 100%;}.SubEditorContent table td,.SubEditorContent table th {min-width:20px;min-height: 20px;border: 1px solid #dedede;}.SubEditorContent table th {background-color: #efefef;}.SubEditorContent blockquote{border-left: solid 3px #dedede;margin: 5px;padding-left: 5px;color: #333;}.SubEditorContent h1,.SubEditorContent h2,.SubEditorContent h3,.SubEditorContent h4,.SubEditorContent h5,.SubEditorContent h6{font-size: revert;font-weight: revert;margin: revert;padding: revert;}.SubEditorContent ul, .SubEditorContent ol{display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;}.SubEditorContent ul {list-style-type: disc;}.SubEditorContent ol{list-style-type: decimal;}.SubEditorContent p{margin: revert;padding: revert;}.SubEditorToolbar {margin:0;border-bottom:1px solid #dbdbdb;align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;font-weight: 400;font-size: 1rem;line-height: 1.5;text-align: left;color: #363636;background-color: #fff;width:100%;position: relative;}.SubEditorToolbar, .SubEditorToolbar  * {user-select: none;}.SubEditorToolbar{ align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;}.SubEditorToolbar .se-dropdown {display: inline-flex;position: relative;vertical-align: top;height: 2.25em;border-color: transparent; border-width: 1px; cursor: pointer; justify-content: center; padding: calc(0.375 em - 1 px)  0.75em;text-align: center;}    .SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-button{margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;border-radius: 3px;cursor: pointer;justify-content: center;padding: calc(.375em - 1px) .75em;text-align: center;white-space: nowrap;position: relative;overflow: hidden;transform: translate3d(0,0,0);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;box-shadow: none;}.SubEditorToolbar .se-button .se-icon{margin:0 calc(-.375em - 1px);height: 24px;width: 24px;align-items: center; display: inline-flex;justify-content: center;}.SubEditorToolbar .se-button .se-icon svg {height: 24px;width: 24px;}.SubEditorToolbar .se-dropdown-trigger .se-button * {pointer-events: none;}.SubEditorToolbar .se-dropdown-menu{min-width: unset;left: 0;padding-top: 4px;position: absolute;top: 100%;z-index: 20;display: none;background-color: #fff;}.SubEditorToolbar .se-ToolbarItem.is-active .se-dropdown-menu {display:block}.SubEditorToolbar .se-dropdown-content{border-radius: 4px;box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);padding: 0;transform-origin: top left;position:relative;background-color: #fff;}.SubEditorToolbar .se-dropdown-content .padding {padding: 15px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item {cursor: pointer;height:unset;margin-bottom:0;margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;justify-content: center;text-transform: uppercase;transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);white-space: nowrap;width: 100%;box-shadow: none;height: unset;margin-right: -1px;box-sizing: border-box;}.SubEditorToolbar .se-dropdown-content.se-control .se-dropdown-item {padding:10px 5px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input {padding: calc(0.5em - 1px) calc(0.75em - 1px);transition: all 300ms;font-size: 1rem;height: 2.5em;line-height: 2.5em;border: solid 1px #ccc;width:200px;}.SubEditorToolbar .se-dropdown-content .se-button {height: 30px;line-height: 1;}.SubEditorToolbar .se-dropdown-content .se-button.close-dropdown {position: absolute;right:1px;top:1px;}.SubEditorToolbar .se-dropdown-content .se-button.alert {background-color: rgb(244,67,54,1);color: #fff;}.SubEditorToolbar .se-dropdown-content .se-button:hover {background-color: #dbdbdb;}.SubEditorToolbar .se-dropdown-content .se-button.alert:hover {background-color: rgb(244,67,54,0.7);}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input:focus {border: solid 1px #2196f3;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input+label {position: absolute;top: -1px;left: 12px;padding:3px 2px;font-size: 0.8em;color: #333;transition: all 0.5s ease;z-index: 3;display: block;cursor: text;background-color: #fff;}.SubEditorToolbar .is-featured{border-color: transparent;color: #363636;background-color: #efefef;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item > * {white-space:  nowrap;margin : 0}.SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-dropdown-content.horizontal {display: flex;flex-wrap: nowrap;align-items: center;justify-content: flex-start;}.SubEditorToolbar > .se-button:hover, .SubEditorToolbar .se-dropdown-trigger .se-button:hover, .SubEditorToolbar .se-dropdown-content .se-dropdown-item.hover:hover,.SubEditorToolbar .se-dropdown-content .se-button.se-ToolbarItem:hover{background-color: #e0e0e0;}.SubEditorToolbar .se-dropdown-content .se-button.se-dropdown-item.borderbottom{border-bottom: 1px solid #dbdbdb;border-radius: 0px;}.SubEditorToolbar >.se-tips{z-index: 9999;position: absolute;top: -1.6em;left: 0px;line-height: 1.2em;display: none;padding: 2px 10px;border: 1px solid #dbdbdb;background: #fff;white-space: nowrap;pointer-events: none;user-select: none;}.SubEditorToolbar .se-Shadow {position:absolute;top:0;left:0;width:100%;height:100%;background-color: rgba(255,255,255,.6);z-index: 100;display: none;}.SubEditorToolbar.EnableShadow .se-Shadow{display: block;}.SubEditorToolbar .se-ToolbarItem.AboveShadow {z-index: 110;}.ToolbarTable td{padding-left: 5px;padding-right: 5px;width:10px; height:10px;border:1px solid #dbdbdb;margin:1px;}.ToolbarTable td.active,.ToolbarTable td:hover{background-color: #e0e0e0;}.ToolbarTable .title{text-align: center;font-size: 12px}.SubEditorDialog {box-sizing: border-box;align-items: center;display: none;flex-direction: column;justify-content: center;overflow: hidden;position: fixed;}.SubEditorDialog.is-active {display: flex;}.SubEditorDialog {z-index: 10000;}.SubEditorDialog .background {box-sizing: border-box;background-color: rgba(10,10,10,.6);}.background {bottom: 0;left: 0;position: absolute;right: 0;top: 0;}.SubEditorDialog .card {box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);}.card {display: flex;flex-direction: column;max-height: calc(100vh - 40px);overflow: hidden;}.card, .content {box-sizing: border-box;margin: 0 20px;position: relative;width: 100%;}.card-title {color: #363636;flex-grow: 1;flex-shrink: 0;font-size: 1.5rem;line-height: 1;}.delete, .close {user-select: none;background-color: rgba(10,10,10,.2);border: 0;border-radius: 290486px;cursor: pointer;pointer-events: auto;display: inline-block;flex-grow: 0;flex-shrink: 0;font-size: 0;height: 20px;max-height: 20px;max-width: 20px;min-height: 20px;min-width: 20px;outline: 0;position: relative;vertical-align: top;width: 20px;}.card-head, .card-foot {box-sizing: border-box;border: none;background: #fff;}.card-head {border-top-left-radius: 6px;border-top-right-radius: 6px;}.card-foot, .card-head {align-items: center;display: flex;flex-shrink: 0;justify-content: flex-start;padding: 20px;position: relative;}.card-foot {justify-content: flex-end;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;}.card-body {background-color: #fff;flex-grow: 1;flex-shrink: 1;overflow: auto;padding: 20px;display: block;}.SubEditorDialog .button{user-select: none;align-items: center;border: 1px solid transparent;box-shadow: none;display: inline-flex;font-size: 1rem;height: 2.25em;justify-content: flex-start;line-height: 1.5;padding: calc(.375em - 1px) calc(.625em - 1px);position: relative;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;color: #363636;cursor: pointer;justify-content: center;text-align: center;white-space: nowrap;border-radius: 3px;text-transform: uppercase;font-weight: 400;box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);}.button.is-info, .button.is-info.is-hovered, .button.is-info:hover {border-color: transparent;color: #fff;}.button.is-info {background-color: #29b6f6;}.card-foot .button:not(:last-child) {margin-right: 10px;}@media screen and (min-width: 769px), print {.card, .body {    margin: 0 auto;    max-height: calc(100vh - 40px);    width: 100vw - 40px;}}.SubEditorToolbar .se-dropdown-content .uploadcontainer{position: relative;border: dashed 2px #bdbdbd;border-radius: 3px;width:250px;min-height: 100px;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer strong{position:absolute;top:50%;transform: translateY(-50%);display: block;width: 100%;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer input{position: absolute;top:0;left:0;width: 100%;height: 100%;opacity: 0;}.FileTileImageGridContainer {max-height: calc(100vh - 140px);margin-bottom:0px;position:relative;overflow-y: auto;}.FileTileImageGridFooter {width: 100%;padding-top: 5px;border-top:#ccc 1px solid;}.FileTileImageGridPagination {justify-content: center;margin-bottom: 0;margin-top: 0;align-items: center;display: flex;text-align: center;border-bottom:none;}.FileTileImageGridPagination > * {padding: 0 0.75em;white-space: nowrap;border: #dbdbdb 1px solid;color: #363636;font-size: 1em;justify-content: center;margin: 1px 5px;text-align: center;-webkit-appearance: none;line-height: 28px;height: 28px; } .FileTileImageGridPagination span.total {border:none;padding: 0;margin-left: 0; } .FileTileImageGridPagination input.current {width: 2.5em;border: none;text-align: center; } .FileTileImageGridPagination input.keyword {width: 6em; } .FileTileImageGridPagination > .se-button {border-radius: 9999px;border: #dbdbdb 1px solid;width: 30px; }.FileTileImageGrid {margin-top:18px;display: flex;flex-wrap: wrap;width:100%;min-width: 640px;max-height: calc(100vh - 140px);overflow-y: visible;}.FileTileImageGrid button {display: inline-block;margin-bottom: 8px;width: calc(20% - 9px);text-decoration: none;margin-right: 8px;padding:5px;background: #ffffff;cursor: pointer;user-select: none;border: 1px solid #eee;min-width: 55px;}.FileTileImageGrid button.upload {position:relative;cursor: pointer;}.FileTileImageGrid button.upload input {position: absolute;width: 100%;height: 100%;top: 0;left: 0;opacity: 0;}/* 4 per row */.FileTileImageGrid a:nth-of-type(5n) {margin-right: 0;}.FileTileImageGrid button > figure {position: relative;width: 100%;padding-top: 100%;margin:0;}.FileTileImageGrid button > figure > figure {position:  absolute;top: 0;left: 0;bottom: 0;right: 0;margin:0;overflow:hidden;}.FileTileImageGrid img{position:absolute;top : 0;left:0;min-width:100%;min-height:100%;width:100%;max-height:100%;border:none;}.FileTileImageGrid figure .text{text-align: center;word-break: break-all;margin: 0;position: absolute;top: 50%;transform: translateY(-50%);display: block;width: 100%;}.FileTileImageGrid button:hover {border: 1px solid #ccc;}.FileTileImageGrid .caption {display:block;margin-top: 6px;max-height:2.2em;overflow: hidden;text-align: center;font-size: 0.7em;}@media screen and (max-width: 768px){.FileTileImageGrid {max-width: 320px;min-width: 320px;}.FileTileImageGrid button {width: calc(25% - 6px);}.FileTileImageGrid button:nth-of-type(2n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(5n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(4n) {margin-right: 0;}}#dropdown-menu-color .se-dropdown-content .padding > div,#dropdown-menu-background .se-dropdown-content .padding > div {display: flex;}#dropdown-menu-color .se-dropdown-content .padding > div > *,#dropdown-menu-background .se-dropdown-content .padding > div > * {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table,#dropdown-menu-background table {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table td div,#dropdown-menu-background table td div {cursor:pointer;width:16px;height:16px;padding: 2px;border: 1px solid #dbdbdb;}#dropdown-menu-color table td div:hover,#dropdown-menu-background table td div:hover{border-color:#999;}";
+  var css_default = ".SubEditor, .SubEditor  * {box-sizing: border-box;}.SubEditor {border:1px solid #dbdbdb;background-color: #fff;position: relative;}.SubEditorContentContainer {overflow-y: auto;padding:10px;}.SubEditor.AutoGrow {height: auto;}.SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}.SubEditorContent, .SubEditorSource {text-align: start;display:inline-block;min-height: 200px;width:100%;box-shadow: none;border:none;outline: none;}.SubEditorContent:focus, .SubEditorSource:focus{box-shadow: none;border:none;outline: none;}.SubEditorContent img {max-width: 100%;}.SubEditorTextarea {display:none;resize: none;width: 100%;min-height: 100px;padding:10px;overflow: hidden;box-sizing: border-box;}.SubEditor .SubEditorFooter {display: none;border-top: 1px solid #dbdbdb;}.SubEditor > .SubEditorTooltip{user-select: none;z-index: 9999;position: absolute;line-height: 1.2em;display: none;padding: 2px 10px;box-shadow:1px 1px 3px gray;border-radius:5px;background: #fff;white-space: nowrap;}.SubEditor .se-button {box-shadow:none}.SubEditorContent table {border: none;border-collapse: collapse;empty-cells: show;max-width: 100%;}.SubEditorContent table td,.SubEditorContent table th {min-width:20px;min-height: 20px;border: 1px solid #dedede;}.SubEditorContent table th {background-color: #efefef;}.SubEditorContent blockquote{border-left: solid 3px #dedede;margin: 5px;padding-left: 5px;color: #333;}.SubEditorContent h1,.SubEditorContent h2,.SubEditorContent h3,.SubEditorContent h4,.SubEditorContent h5,.SubEditorContent h6{font-size: revert;font-weight: revert;margin: revert;padding: revert;}.SubEditorContent ul, .SubEditorContent ol{display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;}.SubEditorContent ul {list-style-type: disc;}.SubEditorContent ol{list-style-type: decimal;}.SubEditorContent p{margin: revert;padding: revert;}.SubEditorToolbar {margin:0;border-bottom:1px solid #dbdbdb;align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;font-weight: 400;font-size: 1rem;line-height: 1.5;text-align: left;color: #363636;background-color: #fff;width:100%;position: relative;}.SubEditorToolbar, .SubEditorToolbar  * {user-select: none;}.SubEditorToolbar{ align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;}.SubEditorToolbar .se-dropdown {display: inline-flex;position: relative;vertical-align: top;height: 2.25em;border-color: transparent; border-width: 1px; cursor: pointer; justify-content: center; padding: calc(0.375 em - 1 px)  0.75em;text-align: center;}    .SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-button{margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;border-radius: 3px;cursor: pointer;justify-content: center;padding: calc(.375em - 1px) .75em;text-align: center;white-space: nowrap;position: relative;overflow: hidden;transform: translate3d(0,0,0);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;box-shadow: none;}.SubEditorToolbar .se-button .se-icon{margin:0 calc(-.375em - 1px);height: 24px;width: 24px;align-items: center; display: inline-flex;justify-content: center;}.SubEditorToolbar .se-button .se-icon svg {height: 24px;width: 24px;}.SubEditorToolbar .se-dropdown-trigger .se-button * {pointer-events: none;}.SubEditorToolbar .se-dropdown-menu{min-width: unset;left: 0;padding-top: 4px;position: absolute;top: 100%;z-index: 20;display: none;background-color: #fff;}.SubEditorToolbar .se-ToolbarItem.is-active .se-dropdown-menu {display:block}.SubEditorToolbar .se-dropdown-content{border-radius: 4px;box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);padding: 0;transform-origin: top left;position:relative;background-color: #fff;}.SubEditorToolbar .se-dropdown-content .padding {padding: 15px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item {cursor: pointer;height:unset;margin-bottom:0;margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;justify-content: center;text-transform: uppercase;transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);white-space: nowrap;width: 100%;box-shadow: none;height: unset;margin-right: -1px;box-sizing: border-box;}.SubEditorToolbar .se-dropdown-content.se-control .se-dropdown-item {padding:10px 5px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input {padding: calc(0.5em - 1px) calc(0.75em - 1px);transition: all 300ms;font-size: 1rem;height: 2.5em;line-height: 2.5em;border: solid 1px #ccc;width:200px;}.SubEditorToolbar .se-dropdown-content .se-button {height: 30px;line-height: 1;}.SubEditorToolbar .se-dropdown-content .se-button.close-dropdown {position: absolute;right:1px;top:1px;}.SubEditorToolbar .se-dropdown-content .se-button.alert {background-color: rgb(244,67,54,1);color: #fff;}.SubEditorToolbar .se-dropdown-content .se-button:hover {background-color: #dbdbdb;}.SubEditorToolbar .se-dropdown-content .se-button.alert:hover {background-color: rgb(244,67,54,0.7);}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input:focus {border: solid 1px #2196f3;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input+label {position: absolute;top: -1px;left: 12px;padding:3px 2px;font-size: 0.8em;color: #333;transition: all 0.5s ease;z-index: 3;display: block;cursor: text;background-color: #fff;}.SubEditorToolbar .is-featured{border-color: transparent;color: #363636;background-color: #efefef;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item > * {white-space:  nowrap;margin : 0}.SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-dropdown-content.horizontal {display: flex;flex-wrap: nowrap;align-items: center;justify-content: flex-start;}.SubEditorToolbar > .se-button:hover, .SubEditorToolbar .se-dropdown-trigger .se-button:hover, .SubEditorToolbar .se-dropdown-content .se-dropdown-item.hover:hover,.SubEditorToolbar .se-dropdown-content .se-button.se-ToolbarItem:hover{background-color: #e0e0e0;}.SubEditorToolbar .se-dropdown-content .se-button.se-dropdown-item.borderbottom{border-bottom: 1px solid #dbdbdb;border-radius: 0px;}.SubEditorToolbar >.se-tips{z-index: 9999;position: absolute;top: -1.6em;left: 0px;line-height: 1.2em;display: none;padding: 2px 10px;border: 1px solid #dbdbdb;background: #fff;white-space: nowrap;pointer-events: none;user-select: none;}.SubEditorToolbar .se-Shadow {position:absolute;top:0;left:0;width:100%;height:100%;background-color: rgba(255,255,255,.6);z-index: 100;display: none;}.SubEditorToolbar.EnableShadow .se-Shadow{display: block;}.SubEditorToolbar .se-ToolbarItem.AboveShadow {z-index: 110;}.se-ToolbarItem.seperator {width:1px;height:100%;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;}.se-ToolbarItem.nextline {width:100%;height:1px;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;}.se-ToolbarItem.spacer {   cursor: default;transition: none;}.SubEditorToolbar > .se-button.se-ToolbarItem.spacer:hover{background-color: transparent;}.ToolbarTable td{padding-left: 5px;padding-right: 5px;width:10px; height:10px;border:1px solid #dbdbdb;margin:1px;}.ToolbarTable td.active,.ToolbarTable td:hover{background-color: #e0e0e0;}.ToolbarTable .title{text-align: center;font-size: 12px}.SubEditorDialog {box-sizing: border-box;align-items: center;display: none;flex-direction: column;justify-content: center;overflow: hidden;position: fixed;}.SubEditorDialog.is-active {display: flex;}.SubEditorDialog {z-index: 10000;}.SubEditorDialog .background {box-sizing: border-box;background-color: rgba(10,10,10,.6);}.background {bottom: 0;left: 0;position: absolute;right: 0;top: 0;}.SubEditorDialog .card {box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);}.card {display: flex;flex-direction: column;max-height: calc(100vh - 40px);overflow: hidden;}.card, .content {box-sizing: border-box;margin: 0 20px;position: relative;width: 100%;}.card-title {color: #363636;flex-grow: 1;flex-shrink: 0;font-size: 1.5rem;line-height: 1;}.delete, .close {user-select: none;background-color: rgba(10,10,10,.2);border: 0;border-radius: 290486px;cursor: pointer;pointer-events: auto;display: inline-block;flex-grow: 0;flex-shrink: 0;font-size: 0;height: 20px;max-height: 20px;max-width: 20px;min-height: 20px;min-width: 20px;outline: 0;position: relative;vertical-align: top;width: 20px;}.card-head, .card-foot {box-sizing: border-box;border: none;background: #fff;}.card-head {border-top-left-radius: 6px;border-top-right-radius: 6px;}.card-foot, .card-head {align-items: center;display: flex;flex-shrink: 0;justify-content: flex-start;padding: 20px;position: relative;}.card-foot {justify-content: flex-end;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;}.card-body {background-color: #fff;flex-grow: 1;flex-shrink: 1;overflow: auto;padding: 20px;display: block;}.SubEditorDialog .button{user-select: none;align-items: center;border: 1px solid transparent;box-shadow: none;display: inline-flex;font-size: 1rem;height: 2.25em;justify-content: flex-start;line-height: 1.5;padding: calc(.375em - 1px) calc(.625em - 1px);position: relative;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;color: #363636;cursor: pointer;justify-content: center;text-align: center;white-space: nowrap;border-radius: 3px;text-transform: uppercase;font-weight: 400;box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);}.button.is-info, .button.is-info.is-hovered, .button.is-info:hover {border-color: transparent;color: #fff;}.button.is-info {background-color: #29b6f6;}.card-foot .button:not(:last-child) {margin-right: 10px;}@media screen and (min-width: 769px), print {.card, .body {    margin: 0 auto;    max-height: calc(100vh - 40px);    width: 100vw - 40px;}}.SubEditorToolbar .se-dropdown-content .uploadcontainer{position: relative;border: dashed 2px #bdbdbd;border-radius: 3px;width:250px;min-height: 100px;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer strong{position:absolute;top:50%;transform: translateY(-50%);display: block;width: 100%;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer input{position: absolute;top:0;left:0;width: 100%;height: 100%;opacity: 0;}.FileTileImageGridContainer {max-height: calc(100vh - 140px);margin-bottom:0px;position:relative;overflow-y: auto;}.FileTileImageGridFooter {width: 100%;padding-top: 5px;border-top:#ccc 1px solid;}.FileTileImageGridPagination {justify-content: center;margin-bottom: 0;margin-top: 0;align-items: center;display: flex;text-align: center;border-bottom:none;}.FileTileImageGridPagination > * {padding: 0 0.75em;white-space: nowrap;border: #dbdbdb 1px solid;color: #363636;font-size: 1em;justify-content: center;margin: 1px 5px;text-align: center;-webkit-appearance: none;line-height: 28px;height: 28px; } .FileTileImageGridPagination span.total {border:none;padding: 0;margin-left: 0; } .FileTileImageGridPagination input.current {width: 2.5em;border: none;text-align: center; } .FileTileImageGridPagination input.keyword {width: 6em; } .FileTileImageGridPagination > .se-button {border-radius: 9999px;border: #dbdbdb 1px solid;width: 30px; }.FileTileImageGrid {margin-top:18px;display: flex;flex-wrap: wrap;width:100%;min-width: 640px;max-height: calc(100vh - 140px);overflow-y: visible;}.FileTileImageGrid button {display: inline-block;margin-bottom: 8px;width: calc(20% - 9px);text-decoration: none;margin-right: 8px;padding:5px;background: #ffffff;cursor: pointer;user-select: none;border: 1px solid #eee;min-width: 55px;}.FileTileImageGrid button.upload {position:relative;cursor: pointer;}.FileTileImageGrid button.upload input {position: absolute;width: 100%;height: 100%;top: 0;left: 0;opacity: 0;}/* 4 per row */.FileTileImageGrid a:nth-of-type(5n) {margin-right: 0;}.FileTileImageGrid button > figure {position: relative;width: 100%;padding-top: 100%;margin:0;}.FileTileImageGrid button > figure > figure {position:  absolute;top: 0;left: 0;bottom: 0;right: 0;margin:0;overflow:hidden;}.FileTileImageGrid img{position:absolute;top : 0;left:0;min-width:100%;min-height:100%;width:100%;max-height:100%;border:none;}.FileTileImageGrid figure .text{text-align: center;word-break: break-all;margin: 0;position: absolute;top: 50%;transform: translateY(-50%);display: block;width: 100%;}.FileTileImageGrid button:hover {border: 1px solid #ccc;}.FileTileImageGrid .caption {display:block;margin-top: 6px;max-height:2.2em;overflow: hidden;text-align: center;font-size: 0.7em;}@media screen and (max-width: 768px){.FileTileImageGrid {max-width: 320px;min-width: 320px;}.FileTileImageGrid button {width: calc(25% - 6px);}.FileTileImageGrid button:nth-of-type(2n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(5n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(4n) {margin-right: 0;}}#dropdown-menu-color .se-dropdown-content .padding > div,#dropdown-menu-background .se-dropdown-content .padding > div {display: flex;}#dropdown-menu-color .se-dropdown-content .padding > div > *,#dropdown-menu-background .se-dropdown-content .padding > div > * {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table,#dropdown-menu-background table {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table td div,#dropdown-menu-background table td div {cursor:pointer;width:16px;height:16px;padding: 2px;border: 1px solid #dbdbdb;}#dropdown-menu-color table td div:hover,#dropdown-menu-background table td div:hover{border-color:#999;}";
 
   // src/debounce.ts
   var debounce = (func, wait = 100) => {
@@ -1206,7 +1206,7 @@
         if (typeof this.events[p.event] === "undefined") {
           this.events[p.event] = [];
         }
-        if (!this.events[p.event].find((e) => e === p))
+        if (!this.events[p.event].includes(p))
           this.events[p.event].push(p);
       });
     }
@@ -1299,7 +1299,7 @@
     }
     const formats = ["P", "H1", "H2", "H3", "H4", "H5", "H6", "CODE", "PRE"];
     let formatEL = "";
-    for (let i = f.path.length - 1; i >= 0; i--) {
+    for (let i = 0; i < f.path.length; i++) {
       if (formatEL === "" && formats.indexOf(f.path[i]) !== -1) {
         formatEL = f.path[i];
         break;
@@ -2368,28 +2368,6 @@
     };
   }
 
-  // src/toolbar/bold.ts
-  function bold_default(editor) {
-    return {
-      bold: {
-        command: "bold",
-        svg: SubEditor.svgList["b"],
-        tips: "bold"
-      }
-    };
-  }
-
-  // src/toolbar/underline.ts
-  function underline_default(editor) {
-    return {
-      underline: {
-        command: "underline",
-        svg: SubEditor.svgList["u"],
-        tips: "underline"
-      }
-    };
-  }
-
   // src/toolbar/blockquote.ts
   function blockquote_default(editor) {
     return {
@@ -2401,25 +2379,32 @@
     };
   }
 
-  // src/toolbar/italic.ts
-  function italic_default(editor) {
-    return {
-      italic: {
-        command: "italic",
-        svg: SubEditor.svgList["i"],
-        tips: "italic"
-      }
-    };
-  }
-
   // src/toolbar/format.ts
   function format_default(editor) {
-    return {
+    const o = {
+      paragraph: {
+        command: "p",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="paragraph"><span class="se-icon">' + SubEditor.svgList["p"] + "</span></span>"
+      },
+      blockquote: {
+        command: "blockquote",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + "</span></span>"
+      },
+      code: {
+        command: "code",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span>"
+      },
       format: {
         command: "format",
         svg: SubEditor.svgList["p"],
         tips: "format",
-        dropdowncontent: '<div class="se-ToolbarItem se-dropdown" data-tips="' + editor.ln("paragraph") + '"><div class="se-dropdown-trigger"><button class="se-button"  data-command="paragraph" data-tips="paragraph" id="btn-dropdown-menu-paragraph" aria-haspopup="true" aria-controls="dropdown-menu-paragraph"><span></span><span class="se-icon" aria-hidden="true">' + SubEditor.svgList["p"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-paragraph" role="menu"><div class="se-dropdown-content horizontal"  aria-hidden="true"><span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="Normal"><span class="se-icon">' + SubEditor.svgList["p"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h1" data-featureformat="H1" data-tips="Heading 1"><span class="se-icon">' + SubEditor.svgList["h1"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h2" data-featureformat="H2" data-tips="Heading 2"><span class="se-icon">' + SubEditor.svgList["h2"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h3" data-featureformat="H3" data-tips="Heading 3"><span class="se-icon">' + SubEditor.svgList["h3"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h4" data-featureformat="H4" data-tips="Heading 4"><span class="se-icon">' + SubEditor.svgList["h4"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h5" data-featureformat="H5" data-tips="Heading 5"><span class="se-icon">' + SubEditor.svgList["h5"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h6" data-featureformat="H6" data-tips="Heading 6"><span class="se-icon">' + SubEditor.svgList["h6"] + '</span></span><span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="Blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + '</span></span><span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="Code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span></div></div></div>",
+        dropdowncontent: '<div class="se-ToolbarItem se-dropdown" data-tips="' + editor.ln("paragraph") + '"><div class="se-dropdown-trigger"><button class="se-button"  data-command="paragraph" data-tips="paragraph" id="btn-dropdown-menu-paragraph" aria-haspopup="true" aria-controls="dropdown-menu-paragraph"><span></span><span class="se-icon" aria-hidden="true">' + SubEditor.svgList["p"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-paragraph" role="menu"><div class="se-dropdown-content horizontal"  aria-hidden="true"><span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="Normal"><span class="se-icon">' + SubEditor.svgList["p"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h1" data-featureformat="H1" data-tips="Heading 1"><span class="se-icon">' + SubEditor.svgList["h1"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h2" data-featureformat="H2" data-tips="Heading 2"><span class="se-icon">' + SubEditor.svgList["h2"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h3" data-featureformat="H3" data-tips="Heading 3"><span class="se-icon">' + SubEditor.svgList["h3"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h4" data-featureformat="H4" data-tips="Heading 4"><span class="se-icon">' + SubEditor.svgList["h4"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h5" data-featureformat="H5" data-tips="Heading 5"><span class="se-icon">' + SubEditor.svgList["h5"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h6" data-featureformat="H6" data-tips="Heading 6"><span class="se-icon">' + SubEditor.svgList["h6"] + '</span></span><span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + '</span></span><span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="Code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span></div></div></div>",
         onRender: (_editor, el) => {
           el.querySelectorAll(".se-button").forEach((elm) => {
             elm.addEventListener("click", (e) => {
@@ -2430,6 +2415,15 @@
         }
       }
     };
+    for (let i = 1; i < 7; i++) {
+      o["h" + i] = {
+        command: "h" + i,
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="h' + i + '" data-featureformat="H' + i + '" data-tips="Heading ' + i + '"><span class="se-icon">' + SubEditor.svgList["h" + i] + "</span></span>"
+      };
+    }
+    return o;
   }
 
   // src/toolbar/fullscreen.ts
@@ -2471,13 +2465,27 @@
   }
 
   // src/toolbar/align.ts
+  var ev = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="align left"],.se-ToolbarItem[data-tips="align right"],.se-ToolbarItem[data-tips="align center"],.se-ToolbarItem[data-tips="align justify"]').forEach((btn) => {
+      btn.classList.remove("is-featured");
+      if (btn.getAttribute("data-value") === _editor.feature.align) {
+        btn.classList.add("is-featured");
+      }
+    });
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="align"] .se-button[data-command]').forEach((btn) => {
+      btn.classList.remove("is-featured");
+      if (btn.getAttribute("data-value") === _editor.feature.align) {
+        btn.classList.add("is-featured");
+      }
+    });
+  } }];
   function align_default(editor) {
-    return {
+    const o = {
       align: {
         command: "align",
         svg: SubEditor.svgList["align_left"],
         tips: "align",
-        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="' + editor.ln("align") + '"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-align"><span></span><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-align" role="menu"><div class="se-dropdown-content horizontal"><span class="se-button se-ToolbarItem" data-command="align" data-value="left" data-tips="align left"><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="center" data-tips="align center"><span class="se-icon">' + SubEditor.svgList["align_center"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="right" data-tips="align right"><span class="se-icon">' + SubEditor.svgList["align_right"] + '</span></span><span class="se-button ToolbarItem" data-command="align" data-value="justify" data-tips="align justify"><span class="se-icon">' + SubEditor.svgList["align_justify"] + "</span></span></div></div></div>",
+        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="align"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-align"><span></span><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-align" role="menu"><div class="se-dropdown-content horizontal"><span class="se-button se-ToolbarItem" data-command="align" data-value="left" data-tips="align left"><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="center" data-tips="align center"><span class="se-icon">' + SubEditor.svgList["align_center"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="right" data-tips="align right"><span class="se-icon">' + SubEditor.svgList["align_right"] + '</span></span><span class="se-button ToolbarItem" data-command="align" data-value="justify" data-tips="align justify"><span class="se-icon">' + SubEditor.svgList["align_justify"] + "</span></span></div></div></div>",
         onRender: (_editor, el) => {
           el.querySelectorAll(".se-button[data-command]").forEach((btn) => {
             btn.addEventListener("click", (e) => {
@@ -2487,18 +2495,29 @@
               return false;
             });
           });
-          _editor.event.register([{ event: "onFeatureChange", target: [], callback: () => {
-            el.querySelectorAll(".se-button").forEach((btn) => {
-              var _a;
-              btn.classList.remove("is-featured");
-              if (btn.getAttribute("data-value") === ((_a = _editor.feature) == null ? void 0 : _a.align)) {
-                btn.classList.add("is-featured");
-              }
-            });
-          } }]);
+          _editor.event.register(ev);
         }
       }
     };
+    ["align_right", "align_left", "align_center", "align_justify"].forEach((cmd) => {
+      const values = cmd.split("_");
+      o[cmd] = {
+        command: cmd,
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="' + cmd + '" data-value="' + values[1] + '" data-tips="' + cmd.replace("_", " ") + '"><span class="se-icon">' + SubEditor.svgList[cmd] + "</span></span>",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            _editor.command("align", [values[1]]);
+            return false;
+          });
+          _editor.event.register(ev);
+        }
+      };
+    });
+    return o;
   }
 
   // src/toolbar/table.ts
@@ -2581,10 +2600,10 @@
           const style = table.hasAttribute("style") ? table.getAttribute("style") : editor.getCfg("table.default.table.style");
           el.querySelector(".se-dropdown-content").innerHTML = '<div class="padding"><div class="se-dropdown-item"><input type="text" name="style"><label>' + editor.ln("TABLE STYLE") + '</label></div><div style="text-align: right;margin-right:5px"><button class="se-button apply">' + editor.ln("Apply") + "</button></div></div>";
           el.querySelector(".se-dropdown-content input[name=style]").value = style;
-          el.querySelector(".se-dropdown-content .se-button.apply").addEventListener("click", (ev) => {
+          el.querySelector(".se-dropdown-content .se-button.apply").addEventListener("click", (ev4) => {
             var _a3;
-            ev.preventDefault();
-            ev.stopPropagation();
+            ev4.preventDefault();
+            ev4.stopPropagation();
             editor.restoreSelection(editor.getCache("currentSelection"));
             editor.command("table", ["table_style", el.querySelector(".se-dropdown-content input[name=style]").value]);
             (_a3 = editor.toolbar) == null ? void 0 : _a3.hideDropdown();
@@ -2602,12 +2621,12 @@
           }
           el.querySelector(".se-dropdown-content").innerHTML = str;
           el.querySelector(".se-dropdown-content input[name=style]").value = style;
-          Array.from(el.querySelectorAll(".se-dropdown-content .se-button.apply")).forEach((btn) => btn.addEventListener("click", (ev) => {
+          Array.from(el.querySelectorAll(".se-dropdown-content .se-button.apply")).forEach((btn) => btn.addEventListener("click", (ev4) => {
             var _a3;
-            ev.preventDefault();
-            ev.stopPropagation();
+            ev4.preventDefault();
+            ev4.stopPropagation();
             editor.restoreSelection(editor.getCache("currentSelection"));
-            editor.command("table", ["cell_style", el.querySelector(".se-dropdown-content input[name=style]").value, ev.target.getAttribute("data-value") || ""]);
+            editor.command("table", ["cell_style", el.querySelector(".se-dropdown-content input[name=style]").value, ev4.target.getAttribute("data-value") || ""]);
             (_a3 = editor.toolbar) == null ? void 0 : _a3.hideDropdown();
             return false;
           }));
@@ -2682,8 +2701,17 @@
   }
 
   // src/toolbar/text.ts
+  var ev2 = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="text"] .se-button[data-command]').forEach((btn) => {
+      btn.classList.remove("is-featured");
+      const cmd = btn.getAttribute("data-command");
+      if (_editor.feature[cmd]) {
+        btn.classList.add("is-featured");
+      }
+    });
+  } }];
   function text_default(editor) {
-    return {
+    const o = {
       text: {
         command: "text",
         svg: SubEditor.svgList["text"],
@@ -2694,23 +2722,33 @@
             btn.addEventListener("click", (e) => {
               e.preventDefault();
               e.stopPropagation();
-              console.log("text", btn.getAttribute("data-command"));
               _editor.command(btn.getAttribute("data-command"));
               return false;
             });
           });
-          _editor.event.register([{ event: "onFeatureChange", target: [], callback: () => {
-            el.querySelectorAll(".se-button[data-command]").forEach((btn) => {
-              btn.classList.remove("is-featured");
-              const cmd = btn.getAttribute("data-command");
-              if (_editor.feature[cmd]) {
-                btn.classList.add("is-featured");
-              }
-            });
-          } }]);
+          _editor.event.register(ev2);
         }
       }
     };
+    const x = { b: "bold", i: "italic", u: "underline", strikethrough: "strikethrough", subscript: "subscript", superscript: "superscript" };
+    Object.keys(x).forEach((key) => {
+      const cmd = x[key];
+      o[cmd] = {
+        command: cmd,
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="' + cmd + '" data-tips="' + cmd + '"><span class="se-icon">' + SubEditor.svgList[key] + "</span></span>",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            _editor.command(el.getAttribute("data-command"));
+            return false;
+          });
+        }
+      };
+    });
+    return o;
   }
 
   // src/toolbar/undo.ts
@@ -2831,6 +2869,16 @@
   }
 
   // src/toolbar/list.ts
+  var ev3 = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-command="ol"],.se-ToolbarItem[data-command="ul"]').forEach((btn) => {
+      var _a;
+      btn.classList.remove("is-featured");
+      const cmd = btn.getAttribute("data-command");
+      if ((_a = _editor.feature) == null ? void 0 : _a.path.includes(cmd.toUpperCase())) {
+        btn.classList.add("is-featured");
+      }
+    });
+  } }];
   function list_default(editor) {
     return {
       ol: {
@@ -2842,15 +2890,7 @@
             const cmd = el.getAttribute("data-command");
             _editor.command(cmd, []);
           });
-          _editor.event.register([{ event: "onFeatureChange", target: [], callback: () => {
-            el.querySelectorAll(".se-button").forEach((btn) => {
-              var _a;
-              btn.classList.remove("is-featured");
-              if ((_a = _editor.feature) == null ? void 0 : _a.path.includes("OL")) {
-                btn.classList.add("is-featured");
-              }
-            });
-          } }]);
+          _editor.event.register(ev3);
         }
       },
       ul: {
@@ -2862,23 +2902,53 @@
             const cmd = el.getAttribute("data-command");
             _editor.command(cmd, []);
           });
-          _editor.event.register([{ event: "onFeatureChange", target: [], callback: () => {
-            el.querySelectorAll(".se-button").forEach((btn) => {
-              var _a;
-              btn.classList.remove("is-featured");
-              if ((_a = _editor.feature) == null ? void 0 : _a.path.includes("UL")) {
-                btn.classList.add("is-featured");
-              }
-            });
-          } }]);
+          _editor.event.register(ev3);
         }
+      }
+    };
+  }
+
+  // src/toolbar/seperator.ts
+  function seperator_default(editor) {
+    const o = {
+      command: "",
+      svg: "",
+      tips: "",
+      dropdowncontent: '<span class="se-button se-ToolbarItem seperator"><span class="se-icon"><span></span>'
+    };
+    return {
+      "|": o,
+      "seperator": o
+    };
+  }
+
+  // src/toolbar/nextline.ts
+  function nextline_default(editor) {
+    return {
+      "nextline": {
+        command: "",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem nextline"><span class="se-icon"><span></span>'
+      }
+    };
+  }
+
+  // src/toolbar/spacer.ts
+  function spacer_default(editor) {
+    return {
+      "spacer": {
+        command: "",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem spacer"><span class="se-icon"><span></span>'
       }
     };
   }
 
   // src/toolbar/toolbar.ts
   function ToolbarPresets(editor) {
-    return Object.assign({}, undo_default(editor), redo_default(editor), color_default(editor), bold_default(editor), underline_default(editor), blockquote_default(editor), italic_default(editor), format_default(editor), fullscreen_default(editor), align_default(editor), table_default2(editor), hr_default(editor), source_default(editor), text_default(editor), indent_default(editor), remove_format_default(editor), link_default(editor), remove_link_default(editor), list_default(editor));
+    return Object.assign({}, undo_default(editor), redo_default(editor), color_default(editor), blockquote_default(editor), format_default(editor), fullscreen_default(editor), align_default(editor), table_default2(editor), hr_default(editor), source_default(editor), text_default(editor), indent_default(editor), remove_format_default(editor), link_default(editor), remove_link_default(editor), list_default(editor), seperator_default(editor), nextline_default(editor), spacer_default(editor));
   }
   var _Toolbar = class {
     constructor(editor) {
@@ -2923,8 +2993,8 @@
       this.refToolbar.appendChild(this.refTips);
     }
     registerPluginItem(item) {
-      const ToolbarItem2 = typeof item === "function" ? item(this.editor) : item;
-      this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem2);
+      const ToolbarItem5 = typeof item === "function" ? item(this.editor) : item;
+      this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem5);
     }
     addItem(item) {
       let barItem = void 0;
@@ -3029,7 +3099,7 @@
       document.removeEventListener("click", this.hideDropdownListener);
       document.addEventListener("click", this.hideDropdownListener);
       this.editor.event.register([{ event: "onFeatureChange", target: [], callback: () => {
-        this.refToolbar.querySelectorAll("div[data-command]").forEach((el) => {
+        this.refToolbar.querySelectorAll("[data-command]").forEach((el) => {
           var _a;
           const cmd = el.getAttribute("data-command") || "_";
           if (cmd === "_")
@@ -3566,6 +3636,12 @@
   }];
 
   // src/plugins/format.ts
+  var extractTextInPath = (el) => {
+    if (el.nodeType === 3)
+      return el;
+    const nodes = Array.from(el.childNodes).filter((child) => child.nodeType === 3).filter((child) => child.textContent.trim()).map((textNode) => textNode);
+    return nodes[0] || null;
+  };
   var clonePath = (paths, content = null) => {
     if (paths[paths.length - 1].nodeType === Node.TEXT_NODE) {
       return document.createTextNode(content ? content : paths[paths.length - 1].textContent);
@@ -3583,6 +3659,7 @@
     const n = document.createElement(tag);
     Array.from(node.childNodes).forEach((c) => n.appendChild(c));
     node.replaceWith(n);
+    return n;
   };
   var usableParent = (node, editor) => {
     const path = [];
@@ -4031,6 +4108,7 @@
         var _a;
         const { range } = editor.getSelectionRange();
         const nodes = editor.dom.selectDeepNodesInRange(range);
+        const endContainer = range.endContainer, endOffset = range.endOffset;
         if (nodes.length === 1) {
           const n = nodes[0];
           if (nodes[0].node === editor.refContent && nodes[0].collapsed) {
@@ -4062,12 +4140,13 @@
             } else if (paths[paths.length - 1].parentElement.nodeName === "CODE") {
               if (paths[paths.length - 1].parentElement.parentElement.nodeName === "PRE")
                 editor.dom.unwrapNode(paths[paths.length - 1].parentElement.parentElement);
-              replaceNode(paths[paths.length - 1].parentElement, "P");
+              nodes[0].node = replaceNode(paths[paths.length - 1].parentElement, "P");
             } else if (["H1", "H2", "H3", "H4", "H5", "H6"].indexOf(paths[paths.length - 1].parentElement.nodeName) !== -1) {
-              replaceNode(paths[paths.length - 1].parentElement, "P");
+              nodes[0].node = replaceNode(paths[paths.length - 1].parentElement, "P");
             } else {
               editor.dom.wrapNode(paths[paths.length - 1], document.createElement("p"));
             }
+            editor.dom.setCaretAt(endContainer, endOffset);
           } else {
             const str = n.node.textContent.substring(n.startOffset, n.endOffset);
             const strBegin = n.node.textContent.substring(0, n.startOffset);
@@ -4094,12 +4173,14 @@
             if (!strBegin) {
               paths[paths.length - 1].parentElement.removeChild(paths[paths.length - 1]);
             }
+            const end = extractTextInPath(pMiddle);
+            editor.dom.setCaretAt(end, (end.textContent || "").length);
           }
           editor.triggerChange();
           return;
         }
         let lastPlaceholdler = null;
-        nodes.forEach((n) => {
+        nodes.forEach((n, index) => {
           if (n.node.nodeName === "HR")
             return;
           const paths = usableParent(n.node, editor);
@@ -4153,11 +4234,11 @@
             return;
           }
           if (["H1", "H2", "H3", "H4", "H5", "H6"].indexOf(paths[paths.length - 1].parentElement.nodeName) !== -1) {
-            replaceNode(paths[paths.length - 1].parentElement, "P");
+            nodes[index].node = replaceNode(paths[paths.length - 1].parentElement, "P");
           } else if (paths[paths.length - 1].parentElement.nodeName === "CODE") {
             if (paths[paths.length - 1].parentElement.parentElement.nodeName === "PRE")
               editor.dom.unwrapNode(paths[paths.length - 1].parentElement.parentElement);
-            replaceNode(paths[paths.length - 1].parentElement, "P");
+            nodes[index].node = replaceNode(paths[paths.length - 1].parentElement, "P");
           } else if (lastPlaceholdler && lastPlaceholdler === paths[paths.length - 1].previousSibling) {
             lastPlaceholdler == null ? void 0 : lastPlaceholdler.appendChild(paths[paths.length - 1]);
           } else {
@@ -4175,6 +4256,7 @@
         const { range } = editor.getSelectionRange();
         const nodes = editor.dom.selectDeepNodesInRange(range);
         const tag = cmd.toUpperCase();
+        let endContainer = range.endContainer, endOffset = range.endOffset;
         const firstTextNode = nodes.find((n) => n.node.nodeType === Node.TEXT_NODE);
         const action = formatAction(firstTextNode == null ? void 0 : firstTextNode.node, tag);
         if (nodes[0].node === editor.refContent && nodes[0].collapsed) {
@@ -4187,7 +4269,7 @@
           editor.dom.setCaretAt(placeholder, 0);
           return;
         }
-        nodes.forEach((n) => {
+        nodes.forEach((n, index) => {
           const parent = usableParent(n.node, editor);
           const node_action = formatAction(n.node, tag);
           if (action.action === "unwrap" && node_action.action !== "wrap") {
@@ -4202,7 +4284,8 @@
             const el = document.createElement(tag);
             if (cachedParent.nodeName === "P") {
               if (n.collapsed && cachedParent.childNodes.length === 1) {
-                return replaceNode(cachedParent, tag);
+                nodes[index].node = replaceNode(cachedParent, tag);
+                return;
               }
               const p = document.createElement("P");
               let x = parent[parent.length - 1];
@@ -4211,7 +4294,9 @@
                 p.appendChild(pnodes[i]);
               }
               if (!n.collapsed && n.partial) {
-                el.appendChild(document.createTextNode(n.node.textContent.substring(n.startOffset, n.endOffset)));
+                endContainer = document.createTextNode(n.node.textContent.substring(n.startOffset, n.endOffset));
+                endOffset = (endContainer.textContent || "").length;
+                el.appendChild(endContainer);
                 const partBeginning = n.node.textContent.substring(0, n.startOffset) || "", partEnding = n.node.textContent.substring(n.endOffset) || "";
                 if (partBeginning !== "") {
                   n.node.textContent = partBeginning;
@@ -4242,7 +4327,9 @@
               }
             } else {
               if (!n.collapsed && n.partial) {
-                el.appendChild(document.createTextNode(n.node.textContent.substring(n.startOffset, n.endOffset)));
+                endContainer = document.createTextNode(n.node.textContent.substring(n.startOffset, n.endOffset));
+                endOffset = (endContainer.textContent || "").length;
+                el.appendChild(endContainer);
                 const partBeginning = n.node.textContent.substring(0, n.startOffset) || "", partEnding = n.node.textContent.substring(n.endOffset) || "";
                 editor.dom.nodesInsertAfter([el], n.node);
                 if (partBeginning !== "") {
@@ -4261,13 +4348,13 @@
               }
             }
           } else if (node_action.action === "replace") {
-            replaceNode(node_action.node, tag);
+            nodes[index].node = replaceNode(node_action.node, tag);
           }
         });
-        if (nodes[nodes.length - 1].isVoid) {
+        if (endContainer) {
+          editor.dom.setCaretAt(endContainer, endOffset);
+        } else if (nodes[nodes.length - 1].isVoid) {
           editor.dom.setCaretAt(nodes[nodes.length - 1].node, 1);
-        } else {
-          editor.dom.setCaretAt(range.endContainer, range.endOffset);
         }
         editor.triggerChange();
       }
@@ -4687,6 +4774,8 @@
           (_b = editor.refContent.firstChild) == null ? void 0 : _b.appendChild(document.createElement("li"));
           range.selectNode(editor.refContent.firstChild.firstChild);
           range.collapse(true);
+          editor.handleFeature();
+          editor.triggerChange();
           return;
         }
         const firstNode = nodes[0].node, firstPath = editor.dom.nodeParentUntil(firstNode, editor.refContent);
@@ -4704,6 +4793,7 @@
             }
           });
           focusNode();
+          editor.handleFeature();
           editor.triggerChange();
           return;
         }
@@ -4744,6 +4834,7 @@
             }
           });
           focusNode();
+          editor.handleFeature();
           editor.triggerChange();
           return;
         }
@@ -4763,6 +4854,7 @@
           lastPlaceholder == null ? void 0 : lastPlaceholder.appendChild(el.parentElement);
         });
         editor.dom.setCaretAt(lastPlaceholder.lastChild.lastChild, 0);
+        editor.handleFeature();
         editor.triggerChange();
       }
     }
@@ -5338,9 +5430,9 @@
         data.forEach((item) => {
           const tile = item.tileFunc ? item.tileFunc() : renderTile(item);
           grid.appendChild(tile);
-          tile.addEventListener("click", (ev) => {
-            ev.preventDefault();
-            ev.stopPropagation();
+          tile.addEventListener("click", (ev4) => {
+            ev4.preventDefault();
+            ev4.stopPropagation();
             editor.command("image", ["library", item]);
             editor.toolbar.hideDropdown();
             return false;
@@ -5378,9 +5470,9 @@
           next.setAttribute("class", "next se-button");
           pagination.appendChild(next);
           next.innerHTML = '<span class="se-icon">' + SubEditor.svgList["next"] + "</span>";
-          prev.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            ev.preventDefault();
+          prev.addEventListener("click", (ev4) => {
+            ev4.stopPropagation();
+            ev4.preventDefault();
             const kw = pagination.querySelector("input.keyword").value || "";
             if (kw !== keyword)
               fetchPage(1, kw);
@@ -5389,9 +5481,9 @@
             }
             return false;
           });
-          next.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            ev.preventDefault();
+          next.addEventListener("click", (ev4) => {
+            ev4.stopPropagation();
+            ev4.preventDefault();
             const kw = pagination.querySelector("input.keyword").value || "";
             if (kw !== keyword)
               fetchPage(1, kw);
@@ -5400,11 +5492,11 @@
             }
             return false;
           });
-          current.addEventListener("keydown", (ev) => {
-            if (ev.key !== "Enter")
+          current.addEventListener("keydown", (ev4) => {
+            if (ev4.key !== "Enter")
               return;
-            ev.preventDefault();
-            ev.stopPropagation();
+            ev4.preventDefault();
+            ev4.stopPropagation();
             const targetPage = parseInt(pagination.querySelector("input.current").value, 10);
             const kw = pagination.querySelector("input.keyword").value || "";
             if (kw !== keyword)
@@ -5435,9 +5527,9 @@
           search.setAttribute("class", "search se-button");
           pagination.appendChild(search);
           search.innerHTML = '<span class="se-icon">' + SubEditor.svgList["search"] + "</span>";
-          search.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            ev.preventDefault();
+          search.addEventListener("click", (ev4) => {
+            ev4.stopPropagation();
+            ev4.preventDefault();
             const kw = keywordInput.value || "";
             if (kw !== keyword)
               fetchPage(1, kw);
@@ -5469,8 +5561,8 @@
     xhr.open("POST", url);
     const fd = new FormData();
     fd.append("file", file);
-    xhr.upload.addEventListener("progress", (ev) => {
-      const percent = Math.min(100, Math.floor(ev.loaded / ev.total * 1e4) / 100);
+    xhr.upload.addEventListener("progress", (ev4) => {
+      const percent = Math.min(100, Math.floor(ev4.loaded / ev4.total * 1e4) / 100);
       el.querySelector(".text").innerHTML = editor.ln("uploading") + " " + percent + "%";
     });
     xhr.addEventListener("error", () => {
@@ -5543,15 +5635,15 @@
         uploadAgainBtn.setAttribute("class", "se-button upload_again");
         uploadAgainBtn.style.display = "none";
         insertBtn.parentElement.insertBefore(uploadAgainBtn, insertBtn);
-        uploadAgainBtn.addEventListener("click", (ev) => {
-          ev.preventDefault();
-          ev.stopPropagation();
+        uploadAgainBtn.addEventListener("click", (ev4) => {
+          ev4.preventDefault();
+          ev4.stopPropagation();
           renderUpload(editor, content);
           return false;
         });
-        insertBtn.addEventListener("click", (ev) => {
-          ev.preventDefault();
-          ev.stopPropagation();
+        insertBtn.addEventListener("click", (ev4) => {
+          ev4.preventDefault();
+          ev4.stopPropagation();
           editor.command("image", ["upload"]);
           editor.toolbar.hideDropdown();
           return false;
@@ -5978,7 +6070,6 @@
       };
       this.onChange = () => {
       };
-      this.dobounceFeatureSelectionFocusNode = null;
       this.event = new Event(this);
       this.feature = null;
       this.dom = dom_default;
@@ -6096,14 +6187,10 @@
       const sel = dom_default.getSelection();
       if (!sel || !(sel == null ? void 0 : sel.focusNode) || !this.refContent.contains(sel.focusNode))
         return;
-      const focusNode = sel.focusNode.nodeType === 3 ? sel.focusNode.parentElement : sel.focusNode;
-      if (this.dobounceFeatureSelectionFocusNode === focusNode)
-        return;
       const feature = feature_default(sel.focusNode, this.refContent);
       if (this.feature === feature)
         return;
       this.feature = feature;
-      this.dobounceFeatureSelectionFocusNode = feature.node;
       this.event.trigger("onFeatureChange", this.feature.nodeName, [this, this.feature]);
     }
     initEvents() {
@@ -6215,8 +6302,8 @@
       }
       this.fixStylePosition();
     }
-    growFn(ev) {
-      ev.target.parentElement.style.height = ev.target.clientHeight + "px";
+    growFn(ev4) {
+      ev4.target.parentElement.style.height = ev4.target.clientHeight + "px";
     }
     fixStylePosition() {
       if (!this.autoGrow) {
@@ -6236,9 +6323,9 @@
         this.refEl.removeChild(this.refEditor);
         this.refEl.removeChild(this.refTextarea);
       }
-      Object.keys(this.docListener).forEach((ev) => {
-        this.docListener[ev].forEach((i) => {
-          document.removeEventListener(ev, i);
+      Object.keys(this.docListener).forEach((ev4) => {
+        this.docListener[ev4].forEach((i) => {
+          document.removeEventListener(ev4, i);
         });
       });
       this.refEl._SubEditor = void 0;
@@ -6264,6 +6351,9 @@
     static presetCss(cssString = "") {
       _SubEditor.presetCssString = cssString;
     }
+    static lastCss() {
+      return _SubEditor.lastCssString;
+    }
     static initCss(cssString = "", skipCss = false) {
       let pluginCss = "";
       const SubEditorStyle = document.querySelector("#SubEditorStyle");
@@ -6271,6 +6361,7 @@
         return;
       Object.keys(_SubEditor.pluginCSS).forEach((p) => pluginCss += _SubEditor.pluginCSS[p]);
       const styleStr = css_default + "\n" + pluginCss + "\n" + _SubEditor.presetCssString + "\n" + cssString;
+      _SubEditor.lastCssString = styleStr;
       for (let i = 0; i < document.styleSheets.length; i++) {
         if (document.styleSheets[i].title && document.styleSheets[i].title === "SubEditorStyle") {
           if (styleStr !== SubEditorStyle.innerHTML) {
@@ -6299,19 +6390,20 @@
         this.handleChange(this.history.Next());
       }
     }
-    handleChange(change) {
-      this.event.trigger("onBeforeChange", "", [this]);
+    handleChange(changed) {
+      this.event.trigger("onBeforeChange", "", [this, changed]);
       if (this.refTextarea.style.display === "none") {
         this.refTextarea.value = this.refContent.innerHTML;
       }
-      if (change && this.onChange)
-        this.onChange(change);
+      if (changed && this.onChange)
+        this.onChange(changed);
     }
   };
   var SubEditor = _SubEditor;
   SubEditor.svgList = {};
   SubEditor.langList = {};
   SubEditor.presetPluginList = {};
+  SubEditor.lastCssString = "";
   SubEditor.presetCssString = "";
   SubEditor.pluginCSS = {};
 

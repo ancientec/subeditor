@@ -8,7 +8,6 @@
 .SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}
 
 .SubEditorContent, .SubEditorSource {
-    all: revert;
     text-align: start;
     display:inline-block;
     min-height: 200px;

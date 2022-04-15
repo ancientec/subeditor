@@ -57,7 +57,7 @@ export default class SubEditor {
     public refToolbar! : HTMLDivElement;
     public refFooter! : HTMLDivElement;
 
-    public static version : "0.5.0";
+    public static version : "0.5.5";
     public static svgList : {[key: string]: string} = {};
     public static langList : {[key: string]:{[key: string]: string}} = {};
     public static presetPluginList : {[key: string]: SubEditorEvent[]} = {};
@@ -69,13 +69,15 @@ export default class SubEditor {
     private height : number = 0;
     private lnFunc? : Function;
     private cacheTextareaStyle = "";
+    //the last generated css string after init
+    private static lastCssString = "";
     public static presetCssString : string = "";
     public static pluginCSS : {[key: string]: string} = {};
     public history : History;
     private debounceChange: () => void = () => {};
     //private debounceFeature: () => void = () => {};
     private onChange : Function = () => {};
-    private dobounceFeatureSelectionFocusNode : HTMLElement | null = null;
+    //private dobounceFeatureSelectionFocusNode : HTMLElement | null = null;
 
     public event : Event = new Event(this);
     public selection? : SelectionSlimState;
@@ -218,12 +220,12 @@ export default class SubEditor {
     public handleFeature() {
         const sel = dom.getSelection();
         if(!sel || !sel?.focusNode || !this.refContent.contains(sel.focusNode)) return;
-        const focusNode = sel.focusNode.nodeType === 3 ? sel.focusNode.parentElement! : sel.focusNode as HTMLElement;
-        if(this.dobounceFeatureSelectionFocusNode === focusNode) return;
+        //const focusNode = sel.focusNode.nodeType === 3 ? sel.focusNode.parentElement! : sel.focusNode as HTMLElement;
+        //if(this.dobounceFeatureSelectionFocusNode === focusNode) return;
         const feature = parseFeature(sel.focusNode, this.refContent);
         if(this.feature === feature) return;
         this.feature = feature;
-        this.dobounceFeatureSelectionFocusNode = feature.node as HTMLElement;
+        //this.dobounceFeatureSelectionFocusNode = feature.node as HTMLElement;
         this.event.trigger("onFeatureChange",this.feature.nodeName, [this, this.feature]);
     }
     private initEvents() {
@@ -395,6 +397,9 @@ export default class SubEditor {
     public static presetCss(cssString : string = "") {
         SubEditor.presetCssString = cssString;
     }
+    public static lastCss() {
+        return SubEditor.lastCssString;
+    }
     private static initCss(cssString : string = "", skipCss : boolean = false) {
         let pluginCss = "";
         const SubEditorStyle = document.querySelector("#SubEditorStyle");
@@ -402,6 +407,7 @@ export default class SubEditor {
 
         Object.keys(SubEditor.pluginCSS).forEach(p => pluginCss += SubEditor.pluginCSS[p]);
         const styleStr = css + "\n" + pluginCss + "\n" + SubEditor.presetCssString + "\n" + cssString;
+        SubEditor.lastCssString = styleStr;
 
         for(let i = 0; i < document.styleSheets.length; i++){
             if( document.styleSheets[i].title && document.styleSheets[i].title === "SubEditorStyle" ){
@@ -432,11 +438,11 @@ export default class SubEditor {
             this.handleChange(this.history.Next());
         }
     }
-    public handleChange(change : ChangeEntry | null) {
-        this.event.trigger("onBeforeChange", "", [this]);
+    public handleChange(changed : ChangeEntry | null) {
+        this.event.trigger("onBeforeChange", "", [this, changed]);
         if(this.refTextarea.style.display === "none") {
             this.refTextarea.value = this.refContent.innerHTML;
         }
-        if(change && this.onChange) this.onChange(change);
+        if(changed && this.onChange) this.onChange(changed);
     }
 }

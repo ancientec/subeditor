@@ -1,9 +1,6 @@
 
 import color from './color';
-import bold from './bold';
-import underline from './underline';
 import blockquote from './blockquote';
-import italic from './italic';
 import format from './format';
 import fullscreen from './fullscreen';
 import align from './align';
@@ -18,6 +15,9 @@ import remove_format from './remove_format';
 import link from './link';
 import remove_link from './remove_link';
 import list from './list';
+import seperator from './seperator';
+import nextline from './nextline';
+import spacer from './spacer';
 import SubEditor from '../subeditor';
 
 export interface ToolbarItem {
@@ -31,7 +31,7 @@ export interface ToolbarItem {
 
 
 export function ToolbarPresets(editor : SubEditor) {
-  return Object.assign({}, undo(editor), redo(editor), color(editor),bold(editor),underline(editor),blockquote(editor),italic(editor),format(editor),fullscreen(editor),align(editor), table(editor), hr(editor), source(editor), text(editor), indent(editor),remove_format(editor), link(editor), remove_link(editor), list(editor));
+  return Object.assign({}, undo(editor), redo(editor), color(editor),blockquote(editor),format(editor),fullscreen(editor),align(editor), table(editor), hr(editor), source(editor), text(editor), indent(editor),remove_format(editor), link(editor), remove_link(editor), list(editor), seperator(editor), nextline(editor), spacer(editor));
 }
 export default class Toolbar {
   public editor : SubEditor;
@@ -189,7 +189,7 @@ export default class Toolbar {
     
   
     this.editor.event.register([{ event : "onFeatureChange", target : [], callback : () => {
-      this.refToolbar.querySelectorAll("div[data-command]").forEach(el => {
+      this.refToolbar.querySelectorAll("[data-command]").forEach(el => {
         const cmd = el.getAttribute('data-command') as string || "_";
         if(cmd === "_") return;
         el.classList.remove('is-featured');

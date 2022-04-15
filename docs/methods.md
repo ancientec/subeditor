@@ -534,6 +534,13 @@ SubEditor.presetCss(".SubEditorContent {border:1px solid red}");
 SubEditor.presetCss(SubEditor.presetCssString + ".SubEditorContent {border:1px solid red}");
 ```
 
+### lastCss()
+   
+*method: static*   
+*params: none*  
+
+Return the last computed css style in string format.   
+
 ### changeValue(str : string)
    
 *method: non-static*   

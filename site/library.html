@@ -17,7 +17,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://subeditor.org">
-            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+            <strong>SubEditor</strong> <small><sub>v0.5.5</sub></small>
           </a>
           </div>
           <div class="navbar-menu">
@@ -95,7 +95,7 @@ cfg[<span class="hljs-string">&quot;image.library.fetch&quot;</span>] = <span cl
 <h3>image.library.allow.search</h3>
 <p>Allow to search using keyword.</p>
 <h3>image.library.fetch(page : Number, perpage : Number, keyword : string, callback : Function)</h3>
-<p>Limit number of files per batch, default 0 for unlimited.</p>
+<p>This is where all the magic happens. User defines how to get data in any format and from any data source. Data is then processed and converted to SubEditor via callback.</p>
 <h3>Callback(total: Number, data : Object)</h3>
 <p>total is the total number of results to be used to calcuate the paging. Data is an object for SubEditor to process and render.</p>
 <pre><code class="language-js"><span class="hljs-comment">//data, minimum requirement:</span>

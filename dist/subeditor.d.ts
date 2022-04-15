@@ -39,7 +39,7 @@ export default class SubEditor {
     refContent: HTMLDivElement;
     refToolbar: HTMLDivElement;
     refFooter: HTMLDivElement;
-    static version: "0.5.0";
+    static version: "0.5.5";
     static svgList: {
         [key: string]: string;
     };
@@ -62,6 +62,7 @@ export default class SubEditor {
     private height;
     private lnFunc?;
     private cacheTextareaStyle;
+    private static lastCssString;
     static presetCssString: string;
     static pluginCSS: {
         [key: string]: string;
@@ -69,7 +70,6 @@ export default class SubEditor {
     history: History;
     private debounceChange;
     private onChange;
-    private dobounceFeatureSelectionFocusNode;
     event: Event;
     selection?: SelectionSlimState;
     toolbar?: Toolbar;
@@ -173,8 +173,9 @@ export default class SubEditor {
     }): void;
     private static initSvg;
     static presetCss(cssString?: string): void;
+    static lastCss(): string;
     private static initCss;
     changeValue(str: string): void;
     triggerChange(): void;
-    handleChange(change: ChangeEntry | null): void;
+    handleChange(changed: ChangeEntry | null): void;
 }

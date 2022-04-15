@@ -57,8 +57,19 @@ css style will be injected into document head upon initialization. your customiz
 The full build-in list of toolbar items are listed as follow, you may change the order as you see fit:   
    
 "undo","redo","text","format","link","remove_format","indent","outdent","color","backgroundcolor","align","ol","ul","image", "library","table","hr","source","fullscreen"   
+
+Additonal style items:   
+- "seperator" or "|" : a divider with 1px width
+- "spacer" : a blank icon width of empty space
+- "nextline" : a horizontal line with 1px width moving all the rest of icons to next line
+
+
+Grouped items:
+- "text" : contains "bold", "italic", "underline", "strikethrough", "superscript", and "subscript" which can also be used by their own.
+- "format" : contains "paragraph", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote", and "code" which can also be used by their own.
+- "align" : contains "align_left", "align_center", "align_right", and "align_justify" which can also be used by their own.
    
-*note that image and library will require addition config variable setup
+*note that image and library will require additional config variable setup
 
 ### pluginList
 

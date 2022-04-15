@@ -67,7 +67,7 @@ Allow to search using keyword.
 
 ### image.library.fetch(page : Number, perpage : Number, keyword : string, callback : Function)
 
-Limit number of files per batch, default 0 for unlimited.  
+This is where all the magic happens. User defines how to get data in any format and from any data source. Data is then processed and converted to SubEditor via callback.      
 
 ### Callback(total: Number, data : Object)
 

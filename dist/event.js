@@ -73,7 +73,7 @@ class Event {
                 this.events[p.event] = [];
             }
             //add if not exists
-            if (!this.events[p.event].find(e => e === p))
+            if (!this.events[p.event].includes(p))
                 this.events[p.event].push(p);
         });
     }

@@ -17,7 +17,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://subeditor.org">
-            <strong>SubEditor</strong> <small><sub>v0.5.0</sub></small>
+            <strong>SubEditor</strong> <small><sub>v0.5.5</sub></small>
           </a>
           </div>
           <div class="navbar-menu">
@@ -241,7 +241,21 @@ subeditor.<span class="hljs-title function_">command</span>(<span class="hljs-st
 <ul>
 <li>event: onFeatureChange</li>
 <li>target: []</li>
-<li>callback: (editor :SubEditor, selection : SelectionSlim)</li>
+<li>callback: (editor : SubEditor, selection : SelectionSlim)</li>
+</ul>
+<h3>registerUI</h3>
+<p>This event fires after the new instance and UI are created. This is useful to apply some UI alternations</p>
+<ul>
+<li>event: registerUI</li>
+<li>target: []</li>
+<li>callback: (editor : SubEditor)</li>
+</ul>
+<h3>onBeforeChange</h3>
+<p>This event fires on every change of content, before the changed value is applied to textarea and before onChange callback.</p>
+<ul>
+<li>event: onBeforeChange</li>
+<li>target: []</li>
+<li>callback: (editor : SubEditor)</li>
 </ul>
 
 

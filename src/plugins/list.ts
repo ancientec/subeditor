@@ -146,6 +146,8 @@ export default [
             editor.refContent.firstChild?.appendChild(document.createElement("li"));
             range.selectNode(editor.refContent.firstChild!.firstChild!);
             range.collapse(true);
+            editor.handleFeature();
+            editor.triggerChange();
             return;
         }
         const firstNode = nodes[0].node, firstPath = editor.dom.nodeParentUntil(firstNode, editor.refContent);
@@ -162,6 +164,7 @@ export default [
                 }
             });
             focusNode();
+            editor.handleFeature();
             editor.triggerChange();
             return;
         }
@@ -204,6 +207,7 @@ export default [
                 }
             });
             focusNode();
+            editor.handleFeature();
             editor.triggerChange();
             return;
         }
@@ -225,6 +229,7 @@ export default [
 
         });
         editor.dom.setCaretAt(lastPlaceholder!.lastChild!.lastChild!,0);
+        editor.handleFeature();
         editor.triggerChange();
     }
 }] as SubEditorEvent[];

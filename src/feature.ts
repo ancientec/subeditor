@@ -110,7 +110,7 @@ function parseFeature(n : Node, container : HTMLElement) : Feature {
     
     const formats = ['P','H1','H2','H3','H4','H5','H6','CODE','PRE'];
     let formatEL = "";
-    for(let i = f.path.length - 1; i >= 0;i--) {
+    for(let i = 0; i < f.path.length;i++) {
         if (formatEL === "" && formats.indexOf(f.path[i]) !== -1) {
             formatEL = f.path[i];
             break;

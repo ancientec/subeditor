@@ -4,6 +4,13 @@
 ```shell
 > npm install subeditor
 ```
+
+For React:
+
+```shell
+> npm install react-subeditor
+```
+
 ## Develop & Unit Test
 
 ```shell

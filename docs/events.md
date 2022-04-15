@@ -233,5 +233,22 @@ This event usually fired after onFeatureChange but it will trigger even when mov
 
 - event: onFeatureChange
 - target: []
-- callback: (editor :SubEditor, selection : SelectionSlim)
+- callback: (editor : SubEditor, selection : SelectionSlim)
 
+
+### registerUI
+
+This event fires after the new instance and UI are created. This is useful to apply some UI alternations   
+
+- event: registerUI
+- target: []
+- callback: (editor : SubEditor)
+
+
+### onBeforeChange
+
+This event fires on every change of content, before the changed value is applied to textarea and before onChange callback.   
+
+- event: onBeforeChange
+- target: []
+- callback: (editor : SubEditor)

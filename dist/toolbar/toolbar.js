@@ -5,10 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ToolbarPresets = void 0;
 const color_1 = __importDefault(require("./color"));
-const bold_1 = __importDefault(require("./bold"));
-const underline_1 = __importDefault(require("./underline"));
 const blockquote_1 = __importDefault(require("./blockquote"));
-const italic_1 = __importDefault(require("./italic"));
 const format_1 = __importDefault(require("./format"));
 const fullscreen_1 = __importDefault(require("./fullscreen"));
 const align_1 = __importDefault(require("./align"));
@@ -23,9 +20,12 @@ const remove_format_1 = __importDefault(require("./remove_format"));
 const link_1 = __importDefault(require("./link"));
 const remove_link_1 = __importDefault(require("./remove_link"));
 const list_1 = __importDefault(require("./list"));
+const seperator_1 = __importDefault(require("./seperator"));
+const nextline_1 = __importDefault(require("./nextline"));
+const spacer_1 = __importDefault(require("./spacer"));
 const subeditor_1 = __importDefault(require("../subeditor"));
 function ToolbarPresets(editor) {
-    return Object.assign({}, (0, undo_1.default)(editor), (0, redo_1.default)(editor), (0, color_1.default)(editor), (0, bold_1.default)(editor), (0, underline_1.default)(editor), (0, blockquote_1.default)(editor), (0, italic_1.default)(editor), (0, format_1.default)(editor), (0, fullscreen_1.default)(editor), (0, align_1.default)(editor), (0, table_1.default)(editor), (0, hr_1.default)(editor), (0, source_1.default)(editor), (0, text_1.default)(editor), (0, indent_1.default)(editor), (0, remove_format_1.default)(editor), (0, link_1.default)(editor), (0, remove_link_1.default)(editor), (0, list_1.default)(editor));
+    return Object.assign({}, (0, undo_1.default)(editor), (0, redo_1.default)(editor), (0, color_1.default)(editor), (0, blockquote_1.default)(editor), (0, format_1.default)(editor), (0, fullscreen_1.default)(editor), (0, align_1.default)(editor), (0, table_1.default)(editor), (0, hr_1.default)(editor), (0, source_1.default)(editor), (0, text_1.default)(editor), (0, indent_1.default)(editor), (0, remove_format_1.default)(editor), (0, link_1.default)(editor), (0, remove_link_1.default)(editor), (0, list_1.default)(editor), (0, seperator_1.default)(editor), (0, nextline_1.default)(editor), (0, spacer_1.default)(editor));
 }
 exports.ToolbarPresets = ToolbarPresets;
 class Toolbar {
@@ -184,7 +184,7 @@ class Toolbar {
         document.removeEventListener('click', this.hideDropdownListener);
         document.addEventListener('click', this.hideDropdownListener);
         this.editor.event.register([{ event: "onFeatureChange", target: [], callback: () => {
-                    this.refToolbar.querySelectorAll("div[data-command]").forEach(el => {
+                    this.refToolbar.querySelectorAll("[data-command]").forEach(el => {
                         var _a;
                         const cmd = el.getAttribute('data-command') || "_";
                         if (cmd === "_")

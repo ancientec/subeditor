@@ -5,7 +5,7 @@ Toobar is the collection of [ToolbarItem](/toolbaritem.html) to interact with Su
 ```js
 
 var subeditor = new SubEditor(elm, {
-    toolbarList : ["undo","redo","text","format","link","remove_format","indent","outdent","color","backgroundcolor","align","ol","ul","image", "library","table","hr","source","fullscreen"]
+    toolbarList : ["undo","redo","seperator","text","format","link","remove_format","nextline","indent","outdent","spacer","color","backgroundcolor","|","align","ol","ul","image", "library","table","hr","source","fullscreen"]
 });
 
 //dom element of toolbar:

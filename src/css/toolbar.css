@@ -205,6 +205,16 @@
 .SubEditorToolbar .se-ToolbarItem.AboveShadow {
     z-index: 110;
 }
+.se-ToolbarItem.seperator {
+    width:1px;height:100%;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;
+}
+.se-ToolbarItem.nextline {
+    width:100%;height:1px;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;
+}
+.se-ToolbarItem.spacer {
+   cursor: default;transition: none;
+}
+.SubEditorToolbar > .se-button.se-ToolbarItem.spacer:hover{background-color: transparent;}
 
 .ToolbarTable td{padding-left: 5px;padding-right: 5px;width:10px; height:10px;border:1px solid #dbdbdb;margin:1px;}
 .ToolbarTable td.active,.ToolbarTable td:hover{background-color: #e0e0e0;}

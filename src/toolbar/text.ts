@@ -1,8 +1,19 @@
-import SubEditor from "../subeditor";
+import SubEditor, { ToolbarItem } from "../subeditor";
+
+const ev = [{ event : "onFeatureChange", target : [], callback : function(_editor : SubEditor) {
+  _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="text"] .se-button[data-command]').forEach(btn => {
+    btn.classList.remove('is-featured');
+    const cmd = btn.getAttribute("data-command") as string;
+    
+    if((_editor.feature as any)[cmd]) {
+      btn.classList.add('is-featured');
+    }
+  });
+}}];
 
 
 export default function(editor : SubEditor) {
-    return {
+    const o : {[key: string]: ToolbarItem} =  {
       text : {
         command : "text",
         svg : SubEditor.svgList["text"],
@@ -12,25 +23,33 @@ export default function(editor : SubEditor) {
           el.querySelectorAll('.se-button[data-command]').forEach(btn => {
             btn.addEventListener('click', (e) => {
               e.preventDefault();
-              e.stopPropagation();console.log("text",btn.getAttribute("data-command"));
+              e.stopPropagation();
               _editor.command(btn.getAttribute("data-command") as string);
               return false;
             });
           });
-  
-          _editor.event.register([{ event : "onFeatureChange", target : [], callback : () => {
-            el.querySelectorAll('.se-button[data-command]').forEach(btn => {
-              btn.classList.remove('is-featured');
-              const cmd = btn.getAttribute("data-command") as string;
-              
-              if((_editor.feature as any)[cmd]) {
-                btn.classList.add('is-featured');
-              }
-            });
-        
-          }}]);
+          _editor.event.register(ev);
           //end of feature change
         }
       }
-    }
+    };
+    const x : {[key: string]: string} = {b : "bold", i : "italic",u : "underline",strikethrough : "strikethrough",subscript : "subscript", superscript : "superscript"};
+    Object.keys(x).forEach(key => {
+      const cmd = x[key];
+      o[cmd] = {
+        command : cmd, svg : "", tips : "",
+        dropdowncontent : '<span class="se-button se-ToolbarItem" data-command="'+cmd+'" data-tips="'+cmd+'"><span class="se-icon">'+(SubEditor.svgList[key])+'</span></span>',
+        onRender : (_editor : SubEditor, el : HTMLElement) => {
+
+          el.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            _editor.command(el.getAttribute("data-command") as string);
+            return false;
+          });
+        }
+      };
+    });
+    
+    return o;
 }

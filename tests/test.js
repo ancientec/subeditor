@@ -16,7 +16,7 @@ var initEditor1 = (opts) => {
         autoGrow : true,
         pluginList : ["fullscreen","hr", "color","source","align","text","undo","redo","indent","format","remove_format","link", "paste","list", "table","image"],
         onChange : function(change) {changeFn(change); },
-        toolbarList : ["undo","redo","text","format","link","remove_format","indent","outdent","color","backgroundcolor","align","ol","ul","image", "library","table","hr","source","fullscreen"]
+        toolbarList : ["undo","redo","nextline","text","text","text","text","|","bold","italic","underline","strikethrough","subscript","superscript","nextline","format","|","paragraph","h1","h2","h3","h4","h5","h6","blockquote","code","nextline","link","remove_format","seperator","indent","outdent","nextline","color","backgroundcolor","nextline","align","align_left","align_center","align_right","align_justify","spacer","ol","ul","nextline","image", "library","spacer","table","hr","source","spacer","spacer","spacer","fullscreen"]
     
     }, opts || {}));
 };
