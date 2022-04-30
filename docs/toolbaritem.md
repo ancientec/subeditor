@@ -132,7 +132,7 @@ By capturing the onclick event in onRender(), custom content can be created base
 
 ```
 
-### presetToolbarItem( name : string, item : Function)
+### presetToolbarItem(name : string, item : Function)
 
 This method takes a function that accepts an editor instance and returns a ToolbarItem. Item set by presetToolbarItem will have the highest priority, it shall replace the item set by plugin (registerToolbarItem) and default item with same name.   
 
