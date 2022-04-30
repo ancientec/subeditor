@@ -27,37 +27,37 @@ ToolbarItem rendered in the same order as declared in toolbarList.
 
 ### Toolbar methods
 
-#### addItem(item : ToolbarItem | string | Function)
+#### addItem(item : ToolbarItem | string | Function):
 
 Add an item into toolbar during runtime. If a function is provide, it should return a ToolbarItem object.
 
 
-#### enableShadow(allowCmds : string[])
+#### enableShadow(allowCmds : string[]):
 
 Overlay a shadow on toolbar and only show items that are allowed. For example, in source code mode, only source code icon is enabled.
 
 
-#### disableShadow()
+#### disableShadow():
 
 Hide the shadow.
 
-#### hasShadow()
+#### hasShadow():
 
 return true if the shadow is visible.
 
 
-#### hideDropdown()
+#### hideDropdown():
 
 Hide the dropdown content.
 
 
-#### insertCloseButton(itemEl : HTMLElement)
+#### insertCloseButton(itemEl : HTMLElement):
 Insert close button on top right corner to the toobar item dropdown content.
 
-#### removeCloseButton(itemEl : HTMLElement)
+#### removeCloseButton(itemEl : HTMLElement):
 Remove the inserted close button.
 
-#### adjustContentPosition(content : HTMLElement)
+#### adjustContentPosition(content : HTMLElement):
 
 If the toobar item has custom dropdown content enabled. This function will center the dropdown content to the toobar icon.
 
