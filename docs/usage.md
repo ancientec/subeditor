@@ -2,7 +2,7 @@
 
 SubEditor can be used on textarea, or inject into div.  
 
-#### 1. textarea
+#### 1. textarea:
 ```html
     <form>
         <textarea id="editorTextarea" style="width:500px;height:300px"></textarea>
@@ -27,7 +27,7 @@ new SubEditor(document.querySelector('#editorTextarea'),
 };
 ```
 
-#### 2. Inject into div, with predefined width and height(auto grow)
+#### 2. Inject into div, with predefined width and height (auto grow):
 ```html
     <div id="editorDiv">
 
@@ -57,7 +57,7 @@ new SubEditor(document.querySelector('#editorDiv'),
 };
 ```
 
-#### Value
+#### Value:
 ```js
     _subeditor.value();
 ```
