@@ -42,36 +42,36 @@ new SubEditor(elem, {cfgList : cfg});
 
 ```
 
-### image.features
+### image.features:
 
 Enable url, upload,or library features on submenu in toolbar.    
 
-### image.accept.types
+### image.accept.types:
 
 Mime types accepted for upload.     
 
 
-### image.upload.url
+### image.upload.url:
 
 The server URL for uploading files. Each request will handle one file. 
 
-### image.upload.accept.files
+### image.upload.accept.files:
 
 Limit number of files per batch, default 0 for unlimited.  
 
-### image.upload.max.size
+### image.upload.max.size:
 
 The total allowed file sizes in MB per batch.   
 
-### image.upload.max.size.per.file
+### image.upload.max.size.per.file:
 
 The maximum file size in MB per single file.   
 
-### image.upload.handler
+### image.upload.handler:
 
 This function is designed to process server repsonse after upload, and update SubEditor.
 
-#### Callback(url : string, thumb : string, obj : any, elFunc : Function | undefined)
+#### Callback (url : string, thumb : string, obj : any, elFunc : Function | undefined):
 
 - url: the url of uploaded file
 - thumb(optional): thumbnail url of uploaded file
