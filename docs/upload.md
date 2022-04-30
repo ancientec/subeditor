@@ -71,7 +71,7 @@ The maximum file size in MB per single file.
 
 This function is designed to process server repsonse after upload, and update SubEditor.
 
-#### Callback (url : string, thumb : string, obj : any, elFunc : Function | undefined):
+#### Callback(url : string, thumb : string, obj : any, elFunc : Function | undefined):
 
 - url: the url of uploaded file
 - thumb(optional): thumbnail url of uploaded file
