@@ -19,7 +19,7 @@ A plugin in SubEditor is an array of events registered under a string name. To u
 - **table**: create table
 - **image**: allow to create image by url, upload or view in a library. This plugin require additional configuration and server side support, please visit: [image plugin page](/image_plugin.html) for details.
 
-### Developing Custom Plugin
+### Developing Custom Plugin:
 
 simply declare the name of the plugin (and associated toolbar) during initialization to start using.
 
@@ -42,7 +42,7 @@ var subeditor = new SubEditor(elm,  {
 ```
 
 
-### initPlugins(plugins : (SubEditorEvent[] | string)[])
+### initPlugins(plugins : (SubEditorEvent[] | string)[]):
    
 *method: non-static*   
 *params: (plugins : (SubEditorEvent[] | string)[])*  
@@ -76,7 +76,7 @@ editor.initPlugins([
 }]);
 ```
 
-### presetPlugin(pluginName : string, plugin : SubEditorEvent[])
+### presetPlugin(pluginName : string, plugin : SubEditorEvent[]):
    
 *method: static*   
 *params: (pluginName : string, plugin : SubEditorEvent[])*  
