@@ -1,6 +1,6 @@
 ### Options
 
-| key      | type | Description |
+| Key      | Type | Description |
 | ----------- | ----------- | ----------- |
 | width      | number       | width of editor, require if the supplied element is div. default use the width of the supplied textarea      |
 | height   | number        | height of editor, require if the supplied element is div. default use the height of the supplied textarea       |
