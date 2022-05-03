@@ -20,6 +20,7 @@
         "esbuild-browser": "esbuild src/browser.js --bundle --minify --outfile=dist/subeditor.min.js && esbuild src/browser.js --bundle --outfile=dist/subeditor.full.js",
         "esbuild-doc": "esbuild src/browser.js --bundle --minify --outfile=docs/js/subeditor.min.js && esbuild src/browser.js --bundle --outfile=docs/js/subeditor.full.js && node doc-scripts/doc.js doc-scripts/config.json build",
         "docs": "node doc-scripts/doc.js doc-scripts/config.json preview",
+        "test-upload" : "node example/nodejs/server.js",
         "test": "echo 'use browser to open tests/index.html'"
     },
     "devDependencies": {
