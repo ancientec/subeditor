@@ -182,9 +182,15 @@ export default class SubEditor {
         }
         return this.refContent.style.display !== "none" ? this.refContent.innerHTML : this.refTextarea.value;
     }
-    public ln(key : string) {
+    public ln(key : string, vars : (string | number)[] | undefined = undefined) {
         if(this.lnFunc) return this.lnFunc(key) || key;
-        return (typeof SubEditor.langList[this.lang] !== "undefined" && typeof SubEditor.langList[this.lang][key] !== "undefined" ? SubEditor.langList[this.lang][key] : key);
+        let translated = (typeof SubEditor.langList[this.lang] !== "undefined" && typeof SubEditor.langList[this.lang][key] !== "undefined" ? SubEditor.langList[this.lang][key] : key);
+        
+        if(vars && vars.length) {
+            vars.forEach((v, idx) => {
+                translated = translated.replace(new RegExp("{%"+(idx+1)+"}",'g'),v.toString());
+            });
+        }
     }
     public registerCallback(key : string, fn : Function) {
         this.callbackList[key] = fn;
@@ -192,7 +198,7 @@ export default class SubEditor {
     public getCallback(key : string, args : any = undefined) {
         if(typeof this.callbackList[key] === "undefined") return;
         
-        if (typeof this.callbackList[key] === "function") return this.callbackList[key](args);
+        if (typeof this.callbackList[key] === "function") return this.callbackList[key].apply(this, args);
         else return this.callbackList[key];
     }
     public static presetToolbarItem( name : string, item : Function) {
