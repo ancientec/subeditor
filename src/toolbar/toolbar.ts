@@ -215,7 +215,7 @@ export default class Toolbar {
         let xNew = rect.width / 2 - 18;//console.log("adjustContentPosition", xNew, rect.x, );
         if (rect.x - xNew < 0)
           xNew = rect.x;
-        ddcontent.setAttribute("style", "transform:translateX(-"+ xNew + "px)");
+        ddcontent.parentElement!.setAttribute("style", "transform:translateX(-"+ xNew + "px)");
       },1);
   }
   public hideDropdown(){
