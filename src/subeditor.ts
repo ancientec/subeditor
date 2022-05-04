@@ -191,6 +191,7 @@ export default class SubEditor {
                 translated = translated.replace(new RegExp("{%"+(idx+1)+"}",'g'),v.toString());
             });
         }
+        return translated;
     }
     public registerCallback(key : string, fn : Function) {
         this.callbackList[key] = fn;
