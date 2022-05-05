@@ -371,10 +371,16 @@ export default class SubEditor {
         if( this.refEl.nodeName === 'TEXTAREA' ) {
             this.refEl.setAttribute("style", this.cacheTextareaStyle);
             this.refEl.parentNode?.removeChild(this.refEditor);
+            this.refEl.classList.remove("SubEditorTextarea");
         } else {
             this.refEl.removeChild(this.refEditor);
             this.refEl.removeChild(this.refTextarea);
         }
+        //reset variable
+        this.cachedList = [];
+        this.cfgList = [];
+        this.selection = undefined;
+        this.feature = null;
         Object.keys(this.docListener).forEach(ev => {
             this.docListener[ev].forEach(i => {
                 document.removeEventListener(ev, i);
