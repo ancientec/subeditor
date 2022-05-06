@@ -78,17 +78,17 @@ http.createServer(async (req, res) => {
     bb.on('file', (name, file, info) => {
       const _Name = `uploaded-${random()}-${info.filename}`;
       result.Name = `${info.filename}`;
-      result.URL = "http://localhost:8000/upload/"+_Name;
+      result.URL = "http://localhost:"+port+"/upload/"+_Name;
         if(info.mimeType.indexOf("image/") !== -1) {
             //should be a thumbnail but not implemented here
-            result.Thumb = "http://localhost:8000/upload/"+_Name;
+            result.Thumb = "http://localhost:"+port+"/upload/"+_Name;
         }
         result.File = "/upload/"+_Name;
         result.Type = info.mimeType;
         result.Size = info.Size;
         result.Ext = path.extname(info.filename).substring(1);
-        const saveTo = path.join("upload/", _Name);
-        fs.writeFileSync("upload/"+_Name+".json", JSON.stringify(result));
+        const saveTo = path.join(__dirname+"/upload/", _Name);
+        fs.writeFileSync(__dirname+"/upload/"+_Name+".json", JSON.stringify(result));
         file.pipe(fs.createWriteStream(saveTo));
     });
     bb.on('close', () => {
@@ -106,11 +106,11 @@ http.createServer(async (req, res) => {
     return;
   }
   //render image:
-  if(req.method === "GET" && req.url.indexOf("/upload/") === 0 && fs.existsSync("."+req.url)) {
+  if(req.method === "GET" && req.url.indexOf("/upload/") === 0 && fs.existsSync(__dirname+"/"+req.url)) {
     //get the mimetype
-    const result = JSON.parse(fs.readFileSync("."+req.url+".json"));
+    const result = JSON.parse(fs.readFileSync(__dirname+"/"+req.url+".json"));
     // read file from file system
-    fs.readFile("."+req.url, function(err, data){
+    fs.readFile(__dirname+"/"+req.url, function(err, data){
         if(err){
           res.statusCode = 500;
           res.end(`Error getting the file: ${err}.`);
