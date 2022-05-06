@@ -52,6 +52,9 @@ export default {
     "please select the appropriate file types:" : "please select the appropriate file types:",
     "max allowed size per file should be " : "max allowed size per file should be ",
     "max allowed size of all files in total should be " : "max allowed size of all files in total should be ",
+    "cannot drop files to content when image upload toolbar is active" :  "cannot drop files to content when image upload toolbar is active",
+    "another upload is in progress" : "another upload is in progress",
+    "Cannot upload more than {%1} files" : "Cannot upload more than {%1} files",
     "UPLOADING..." : "UPLOADING...",
     "START OVER" : "START OVER"
     

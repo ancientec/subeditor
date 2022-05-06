@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 .SubEditor {border:1px solid #dbdbdb;background-color: #fff;position: relative;}
-.SubEditorContentContainer {overflow-y: auto;padding:10px;}
+.SubEditorContentContainer {overflow-y: auto;padding:10px;position: relative;}
 
 .SubEditor.AutoGrow {height: auto;}
 .SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}

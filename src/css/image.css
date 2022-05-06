@@ -2,6 +2,8 @@
 .SubEditorToolbar .se-dropdown-content .uploadcontainer strong{position:absolute;top:50%;transform: translateY(-50%);display: block;width: 100%;text-align: center;}
 .SubEditorToolbar .se-dropdown-content .uploadcontainer input{position: absolute;top:0;left:0;width: 100%;height: 100%;opacity: 0;}
 
+.UploadProgressBar {position:absolute;top:0;left:0;background:rgb(244,67,54,0.7);width:0%;height:1px;border:none;}
+.UploadProgressError {position:absolute;top:0;left:0;width:100%;color:rgb(244,67,54,0.7);text-align: center;}
 .FileTileImageGridContainer {
 	max-height: calc(100vh - 140px);
 	margin-bottom:0px;

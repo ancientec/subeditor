@@ -22,7 +22,7 @@ function dataURItoBlob(dataURI) {
 async function testURL() {
     try{
         urlTest = await fetch(url);
-        urlTest.text().then(function (text) {console.log("text");
+        urlTest.text().then(function (text) {
             if(text === "ready for test") {
                 allowImageTests();
             }
@@ -31,6 +31,74 @@ async function testURL() {
     }
 }
 testURL();
+
+describe('image link', () => {
+    it('should allow image link when feature is empty', () => {
+        editor2.setCfg("image.features", []);
+        //should allow image link
+        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+        btn.click();
+        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content label").innerHTML).equal(editor2.ln("image url"));
+        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .close-dropdown").click();
+    });
+    it('should allow only image link', () => {
+        editor2.setCfg("image.features", ["url"]);
+        //should allow image link
+        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+        btn.click();
+        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content label").innerHTML).equal(editor2.ln("image url"));
+        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .close-dropdown").click();
+    });
+    it('insert image link', () => {
+        editor2.refContent.innerHTML = "";
+        editor2.setCfg("image.features", ["url"]);
+        //should allow image link
+        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+        btn.click();
+        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content input").value = "https://picsum.photos/id/0/5616/3744";
+        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content button.insert").click();
+        chai.expect(editor2.value()).equal('<img data-action="url" src="https://picsum.photos/id/0/5616/3744" style="max-width:100%"><br>');
+    });
+    it('insert image link outside code', () => {
+        editor2.refContent.innerHTML = "<pre><code>abc</code></pre>";
+        editor2.selection = null;
+        var sel = document.getSelection();
+        sel.removeAllRanges();
+        var range = document.createRange();
+        range.setStart(editor2.refContent.querySelector("code").firstChild, 0);
+        range.setEnd(editor2.refContent.querySelector("code").firstChild, 0);
+        sel.addRange(range);
+        editor2.setCfg("image.features", ["url"]);
+        //should allow image link
+        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+        btn.click();
+        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content input").value = "https://picsum.photos/id/0/5616/3744";
+        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content button.insert").click();
+        chai.expect(editor2.value()).equal('<pre><code>abc</code></pre><img data-action="url" src="https://picsum.photos/id/0/5616/3744" style="max-width:100%"><br>');
+    });
+    it('should have upload feature icon', () => {
+        editor2.setCfg("image.features", ["url","upload"]);
+        editor2.setCfg("image.upload.url", () => {});
+        //should allow image link
+        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+        btn.click();
+        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='upload']")).not.equal(null);
+
+        editor2.toolbar.hideDropdown();
+    });
+    it('should have library feature icon', () => {
+        editor2.setCfg("image.features", ["url","library"]);
+        editor2.setCfg("image.library.fetch", () => {});
+        //should allow image link
+        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+        btn.click();
+        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='library']")).not.equal(null);
+
+        editor2.toolbar.hideDropdown();
+    });
+
+    
+});
 
 function allowImageTests() {
     describe('image', function() {
@@ -58,14 +126,18 @@ function allowImageTests() {
             input._mockfiles = [file,file_a];
             input.dispatchEvent(new Event('change'));
 
+            editor2.cachedList["image.upload.insert.list"] = [];
+
             var completed = () => {
+                
                 editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
-                chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.result.list"][0].url+'" target="_blank">foo.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.result.list"][1].url+'" style="max-width:100%"><br>');
+                chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.insert.list"][0].url+'" target="_blank">foo.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.insert.list"][1].url+'" style="max-width:100%"><br>');
+                //console.log("image.upload.total.size", editor2.getCallback("image.upload.total.size"));
                 done();
             }
 
             var x = setInterval(() => {
-                if(editor2.cachedList["image.upload.result.list"].length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                if(editor2.refToolbar.querySelectorAll(".FileTileImageGrid button.completed").length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
                     clearInterval(x);
                     completed();
                 }
@@ -119,23 +191,14 @@ function allowImageTests() {
         var input = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer input");
         input._mockfiles = [file, file2];
         input.dispatchEvent(new Event('change'));
-
-        var completed = () => {
-            editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
-            chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.result.list"][0].url+'" target="_blank">foox.txt</a><br>');
-            done();
-        }
-
-        var x = setInterval(() => {
-            if(editor2.cachedList["image.upload.result.list"].length === 1 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
-                clearInterval(x);
-                completed();
-            }
-        }, 200);
+        editor2.cachedList["image.upload.insert.list"] = [];
+        chai.expect(editor2.refToolbar.querySelector('#dropdown-menu-image .se-dropdown-content .uploadcontainer strong').innerHTML).to.equal('<small>Cannot upload more than 1 files. </small>');
+        done();
             
         });
         it('should show allow upload tile button', function(done) {
             editor2.refContent.innerHTML = "";
+            editor2.cachedList["image.upload.insert.list"] = [];
                 editor2.setCfg("image.features", ["url", "upload"]);
                 editor2.setCfg("image.upload.url", url);
                 editor2.setCfg("image.upload.accept.files", 3);//accept 3 file
@@ -172,20 +235,30 @@ function allowImageTests() {
                 }
                 this.timeout(8000);
                 var x = setInterval(() => {
-                    if(editor2.cachedList["image.upload.result.list"].length === 1 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
-                        completed();
+                    
+                    if(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                        switch(editor2.refToolbar.querySelectorAll(".FileTileImageGrid button.completed").length) {
+                            case 1:
+                                try{completed();}catch(e){console.log(e);}
+                            break;
+                            case 2:
+                                try{completed2();}catch(e){console.log(e);}
+                            break;
+                            case 3:
+                                clearInterval(x);
+                                try{setTimeout(completed3, 10);}catch(e){console.log(e);}
+                            
+                            break;
+                            default:
+                            break;
+                        }
                     }
-                    if(editor2.cachedList["image.upload.result.list"].length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
-                        completed2();
-                    }
-                    if(editor2.cachedList["image.upload.result.list"].length === 3 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
-                        clearInterval(x);
-                        setTimeout(completed3, 10);
-                    }
+                    
                 }, 200);
         });
         it('should allow drop files', (done) => {
             editor2.refContent.innerHTML = "";
+            editor2.cachedList["image.upload.insert.list"] = [];
             editor2.setCfg("image.features", ["url", "upload"]);
             editor2.setCfg("image.upload.url", url);
             editor2.setCfg("image.upload.accept.files", 0);
@@ -210,13 +283,14 @@ function allowImageTests() {
             dropEL.dispatchEvent(evt);
     
             var completed = () => {
+                
                 editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
-                chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.result.list"][0].url+'" target="_blank">foox.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.result.list"][1].url+'" style="max-width:100%"><br>');
+                chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.insert.list"][0].url+'" target="_blank">foox.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.insert.list"][1].url+'" style="max-width:100%"><br>');
                 done();
             }
     
             var x = setInterval(() => {
-                if(editor2.cachedList["image.upload.result.list"].length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                if(editor2.refToolbar.querySelectorAll(".FileTileImageGrid button.completed").length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
                     clearInterval(x);
                     completed();
                 }
@@ -225,6 +299,7 @@ function allowImageTests() {
         });
         it('should use custom el function', (done) => {
                 editor2.refContent.innerHTML = "";
+                editor2.cachedList["image.upload.insert.list"] = [];
                 editor2.setCfg("image.features", ["url", "upload"]);
                 editor2.setCfg("image.upload.url", url);
                 editor2.setCfg("image.upload.accept.files", 0);
@@ -266,21 +341,23 @@ function allowImageTests() {
                 dropEL.dispatchEvent(evt);
         
                 var completed = () => {
-                    editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
-                    chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.result.list"][0].url+'" target="_blank" data-test="1">foox.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.result.list"][1].url+'" style="max-width:100%" data-test="1"><br>');
+                    chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.insert.list"][0].url+'" target="_blank" data-test="1">foox.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.insert.list"][1].url+'" style="max-width:100%" data-test="1"><br>');
                     done();
                 }
         
                 var x = setInterval(() => {
-                    if(editor2.cachedList["image.upload.result.list"].length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                    if(editor2.refToolbar.querySelectorAll(".FileTileImageGrid button.completed").length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
                         clearInterval(x);
                         completed();
+                       
                     }
                 }, 200);
                     
         });
         it('upload should rewrite handler', (done) => {
                 editor2.refContent.innerHTML = "";
+                editor2.cachedList["image.upload.insert.list"] = [];
                 editor2.setCfg("image.features", ["url", "upload"]);
                 editor2.setCfg("image.url.rewrite.handler", (u) => { return u.replace('http://','//').replace('https://','//')});
                 editor2.setCfg("image.upload.url", url);
@@ -306,17 +383,17 @@ function allowImageTests() {
                 dropEL.dispatchEvent(evt);
                 var completed = () => {
                     editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
-                    chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.result.list"][0].url+'" target="_blank">bar.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.result.list"][1].url+'" style="max-width:100%"><br>');
-                    chai.expect(editor2.cachedList["image.upload.result.list"][0].url.indexOf("//")).equal(0);
-                    chai.expect(editor2.cachedList["image.upload.result.list"][1].url.indexOf("//")).equal(0);
+                    chai.expect(editor2.value()).equal('<a data-action="upload" href="'+editor2.cachedList["image.upload.insert.list"][0].url+'" target="_blank">bar.txt</a><br><img data-action="upload" src="'+editor2.cachedList["image.upload.insert.list"][1].url+'" style="max-width:100%"><br>');
+                    chai.expect(editor2.cachedList["image.upload.insert.list"][0].url.indexOf("//")).equal(0);
+                    chai.expect(editor2.cachedList["image.upload.insert.list"][1].url.indexOf("//")).equal(0);
                     done();
                 }
 
                 var x = setInterval(() => {
                     
-                    if(editor2.cachedList["image.upload.result.list"].length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                    if(editor2.refToolbar.querySelectorAll(".FileTileImageGrid button.completed").length === 2 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
                         clearInterval(x);
-                        completed();
+                        try{ completed();}catch(e){console.log(e);}
                     }
                 }, 200);
                 
@@ -358,6 +435,7 @@ function allowImageTests() {
         });
         it('upload limit total size', (done) => {
             editor2.refContent.innerHTML = "";
+            editor2.cachedList["image.upload.insert.list"] = [];
             editor2.setCfg("image.features", ["url", "upload"]);
             editor2.setCfg("image.url.rewrite.handler", (u) => { return u.replace('http://','//').replace('https://','//')});
             editor2.setCfg("image.upload.url", url);
@@ -386,7 +464,7 @@ function allowImageTests() {
             const txt = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer strong");
             
             chai.expect(txt.innerHTML).equal('<small>max allowed size of all files in total should be  0.00000762939453125MB. </small>');
-
+            editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .se-button").click();
             done();
         });
         it('upload limit per file size', (done) => {
@@ -421,6 +499,9 @@ function allowImageTests() {
             chai.expect(txt.innerHTML).equal('<small>max allowed size per file should be  0.00000476837158203125MB. </small>');
 
             done();
+            //reset
+            editor2.setCfg("image.upload.max.size", 0);
+            editor2.setCfg("image.upload.max.size.per.file", 0);
         });
         it('load library', (done) => {
             editor2.refContent.innerHTML = "";
@@ -780,72 +861,445 @@ function allowImageTests() {
             btn.parentElement.parentElement.querySelector('.se-button[data-command=library]').click();
             
         });
+
+        it('upload calculate total size', (done) => {
+            editor2.cachedList["image.upload.insert.list"] = [];
+            editor2.refContent.innerHTML = "";
+            editor2.setCfg("image.features", ["url", "upload"]);
+            editor2.setCfg("image.url.rewrite.handler", (u) => { return u.replace('http://','//').replace('https://','//')});
+            editor2.setCfg("image.upload.url", url);
+            editor2.setCfg("image.upload.accept.files", 0);
+            editor2.setCfg("image.upload.max.size", 0);//8 / 1048576
+            editor2.setCfg("image.upload.max.size.per.file", 5 / 1048576);
+            editor2.setCfg("image.upload.handler", (file, responseText, callback) => {
+                var o = JSON.parse(responseText);
+                callback(o.URL, o.Thumb, o);
+            });
+            editor2.setCfg("image.accept.types", "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp");
+    
+            var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+            btn.click();
+            editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='upload']").click();
+            //should allow image link
+            var file = new File(["1"], "1.txt", {
+                type: "text/plain",
+            }), file2 = new File(["12"], "2.txt", {
+                type: "text/plain",
+            });
+            var dropEL = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer");
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2,new File(["123"], "3.txt", {
+                type: "text/plain",
+            }),new File(["1234"], "4.png", {
+                type: "image/png",
+            }),new File(["12345"], "5.txt", {
+                type: "text/plain",
+            })]};
+            dropEL.dispatchEvent(evt);
+    
+            var completed = () => {
+                try{
+                    chai.expect(editor2.getCallback("image.upload.total.size")).equal(1+2+3+4+5);
+                    editor2.cachedList["image.upload.insert.list"][3].domEl.parentElement.removeChild(editor2.cachedList["image.upload.insert.list"][3].domEl);
+                    chai.expect(editor2.getCallback("image.upload.total.size")).equal(1+2+3+5);
+                    editor2.cachedList["image.upload.insert.list"][2].domEl.parentElement.removeChild(editor2.cachedList["image.upload.insert.list"][2].domEl);
+                    
+                    chai.expect(editor2.getCallback("image.upload.total.size")).equal(1+2+5);
+                    editor2.setCfg("image.upload.max.size", 8 / 1048576);
+
+                    editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]').click();
+                    editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='upload']").click();
+                    //should allow image link
+            
+                    dropEL = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer");
+                    evt = new Event('drop');
+                    evt.dataTransfer = {files : [new File(["bar"], "bar.txt", {
+                        type: "text/plain",
+                    })]};
+                    dropEL.dispatchEvent(evt);
+                    const txt = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer strong");
+                    chai.expect(txt.innerHTML).equal('<small>max allowed size of all files in total should be  0.00000762939453125MB. </small>');
+
+                    editor2.setCfg("image.upload.max.size", 0);
+                    editor2.setCfg("image.upload.max.size.per.file", 0);
+                    editor2.cachedList["image.upload.insert.list"] = [];
+                    editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .se-button").click();
+                    done();
+                }catch(e) {console.log(e);}
+                
+                
+            }
+    
+            var x = setInterval(() => {
+                if(editor2.refToolbar.querySelectorAll(".FileTileImageGrid button.completed").length === 5 && editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").innerHTML === editor2.ln("insert")) {
+                    editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .FileTileImageGridFooter .insert").click();
+                    clearInterval(x);
+                    completed();
+                }
+            }, 200);
+            
+        });
+
+        it('upload max files', (done) => {
+            //continue from above:
+            editor2.setCfg("image.upload.max.files", 3);
+
+            var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
+            btn.click();
+            editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='upload']").click();
+            //should allow image link
+            var file = new File(["1"], "1.txt", {
+                type: "text/plain",
+            }), file2 = new File(["12"], "2.txt", {
+                type: "text/plain",
+            });
+            var dropEL = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer");
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2,new File(["123"], "3.txt", {
+                type: "text/plain",
+            }),new File(["1234"], "4.png", {
+                type: "image/png",
+            }),new File(["12345"], "5.txt", {
+                type: "text/plain",
+            })]};
+            dropEL.dispatchEvent(evt);
+            const txt = editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .uploadcontainer strong");
+            chai.expect(txt.innerHTML).equal('<small>Cannot upload more than 3 files. </small>');
+            editor2.setCfg("image.upload.max.size", 0);
+            editor2.setCfg("image.upload.max.size.per.file", 0);
+            editor2.setCfg("image.upload.max.files", 0);
+            editor2.cachedList["image.upload.insert.list"] = [];
+            editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .se-button").click();
+            done();
+
+            
+        });
+        it('should allow dropping files to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 0,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+    
+            var completed = () => {
+                chai.expect(editor2.cachedList["image.upload.insert.list"][0].name).equal('foox.txt');
+                chai.expect(editor2.cachedList["image.upload.insert.list"][1].name).equal('a.png');
+                const val = editor2.value();
+                
+                chai.expect(val).to.include('<a data-action="upload" href="'+editor2.cachedList["image.upload.insert.list"][0].url+'" target="_blank">foox.txt</a>');
+                chai.expect(val).to.include('<img data-action="upload" src="'+editor2.cachedList["image.upload.insert.list"][1].url+'" style="max-width:100%">');
+                done();
+            }
+    
+            var x = setInterval(() => {
+                if(editor2.cachedList["image.upload.insert.list"].length === 2) {
+                    clearInterval(x);
+                    try{completed();}catch(e){console.log(e);}
+                    
+                }
+            }, 200);
+                
+        });
+        it('should reject dropping file type to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 0,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.pdf", {
+                type: "application/pdf",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+            chai.expect(editor2.refContent.parentElement.querySelector(".UploadProgressError").innerHTML).to.equal('please select the appropriate file types: text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp. <br>');
+            done();
+                
+        });
+        it('should limit dropping number of files to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 1,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+            chai.expect(editor2.refContent.parentElement.querySelector(".UploadProgressError").innerHTML).to.equal('Cannot upload more than 1 files. <br>');
+            done();
+                
+        });
+        it('should limit dropping max files to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.max.files" : 2,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+    
+            var completed = () => {
+                chai.expect(editor2.cachedList["image.upload.insert.list"][0].name).equal('foox.txt');
+                chai.expect(editor2.cachedList["image.upload.insert.list"][1].name).equal('a.png');
+                //drop again should failed
+                evt = new Event('drop');
+                evt.dataTransfer = {files : [file,file2]};
+                editor2.refContent.dispatchEvent(evt);
+                chai.expect(editor2.refContent.parentElement.querySelector(".UploadProgressError").innerHTML).to.equal('Cannot upload more than 2 files. <br>');
+                done();
+            }
+    
+            var x = setInterval(() => {
+                if(editor2.cachedList["image.upload.insert.list"].length === 2) {
+                    clearInterval(x);
+                    try{completed();}catch(e){console.log(e);}
+                    
+                }
+            }, 200);
+                
+        });
+
+        it('should limit dropping exceeding upload size per file to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 0,
+                "image.upload.max.size" : 0,//10 / 1048576,
+                "image.upload.max.size.per.file" : 5 / 1048576,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+            chai.expect(editor2.refContent.parentElement.querySelector(".UploadProgressError").innerHTML).to.equal('max allowed size per file should be  0.00000476837158203125MB. <br>');
+            done();
+
+        });
+        it('should limit dropping exceeding total upload file size to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 0,
+                "image.upload.max.size" : 10 / 1048576,
+                "image.upload.max.size.per.file" : 0,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+            chai.expect(editor2.refContent.parentElement.querySelector(".UploadProgressError").innerHTML).to.equal('max allowed size of all files in total should be  0.0000095367431640625MB.  <br>');
+            done();
+
+        });
+        it('should allow custom el function when dropping files to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 0,
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o, () => {
+                        if(o.Type.indexOf("image/") !== -1) {
+                            const _node = document.createElement("img");
+                            _node.setAttribute("data-action", "upload");
+                            _node.setAttribute("src", o.URL);
+                            _node.setAttribute("style","max-width:100%");
+                            _node.setAttribute("data-test", "1");
+                            return _node;
+                        } else {
+                            const _node = document.createElement("a");
+                            _node.setAttribute("data-action", "upload");
+                            _node.setAttribute("href", o.URL);
+                            _node.setAttribute("target","_blank");
+                            _node.setAttribute("data-test", "1");
+                            _node.innerHTML = "foox.txt";
+                            return _node;
+                        }
+                    });
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+    
+            var completed = () => {
+                chai.expect(editor2.cachedList["image.upload.insert.list"][0].name).equal('foox.txt');
+                chai.expect(editor2.cachedList["image.upload.insert.list"][1].name).equal('a.png');
+                const val = editor2.value();
+                chai.expect(val).to.include('<a data-action="upload" href="'+editor2.cachedList["image.upload.insert.list"][0].url+'" target="_blank" data-test="1">foox.txt</a>');
+                chai.expect(val).to.include('<img data-action="upload" src="'+editor2.cachedList["image.upload.insert.list"][1].url+'" style="max-width:100%" data-test="1">');
+                done();
+            }
+    
+            var x = setInterval(() => {
+                if(editor2.cachedList["image.upload.insert.list"].length === 2) {
+                    clearInterval(x);
+                    try{completed();}catch(e){console.log(e);}
+                    
+                }
+            }, 200);
+                
+        });
+        it('should allow url rewrite when dropping files to content', (done) => {
+            editor2.changeValue("");
+            editor2.cachedList["image.upload.insert.list"] = [];
+            destroyEditor2();
+            initEditor2({cfgList : {
+                "image.features" : ["url", "upload"],
+                "image.upload.url" : url,
+                "image.drop.to.content.upload" : true,
+                "image.upload.accept.files" : 0,
+                "image.url.rewrite.handler" : (u) => { return u.replace('http://','//').replace('https://','//')},
+                "image.accept.types" : "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp",
+                "image.upload.handler" : (file, responseText, callback) => {
+                    var o = JSON.parse(responseText);
+                    callback(o.URL, o.Thumb, o);
+                }
+            }})
+            
+    
+            //should allow image link
+            var file = new File(["foo"], "foox.txt", {
+                type: "text/plain",
+            }), file2 = new File([dataURItoBlob(pngA)], "a.png", {
+                type: "image/png",
+            });
+            var evt = new Event('drop');
+            evt.dataTransfer = {files : [file,file2]};
+            editor2.refContent.dispatchEvent(evt);
+    
+            var completed = () => {
+
+                chai.expect(editor2.cachedList["image.upload.insert.list"][0].url.indexOf("//")).equal(0);
+                chai.expect(editor2.cachedList["image.upload.insert.list"][1].url.indexOf("//")).equal(0);
+                done();
+            }
+    
+            var x = setInterval(() => {
+                if(editor2.cachedList["image.upload.insert.list"].length === 2) {
+                    clearInterval(x);
+                    try{completed();}catch(e){console.log(e);}
+                    
+                }
+            }, 200);
+                
+        });
+
     });
+
 }
 
 
-describe('image link', () => {
-    it('should allow image link when feature is empty', () => {
-        editor2.setCfg("image.features", []);
-        //should allow image link
-        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
-        btn.click();
-        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content label").innerHTML).equal(editor2.ln("image url"));
-        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .close-dropdown").click();
-    });
-    it('should allow only image link', () => {
-        editor2.setCfg("image.features", ["url"]);
-        //should allow image link
-        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
-        btn.click();
-        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content label").innerHTML).equal(editor2.ln("image url"));
-        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content .close-dropdown").click();
-    });
-    it('insert image link', () => {
-        editor2.refContent.innerHTML = "";
-        editor2.setCfg("image.features", ["url"]);
-        //should allow image link
-        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
-        btn.click();
-        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content input").value = "https://picsum.photos/id/0/5616/3744";
-        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content button.insert").click();
-        chai.expect(editor2.value()).equal('<img data-action="url" src="https://picsum.photos/id/0/5616/3744" style="max-width:100%"><br>');
-    });
-    it('insert image link outside code', () => {
-        editor2.refContent.innerHTML = "<pre><code>abc</code></pre>";
-        editor2.selection = null;
-        var sel = document.getSelection();
-        sel.removeAllRanges();
-        var range = document.createRange();
-        range.setStart(editor2.refContent.querySelector("code").firstChild, 0);
-        range.setEnd(editor2.refContent.querySelector("code").firstChild, 0);
-        sel.addRange(range);
-        editor2.setCfg("image.features", ["url"]);
-        //should allow image link
-        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
-        btn.click();
-        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content input").value = "https://picsum.photos/id/0/5616/3744";
-        editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content button.insert").click();
-        chai.expect(editor2.value()).equal('<pre><code>abc</code></pre><img data-action="url" src="https://picsum.photos/id/0/5616/3744" style="max-width:100%"><br>');
-    });
-    it('should have upload feature icon', () => {
-        editor2.setCfg("image.features", ["url","upload"]);
-        editor2.setCfg("image.upload.url", () => {});
-        //should allow image link
-        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
-        btn.click();
-        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='upload']")).not.equal(null);
-
-        editor2.toolbar.hideDropdown();
-    });
-    it('should have library feature icon', () => {
-        editor2.setCfg("image.features", ["url","library"]);
-        editor2.setCfg("image.library.fetch", () => {});
-        //should allow image link
-        var btn = editor2.refToolbar.querySelector('button[aria-controls="dropdown-menu-image"]');
-        btn.click();
-        chai.expect(editor2.refToolbar.querySelector("#dropdown-menu-image .se-dropdown-content span[data-command='library']")).not.equal(null);
-
-        editor2.toolbar.hideDropdown();
-    });
-});
