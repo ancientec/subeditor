@@ -8,17 +8,13 @@
 */
 
 'use strict';
-import svg from "./svg";
-import css from "./css";
 import debounce from "./debounce";
 import History, { ChangeEntry } from "./history";
 import Event,{SubEditorEvent} from './event';
 import parseFeature, { Feature } from './feature';
-import dom from './dom'; 
-import lang from './lang';
-import Toolbar, { ToolbarItem } from "./toolbar/toolbar";
+import dom from './dom';
+import Toolbar, { ToolbarItem } from "./toolbar";
 import selection_serializer, { SelectionSlimState } from '@ancientec/selection-serializer';
-import presetPlugins from './plugins';
 
 export {ChangeEntry, SubEditorEvent, ToolbarItem, SelectionSlimState};
 
@@ -57,10 +53,19 @@ export default class SubEditor {
     public refToolbar! : HTMLDivElement;
     public refFooter! : HTMLDivElement;
 
-    public static version : "0.5.5";
+    public static version : string = "0.5.5";
+
+    //default and official values:
+    public static cssString : string = "";
     public static svgList : {[key: string]: string} = {};
     public static langList : {[key: string]:{[key: string]: string}} = {};
+    public static pluginList  : {[key: string]: SubEditorEvent[]} = {};
+    public static toolbarItemList : {[key: string]: Function} = {};
+
+    //user define:
     public static presetPluginList : {[key: string]: SubEditorEvent[]} = {};
+    public static presetCssString : string = "";
+
     public cfgList : {[key: string]: any} = {};
     //to store any temp variables
     public cachedList : {[key: string] : any} = {};
@@ -71,7 +76,7 @@ export default class SubEditor {
     private cacheTextareaStyle = "";
     //the last generated css string after init
     private static lastCssString = "";
-    public static presetCssString : string = "";
+    
     public static pluginCSS : {[key: string]: string} = {};
     public history : History;
     private debounceChange: () => void = () => {};
@@ -215,8 +220,8 @@ export default class SubEditor {
             if(typeof plugin === "string") {
                 if(typeof SubEditor.presetPluginList[plugin] !== "undefined" ) {
                     this.event.register(SubEditor.presetPluginList[plugin]);
-                } else if(typeof presetPlugins[plugin] !== "undefined" ) {
-                    this.event.register(presetPlugins[plugin]);
+                } else if(typeof SubEditor.pluginList[plugin] !== "undefined" ) {
+                    this.event.register(SubEditor.pluginList[plugin]);
                 }
             } else if(typeof plugin === "object" && plugin.length){
                 this.event.register(plugin);
@@ -390,14 +395,10 @@ export default class SubEditor {
     }
     public static presetLang(langList : {[key: string]:{[key: string]: string}}) {
         Object.keys(langList).forEach(ln => {
-            SubEditor.langList[ln] = Object.assign({},lang[ln] || {}, SubEditor.langList[ln] || {}, langList[ln]);
+            SubEditor.langList[ln] = Object.assign({}, SubEditor.langList[ln] || {}, langList[ln]);
         });
     }
     private static initLang(langList : {[key: string]:{[key: string]: string}}) {
-        //init preset languages
-        Object.keys(lang).forEach(ln => {
-            SubEditor.langList[ln] = Object.assign({},lang[ln], SubEditor.langList[ln] || {},  langList[ln] || {});
-        });
         // handle new languages
         if(Object.keys(langList).length > 0) SubEditor.presetLang(langList);
     }
@@ -405,7 +406,7 @@ export default class SubEditor {
         SubEditor.svgList = Object.assign(SubEditor.svgList, _svg);
     }
     private static initSvg(userSvgList : {[key: string]: string}){
-        SubEditor.svgList = Object.assign({}, svg, userSvgList);
+        SubEditor.svgList = Object.assign({}, SubEditor.svgList || {}, userSvgList);
     }
     public static presetCss(cssString : string = "") {
         SubEditor.presetCssString = cssString;
@@ -419,7 +420,7 @@ export default class SubEditor {
         if(skipCss && SubEditorStyle) return;
 
         Object.keys(SubEditor.pluginCSS).forEach(p => pluginCss += SubEditor.pluginCSS[p]);
-        const styleStr = css + "\n" + pluginCss + "\n" + SubEditor.presetCssString + "\n" + cssString;
+        const styleStr = SubEditor.cssString + "\n" + pluginCss + "\n" + SubEditor.presetCssString + "\n" + cssString;
         SubEditor.lastCssString = styleStr;
 
         for(let i = 0; i < document.styleSheets.length; i++){

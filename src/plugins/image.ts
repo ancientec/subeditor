@@ -1,6 +1,4 @@
-import SubEditor from "../subeditor";
-import { SubEditorEvent } from "../event";
-import { ToolbarItem } from "../toolbar/toolbar";
+import SubEditor,{ ToolbarItem, SubEditorEvent } from "../subeditor";
 
 //toolbar and event all together
 

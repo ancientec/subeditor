@@ -1,6 +1,6 @@
 'use strict';
 
-import SubEditor from "./main";
+import SubEditor from "./subeditor";
 
 if(typeof window !== "undefined") {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

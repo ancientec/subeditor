@@ -1,24 +1,5 @@
 
-import color from './color';
-import blockquote from './blockquote';
-import format from './format';
-import fullscreen from './fullscreen';
-import align from './align';
-import table from './table';
-import hr from './hr';
-import source from './source';
-import text from './text';
-import undo from './undo';
-import redo from './redo';
-import indent from './indent';
-import remove_format from './remove_format';
-import link from './link';
-import remove_link from './remove_link';
-import list from './list';
-import seperator from './seperator';
-import nextline from './nextline';
-import spacer from './spacer';
-import SubEditor from '../subeditor';
+import SubEditor from './subeditor';
 
 export interface ToolbarItem {
   command : string;
@@ -29,16 +10,14 @@ export interface ToolbarItem {
 }
 
 
-
-export function ToolbarPresets(editor : SubEditor) {
-  return Object.assign({}, undo(editor), redo(editor), color(editor),blockquote(editor),format(editor),fullscreen(editor),align(editor), table(editor), hr(editor), source(editor), text(editor), indent(editor),remove_format(editor), link(editor), remove_link(editor), list(editor), seperator(editor), nextline(editor), spacer(editor));
-}
 export default class Toolbar {
   public editor : SubEditor;
   public refToolbar : HTMLDivElement = document.createElement("div");
   public refShadow : HTMLDivElement = document.createElement("div");
   public refTips : HTMLDivElement = document.createElement("div");
+  //toolbarItem defined by user using SubEditor.presetToolbarItem:
   public static presetItemList : {[key: string]: Function} = {};
+  //toolbarItem defined in plugins:
   public pluginItemList : {[key: string]: ToolbarItem} = {};
   public renderButton = (item : ToolbarItem) => {
     if(!item.command || !item.svg) return "";
@@ -68,11 +47,14 @@ export default class Toolbar {
   public addItem(item : ToolbarItem | string | Function) {
     
     let barItem : ToolbarItem | undefined = undefined;
-    const presets = ToolbarPresets(this.editor);
     if(typeof item === "string") {
       if(typeof Toolbar.presetItemList[item] === "function") barItem = Toolbar.presetItemList[item](this.editor) as ToolbarItem;
       else if(typeof this.pluginItemList[item] !== "undefined") barItem = this.pluginItemList[item];
-      else if(typeof presets[item] !== "undefined") barItem = presets[item];
+      else if(typeof SubEditor.toolbarItemList[item] !== "undefined") {
+        const defaultItem = SubEditor.toolbarItemList[item](this.editor);
+        if(typeof defaultItem[item] !== "undefined") barItem = defaultItem[item];
+        else return;//plugin function failed to return the correct format
+      }
       else return;
     } else if(typeof item === "function") barItem = item(this.editor);
 
