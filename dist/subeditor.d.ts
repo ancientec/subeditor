@@ -1,7 +1,7 @@
 import History, { ChangeEntry } from "./history";
 import Event, { SubEditorEvent } from './event';
 import { Feature } from './feature';
-import Toolbar, { ToolbarItem } from "./toolbar/toolbar";
+import Toolbar, { ToolbarItem } from "./toolbar";
 import { SelectionSlimState } from '@ancientec/selection-serializer';
 export { ChangeEntry, SubEditorEvent, ToolbarItem, SelectionSlimState };
 export interface SubEditorHTMLElement extends HTMLElement {
@@ -39,7 +39,8 @@ export default class SubEditor {
     refContent: HTMLDivElement;
     refToolbar: HTMLDivElement;
     refFooter: HTMLDivElement;
-    static version: "0.5.5";
+    static version: string;
+    static cssString: string;
     static svgList: {
         [key: string]: string;
     };
@@ -48,9 +49,16 @@ export default class SubEditor {
             [key: string]: string;
         };
     };
+    static pluginList: {
+        [key: string]: SubEditorEvent[];
+    };
+    static toolbarItemList: {
+        [key: string]: Function;
+    };
     static presetPluginList: {
         [key: string]: SubEditorEvent[];
     };
+    static presetCssString: string;
     cfgList: {
         [key: string]: any;
     };
@@ -63,7 +71,6 @@ export default class SubEditor {
     private lnFunc?;
     private cacheTextareaStyle;
     private static lastCssString;
-    static presetCssString: string;
     static pluginCSS: {
         [key: string]: string;
     };
@@ -136,7 +143,7 @@ export default class SubEditor {
      * @returns html string value
      */
     value(): string;
-    ln(key: string): any;
+    ln(key: string, vars?: (string | number)[] | undefined): any;
     registerCallback(key: string, fn: Function): void;
     getCallback(key: string, args?: any): any;
     static presetToolbarItem(name: string, item: Function): void;

@@ -81,7 +81,7 @@ current version (static). In case of breaking changes, plugin developer can use 
 
 ```js
 console.log(SubEditor.version);
-//0.5.0
+//0.6.0
 ```
 
 ### svgList

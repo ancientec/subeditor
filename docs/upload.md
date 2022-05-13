@@ -29,9 +29,11 @@ var cfg = {};
 cfg["image.features"] = ["url","upload","library"];
 cfg["image.accept.types"] = "text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp";
 cfg["image.upload.url"] = "upload.php";
+cfg["image.drop.to.content.upload"] =  true;
 cfg["image.upload.accept.files"] =  0;
 cfg["image.upload.max.size"] = 2.5;
 cfg["image.upload.max.size.per.file"] = 0.5;
+cfg["image.upload.max.files"] = 3;
 cfg["image.upload.handler"] =  (file, responseText, callback) => {
     var o = JSON.parse(responseText);
     callback(o.URL, o.Thumb, o, () => {return elFunc(o)});
@@ -44,7 +46,11 @@ new SubEditor(elem, {cfgList : cfg});
 
 ### image.features
 
-Enable url, upload,or library features on submenu in toolbar.    
+Enable url, upload,or library features on submenu in toolbar.   
+
+### image.drop.to.content.upload
+
+Whether to allow uploading when directly dropping files into content. (true = allow, default=false)
 
 ### image.accept.types
 
@@ -57,15 +63,19 @@ The server URL for uploading files. Each request will handle one file.
 
 ### image.upload.accept.files
 
-Limit number of files per batch, default 0 for unlimited.  
+Limit number of files per batch, default 0 for unlimited. This value limits the number of files to be selected or dropped per batch.   
 
 ### image.upload.max.size
 
-The total allowed file sizes in MB per batch.   
+The total allowed file sizes in MB per batch. This value will also take into account of the existing uploaded files in content. By removing the element(link or image) from content will reduce the total uploaded size.   
 
 ### image.upload.max.size.per.file
 
 The maximum file size in MB per single file.   
+
+### image.upload.max.files
+
+The maximum number of uploaded files to be included in content. This value takes into account of currently existing uploaded files in content, by removing the element(link or image) from content will reduce the number count.
 
 ### image.upload.handler
 

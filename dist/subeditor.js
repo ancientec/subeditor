@@ -11,17 +11,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const svg_1 = __importDefault(require("./svg"));
-const css_1 = __importDefault(require("./css"));
 const debounce_1 = __importDefault(require("./debounce"));
 const history_1 = __importDefault(require("./history"));
 const event_1 = __importDefault(require("./event"));
 const feature_1 = __importDefault(require("./feature"));
 const dom_1 = __importDefault(require("./dom"));
-const lang_1 = __importDefault(require("./lang"));
-const toolbar_1 = __importDefault(require("./toolbar/toolbar"));
+const toolbar_1 = __importDefault(require("./toolbar"));
 const selection_serializer_1 = __importDefault(require("@ancientec/selection-serializer"));
-const plugins_1 = __importDefault(require("./plugins"));
 class SubEditor {
     constructor(el, opts) {
         var _a;
@@ -126,10 +122,16 @@ class SubEditor {
         }
         return this.refContent.style.display !== "none" ? this.refContent.innerHTML : this.refTextarea.value;
     }
-    ln(key) {
+    ln(key, vars = undefined) {
         if (this.lnFunc)
             return this.lnFunc(key) || key;
-        return (typeof SubEditor.langList[this.lang] !== "undefined" && typeof SubEditor.langList[this.lang][key] !== "undefined" ? SubEditor.langList[this.lang][key] : key);
+        let translated = (typeof SubEditor.langList[this.lang] !== "undefined" && typeof SubEditor.langList[this.lang][key] !== "undefined" ? SubEditor.langList[this.lang][key] : key);
+        if (vars && vars.length) {
+            vars.forEach((v, idx) => {
+                translated = translated.replace(new RegExp("{%" + (idx + 1) + "}", 'g'), v.toString());
+            });
+        }
+        return translated;
     }
     registerCallback(key, fn) {
         this.callbackList[key] = fn;
@@ -138,7 +140,7 @@ class SubEditor {
         if (typeof this.callbackList[key] === "undefined")
             return;
         if (typeof this.callbackList[key] === "function")
-            return this.callbackList[key](args);
+            return this.callbackList[key].apply(this, args);
         else
             return this.callbackList[key];
     }
@@ -154,8 +156,8 @@ class SubEditor {
                 if (typeof SubEditor.presetPluginList[plugin] !== "undefined") {
                     this.event.register(SubEditor.presetPluginList[plugin]);
                 }
-                else if (typeof plugins_1.default[plugin] !== "undefined") {
-                    this.event.register(plugins_1.default[plugin]);
+                else if (typeof SubEditor.pluginList[plugin] !== "undefined") {
+                    this.event.register(SubEditor.pluginList[plugin]);
                 }
             }
             else if (typeof plugin === "object" && plugin.length) {
@@ -306,11 +308,17 @@ class SubEditor {
         if (this.refEl.nodeName === 'TEXTAREA') {
             this.refEl.setAttribute("style", this.cacheTextareaStyle);
             (_a = this.refEl.parentNode) === null || _a === void 0 ? void 0 : _a.removeChild(this.refEditor);
+            this.refEl.classList.remove("SubEditorTextarea");
         }
         else {
             this.refEl.removeChild(this.refEditor);
             this.refEl.removeChild(this.refTextarea);
         }
+        //reset variable
+        this.cachedList = [];
+        this.cfgList = [];
+        this.selection = undefined;
+        this.feature = null;
         Object.keys(this.docListener).forEach(ev => {
             this.docListener[ev].forEach(i => {
                 document.removeEventListener(ev, i);
@@ -320,14 +328,10 @@ class SubEditor {
     }
     static presetLang(langList) {
         Object.keys(langList).forEach(ln => {
-            SubEditor.langList[ln] = Object.assign({}, lang_1.default[ln] || {}, SubEditor.langList[ln] || {}, langList[ln]);
+            SubEditor.langList[ln] = Object.assign({}, SubEditor.langList[ln] || {}, langList[ln]);
         });
     }
     static initLang(langList) {
-        //init preset languages
-        Object.keys(lang_1.default).forEach(ln => {
-            SubEditor.langList[ln] = Object.assign({}, lang_1.default[ln], SubEditor.langList[ln] || {}, langList[ln] || {});
-        });
         // handle new languages
         if (Object.keys(langList).length > 0)
             SubEditor.presetLang(langList);
@@ -336,7 +340,7 @@ class SubEditor {
         SubEditor.svgList = Object.assign(SubEditor.svgList, _svg);
     }
     static initSvg(userSvgList) {
-        SubEditor.svgList = Object.assign({}, svg_1.default, userSvgList);
+        SubEditor.svgList = Object.assign({}, SubEditor.svgList || {}, userSvgList);
     }
     static presetCss(cssString = "") {
         SubEditor.presetCssString = cssString;
@@ -350,7 +354,7 @@ class SubEditor {
         if (skipCss && SubEditorStyle)
             return;
         Object.keys(SubEditor.pluginCSS).forEach(p => pluginCss += SubEditor.pluginCSS[p]);
-        const styleStr = css_1.default + "\n" + pluginCss + "\n" + SubEditor.presetCssString + "\n" + cssString;
+        const styleStr = SubEditor.cssString + "\n" + pluginCss + "\n" + SubEditor.presetCssString + "\n" + cssString;
         SubEditor.lastCssString = styleStr;
         for (let i = 0; i < document.styleSheets.length; i++) {
             if (document.styleSheets[i].title && document.styleSheets[i].title === "SubEditorStyle") {
@@ -391,11 +395,17 @@ class SubEditor {
     }
 }
 exports.default = SubEditor;
+SubEditor.version = "0.6.0";
+//default and official values:
+SubEditor.cssString = "";
 SubEditor.svgList = {};
 SubEditor.langList = {};
+SubEditor.pluginList = {};
+SubEditor.toolbarItemList = {};
+//user define:
 SubEditor.presetPluginList = {};
+SubEditor.presetCssString = "";
 //the last generated css string after init
 SubEditor.lastCssString = "";
-SubEditor.presetCssString = "";
 SubEditor.pluginCSS = {};
 //# sourceMappingURL=subeditor.js.map

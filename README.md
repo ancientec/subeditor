@@ -18,7 +18,7 @@ This library was first written in 2020 for internal projects, recently rewrite i
 
 ## Features
 
-- Lightweight, one single bundled file for all scripts, plugins, css and svg (176kb minimized, 44kb minimized & gzipped)
+- Lightweight, one single bundled file for all scripts, plugins, css and svg (182kb minimized, 44kb minimized & gzipped)
 - All logics and behaviors are written in plugins (inspired by Slatejs)
 - Work with raw selection and range (no browser exeCommand)
 - Full features text, format, table and images
@@ -35,7 +35,7 @@ Plugins are a group of event listeners design specifically for alternating conte
 - format: h1, h2, h3, h4, h5, h6, paragaph
 - fullscreen
 - horizontal line
-- images (url, upload and library) with server side examples
+- images (url, upload, directly drop file to content and library) with server side examples
 - indent and outdent
 - url hyperlink
 - ordered list and unordered list

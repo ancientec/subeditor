@@ -2,7 +2,7 @@
     "previewPort" : 3000,
     "sourcePath" : "../docs",
     "buildPath" : "../site",
-    "version" : "0.5.5",
+    "version" : "0.6.0",
     "name" : "SubEditor",
     "logo" : "",
     "title" : "SubEditor: free opensource wysiwyg html editor",

@@ -1,4 +1,4 @@
-import SubEditor from '../subeditor';
+import SubEditor from './subeditor';
 export interface ToolbarItem {
     command: string;
     svg: string;
@@ -6,7 +6,6 @@ export interface ToolbarItem {
     tips?: string;
     onRender?: Function;
 }
-export declare function ToolbarPresets(editor: SubEditor): any;
 export default class Toolbar {
     editor: SubEditor;
     refToolbar: HTMLDivElement;

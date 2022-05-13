@@ -3,36 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ToolbarPresets = void 0;
-const color_1 = __importDefault(require("./color"));
-const blockquote_1 = __importDefault(require("./blockquote"));
-const format_1 = __importDefault(require("./format"));
-const fullscreen_1 = __importDefault(require("./fullscreen"));
-const align_1 = __importDefault(require("./align"));
-const table_1 = __importDefault(require("./table"));
-const hr_1 = __importDefault(require("./hr"));
-const source_1 = __importDefault(require("./source"));
-const text_1 = __importDefault(require("./text"));
-const undo_1 = __importDefault(require("./undo"));
-const redo_1 = __importDefault(require("./redo"));
-const indent_1 = __importDefault(require("./indent"));
-const remove_format_1 = __importDefault(require("./remove_format"));
-const link_1 = __importDefault(require("./link"));
-const remove_link_1 = __importDefault(require("./remove_link"));
-const list_1 = __importDefault(require("./list"));
-const seperator_1 = __importDefault(require("./seperator"));
-const nextline_1 = __importDefault(require("./nextline"));
-const spacer_1 = __importDefault(require("./spacer"));
-const subeditor_1 = __importDefault(require("../subeditor"));
-function ToolbarPresets(editor) {
-    return Object.assign({}, (0, undo_1.default)(editor), (0, redo_1.default)(editor), (0, color_1.default)(editor), (0, blockquote_1.default)(editor), (0, format_1.default)(editor), (0, fullscreen_1.default)(editor), (0, align_1.default)(editor), (0, table_1.default)(editor), (0, hr_1.default)(editor), (0, source_1.default)(editor), (0, text_1.default)(editor), (0, indent_1.default)(editor), (0, remove_format_1.default)(editor), (0, link_1.default)(editor), (0, remove_link_1.default)(editor), (0, list_1.default)(editor), (0, seperator_1.default)(editor), (0, nextline_1.default)(editor), (0, spacer_1.default)(editor));
-}
-exports.ToolbarPresets = ToolbarPresets;
+const subeditor_1 = __importDefault(require("./subeditor"));
 class Toolbar {
     constructor(editor) {
         this.refToolbar = document.createElement("div");
         this.refShadow = document.createElement("div");
         this.refTips = document.createElement("div");
+        //toolbarItem defined in plugins:
         this.pluginItemList = {};
         this.renderButton = (item) => {
             if (!item.command || !item.svg)
@@ -77,14 +54,18 @@ class Toolbar {
     }
     addItem(item) {
         let barItem = undefined;
-        const presets = ToolbarPresets(this.editor);
         if (typeof item === "string") {
             if (typeof Toolbar.presetItemList[item] === "function")
                 barItem = Toolbar.presetItemList[item](this.editor);
             else if (typeof this.pluginItemList[item] !== "undefined")
                 barItem = this.pluginItemList[item];
-            else if (typeof presets[item] !== "undefined")
-                barItem = presets[item];
+            else if (typeof subeditor_1.default.toolbarItemList[item] !== "undefined") {
+                const defaultItem = subeditor_1.default.toolbarItemList[item](this.editor);
+                if (typeof defaultItem[item] !== "undefined")
+                    barItem = defaultItem[item];
+                else
+                    return; //plugin function failed to return the correct format
+            }
             else
                 return;
         }
@@ -211,7 +192,7 @@ class Toolbar {
             let xNew = rect.width / 2 - 18; //console.log("adjustContentPosition", xNew, rect.x, );
             if (rect.x - xNew < 0)
                 xNew = rect.x;
-            ddcontent.setAttribute("style", "transform:translateX(-" + xNew + "px)");
+            ddcontent.parentElement.setAttribute("style", "transform:translateX(-" + xNew + "px)");
         }, 1);
     }
     hideDropdown() {
@@ -244,5 +225,6 @@ class Toolbar {
     }
 }
 exports.default = Toolbar;
+//toolbarItem defined by user using SubEditor.presetToolbarItem:
 Toolbar.presetItemList = {};
 //# sourceMappingURL=toolbar.js.map

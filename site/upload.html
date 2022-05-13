@@ -17,7 +17,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://subeditor.org">
-            <strong>SubEditor</strong> <small><sub>v0.5.5</sub></small>
+            <strong>SubEditor</strong> <small><sub>v0.6.0</sub></small>
           </a>
           </div>
           <div class="navbar-menu">
@@ -66,9 +66,11 @@
 cfg[<span class="hljs-string">&quot;image.features&quot;</span>] = [<span class="hljs-string">&quot;url&quot;</span>,<span class="hljs-string">&quot;upload&quot;</span>,<span class="hljs-string">&quot;library&quot;</span>];
 cfg[<span class="hljs-string">&quot;image.accept.types&quot;</span>] = <span class="hljs-string">&quot;text/plain, image/jpeg, image/jpg, image/png, image/apng, image/gif, image/webp&quot;</span>;
 cfg[<span class="hljs-string">&quot;image.upload.url&quot;</span>] = <span class="hljs-string">&quot;upload.php&quot;</span>;
+cfg[<span class="hljs-string">&quot;image.drop.to.content.upload&quot;</span>] =  <span class="hljs-literal">true</span>;
 cfg[<span class="hljs-string">&quot;image.upload.accept.files&quot;</span>] =  <span class="hljs-number">0</span>;
 cfg[<span class="hljs-string">&quot;image.upload.max.size&quot;</span>] = <span class="hljs-number">2.5</span>;
 cfg[<span class="hljs-string">&quot;image.upload.max.size.per.file&quot;</span>] = <span class="hljs-number">0.5</span>;
+cfg[<span class="hljs-string">&quot;image.upload.max.files&quot;</span>] = <span class="hljs-number">3</span>;
 cfg[<span class="hljs-string">&quot;image.upload.handler&quot;</span>] =  <span class="hljs-function">(<span class="hljs-params">file, responseText, callback</span>) =&gt;</span> {
     <span class="hljs-keyword">var</span> o = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(responseText);
     <span class="hljs-title function_">callback</span>(o.<span class="hljs-property">URL</span>, o.<span class="hljs-property">Thumb</span>, o, <span class="hljs-function">() =&gt;</span> {<span class="hljs-keyword">return</span> <span class="hljs-title function_">elFunc</span>(o)});
@@ -80,16 +82,20 @@ cfg[<span class="hljs-string">&quot;image.upload.handler&quot;</span>] =  <span 
 </code></pre>
 <h3>image.features</h3>
 <p>Enable url, upload,or library features on submenu in toolbar.</p>
+<h3>image.drop.to.content.upload</h3>
+<p>Whether to allow uploading when directly dropping files into content. (true = allow, default=false)</p>
 <h3>image.accept.types</h3>
 <p>Mime types accepted for upload.</p>
 <h3>image.upload.url</h3>
 <p>The server URL for uploading files. Each request will handle one file.</p>
 <h3>image.upload.accept.files</h3>
-<p>Limit number of files per batch, default 0 for unlimited.</p>
+<p>Limit number of files per batch, default 0 for unlimited. This value limits the number of files to be selected or dropped per batch.</p>
 <h3>image.upload.max.size</h3>
-<p>The total allowed file sizes in MB per batch.</p>
+<p>The total allowed file sizes in MB per batch. This value will also take into account of the existing uploaded files in content. By removing the element(link or image) from content will reduce the total uploaded size.</p>
 <h3>image.upload.max.size.per.file</h3>
 <p>The maximum file size in MB per single file.</p>
+<h3>image.upload.max.files</h3>
+<p>The maximum number of uploaded files to be included in content. This value takes into account of currently existing uploaded files in content, by removing the element(link or image) from content will reduce the number count.</p>
 <h3>image.upload.handler</h3>
 <p>This function is designed to process server repsonse after upload, and update SubEditor.</p>
 <h4>Callback(url : string, thumb : string, obj : any, elFunc : Function | undefined)</h4>

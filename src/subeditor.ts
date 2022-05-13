@@ -53,7 +53,7 @@ export default class SubEditor {
     public refToolbar! : HTMLDivElement;
     public refFooter! : HTMLDivElement;
 
-    public static version : string = "0.5.5";
+    public static version : string = "0.6.0";
 
     //default and official values:
     public static cssString : string = "";

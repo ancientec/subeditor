@@ -928,61 +928,6 @@
     }
   });
 
-  // src/svg/index.ts
-  var svg_default = {
-    "align_center": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5,6.3H19V8.37H5Zm0,9.33H19V17.7H5ZM7.33,11h9.34V13H7.33Z"></path></svg>',
-    "align_justify": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6.3H19V8.4H5ZM5 15.6H19V17.7H5ZM5 11H19V13H5Z"></path></svg>',
-    "align_left": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6.3H19V8.37H5ZM5 15.63H19V17.7H5ZM5 11H14.33V13H5Z"></path></svg>',
-    "align_right": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6.3H19V8.37H5ZM5 15.63H19V17.7H5ZM9.67 11H19V13H9.67Z"></path></svg>',
-    "b": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 5v14h7A3.6 3.6 0 0017 16A3.6 3.6 0 0015 12A3.6 3.6 0 0017 8.5A3.6 3.6 0 0014 5h-7ZM9 7h4.5A2.1 2.1 0 0114.5 9A2.1 2.1 0 0113.5 11h-4.5v-4ZM9 13h4.5A2.1 2.1 0 0114.5 15.5A2.1 2.1 0 0113.5 17h-4.5v-4Z"></path></svg>',
-    "background_color": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.85 17.5 11.08 6.5H12.65L17.15 17.5H15.49L14.21 14.17H9.61L8.4 17.5ZM10 13H13.73L12.58 10Q12.06 8.61 11.8 7.72A13.8 13.8 0 0111.2 9.82ZM19 5H5V19H19Z"></path></svg>',
-    "blockquote": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.7 5 17.7 5A14 14 0 0012.7 15.5A3.2 3.2 0 0016.2 19A3.5 3.5 0 0019.7 15.5A3 3 0 0015.4 13A14 14 0 0119.7 5ZM11.3 5 9.3 5A14 14 0 004.3 15.5A3.2 3.2 0 007.8 19A3.5 3.5 0 0011.3 15.5A3 3 0 007 13A14 14 0 0111.3 5Z"></path></svg>',
-    "character": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.72 17.38H8.72A7.33 7.33 0 015.87 11.55A7.34 7.34 0 016.62 8.2A5.78 5.78 0 018.74 5.86A6.12 6.12 0 0112 5A5.91 5.91 0 0115.18 5.79A6.11 6.11 0 0117.27 8.05A7 7 0 0118.09 11.55A7.33 7.33 0 0115.24 17.38H18.24V19H12.93V17.48A5.68 5.68 0 0016.27 11.84A5.88 5.88 0 0015.09 8.05A3.69 3.69 0 0012 6.56A3.74 3.74 0 008.89 8.06A5.76 5.76 0 007.73 11.74C7.73 14.5 8.83 16.41 11.05 17.48V19H5.72Z"></path></svg>',
-    "close": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.91 9.94 12 5 7.06 7.1 5 12 9.9 16.91 5 19 7.09 14.1 12 19 16.9 16.93 19 12 14.06 7.09 19Z"></path></svg>',
-    "code": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 8.11 7.79 L 9.04 8.72 L 5.76 12 L 9 15.28 L 8.07 16.21 L 4 12 ZM 15.89 7.79 L 15 8.72 L 18.24 12 L 15 15.28 L 15.93 16.21 L 20 12 Z\nM 13 6.5 L 14 6.5 L 11 17 L 10 17  Z"></path></svg>',
-    "download": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.44 10.47V15.92H6.56V10.47H5V17.47H19V10.47ZM11.24 6.53H12.8V12.22H14.33L12 15 9.67 12.22H11.24Z"></path></svg>',
-    "fullscreen": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14H5V19H10V17H7ZM5 10H7V7H10V5H5ZM17 17H14V19H19V14H17ZM14 5V7H17V10H19V5Z"></path></svg>',
-    "fullscreen_close": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16H8V19H10V14H5ZM8 8H5V10H10V5H8ZM14 19H16V16H19V14H14ZM16 8V5H14V10H19V8Z"></path></svg>',
-    "h1": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 17V7.08H6.31V11.14H11.44V7.08H12.75V17H11.44V12.3H6.31V17ZM19 17H17.79V9.23A6.35 6.35 0 0116.64 10.07A9.14 9.14 0 0115.36 10.69V9.52A7.2 7.2 0 0017.14 8.36A4.42 4.42 0 0018.22 7H19Z"></path></svg>',
-    "h2": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.39V7.64H6.16V11.24H10.71V7.64H11.86V16.39H10.71V12.27H6.16V16.39ZM19 15.36V16.36H13.22A1.83 1.83 0 0113.34 15.62A4 4 0 0114.05 14.45A10.47 10.47 0 0115.46 13.13A11.44 11.44 0 0017.38 11.27A2.15 2.15 0 0017.88 9.98A1.44 1.44 0 0017.43 8.91A1.62 1.62 0 0016.24 8.47A1.67 1.67 0 0015 9A1.79 1.79 0 0014.52 10.29L13.42 10.18A2.72 2.72 0 0114.27 8.3A2.89 2.89 0 0116.27 7.65A2.75 2.75 0 0118.27 8.35A2.28 2.28 0 0119 10A2.51 2.51 0 0118.78 11A4 4 0 0118.07 12.07A17.75 17.75 0 0116.41 13.61C15.77 14.15 15.41 14.51 15.17 14.71A3.36 3.36 0 0014.72 15.29Z"></path></svg>',
-    "h3": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.29V7.59H6.15V11.16H10.67V7.59H11.82V16.29H10.67V12.19H6.15V16.29ZM13.31 14 14.37 13.86A2.47 2.47 0 0015 15.16A1.57 1.57 0 0016.08 15.56A1.76 1.76 0 0017.35 15A1.8 1.8 0 0017.87 13.7A1.64 1.64 0 0017.39 12.49A1.66 1.66 0 0016.17 12.01A3 3 0 0015.41 12.13L15.53 11.2H15.7A2.17 2.17 0 0016.93 10.84A1.23 1.23 0 0017.48 9.74A1.32 1.32 0 0017.08 8.74A1.41 1.41 0 0016.08 8.36A1.44 1.44 0 0015.08 8.75A2 2 0 0014.48 10L13.41 9.81A2.75 2.75 0 0114.3 8.15A2.61 2.61 0 0116 7.56A2.9 2.9 0 0117.31 7.86A2.34 2.34 0 0118.23 8.7A2.13 2.13 0 0118.54 9.82A1.82 1.82 0 0118.24 10.82A2.05 2.05 0 0117.35 11.56A2 2 0 0118.54 12.3A2.2 2.2 0 0118.97 13.7A2.58 2.58 0 0118.14 15.63A2.9 2.9 0 0116.04 16.42A2.75 2.75 0 0114.14 15.74A2.65 2.65 0 0113.31 14Z"></path></svg>',
-    "h4": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.36V7.64H6.15V11.22H10.68V7.64H11.84V16.36H10.68V12.25H6.15V16.36ZM16.75 16.36V14.27H13V13.27L17 7.62H17.87V13.27H19V14.27H17.82V16.36ZM16.75 13.29V9.36L14 13.29Z"></path></svg>',
-    "h5": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.25V7.6H6.15V11.15H10.64V7.6H11.79V16.25H10.64V12.17H6.15V16.25ZM13.26 14 14.38 13.9A2 2 0 0015 15.12A1.61 1.61 0 0016.09 15.53A1.72 1.72 0 0017.39 14.95A2.17 2.17 0 0017.92 13.41A2 2 0 0017.36 12A1.77 1.77 0 0016 11.45A1.79 1.79 0 0015.07 11.69A1.71 1.71 0 0014.42 12.29L13.42 12.16 14.26 7.72H18.56V8.72H15.14L14.67 11.05A2.84 2.84 0 0116.31 10.51A2.6 2.6 0 0118.22 11.29A2.74 2.74 0 0119 13.29A3.19 3.19 0 0118.32 15.29A2.76 2.76 0 0116.04 16.29A2.78 2.78 0 0114.12 15.63A2.58 2.58 0 0113.26 14Z"></path></svg>',
-    "h6": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.29V7.6H6.15V11.17H10.67V7.6H11.82V16.29H10.67V12.19H6.15V16.29ZM18.85 9.73 17.78 9.81A2 2 0 0017.38 8.89A1.52 1.52 0 0015.38 8.72A2.51 2.51 0 0014.58 9.8A5.75 5.75 0 0014.28 11.8A2.43 2.43 0 0115.22 10.93A2.53 2.53 0 0116.39 10.64A2.41 2.41 0 0118.21 11.43A2.81 2.81 0 0118.96 13.43A3.43 3.43 0 0118.65 15A2.53 2.53 0 0116.28 16.45A2.75 2.75 0 0114.1 15.45A5 5 0 0113.26 12.21A5.78 5.78 0 0114.19 8.55A2.66 2.66 0 0116.38 7.55A2.34 2.34 0 0118.85 9.72ZM14.49 13.47A2.44 2.44 0 0014.72 14.53A1.73 1.73 0 0015.38 15.3A1.67 1.67 0 0016.26 15.56A1.5 1.5 0 0017.42 15A2.14 2.14 0 0017.91 13.51A2 2 0 0017.43 12.09A1.61 1.61 0 0016.22 11.57A1.69 1.69 0 0014.99 12.09A1.86 1.86 0 0014.49 13.47Z"></path></svg>',
-    "hr": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 11H19V13H5Z"></path></svg>',
-    "i": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9l-2 10h2l2-10Zm0.75-3a1 1 0 001 1a1 1 0 10-1-1Z"></path></svg>',
-    "image": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.3 7.1V17H4.7V7.1H19.3M21.3 5H2.7V19H21.3ZM7.2 8.4A1.2 1.2 0 108.4 9.5A1.2 1.2 0 007.2 8.4ZM6.8 15.7H13.8L10.3 11ZM12 12.1 14.3 9.9 18.3 15.7H14.6S11.9 12 12 12.1Z"></path></svg>',
-    "image_library": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 15.74 5.68 V 13.6 H 4.06 V 5.68 H 15.74 M 17.34 4 H 2.46 V 15.2 H 17.34 Z M 6.06 6.72 A 0.96 0.96 90 1 0 7.02 7.6 A 0.96 0.96 90 0 0 6.06 6.72 Z M 5.74 12.56 H 11.34 L 8.54 8.8 Z M 9.9 9.68 L 11.74 7.92 L 14.94 12.56 H 11.98 S 9.82 9.6 9.9 9.68 Z M 18.94 5.68 H 20.54 V 18.4 H 4.06 V 16.8 H 18.94 Z"></path></svg>',
-    "indent": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 9V15L7 12 4 9ZM4 19H20V17H4V19ZM4 7H20V5H4V7ZM9 11H20V9H9V11ZM9 15H20V13H9V15Z"></path></svg>',
-    "link": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 10.13 11.39 A 0.3 0.3 0 0 0 10.03 11.19 L 9.17 10.5 A 0.3 0.3 0 0 0 8.919 10.488 L 5.7 13.6 L 5.69 13.61 A 2.37 2.37 0 0 0 5.69 16.95 L 7.07 18.32 A 2.36 2.36 0 0 0 8.73 19 A 2.4 2.4 0 0 0 10.39 18.32 L 13.63 15 A 0.3 0.3 0 0 0 13.63 14.8 L 12.68 13.9 A 0.3 0.3 0 0 0 12.52 13.96 L 9.23 17.24 A 0.74 0.74 0 0 1 8.67 17.47 A 0.71 0.71 0 0 1 8.12 17.24 L 6.75 15.87 A 0.82 0.82 0 0 1 6.75 14.76 Z M 13.88 12.7 A 0.3 0.3 90 0 0 13.98 12.9 L 14.84 13.59 A 0.3 0.3 90 0 0 15.091 13.602 L 18.31 10.49 L 18.32 10.48 A 2.37 2.37 90 0 0 18.32 7.14 L 16.94 5.77 A 2.36 2.36 90 0 0 15.28 5.09 A 2.4 2.4 90 0 0 13.62 5.77 L 10.38 9.09 A 0.3 0.3 90 0 0 10.38 9.29 L 11.33 10.19 A 0.3 0.3 90 0 0 11.49 10.13 L 14.78 6.85 A 0.74 0.74 90 0 1 15.34 6.62 A 0.71 0.71 90 0 1 15.89 6.85 L 17.26 8.22 A 0.82 0.82 90 0 1 17.26 9.33 Z M 14.45 10.63 A 0.36 0.36 0 0 0 14.56 10.39 A 0.33 0.33 0 0 0 14.45 10.16 L 13.85 9.55 A 0.5 0.5 0 0 0 13.61 9.45 A 0.32 0.32 0 0 0 13.37 9.55 L 9.62 13.29 A 0.4 0.4 0 0 0 9.52 13.53 A 0.34 0.34 0 0 0 9.62 13.76 L 10.23 14.37 A 0.4 0.4 0 0 0 10.47 14.47 A 0.32 0.32 0 0 0 10.71 14.37 Z"></path></svg>',
-    "next": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 9.89 7.79 L 9 8.72 L 12.24 12 L 9 15.28 L 9.93 16.21 L 14 12 Z"></path></svg>',
-    "ol": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.55 6.21H19V8.31H9.55ZM9.55 15.66H19V17.76H9.55ZM9.55 10.94H19V13H9.55ZM6 8.31H5.62V6.84A1.34 1.34 0 015.12 7.14V6.78A1 1 0 005.45 6.59A.76.76 0 005.7 6.27H6ZM5 17.22 5.37 17.22A.3.3 0 005.47 17.44A.26.26 0 005.66 17.52A.28.28 0 005.86 17.43A.37.37 0 006 17.13A.36.36 0 005.92 16.9A.27.27 0 005.73 16.82L5.55 16.82 5.55 16.5A.33.33 0 005.79 16.44A.22.22 0 005.87 16.25A.24.24 0 005.81 16.08A.21.21 0 005.65 16.02A.24.24 0 005.49 16.09A.31.31 0 005.4 16.29L5.05 16.23A.7.7 0 015.16 16A.51.51 0 015.37 15.83A.73.73 0 015.67 15.77A.6.6 0 016.12 15.95A.49.49 0 016.26 16.28A.47.47 0 015.97 16.7A.48.48 0 016.25 16.87A.46.46 0 016.35 17.18A.58.58 0 016.16 17.63A.71.71 0 015.23 17.63A.63.63 0 015 17.22ZM6.35 12.66V13H5A1 1 0 015.13 12.61A3.18 3.18 0 015.57 12.12A2.38 2.38 0 005.9 11.79A.46.46 0 006 11.57A.32.32 0 005.93 11.37A.26.26 0 005.73 11.3A.29.29 0 005.54 11.37A.36.36 0 005.46 11.62L5.07 11.62A.63.63 0 015.28 11.16A.72.72 0 015.72 11A.68.68 0 016.2 11.16A.54.54 0 016.37 11.56A.81.81 0 016.37 11.83A1.08 1.08 0 016.21 12.09A2.59 2.59 0 015.96 12.35L5.72 12.57 5.64 12.68Z"></path></svg>',
-    "outdent": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 9V15L4 12 7 9ZM4 19H20V17H4V19ZM4 7H20V5H4V7ZM9 11H20V9H9V11ZM9 15H20V13H9V15Z"></path></svg>',
-    "p": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.53 19H10.71V11.16A3.21 3.21 0 018.53 10.24A3 3 0 017.76 8.1A3.44 3.44 0 018.07 6.66A2.7 2.7 0 018.9 5.66A3.21 3.21 0 0110.12 5.13A9.54 9.54 0 0111.76 5H16.24V7H15.39V19H13.62V7H12.53Z"></path></svg>',
-    "plus": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.8 5 13.2 5 13.2 10.8 19 10.8 19 13.2 13.2 13.2 13.2 19 10.8 19 10.8 13.2 5 13.2 5 10.8 10.8 10.8Z"></path></svg>',
-    "previous": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 14.11 7.79 L 15.04 8.72 L 11.76 12 L 15 15.28 L 14.07 16.21 L 10 12 Z"></path></svg>',
-    "redo": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.76 6.74 19 12.08 13.67 14.31 14.86 11.39A6.68 6.68 0 006.78 16.49A3.14 3.14 0 006.66 17.26L5 17.15A8.42 8.42 0 0111.41 9.8H11.41A8.22 8.22 0 0115.56 9.8Z"></path></svg>',
-    "remove_format": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5,17v2h13V17ZM7,13.51,10.53,10,7,6.47,8.5,5,12,8.5,15.51,5,17,6.49,13.5,10,17,13.5,15.52,15,12,11.47,8.49,15Z"></path></svg>',
-    "remove_link": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.13 11.35A.41.41 0 0010.03 11.14L9.17 10.45A.33.33 0 008.91 10.45L5.7 13.56H5.7A2.38 2.38 0 005.7 16.91L7.08 18.27A2.29 2.29 0 008.73 19A2.36 2.36 0 0010.39 18.32L13.63 15A.31.31 0 0013.63 14.81L12.63 13.9A.38.38 0 0012.47 13.96L9.23 17.19A.71.71 0 018.67 17.42A.68.68 0 018.12 17.19L6.75 15.82A.8.8 0 016.75 14.72ZM13.88 12.65A.26.26 0 0013.98 12.85L14.84 13.55A.31.31 0 0015.09 13.55L18.31 10.43H18.31A2.38 2.38 0 0018.31 7.09L16.94 5.72A2.39 2.39 0 0013.62 5.72L10.38 9.05A.21.21 0 0010.38 9.24L11.33 10.14A.33.33 0 0011.49 10.09L14.78 6.8A.75.75 0 0115.34 6.57A.78.78 0 0115.89 6.8L17.26 8.18A.83.83 0 0117.26 9.28ZM14.45 10.59A.44.44 0 0014.56 10.35A.41.41 0 0014.45 10.11L13.85 9.51A.58.58 0 0013.61 9.4A.3.3 0 0013.37 9.51L9.62 13.24A.39.39 0 009.52 13.48A.33.33 0 009.62 13.72L10.23 14.32A.41.41 0 0010.47 14.43A.34.34 0 0010.71 14.32ZM15 17.83 16.42 16.42 15 15 15.59 14.42 17 15.83 18.4 14.43 19 15 17.6 16.4 19 17.8 18.41 18.4 17 17 15.6 18.43Z"></path></svg>',
-    "remove_list": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 9.67 6.3 H 19 V 8.37 H 9.67 Z M 9.67 15.63 H 14 V 17.7 H 9.67 Z M 5 15.63 H 7.33 V 17.7 H 5 Z M 5 11 H 7.33 V 13 H 5 Z M 5 6.3 H 7.33 V 8.37 H 5 Z M 9.67 11 H 19 V 13 H 9.67 Z M 15 17.83 L 16.42 16.42 L 15 15 L 15.59 14.42 L 17 15.83 L 18.4 14.43 L 19 15 L 17.6 16.4 L 19 17.8 L 18.41 18.4 L 17 17 L 15.6 18.43 Z"></path></svg>',
-    "search": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 10.4 6.08 A 4.32 4.32 90 1 0 10.4 14.72 A 4.32 4.32 90 1 0 10.4 6.08 Z M 10.4 7.16 A 2.16 2.16 90 1 1 10.4 13.64 A 2.16 2.16 90 1 1 10.4 7.16 Z M 13.493 13.496 L 17.96 17.24 L 17.24 17.96 L 12.8015 14.033 Z"></path></svg>',
-    "strikethrough": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 3 11.3 H 21 v 1.5 H 3 Z M 16.63 13.7 A 3.51 3.51 0 0 1 17 15.29 A 3.25 3.25 0 0 1 15.67 18 a 5.56 5.56 0 0 1 -3.47 1 a 6.25 6.25 0 0 1 -2.62 -0.54 A 4.43 4.43 0 0 1 7.69 17 A 3.71 3.71 0 0 1 7 14.81 V 14.7 H 9 v 0.11 a 2.17 2.17 0 0 0 0.86 1.83 a 3.62 3.62 0 0 0 2.32 0.68 a 3.41 3.41 0 0 0 2.08 -0.54 a 1.76 1.76 0 0 0 0.7 -1.47 a 1.69 1.69 0 0 0 -0.65 -1.43 l -0.27 -0.18 Z M 16.34 7.06 a 4.19 4.19 0 0 0 -1.72 -1.51 A 5.71 5.71 0 0 0 12.11 5 A 5.16 5.16 0 0 0 8.75 6.07 a 3.34 3.34 0 0 0 -1.31 2.7 a 3.26 3.26 0 0 0 0.33 1.43 h 2.59 a 1.63 1.63 0 0 1 -0.65 -1.3 a 1.77 1.77 0 0 1 0.69 -1.51 a 3 3 0 0 1 2 -0.55 a 3.1 3.1 0 0 1 2.11 0.66 a 2.36 2.36 0 0 1 0.73 1.84 v 0.11 H 17 A 3.91 3.91 0 0 0 16.34 7.06 Z"></path></svg>',
-    "subscript": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.63 15.22 7.87 11 3.66 6.77 5.43 5 9.64 9.21 13.85 5 15.64 6.79 11.44 11 15.64 15.21 13.87 17 9.66 12.77 5.42 17ZM20.37 18.29V19H16.42A1.24 1.24 0 0116.5 18.49A2.83 2.83 0 0116.98 17.69A8.18 8.18 0 0117.98 16.79A8 8 0 0019.29 15.52A1.5 1.5 0 0019.64 14.64A1 1 0 0019.32 13.9A1.11 1.11 0 0018.51 13.6A1.16 1.16 0 0017.66 13.92A1.2 1.2 0 0017.34 14.8L16.58 14.72A1.86 1.86 0 0117.17 13.44A2 2 0 0118.5 13A1.9 1.9 0 0119.86 13.48A1.58 1.58 0 0120.36 14.66A1.78 1.78 0 0120.21 15.37A2.61 2.61 0 0119.73 16.1A11 11 0 0118.59 17.15A9 9 0 0017.75 17.91A2.12 2.12 0 0017.44 18.3Z"></path></svg>',
-    "superscript": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.63 17.21 7.87 13 3.66 8.76 5.43 7 9.64 11.2 13.85 7 15.64 8.8 11.44 13 15.64 17.21 13.87 19 9.66 14.76 5.42 19ZM20.37 10.3V11H16.42A1.3 1.3 0 0116.5 10.49A2.66 2.66 0 0117 9.7A8.15 8.15 0 0118 8.79A8 8 0 0019.31 7.53A1.55 1.55 0 0019.66 6.64A1 1 0 0019.34 5.91A1.11 1.11 0 0018.53 5.61A1.16 1.16 0 0017.68 5.92A1.22 1.22 0 0017.36 6.8L16.6 6.73A1.89 1.89 0 0117.19 5.44A2 2 0 0118.5 5A1.94 1.94 0 0119.86 5.47A1.6 1.6 0 0120.36 6.66A1.73 1.73 0 0120.21 7.36A2.48 2.48 0 0119.73 8.09A12.06 12.06 0 0118.59 9.15Q17.93 9.7 17.75 9.9A1.88 1.88 0 0017.44 10.3Z"></path></svg>',
-    "table": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 5H2V19H22ZM9.5 13.5V10.5H14.5V13.5ZM14.5 15V17.5H9.5V15ZM9.5 9V6.5H14.5V9ZM3.5 6.5H8V9H3.5ZM3.5 10.5H8V13.5H3.5ZM3.5 17.5V15H8V17.5ZM20.5 17.5H16V15H20.5ZM20.5 13.5H16V10.5H20.5ZM16 9V6.5H20.5V9Z"></path></svg>',
-    "text": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 3.905 17.1 L 8.747 4.5 H 10.547 L 15.704 17.1 H 13.796 L 12.329 13.284 H 7.1 L 5.678 17.1 Z M 7.505 11.925 H 11.771 L 10.493 8.433 C 10.097 7.38 9.8 6.507 9.593 5.823 A 16.479 16.479 90 0 1 8.9 8.226 Z M 17 5 a 1 1 0 1 1 2 0 a 1 1 0 1 1 -2 0 Z M 17 8 a 1 1 0 1 1 2 0 a 1 1 0 1 1 -2 0 Z M 17 11 a 1 1 0 1 1 2 0 a 1 1 0 1 1 -2 0 Z"></path></svg>',
-    "text_color": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 5.45 19 L 10.83 5 H 12.83 L 15.4 11.8 L 13 14.76 H 9 L 7.42 19 Z M 9.45 13.25 H 14.19 L 12.77 9.37 C 12.33 8.2 12 7.23 11.77 6.47 A 18.31 18.31 0 0 1 11 9.14 Z M 15.78 12.22 s -2.75 2.98 -2.75 4.82 a 2.79 2.79 90 0 0 5.58 0.08 v -0.08 C 18.61 15.21 15.78 12.22 15.78 12.22 Z"></path></svg>',
-    "u": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 3.5v8.5A6.5 6.5 0 0012.5 17.5A6.5 6.5 0 0019 12v-8.5h-2v8.5A4.5 4.5 0 0112.5 15.5A4.5 4.5 0 018 12v-8.5ZM6 18.5v2h13v-2Z"></path></svg>',
-    "ul": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.67 6.3H19V8.37H9.67ZM9.67 15.63H19V17.7H9.67ZM5 15.63H7.33V17.7H5ZM5 11H7.33V13H5ZM5 6.3H7.33V8.37H5ZM9.67 11H19V13H9.67Z"></path></svg>',
-    "undo": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.44 9.85A8.22 8.22 0 0112.59 9.85H12.59A8.42 8.42 0 0119 17.15L17.34 17.26A3.14 3.14 0 0017.22 16.49A6.68 6.68 0 009.14 11.39L10.33 14.31 5 12.08 7.24 6.74Z"></path></svg>',
-    "upload": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.44 10.47V15.92H6.56V10.47H5V17.47H19V10.47ZM12.76 15H11.2V9.25H9.67L12 6.53 14.33 9.25H12.76Z"></path></svg>',
-    "video": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.88 8.71V15.29H6.65V8.71H14.88M16.53 10.71V7.06H5V16.94H16.53V13.24L19 15.24V8.71Z"></path></svg>',
-    "view_source": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.11 7.79 10.04 8.72 6.76 12 10 15.28 9.07 16.21 5 12ZM14.89 7.79 14 8.72 17.24 12 14 15.28 14.93 16.21 19 12Z"></path></svg>'
-  };
-
-  // src/css/index.ts
-  var css_default = ".SubEditor, .SubEditor  * {box-sizing: border-box;}.SubEditor {border:1px solid #dbdbdb;background-color: #fff;position: relative;}.SubEditorContentContainer {overflow-y: auto;padding:10px;}.SubEditor.AutoGrow {height: auto;}.SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}.SubEditorContent, .SubEditorSource {text-align: start;display:inline-block;min-height: 200px;width:100%;box-shadow: none;border:none;outline: none;}.SubEditorContent:focus, .SubEditorSource:focus{box-shadow: none;border:none;outline: none;}.SubEditorContent img {max-width: 100%;}.SubEditorTextarea {display:none;resize: none;width: 100%;min-height: 100px;padding:10px;overflow: hidden;box-sizing: border-box;}.SubEditor .SubEditorFooter {display: none;border-top: 1px solid #dbdbdb;}.SubEditor > .SubEditorTooltip{user-select: none;z-index: 9999;position: absolute;line-height: 1.2em;display: none;padding: 2px 10px;box-shadow:1px 1px 3px gray;border-radius:5px;background: #fff;white-space: nowrap;}.SubEditor .se-button {box-shadow:none}.SubEditorContent table {border: none;border-collapse: collapse;empty-cells: show;max-width: 100%;}.SubEditorContent table td,.SubEditorContent table th {min-width:20px;min-height: 20px;border: 1px solid #dedede;}.SubEditorContent table th {background-color: #efefef;}.SubEditorContent blockquote{border-left: solid 3px #dedede;margin: 5px;padding-left: 5px;color: #333;}.SubEditorContent h1,.SubEditorContent h2,.SubEditorContent h3,.SubEditorContent h4,.SubEditorContent h5,.SubEditorContent h6{font-size: revert;font-weight: revert;margin: revert;padding: revert;}.SubEditorContent ul, .SubEditorContent ol{display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;}.SubEditorContent ul {list-style-type: disc;}.SubEditorContent ol{list-style-type: decimal;}.SubEditorContent p{margin: revert;padding: revert;}.SubEditorToolbar {margin:0;border-bottom:1px solid #dbdbdb;align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;font-weight: 400;font-size: 1rem;line-height: 1.5;text-align: left;color: #363636;background-color: #fff;width:100%;position: relative;}.SubEditorToolbar, .SubEditorToolbar  * {user-select: none;}.SubEditorToolbar{ align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;}.SubEditorToolbar .se-dropdown {display: inline-flex;position: relative;vertical-align: top;height: 2.25em;border-color: transparent; border-width: 1px; cursor: pointer; justify-content: center; padding: calc(0.375 em - 1 px)  0.75em;text-align: center;}    .SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-button{margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;border-radius: 3px;cursor: pointer;justify-content: center;padding: calc(.375em - 1px) .75em;text-align: center;white-space: nowrap;position: relative;overflow: hidden;transform: translate3d(0,0,0);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;box-shadow: none;}.SubEditorToolbar .se-button .se-icon{margin:0 calc(-.375em - 1px);height: 24px;width: 24px;align-items: center; display: inline-flex;justify-content: center;}.SubEditorToolbar .se-button .se-icon svg {height: 24px;width: 24px;}.SubEditorToolbar .se-dropdown-trigger .se-button * {pointer-events: none;}.SubEditorToolbar .se-dropdown-menu{min-width: unset;left: 0;padding-top: 4px;position: absolute;top: 100%;z-index: 20;display: none;background-color: #fff;}.SubEditorToolbar .se-ToolbarItem.is-active .se-dropdown-menu {display:block}.SubEditorToolbar .se-dropdown-content{border-radius: 4px;box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);padding: 0;transform-origin: top left;position:relative;background-color: #fff;}.SubEditorToolbar .se-dropdown-content .padding {padding: 15px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item {cursor: pointer;height:unset;margin-bottom:0;margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;justify-content: center;text-transform: uppercase;transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);white-space: nowrap;width: 100%;box-shadow: none;height: unset;margin-right: -1px;box-sizing: border-box;}.SubEditorToolbar .se-dropdown-content.se-control .se-dropdown-item {padding:10px 5px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input {padding: calc(0.5em - 1px) calc(0.75em - 1px);transition: all 300ms;font-size: 1rem;height: 2.5em;line-height: 2.5em;border: solid 1px #ccc;width:200px;}.SubEditorToolbar .se-dropdown-content .se-button {height: 30px;line-height: 1;}.SubEditorToolbar .se-dropdown-content .se-button.close-dropdown {position: absolute;right:1px;top:1px;}.SubEditorToolbar .se-dropdown-content .se-button.alert {background-color: rgb(244,67,54,1);color: #fff;}.SubEditorToolbar .se-dropdown-content .se-button:hover {background-color: #dbdbdb;}.SubEditorToolbar .se-dropdown-content .se-button.alert:hover {background-color: rgb(244,67,54,0.7);}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input:focus {border: solid 1px #2196f3;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input+label {position: absolute;top: -1px;left: 12px;padding:3px 2px;font-size: 0.8em;color: #333;transition: all 0.5s ease;z-index: 3;display: block;cursor: text;background-color: #fff;}.SubEditorToolbar .is-featured{border-color: transparent;color: #363636;background-color: #efefef;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item > * {white-space:  nowrap;margin : 0}.SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-dropdown-content.horizontal {display: flex;flex-wrap: nowrap;align-items: center;justify-content: flex-start;}.SubEditorToolbar > .se-button:hover, .SubEditorToolbar .se-dropdown-trigger .se-button:hover, .SubEditorToolbar .se-dropdown-content .se-dropdown-item.hover:hover,.SubEditorToolbar .se-dropdown-content .se-button.se-ToolbarItem:hover{background-color: #e0e0e0;}.SubEditorToolbar .se-dropdown-content .se-button.se-dropdown-item.borderbottom{border-bottom: 1px solid #dbdbdb;border-radius: 0px;}.SubEditorToolbar >.se-tips{z-index: 9999;position: absolute;top: -1.6em;left: 0px;line-height: 1.2em;display: none;padding: 2px 10px;border: 1px solid #dbdbdb;background: #fff;white-space: nowrap;pointer-events: none;user-select: none;}.SubEditorToolbar .se-Shadow {position:absolute;top:0;left:0;width:100%;height:100%;background-color: rgba(255,255,255,.6);z-index: 100;display: none;}.SubEditorToolbar.EnableShadow .se-Shadow{display: block;}.SubEditorToolbar .se-ToolbarItem.AboveShadow {z-index: 110;}.se-ToolbarItem.seperator {width:1px;height:100%;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;}.se-ToolbarItem.nextline {width:100%;height:1px;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;}.se-ToolbarItem.spacer {   cursor: default;transition: none;}.SubEditorToolbar > .se-button.se-ToolbarItem.spacer:hover{background-color: transparent;}.ToolbarTable td{padding-left: 5px;padding-right: 5px;width:10px; height:10px;border:1px solid #dbdbdb;margin:1px;}.ToolbarTable td.active,.ToolbarTable td:hover{background-color: #e0e0e0;}.ToolbarTable .title{text-align: center;font-size: 12px}.SubEditorDialog {box-sizing: border-box;align-items: center;display: none;flex-direction: column;justify-content: center;overflow: hidden;position: fixed;}.SubEditorDialog.is-active {display: flex;}.SubEditorDialog {z-index: 10000;}.SubEditorDialog .background {box-sizing: border-box;background-color: rgba(10,10,10,.6);}.background {bottom: 0;left: 0;position: absolute;right: 0;top: 0;}.SubEditorDialog .card {box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);}.card {display: flex;flex-direction: column;max-height: calc(100vh - 40px);overflow: hidden;}.card, .content {box-sizing: border-box;margin: 0 20px;position: relative;width: 100%;}.card-title {color: #363636;flex-grow: 1;flex-shrink: 0;font-size: 1.5rem;line-height: 1;}.delete, .close {user-select: none;background-color: rgba(10,10,10,.2);border: 0;border-radius: 290486px;cursor: pointer;pointer-events: auto;display: inline-block;flex-grow: 0;flex-shrink: 0;font-size: 0;height: 20px;max-height: 20px;max-width: 20px;min-height: 20px;min-width: 20px;outline: 0;position: relative;vertical-align: top;width: 20px;}.card-head, .card-foot {box-sizing: border-box;border: none;background: #fff;}.card-head {border-top-left-radius: 6px;border-top-right-radius: 6px;}.card-foot, .card-head {align-items: center;display: flex;flex-shrink: 0;justify-content: flex-start;padding: 20px;position: relative;}.card-foot {justify-content: flex-end;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;}.card-body {background-color: #fff;flex-grow: 1;flex-shrink: 1;overflow: auto;padding: 20px;display: block;}.SubEditorDialog .button{user-select: none;align-items: center;border: 1px solid transparent;box-shadow: none;display: inline-flex;font-size: 1rem;height: 2.25em;justify-content: flex-start;line-height: 1.5;padding: calc(.375em - 1px) calc(.625em - 1px);position: relative;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;color: #363636;cursor: pointer;justify-content: center;text-align: center;white-space: nowrap;border-radius: 3px;text-transform: uppercase;font-weight: 400;box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);}.button.is-info, .button.is-info.is-hovered, .button.is-info:hover {border-color: transparent;color: #fff;}.button.is-info {background-color: #29b6f6;}.card-foot .button:not(:last-child) {margin-right: 10px;}@media screen and (min-width: 769px), print {.card, .body {    margin: 0 auto;    max-height: calc(100vh - 40px);    width: 100vw - 40px;}}.SubEditorToolbar .se-dropdown-content .uploadcontainer{position: relative;border: dashed 2px #bdbdbd;border-radius: 3px;width:250px;min-height: 100px;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer strong{position:absolute;top:50%;transform: translateY(-50%);display: block;width: 100%;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer input{position: absolute;top:0;left:0;width: 100%;height: 100%;opacity: 0;}.FileTileImageGridContainer {max-height: calc(100vh - 140px);margin-bottom:0px;position:relative;overflow-y: auto;}.FileTileImageGridFooter {width: 100%;padding-top: 5px;border-top:#ccc 1px solid;}.FileTileImageGridPagination {justify-content: center;margin-bottom: 0;margin-top: 0;align-items: center;display: flex;text-align: center;border-bottom:none;}.FileTileImageGridPagination > * {padding: 0 0.75em;white-space: nowrap;border: #dbdbdb 1px solid;color: #363636;font-size: 1em;justify-content: center;margin: 1px 5px;text-align: center;-webkit-appearance: none;line-height: 28px;height: 28px; } .FileTileImageGridPagination span.total {border:none;padding: 0;margin-left: 0; } .FileTileImageGridPagination input.current {width: 2.5em;border: none;text-align: center; } .FileTileImageGridPagination input.keyword {width: 6em; } .FileTileImageGridPagination > .se-button {border-radius: 9999px;border: #dbdbdb 1px solid;width: 30px; }.FileTileImageGrid {margin-top:18px;display: flex;flex-wrap: wrap;width:100%;min-width: 640px;max-height: calc(100vh - 140px);overflow-y: visible;}.FileTileImageGrid button {display: inline-block;margin-bottom: 8px;width: calc(20% - 9px);text-decoration: none;margin-right: 8px;padding:5px;background: #ffffff;cursor: pointer;user-select: none;border: 1px solid #eee;min-width: 55px;}.FileTileImageGrid button.upload {position:relative;cursor: pointer;}.FileTileImageGrid button.upload input {position: absolute;width: 100%;height: 100%;top: 0;left: 0;opacity: 0;}/* 4 per row */.FileTileImageGrid a:nth-of-type(5n) {margin-right: 0;}.FileTileImageGrid button > figure {position: relative;width: 100%;padding-top: 100%;margin:0;}.FileTileImageGrid button > figure > figure {position:  absolute;top: 0;left: 0;bottom: 0;right: 0;margin:0;overflow:hidden;}.FileTileImageGrid img{position:absolute;top : 0;left:0;min-width:100%;min-height:100%;width:100%;max-height:100%;border:none;}.FileTileImageGrid figure .text{text-align: center;word-break: break-all;margin: 0;position: absolute;top: 50%;transform: translateY(-50%);display: block;width: 100%;}.FileTileImageGrid button:hover {border: 1px solid #ccc;}.FileTileImageGrid .caption {display:block;margin-top: 6px;max-height:2.2em;overflow: hidden;text-align: center;font-size: 0.7em;}@media screen and (max-width: 768px){.FileTileImageGrid {max-width: 320px;min-width: 320px;}.FileTileImageGrid button {width: calc(25% - 6px);}.FileTileImageGrid button:nth-of-type(2n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(5n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(4n) {margin-right: 0;}}#dropdown-menu-color .se-dropdown-content .padding > div,#dropdown-menu-background .se-dropdown-content .padding > div {display: flex;}#dropdown-menu-color .se-dropdown-content .padding > div > *,#dropdown-menu-background .se-dropdown-content .padding > div > * {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table,#dropdown-menu-background table {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table td div,#dropdown-menu-background table td div {cursor:pointer;width:16px;height:16px;padding: 2px;border: 1px solid #dbdbdb;}#dropdown-menu-color table td div:hover,#dropdown-menu-background table td div:hover{border-color:#999;}";
-
   // src/debounce.ts
   var debounce = (func, wait = 100) => {
     let timeout;
@@ -2101,855 +2046,7 @@
   };
   var dom_default = exp;
 
-  // src/lang/en.ts
-  var en_default = {
-    "bold": "bold",
-    "italic": "italic",
-    "underline": "underline",
-    "blockquote": "blockquote",
-    "paragraph": "paragraph",
-    "Normal": "Normal",
-    "Heading 1": "Heading 1",
-    "Heading 2": "Heading 2",
-    "Heading 3": "Heading 3",
-    "Heading 4": "Heading 4",
-    "Heading 5": "Heading 5",
-    "Heading 6": "Heading 6",
-    "Code": "Code",
-    "text color": "text color",
-    "background color": "background color",
-    "SET TEXT COLOR": "SET COLOR",
-    "SET BACKGROUND COLOR": "SET COLOR",
-    "fullscreen": "fullscreen",
-    "exit fullscreen": "exit fullscreen",
-    "table": "table",
-    "align": "align",
-    "align left": "align left",
-    "align center": "align center",
-    "align right": "align right",
-    "align justify": "align justify",
-    "horizontal line": "horizontal line",
-    "view source": "view source",
-    "strikethrough": "strikethrough",
-    "superscript": "superscript",
-    "subscript": "subscript",
-    "indent": "indent",
-    "outdent": "outdent",
-    "format": "format",
-    "remove format": "remove format",
-    "link": "link",
-    "url": "URL",
-    "text": "TEXT",
-    "link target": "TARGET",
-    "remove": "REMOVE",
-    "insert": "INSERT",
-    "update": "UPDATE",
-    "open in new tab": " (open in new tab)",
-    "list": "list",
-    "ordered list": "ordered list",
-    "unordered list": "unordered list",
-    "remove list": "remove list",
-    "image": "image",
-    "uploading": "uploading",
-    "upload failed": "upload failed",
-    "drop or click to upload image": "drop or click to upload image",
-    "please select the appropriate file types:": "please select the appropriate file types:",
-    "max allowed size per file should be ": "max allowed size per file should be ",
-    "max allowed size of all files in total should be ": "max allowed size of all files in total should be ",
-    "UPLOADING...": "UPLOADING...",
-    "START OVER": "START OVER"
-  };
-
-  // src/lang/zhCN.ts
-  var zhCN_default = {
-    "bold": "\u7C97\u4F53",
-    "italic": "\u659C\u4F53",
-    "underline": "\u4E0B\u5212\u7EBF",
-    "blockquote": "\u5F15\u7528",
-    "paragraph": "\u6BB5\u843D",
-    "Normal": "\u6B63\u5E38",
-    "Heading 1": "\u6807\u9898 1",
-    "Heading 2": "\u6807\u9898 2",
-    "Heading 3": "\u6807\u9898 3",
-    "Heading 4": "\u6807\u9898 4",
-    "Heading 5": "\u6807\u9898 5",
-    "Heading 6": "\u6807\u9898 6",
-    "Code": "\u4EE3\u7801",
-    "text color": "\u6587\u5B57\u989C\u8272",
-    "background color": "\u80CC\u666F\u989C\u8272",
-    "SET TEXT COLOR": "\u8BBE\u7F6E\u6587\u5B57\u989C\u8272",
-    "SET BACKGROUND COLOR": "\u8BBE\u7F6E\u80CC\u666F\u989C\u8272",
-    "fullscreen": "\u5168\u5C4F",
-    "exit fullscreen": "\u9000\u51FA\u5168\u5C4F",
-    "table": "\u8868\u683C",
-    "align": "\u5BF9\u9F50",
-    "align left": "\u9760\u5DE6",
-    "align center": "\u7F6E\u4E2D",
-    "align right": "\u9760\u53F3",
-    "align justify": "\u5DE6\u53F3\u5BF9\u9F50",
-    "horizontal line": "\u6C34\u5E73\u7EBF",
-    "view source": "\u67E5\u770B\u6E90\u4EE3\u7801",
-    "strikethrough": "\u5220\u9664\u7EBF",
-    "superscript": "\u4E0A\u6807",
-    "subscript": "\u4E0B\u6807",
-    "indent": "\u7F29\u8FDB",
-    "outdent": "\u51CF\u5C0F\u7F29\u8FDB",
-    "format": "\u683C\u5F0F",
-    "remove format": "\u5220\u9664\u683C\u5F0F",
-    "link": "\u94FE\u63A5",
-    "url": "\u7F51\u5740",
-    "text": "\u6587\u672C",
-    "link target": "\u94FE\u63A5\u76EE\u6807",
-    "remove": "\u5220\u9664",
-    "insert": "\u63D2\u5165",
-    "update": "\u66F4\u65B0",
-    "open in new tab": "\uFF08\u5728\u65B0\u6807\u7B7E\u4E2D\u6253\u5F00\uFF09",
-    "list": "\u5217\u8868",
-    "ordered list": "\u6570\u5B57\u5217\u8868",
-    "unordered list": "\u65E0\u5E8F\u5217\u8868",
-    "remove list": "\u5220\u9664\u5217\u8868",
-    "image": "\u56FE\u7247",
-    "uploading": "\u4E0A\u4F20\u4E2D",
-    "upload failed": "\u4E0A\u4F20\u5931\u8D25",
-    "drop or click to upload image": "\u62D6\u653E\u6216\u6D4F\u89C8\u6587\u4EF6\u4E0A\u4F20",
-    "please select the appropriate file types:": "\u8BF7\u9009\u62E9\u9002\u5F53\u7684\u6587\u4EF6\u7C7B\u578B\uFF1A",
-    "max allowed size per file should be ": "\u5355\u4E2A\u6587\u4EF6\u5141\u8BB8\u7684\u6700\u5927\u5927\u5C0F\u5E94\u8BE5\u662F ",
-    "max allowed size of all files in total should be ": "\u603B\u6587\u4EF6\u7684\u6700\u5927\u5141\u8BB8\u5927\u5C0F\u5E94\u4E3A ",
-    "UPLOADING...": "\u4E0A\u4F20\u4E2D...",
-    "START OVER": "\u91CD\u65B0\u5F00\u59CB"
-  };
-
-  // src/lang/zhTW.ts
-  var zhTW_default = {
-    "bold": "\u7C97\u9AD4",
-    "italic": "\u659C\u9AD4",
-    "underline": "\u4E0B\u5283\u7DDA",
-    "blockquote": "\u5F15\u7528",
-    "paragraph": "\u6BB5\u843D",
-    "Normal": "\u6B63\u5E38",
-    "Heading 1": "\u6A19\u984C 1",
-    "Heading 2": "\u6A19\u984C 2",
-    "Heading 3": "\u6A19\u984C 3",
-    "Heading 4": "\u6A19\u984C 4",
-    "Heading 5": "\u6A19\u984C 5",
-    "Heading 6": "\u6A19\u984C 6",
-    "Code": "\u4EE3\u78BC",
-    "text color": "\u6587\u5B57\u984F\u8272",
-    "background color": "\u80CC\u666F\u984F\u8272",
-    "SET TEXT COLOR": "\u8A2D\u7F6E\u6587\u5B57\u984F\u8272",
-    "SET BACKGROUND COLOR": "\u8A2D\u7F6E\u80CC\u666F\u984F\u8272",
-    "fullscreen": "\u5168\u5C4F",
-    "exit fullscreen": "\u9000\u51FA\u5168\u5C4F",
-    "table": "\u8868\u683C",
-    "align": "\u5C0D\u9F4A",
-    "align left": "\u9760\u5DE6",
-    "align center": "\u7F6E\u4E2D",
-    "align right": "\u9760\u53F3",
-    "align justify": "\u5DE6\u53F3\u5C0D\u9F4A",
-    "horizontal line": "\u6C34\u5E73\u7DDA",
-    "view source": "\u67E5\u770B\u6E90\u4EE3\u78BC",
-    "strikethrough": "\u522A\u9664\u7DDA",
-    "superscript": "\u4E0A\u6A19",
-    "subscript": "\u4E0B\u6A19",
-    "indent": "\u7E2E\u9032",
-    "outdent": "\u6E1B\u5C0F\u7E2E\u9032",
-    "format": "\u683C\u5F0F",
-    "remove format": "\u522A\u9664\u683C\u5F0F",
-    "link": "\u93C8\u63A5",
-    "url": "\u7DB2\u5740",
-    "text": "\u6587\u672C",
-    "link target": "\u93C8\u63A5\u76EE\u6A19",
-    "remove": "\u522A\u9664",
-    "insert": "\u63D2\u5165",
-    "update": "\u66F4\u65B0",
-    "open in new tab": "\uFF08\u5728\u65B0\u6A19\u7C64\u4E2D\u6253\u958B\uFF09",
-    "list": "\u5217\u8868",
-    "ordered list": "\u6578\u5B57\u5217\u8868",
-    "unordered list": "\u7121\u5E8F\u5217\u8868",
-    "remove list": "\u522A\u9664\u5217\u8868",
-    "image": "\u5716\u7247",
-    "uploading": "\u4E0A\u50B3\u4E2D",
-    "upload failed": "\u4E0A\u50B3\u5931\u6557",
-    "drop or click to upload image": "\u62D6\u653E\u6216\u700F\u89BD\u6587\u4EF6\u4E0A\u50B3",
-    "please select the appropriate file types:": "\u8ACB\u9078\u64C7\u9069\u7576\u7684\u6587\u4EF6\u985E\u578B\uFF1A",
-    "max allowed size per file should be ": "\u55AE\u500B\u6587\u4EF6\u5141\u8A31\u7684\u6700\u5927\u5927\u5C0F\u61C9\u8A72\u662F ",
-    "max allowed size of all files in total should be ": "\u7E3D\u6587\u4EF6\u7684\u6700\u5927\u5141\u8A31\u5927\u5C0F\u61C9\u70BA ",
-    "UPLOADING...": "\u4E0A\u50B3\u4E2D...",
-    "START OVER": "\u91CD\u65B0\u958B\u59CB"
-  };
-
-  // src/lang/index.ts
-  var lang_default = {
-    en: en_default,
-    zhCN: zhCN_default,
-    zhTW: zhTW_default
-  };
-
-  // src/toolbar/color.ts
-  var rgbToHex = (r, g, b) => "#" + [r, g, b].map((x) => {
-    if (x === "")
-      return "00";
-    const hex = parseInt(x, 10).toString(16);
-    return hex.length === 1 ? "0" + hex : hex;
-  }).join("");
-  var rgbStyleToHex = (rgb) => {
-    if (rgb.indexOf("rgb(") === -1)
-      return rgb;
-    let _rgb = rgb.replace("rgb(", "").replace(")", "").split(",");
-    return rgbToHex(_rgb[0], _rgb[1], _rgb[2]);
-  };
-  function color_default(editor) {
-    const content = (type) => {
-      var _a, _b;
-      const v = type === "color" ? ["color", SubEditor.svgList["text_color"], ((_a = editor.feature) == null ? void 0 : _a.color) || "", editor.ln("text color"), editor.ln("SET COLOR"), "#000000"] : ["background", SubEditor.svgList["background_color"], ((_b = editor.feature) == null ? void 0 : _b.background) || "", editor.ln("background color"), editor.ln("SET BACKGROUND COLOR"), "#ffffff"];
-      return '<div class="se-ToolbarItem se-dropdown"><div class="se-dropdown-trigger"><button class="se-button"  data-command="' + v[0] + '" data-tips="' + v[3] + '" id="btn-dropdown-menu-' + v[0] + '" aria-haspopup="true" aria-controls="dropdown-menu-' + v[0] + '"><span></span><span class="se-icon">' + v[1] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-' + v[0] + '" role="menu"><div class="se-dropdown-content control"><div class="padding"><table><tbody><tr><td><div style="background-color: rgb(0, 0, 0);"></div></td><td><div style="background-color: rgb(68, 68, 68);"></div></td><td><div style="background-color: rgb(102, 102, 102);"></div></td><td><div style="background-color: rgb(153, 153, 153);"></div></td><td><div style="background-color: rgb(204, 204, 204);"></div></td><td><div style="background-color: rgb(238, 238, 238);"></div></td><td><div style="background-color: rgb(243, 243, 243);"></div></td><td><div style="background-color: rgb(255, 255, 255);"></div></td></tr><tr><td><div style="background-color: rgb(255, 0, 0);"></div></td><td><div style="background-color: rgb(255, 153, 0);"></div></td><td><div style="background-color: rgb(255, 255, 0);"></div></td><td><div style="background-color: rgb(0, 255, 0);"></div></td><td><div style="background-color: rgb(0, 255, 255);"></div></td><td><div style="background-color: rgb(0, 0, 255);"></div></td><td><div style="background-color: rgb(153, 0, 255);"></div></td><td><div style="background-color: rgb(255, 0, 255);"></div></td></tr><tr><td><div style="background-color: rgb(244, 204, 204);"></div></td><td><div style="background-color: rgb(252, 229, 205);"></div></td><td><div style="background-color: rgb(255, 242, 204);"></div></td><td><div style="background-color: rgb(217, 234, 211);"></div></td><td><div style="background-color: rgb(208, 224, 227);"></div></td><td><div style="background-color: rgb(207, 226, 243);"></div></td><td><div style="background-color: rgb(217, 210, 233);"></div></td><td><div style="background-color: rgb(234, 209, 220);"></div></td></tr><tr><td><div style="background-color: rgb(234, 153, 153);"></div></td><td><div style="background-color: rgb(249, 203, 156);"></div></td><td><div style="background-color: rgb(255, 229, 153);"></div></td><td><div style="background-color: rgb(182, 215, 168);"></div></td><td><div style="background-color: rgb(162, 196, 201);"></div></td><td><div style="background-color: rgb(159, 197, 232);"></div></td><td><div style="background-color: rgb(180, 167, 214);"></div></td><td><div style="background-color: rgb(213, 166, 189);"></div></td></tr><tr><td><div style="background-color: rgb(224, 102, 102);"></div></td><td><div style="background-color: rgb(246, 178, 107);"></div></td><td><div style="background-color: rgb(255, 217, 102);"></div></td><td><div style="background-color: rgb(147, 196, 125);"></div></td><td><div style="background-color: rgb(118, 165, 175);"></div></td><td><div style="background-color: rgb(111, 168, 220);"></div></td><td><div style="background-color: rgb(142, 124, 195);"></div></td><td><div style="background-color: rgb(194, 123, 160);"></div></td></tr><tr><td><div style="background-color: rgb(204, 0, 0);"></div></td><td><div style="background-color: rgb(230, 145, 56);"></div></td><td><div style="background-color: rgb(241, 194, 50);"></div></td><td><div style="background-color: rgb(106, 168, 79);"></div></td><td><div style="background-color: rgb(69, 129, 142);"></div></td><td><div style="background-color: rgb(61, 133, 198);"></div></td><td><div style="background-color: rgb(103, 78, 167);"></div></td><td><div style="background-color: rgb(166, 77, 121);"></div></td></tr><tr><td><div style="background-color: rgb(153, 0, 0);"></div></td><td><div style="background-color: rgb(180, 95, 6);"></div></td><td><div style="background-color: rgb(191, 144, 0);"></div></td><td><div style="background-color: rgb(56, 118, 29);"></div></td><td><div style="background-color: rgb(19, 79, 92);"></div></td><td><div style="background-color: rgb(11, 83, 148);"></div></td><td><div style="background-color: rgb(53, 28, 117);"></div></td><td><div style="background-color: rgb(116, 27, 71);"></div></td></tr><tr><td><div style="background-color: rgb(102, 0, 0);"></div></td><td><div style="background-color: rgb(120, 63, 4);"></div></td><td><div style="background-color: rgb(127, 96, 0);"></div></td><td><div style="background-color: rgb(39, 78, 19);"></div></td><td><div style="background-color: rgb(12, 52, 61);"></div></td><td><div style="background-color: rgb(7, 55, 99);"></div></td><td><div style="background-color: rgb(32, 18, 77);"></div></td><td><div style="background-color: rgb(76, 17, 48);"></div></td></tr></tbody></table><div><input class="Hex" type="color" value="' + (rgbStyleToHex(v[2]) || v[5]) + '"><button class="se-button">' + v[4] + "</button></div></div></div></div></div>";
-    };
-    return {
-      color: {
-        command: "color",
-        svg: SubEditor.svgList["text_color"],
-        tips: editor.ln("text color"),
-        dropdowncontent: content("color"),
-        onRender: (_editor, el) => {
-          var _a, _b;
-          const menu = el.querySelector(".se-dropdown-menu");
-          (_a = el.querySelector(".se-dropdown-trigger > button")) == null ? void 0 : _a.addEventListener("click", () => {
-            var _a2, _b2, _c, _d, _e;
-            if (!menu.classList.contains("is-active")) {
-              _editor.handleFeature();
-              el.querySelector("input").value = rgbStyleToHex(((_b2 = (_a2 = _editor.feature) == null ? void 0 : _a2.node) == null ? void 0 : _b2.style.color) || ((_e = (_d = (_c = _editor.feature) == null ? void 0 : _c.node) == null ? void 0 : _d.parentElement) == null ? void 0 : _e.style.color) || "");
-            }
-          });
-          el.querySelectorAll("td > div").forEach((div) => {
-            div.addEventListener("click", (e) => {
-              el.querySelector("input").value = rgbStyleToHex(e.currentTarget.style.backgroundColor);
-            });
-          });
-          (_b = el.querySelector(".se-dropdown-content button")) == null ? void 0 : _b.addEventListener("click", (e) => {
-            var _a2, _b2;
-            e.preventDefault();
-            e.stopPropagation();
-            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
-            _editor.command("color", [(_b2 = el.querySelector("input")) == null ? void 0 : _b2.value]);
-            return false;
-          });
-        }
-      },
-      backgroundcolor: {
-        command: "backgroundcolor",
-        svg: SubEditor.svgList["background_color"],
-        tips: "background color",
-        dropdowncontent: content("background"),
-        onRender: (_editor, el) => {
-          var _a, _b;
-          const menu = el.querySelector(".se-dropdown-menu");
-          (_a = el.querySelector(".se-dropdown-trigger > button")) == null ? void 0 : _a.addEventListener("click", () => {
-            var _a2, _b2, _c, _d, _e;
-            if (!menu.classList.contains("is-active")) {
-              _editor.handleFeature();
-              el.querySelector("input").value = rgbStyleToHex(((_b2 = (_a2 = _editor.feature) == null ? void 0 : _a2.node) == null ? void 0 : _b2.style.backgroundColor) || ((_e = (_d = (_c = _editor.feature) == null ? void 0 : _c.node) == null ? void 0 : _d.parentElement) == null ? void 0 : _e.style.backgroundColor) || "");
-            }
-          });
-          el.querySelectorAll("td > div").forEach((div) => {
-            div.addEventListener("click", (e) => {
-              el.querySelector("input").value = rgbStyleToHex(e.currentTarget.style.backgroundColor);
-            });
-          });
-          (_b = el.querySelector(".se-dropdown-content button")) == null ? void 0 : _b.addEventListener("click", (e) => {
-            var _a2, _b2;
-            e.preventDefault();
-            e.stopPropagation();
-            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
-            _editor.command("backgroundcolor", [(_b2 = el.querySelector("input")) == null ? void 0 : _b2.value]);
-            return false;
-          });
-        }
-      }
-    };
-  }
-
-  // src/toolbar/blockquote.ts
-  function blockquote_default(editor) {
-    return {
-      blockquote: {
-        command: "blockquote",
-        svg: SubEditor.svgList["blockquote"],
-        tips: "blockquote"
-      }
-    };
-  }
-
-  // src/toolbar/format.ts
-  function format_default(editor) {
-    const o = {
-      paragraph: {
-        command: "p",
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="paragraph"><span class="se-icon">' + SubEditor.svgList["p"] + "</span></span>"
-      },
-      blockquote: {
-        command: "blockquote",
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + "</span></span>"
-      },
-      code: {
-        command: "code",
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span>"
-      },
-      format: {
-        command: "format",
-        svg: SubEditor.svgList["p"],
-        tips: "format",
-        dropdowncontent: '<div class="se-ToolbarItem se-dropdown" data-tips="' + editor.ln("paragraph") + '"><div class="se-dropdown-trigger"><button class="se-button"  data-command="paragraph" data-tips="paragraph" id="btn-dropdown-menu-paragraph" aria-haspopup="true" aria-controls="dropdown-menu-paragraph"><span></span><span class="se-icon" aria-hidden="true">' + SubEditor.svgList["p"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-paragraph" role="menu"><div class="se-dropdown-content horizontal"  aria-hidden="true"><span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="Normal"><span class="se-icon">' + SubEditor.svgList["p"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h1" data-featureformat="H1" data-tips="Heading 1"><span class="se-icon">' + SubEditor.svgList["h1"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h2" data-featureformat="H2" data-tips="Heading 2"><span class="se-icon">' + SubEditor.svgList["h2"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h3" data-featureformat="H3" data-tips="Heading 3"><span class="se-icon">' + SubEditor.svgList["h3"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h4" data-featureformat="H4" data-tips="Heading 4"><span class="se-icon">' + SubEditor.svgList["h4"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h5" data-featureformat="H5" data-tips="Heading 5"><span class="se-icon">' + SubEditor.svgList["h5"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h6" data-featureformat="H6" data-tips="Heading 6"><span class="se-icon">' + SubEditor.svgList["h6"] + '</span></span><span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + '</span></span><span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="Code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span></div></div></div>",
-        onRender: (_editor, el) => {
-          el.querySelectorAll(".se-button").forEach((elm) => {
-            elm.addEventListener("click", (e) => {
-              const cmd = elm.getAttribute("data-command");
-              _editor.command(cmd, []);
-            });
-          });
-        }
-      }
-    };
-    for (let i = 1; i < 7; i++) {
-      o["h" + i] = {
-        command: "h" + i,
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="h' + i + '" data-featureformat="H' + i + '" data-tips="Heading ' + i + '"><span class="se-icon">' + SubEditor.svgList["h" + i] + "</span></span>"
-      };
-    }
-    return o;
-  }
-
-  // src/toolbar/fullscreen.ts
-  function fullscreen_default(editor) {
-    return {
-      fullscreen: {
-        command: "fullscreen",
-        svg: SubEditor.svgList["fullscreen"],
-        tips: "fullscreen",
-        onRender: (_editor, el) => {
-          el.setAttribute("data-value", "1");
-          el.addEventListener("click", (e) => {
-            _editor.command("fullscreen", [el.getAttribute("data-value")]);
-          });
-          _editor.event.register([{ event: "onFullscreenChange", target: [], callback: () => {
-            const isFullscreen = el.getAttribute("data-value");
-            if (isFullscreen === "") {
-              el.querySelector("span.se-icon").innerHTML = SubEditor.svgList["fullscreen"];
-              el.setAttribute("data-value", "1");
-              el.setAttribute("data-tips", "exit fullscreen");
-              el.classList.remove("is-featured");
-            } else {
-              el.querySelector("span.se-icon").innerHTML = SubEditor.svgList["fullscreen_close"];
-              el.setAttribute("data-value", "");
-              el.setAttribute("data-tips", "fullscreen");
-              el.classList.add("is-featured");
-            }
-            if (editor.refToolbar) {
-              const tips = editor.refToolbar.querySelector(".tips");
-              if (tips) {
-                tips.style.display = "none";
-                tips.style.top = "";
-              }
-            }
-          } }]);
-        }
-      }
-    };
-  }
-
-  // src/toolbar/align.ts
-  var ev = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
-    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="align left"],.se-ToolbarItem[data-tips="align right"],.se-ToolbarItem[data-tips="align center"],.se-ToolbarItem[data-tips="align justify"]').forEach((btn) => {
-      btn.classList.remove("is-featured");
-      if (btn.getAttribute("data-value") === _editor.feature.align) {
-        btn.classList.add("is-featured");
-      }
-    });
-    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="align"] .se-button[data-command]').forEach((btn) => {
-      btn.classList.remove("is-featured");
-      if (btn.getAttribute("data-value") === _editor.feature.align) {
-        btn.classList.add("is-featured");
-      }
-    });
-  } }];
-  function align_default(editor) {
-    const o = {
-      align: {
-        command: "align",
-        svg: SubEditor.svgList["align_left"],
-        tips: "align",
-        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="align"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-align"><span></span><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-align" role="menu"><div class="se-dropdown-content horizontal"><span class="se-button se-ToolbarItem" data-command="align" data-value="left" data-tips="align left"><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="center" data-tips="align center"><span class="se-icon">' + SubEditor.svgList["align_center"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="right" data-tips="align right"><span class="se-icon">' + SubEditor.svgList["align_right"] + '</span></span><span class="se-button ToolbarItem" data-command="align" data-value="justify" data-tips="align justify"><span class="se-icon">' + SubEditor.svgList["align_justify"] + "</span></span></div></div></div>",
-        onRender: (_editor, el) => {
-          el.querySelectorAll(".se-button[data-command]").forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              _editor.command("align", [btn.getAttribute("data-value")]);
-              return false;
-            });
-          });
-          _editor.event.register(ev);
-        }
-      }
-    };
-    ["align_right", "align_left", "align_center", "align_justify"].forEach((cmd) => {
-      const values = cmd.split("_");
-      o[cmd] = {
-        command: cmd,
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="' + cmd + '" data-value="' + values[1] + '" data-tips="' + cmd.replace("_", " ") + '"><span class="se-icon">' + SubEditor.svgList[cmd] + "</span></span>",
-        onRender: (_editor, el) => {
-          el.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            _editor.command("align", [values[1]]);
-            return false;
-          });
-          _editor.event.register(ev);
-        }
-      };
-    });
-    return o;
-  }
-
-  // src/toolbar/table.ts
-  function createTableDropdown(editor, el) {
-    el.querySelector(".se-dropdown-content").innerHTML = '<div class="padding"><table class="ToolbarTable"><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><div class="title"></div></div>';
-    const table = el.querySelector("table");
-    const _mouseover = (e, row, col2) => {
-      let x = 0, y = 0;
-      table.querySelectorAll("tr").forEach((tr) => {
-        x++;
-        tr.querySelectorAll("td").forEach((td) => {
-          y++;
-          td.classList.remove("active");
-          if (row >= x && col2 >= y) {
-            td.classList.add("active");
-          }
-          if (td === e.currentTarget) {
-            el.querySelector(".title").innerHTML = x + " x " + y;
-          }
-        });
-        y = 0;
-      });
-    };
-    const _mouseout = () => {
-      table.querySelectorAll("td").forEach((td) => {
-        td.classList.remove("active");
-        el.querySelector(".title").innerHTML = "&nbsp;";
-      });
-    };
-    let _row = 0, _col = 0;
-    table.querySelectorAll("tr").forEach((tr) => {
-      _row++;
-      tr.querySelectorAll("td").forEach((td) => {
-        _col++;
-        const __row = _row, __col = _col;
-        td.addEventListener("mouseover", (e) => {
-          _mouseover(e, __row, __col);
-        });
-        td.addEventListener("mouseout", _mouseout);
-        td.addEventListener("click", () => {
-          var _a;
-          (_a = editor.toolbar) == null ? void 0 : _a.hideDropdown();
-          editor.command("table", [__row + "," + __col]);
-        });
-      });
-      _col = 0;
-    });
-  }
-  function inTableDropdown(editor, el) {
-    var _a, _b, _c, _d, _e;
-    const cell = editor.dom.nodeParent((_a = editor.feature) == null ? void 0 : _a.node, "TD") || editor.dom.nodeParent((_b = editor.feature) == null ? void 0 : _b.node, "TH");
-    const is_td = (_c = editor.feature) == null ? void 0 : _c.path.includes("TD"), table = editor.feature.pathNode[(_d = editor.feature) == null ? void 0 : _d.path.indexOf("TABLE")], tr = editor.dom.nodeParent((_e = editor.feature) == null ? void 0 : _e.node, "TR"), trs = table.querySelectorAll("tbody tr");
-    const has_header = table.querySelectorAll("th").length > 0;
-    const col2 = editor.dom.nodePosition(cell), row = editor.dom.nodePosition(tr);
-    const noderowspan = parseInt(cell.getAttribute("rowspan") || "1", 10), nodecolspan = parseInt(cell.getAttribute("colspan") || "1", 10);
-    const allow_unmerge = nodecolspan > 1 || noderowspan > 1;
-    let allow_mergeright = cell.parentElement.childNodes.length > col2 + 1;
-    let allow_mergedown = is_td && trs.length > row + 1;
-    const tableCellList = allow_mergedown || allow_mergeright ? editor.dom.table.cellList(table, false) : [];
-    if (allow_mergeright) {
-      const nodeList = tableCellList[row], idx = nodeList.indexOf(cell);
-      if (editor.dom.table.rowSpan(cell) !== editor.dom.table.rowSpan(nodeList[idx + 1])) {
-        allow_mergeright = false;
-      }
-    }
-    if (allow_mergedown) {
-      const nodeList = tableCellList[row], nextNodeList = tableCellList[row + 1], idx = nodeList.indexOf(cell);
-      if (editor.dom.table.colSpan(nodeList[idx]) !== editor.dom.table.colSpan(nextNodeList[idx])) {
-        allow_mergedown = false;
-      }
-    }
-    el.querySelector(".se-dropdown-content").innerHTML = '<button class="se-button se-dropdown-item hover borderbottom" data-command="table_style" >' + editor.ln("TABLE STYLE") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="cell_style">' + editor.ln("CELL STYLE") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_header" style="' + (has_header ? "display: none;" : "") + '">' + editor.ln("INSERT HEADER") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="delete_header" style="' + (is_td ? "display: none;" : "") + '">' + editor.ln("DELETE HEADER") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_row_above" style="' + (!is_td ? "display: none;" : "") + '">' + editor.ln("INSERT ROW ABOVE") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_row_below" style="' + (!is_td ? "display: none;" : "") + '">' + editor.ln("INSERT ROW BELOW") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_column_left">' + editor.ln("INSERT COLUMN LEFT") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_column_right">' + editor.ln("INSERT COLUMN RIGHT") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="delete_row" style="' + (!is_td ? "display: none;" : "") + '">' + editor.ln("DELETE ROW") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="delete_column">' + editor.ln("DELETE COLUMN") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="merge_down" style="' + (!allow_mergedown ? "display: none;" : "") + '">' + editor.ln("MERGE DOWN") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="merge_right" style="' + (!allow_mergeright ? "display: none;" : "") + '">' + editor.ln("MERGE RIGHT") + '</button><button class="se-button se-dropdown-item hover" data-command="unmerge" style="' + (!allow_unmerge ? "display: none;" : "") + '">' + editor.ln("UNMERGE") + "</button>";
-    el.querySelectorAll(".se-dropdown-item").forEach((i) => {
-      i.addEventListener("click", (e) => {
-        var _a2;
-        e.preventDefault();
-        e.stopPropagation();
-        const cmd = i.getAttribute("data-command") || "";
-        if (cmd === "table_style") {
-          const style = table.hasAttribute("style") ? table.getAttribute("style") : editor.getCfg("table.default.table.style");
-          el.querySelector(".se-dropdown-content").innerHTML = '<div class="padding"><div class="se-dropdown-item"><input type="text" name="style"><label>' + editor.ln("TABLE STYLE") + '</label></div><div style="text-align: right;margin-right:5px"><button class="se-button apply">' + editor.ln("Apply") + "</button></div></div>";
-          el.querySelector(".se-dropdown-content input[name=style]").value = style;
-          el.querySelector(".se-dropdown-content .se-button.apply").addEventListener("click", (ev4) => {
-            var _a3;
-            ev4.preventDefault();
-            ev4.stopPropagation();
-            editor.restoreSelection(editor.getCache("currentSelection"));
-            editor.command("table", ["table_style", el.querySelector(".se-dropdown-content input[name=style]").value]);
-            (_a3 = editor.toolbar) == null ? void 0 : _a3.hideDropdown();
-            return false;
-          });
-          return false;
-        }
-        if (cmd === "cell_style") {
-          const style = cell.hasAttribute("style") ? cell.getAttribute("style") : editor.getCfg(is_td ? "table.default.cell.style" : "table.default.header.cell.style");
-          let str = '<div class="padding"><div class="se-dropdown-item"><input type="text" name="style"><label>' + editor.ln("CELL STYLE") + '</label></div><div style="text-align:right;display:flex"><button disabled style="    border: none;background: #fff;">' + editor.ln("Apply To") + "</button>";
-          if (is_td) {
-            str += '<button class="se-button apply" data-value="all">' + editor.ln("All") + '</button><button class="se-button apply" data-value="row">' + editor.ln("Row") + '</button><button class="se-button apply" data-value="cell">' + editor.ln("Cell") + "</button></div></div>";
-          } else {
-            str += '<button class="se-button apply" data-value="row">' + editor.ln("Row") + '</button><button class="se-button apply" data-value="cell">' + editor.ln("Cell") + "</button></div></div>";
-          }
-          el.querySelector(".se-dropdown-content").innerHTML = str;
-          el.querySelector(".se-dropdown-content input[name=style]").value = style;
-          Array.from(el.querySelectorAll(".se-dropdown-content .se-button.apply")).forEach((btn) => btn.addEventListener("click", (ev4) => {
-            var _a3;
-            ev4.preventDefault();
-            ev4.stopPropagation();
-            editor.restoreSelection(editor.getCache("currentSelection"));
-            editor.command("table", ["cell_style", el.querySelector(".se-dropdown-content input[name=style]").value, ev4.target.getAttribute("data-value") || ""]);
-            (_a3 = editor.toolbar) == null ? void 0 : _a3.hideDropdown();
-            return false;
-          }));
-          return false;
-        }
-        editor.restoreSelection(editor.getCache("currentSelection"));
-        editor.command("table", [cmd]);
-        (_a2 = editor.toolbar) == null ? void 0 : _a2.hideDropdown();
-        return false;
-      });
-    });
-  }
-  function table_default2(editor) {
-    return {
-      table: {
-        command: "table",
-        svg: SubEditor.svgList["table"],
-        tips: editor.ln("table"),
-        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="' + editor.ln("table") + '"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-table"><span></span><span class="se-icon">' + SubEditor.svgList["table"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-table" role="menu"><div class="se-dropdown-content se-control"><div class="title"></div></div></div></div>',
-        onRender: (_editor, table) => {
-          const menu = table.querySelector(".se-dropdown-menu");
-          table.querySelector(".se-dropdown-trigger > button").addEventListener("click", () => {
-            var _a;
-            if (!menu.classList.contains("is-active")) {
-              editor.setCache("currentSelection", _editor.selection);
-              _editor.handleFeature();
-              const path = (_a = _editor.feature) == null ? void 0 : _a.path;
-              if (path.includes("TD") || path.includes("TH")) {
-                inTableDropdown(_editor, table);
-              } else {
-                createTableDropdown(_editor, table);
-              }
-            }
-          });
-        }
-      }
-    };
-  }
-
-  // src/toolbar/hr.ts
-  function hr_default(editor) {
-    return {
-      hr: {
-        command: "hr",
-        svg: SubEditor.svgList["hr"],
-        tips: "horizontal line"
-      }
-    };
-  }
-
-  // src/toolbar/source.ts
-  function source_default(editor) {
-    return {
-      source: {
-        command: "source",
-        svg: SubEditor.svgList["view_source"],
-        tips: "view source",
-        onRender: (_editor, el) => {
-          el.addEventListener("click", () => {
-            var _a;
-            if (!((_a = _editor.toolbar) == null ? void 0 : _a.hasShadow())) {
-              _editor.toolbar.enableShadow(["source", "fullscreen"]);
-            } else {
-              _editor.toolbar.disableShadow();
-            }
-            const cmd = el.getAttribute("data-command");
-            _editor.command(cmd, []);
-          });
-        }
-      }
-    };
-  }
-
-  // src/toolbar/text.ts
-  var ev2 = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
-    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="text"] .se-button[data-command]').forEach((btn) => {
-      btn.classList.remove("is-featured");
-      const cmd = btn.getAttribute("data-command");
-      if (_editor.feature[cmd]) {
-        btn.classList.add("is-featured");
-      }
-    });
-  } }];
-  function text_default(editor) {
-    const o = {
-      text: {
-        command: "text",
-        svg: SubEditor.svgList["text"],
-        tips: "text",
-        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="text"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-align"><span></span><span class="se-icon">' + SubEditor.svgList["text"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-align" role="menu"><div class="se-dropdown-content horizontal"><span class="se-button se-ToolbarItem" data-command="bold" data-tips="bold"><span class="se-icon">' + SubEditor.svgList["b"] + '</span></span><span class="se-button se-ToolbarItem" data-command="italic" data-tips="italic"><span class="se-icon">' + SubEditor.svgList["i"] + '</span></span><span class="se-button se-ToolbarItem" data-command="underline" data-tips="underline"><span class="se-icon">' + SubEditor.svgList["u"] + '</span></span><span class="se-button se-ToolbarItem" data-command="strikethrough" data-tips="strikethrough"><span class="se-icon">' + SubEditor.svgList["strikethrough"] + '</span></span><span class="se-button se-ToolbarItem" data-command="superscript" data-tips="superscript"><span class="se-icon">' + SubEditor.svgList["superscript"] + '</span></span><span class="se-button se-ToolbarItem" data-command="subscript" data-tips="subscript"><span class="se-icon">' + SubEditor.svgList["subscript"] + "</span></span></div></div></div>",
-        onRender: (_editor, el) => {
-          el.querySelectorAll(".se-button[data-command]").forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              _editor.command(btn.getAttribute("data-command"));
-              return false;
-            });
-          });
-          _editor.event.register(ev2);
-        }
-      }
-    };
-    const x = { b: "bold", i: "italic", u: "underline", strikethrough: "strikethrough", subscript: "subscript", superscript: "superscript" };
-    Object.keys(x).forEach((key) => {
-      const cmd = x[key];
-      o[cmd] = {
-        command: cmd,
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="' + cmd + '" data-tips="' + cmd + '"><span class="se-icon">' + SubEditor.svgList[key] + "</span></span>",
-        onRender: (_editor, el) => {
-          el.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            _editor.command(el.getAttribute("data-command"));
-            return false;
-          });
-        }
-      };
-    });
-    return o;
-  }
-
-  // src/toolbar/undo.ts
-  function undo_default(editor) {
-    return {
-      undo: {
-        command: "undo",
-        svg: SubEditor.svgList["undo"],
-        tips: "undo"
-      }
-    };
-  }
-
-  // src/toolbar/redo.ts
-  function redo_default(editor) {
-    return {
-      redo: {
-        command: "redo",
-        svg: SubEditor.svgList["redo"],
-        tips: "redo"
-      }
-    };
-  }
-
-  // src/toolbar/indent.ts
-  function indent_default(editor) {
-    return {
-      indent: {
-        command: "indent",
-        svg: SubEditor.svgList["indent"],
-        tips: "indent"
-      },
-      outdent: {
-        command: "outdent",
-        svg: SubEditor.svgList["outdent"],
-        tips: "outdent"
-      }
-    };
-  }
-
-  // src/toolbar/remove_format.ts
-  function remove_format_default(editor) {
-    return {
-      remove_format: {
-        command: "remove_format",
-        svg: SubEditor.svgList["remove_format"],
-        tips: "remove format"
-      }
-    };
-  }
-
-  // src/toolbar/link.ts
-  function link_default(editor) {
-    return {
-      link: {
-        command: "link",
-        svg: SubEditor.svgList["link"],
-        tips: "link",
-        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="' + editor.ln("link") + '"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-link"><span></span><span class="se-icon">' + SubEditor.svgList["link"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-link" role="menu"><div class="se-dropdown-content control"><div class="padding"><div class="se-dropdown-item"><input type="text" name="url"><label>' + editor.ln("url") + '</label></div><div class="se-dropdown-item"><input type="text" name="text"><label>' + editor.ln("text") + '</label></div><div class="se-dropdown-item"><input type="text" name="target"><label>' + editor.ln("link target") + ' <u style="cursor:pointer">' + editor.ln("open in new tab") + '</u></label></div><div style="text-align: right;margin-right:5px"><button class="se-button alert">' + editor.ln("remove") + '</button><button class="se-button insert">' + editor.ln("insert") + "</button></div></div></div></div></div>",
-        onRender: (_editor, el) => {
-          var _a, _b;
-          const btnAlert = el.querySelector(".se-dropdown-content .se-button.alert"), btnInsert = el.querySelector(".se-dropdown-content .se-button.insert"), inputURL = el.querySelector(".se-dropdown-content input[name=url]"), inputText = el.querySelector(".se-dropdown-content input[name=text]"), inputTarget = el.querySelector(".se-dropdown-content input[name=target]");
-          editor.setCache("currentSelection", _editor.selection);
-          (_a = el.querySelector("u")) == null ? void 0 : _a.addEventListener("click", () => {
-            el.querySelector("input[name=target]").value = "_blank";
-          });
-          btnInsert.addEventListener("click", (e) => {
-            var _a2;
-            e.preventDefault();
-            e.stopPropagation();
-            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
-            _editor.restoreSelection(editor.getCache("currentSelection"));
-            _editor.command("link", [btnInsert.innerHTML === editor.ln("insert") ? "insert" : "update", inputURL.value, inputText.value, inputTarget.value]);
-            return false;
-          });
-          btnAlert.addEventListener("click", (e) => {
-            var _a2;
-            e.preventDefault();
-            e.stopPropagation();
-            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
-            _editor.command("link", ["remove"]);
-            return false;
-          });
-          const menu = el.querySelector(".se-dropdown-menu");
-          (_b = el.querySelector(".se-dropdown-trigger > button")) == null ? void 0 : _b.addEventListener("click", () => {
-            var _a2, _b2, _c, _d, _e;
-            if (!menu.classList.contains("is-active")) {
-              editor.setCache("currentSelection", _editor.selection);
-              if ((_a2 = _editor.feature) == null ? void 0 : _a2.a.node) {
-                btnInsert.innerHTML = editor.ln("update");
-                inputURL.value = ((_b2 = _editor.feature) == null ? void 0 : _b2.a.href) || "";
-                inputTarget.value = ((_c = _editor.feature) == null ? void 0 : _c.a.target) || "";
-                inputText.value = ((_e = (_d = _editor.feature) == null ? void 0 : _d.a.node) == null ? void 0 : _e.textContent) || "";
-                btnAlert.style.display = "";
-              } else {
-                inputURL.value = "";
-                inputTarget.value = "";
-                inputText.value = "";
-                btnInsert.innerHTML = editor.ln("insert");
-                btnAlert.style.display = "none";
-              }
-            }
-          });
-        }
-      }
-    };
-  }
-
-  // src/toolbar/remove_link.ts
-  function remove_link_default(editor) {
-    return {
-      remove_link: {
-        command: "remove_link",
-        svg: SubEditor.svgList["remove_link"],
-        tips: "remove link"
-      }
-    };
-  }
-
-  // src/toolbar/list.ts
-  var ev3 = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
-    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-command="ol"],.se-ToolbarItem[data-command="ul"]').forEach((btn) => {
-      var _a;
-      btn.classList.remove("is-featured");
-      const cmd = btn.getAttribute("data-command");
-      if ((_a = _editor.feature) == null ? void 0 : _a.path.includes(cmd.toUpperCase())) {
-        btn.classList.add("is-featured");
-      }
-    });
-  } }];
-  function list_default(editor) {
-    return {
-      ol: {
-        command: "ol",
-        svg: SubEditor.svgList["ol"],
-        tips: "ordered list",
-        onRender: (_editor, el) => {
-          el.addEventListener("click", (e) => {
-            const cmd = el.getAttribute("data-command");
-            _editor.command(cmd, []);
-          });
-          _editor.event.register(ev3);
-        }
-      },
-      ul: {
-        command: "ul",
-        svg: SubEditor.svgList["ul"],
-        tips: "unordered list",
-        onRender: (_editor, el) => {
-          el.addEventListener("click", (e) => {
-            const cmd = el.getAttribute("data-command");
-            _editor.command(cmd, []);
-          });
-          _editor.event.register(ev3);
-        }
-      }
-    };
-  }
-
-  // src/toolbar/seperator.ts
-  function seperator_default(editor) {
-    const o = {
-      command: "",
-      svg: "",
-      tips: "",
-      dropdowncontent: '<span class="se-button se-ToolbarItem seperator"><span class="se-icon"><span></span>'
-    };
-    return {
-      "|": o,
-      "seperator": o
-    };
-  }
-
-  // src/toolbar/nextline.ts
-  function nextline_default(editor) {
-    return {
-      "nextline": {
-        command: "",
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem nextline"><span class="se-icon"><span></span>'
-      }
-    };
-  }
-
-  // src/toolbar/spacer.ts
-  function spacer_default(editor) {
-    return {
-      "spacer": {
-        command: "",
-        svg: "",
-        tips: "",
-        dropdowncontent: '<span class="se-button se-ToolbarItem spacer"><span class="se-icon"><span></span>'
-      }
-    };
-  }
-
-  // src/toolbar/toolbar.ts
-  function ToolbarPresets(editor) {
-    return Object.assign({}, undo_default(editor), redo_default(editor), color_default(editor), blockquote_default(editor), format_default(editor), fullscreen_default(editor), align_default(editor), table_default2(editor), hr_default(editor), source_default(editor), text_default(editor), indent_default(editor), remove_format_default(editor), link_default(editor), remove_link_default(editor), list_default(editor), seperator_default(editor), nextline_default(editor), spacer_default(editor));
-  }
+  // src/toolbar.ts
   var _Toolbar = class {
     constructor(editor) {
       this.refToolbar = document.createElement("div");
@@ -2993,20 +2090,23 @@
       this.refToolbar.appendChild(this.refTips);
     }
     registerPluginItem(item) {
-      const ToolbarItem5 = typeof item === "function" ? item(this.editor) : item;
-      this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem5);
+      const ToolbarItem7 = typeof item === "function" ? item(this.editor) : item;
+      this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem7);
     }
     addItem(item) {
       let barItem = void 0;
-      const presets = ToolbarPresets(this.editor);
       if (typeof item === "string") {
         if (typeof _Toolbar.presetItemList[item] === "function")
           barItem = _Toolbar.presetItemList[item](this.editor);
         else if (typeof this.pluginItemList[item] !== "undefined")
           barItem = this.pluginItemList[item];
-        else if (typeof presets[item] !== "undefined")
-          barItem = presets[item];
-        else
+        else if (typeof SubEditor.toolbarItemList[item] !== "undefined") {
+          const defaultItem = SubEditor.toolbarItemList[item](this.editor);
+          if (typeof defaultItem[item] !== "undefined")
+            barItem = defaultItem[item];
+          else
+            return;
+        } else
           return;
       } else if (typeof item === "function")
         barItem = item(this.editor);
@@ -3124,7 +2224,7 @@
         let xNew = rect.width / 2 - 18;
         if (rect.x - xNew < 0)
           xNew = rect.x;
-        ddcontent.setAttribute("style", "transform:translateX(-" + xNew + "px)");
+        ddcontent.parentElement.setAttribute("style", "transform:translateX(-" + xNew + "px)");
       }, 1);
     }
     hideDropdown() {
@@ -3161,9 +2261,370 @@
 
   // src/subeditor.ts
   var import_selection_serializer2 = __toModule(require_selection_serializer());
+  "use strict";
+  var _SubEditor = class {
+    constructor(el, opts) {
+      this.cfgList = {};
+      this.cachedList = {};
+      this.lang = "en";
+      this.autoGrow = false;
+      this.height = 0;
+      this.cacheTextareaStyle = "";
+      this.debounceChange = () => {
+      };
+      this.onChange = () => {
+      };
+      this.event = new Event(this);
+      this.feature = null;
+      this.dom = dom_default;
+      this.docListener = {};
+      this.callbackList = {};
+      var _a;
+      _SubEditor.initSvg(opts.svgList || {});
+      _SubEditor.initLang(opts.langList || {});
+      if (typeof el._SubEditor !== "undefined") {
+        el._SubEditor.destroy();
+      }
+      if (opts.lang)
+        this.lang = opts.lang;
+      if (opts.ln)
+        this.lnFunc = opts.ln;
+      if (opts.cfgList)
+        this.cfgList = opts.cfgList;
+      if (opts.instance)
+        opts.instance(this);
+      this.refEl = el;
+      this.refEl._SubEditor = this;
+      this.refEditor = document.createElement("div");
+      this.refContent = document.createElement("div");
+      this.refFooter = document.createElement("div");
+      const contentContainer = document.createElement("div");
+      contentContainer.classList.add("SubEditorContentContainer");
+      contentContainer.appendChild(this.refContent);
+      this.refEditor.appendChild(contentContainer);
+      this.refEditor.appendChild(this.refFooter);
+      if (el.tagName === "TEXTAREA") {
+        this.refTextarea = el;
+        (_a = this.refTextarea.parentNode) == null ? void 0 : _a.insertBefore(this.refEditor, this.refTextarea);
+      } else {
+        this.refTextarea = document.createElement("textarea");
+        el.appendChild(this.refEditor);
+        el.appendChild(this.refTextarea);
+      }
+      this.refEditor.classList.add("SubEditor");
+      this.refContent.classList.add("SubEditorContent");
+      this.refFooter.classList.add("SubEditorFooter");
+      this.cacheTextareaStyle = this.refTextarea.getAttribute("style") || "";
+      this.refEditor.style.width = (opts.width ? opts.width : this.refTextarea.clientWidth) + "px";
+      this.height = opts.height ? opts.height : this.refTextarea.clientHeight;
+      this.refEditor.style.height = this.height + "px";
+      this.refTextarea.style.display = "none";
+      this.refTextarea.classList.add("SubEditorTextarea");
+      if (opts.value) {
+        this.refTextarea.value = opts.value;
+      }
+      this.refContent.innerHTML = this.refTextarea.value;
+      this.refContent.setAttribute("contenteditable", "true");
+      this.history = new history_default(this.refContent);
+      this.history.Next();
+      if (opts.onChange) {
+        this.onChange = opts.onChange;
+      }
+      this.toolbar = new Toolbar(this);
+      this.refToolbar = this.refEditor.querySelector(".SubEditorToolbar");
+      this.initPlugins(opts.pluginList || []);
+      this.initEvents();
+      this.event.trigger("registerCss", "", []);
+      _SubEditor.initCss(opts.css || "", opts.skipCss === true);
+      this.event.trigger("registerSvg", "", []);
+      this.event.trigger("registerLanguage", "", []);
+      this.event.trigger("registerToolbarItem", "", []);
+      this.initToolbarItems(opts.toolbarList || []);
+      if (typeof opts.autoGrow !== "undefined")
+        this.setAutoGrow(opts.autoGrow);
+      this.fixStylePosition();
+      this.event.trigger("registerUI", "", []);
+    }
+    value() {
+      const source = this.refEditor.querySelector(".SubEditorSource");
+      if (source) {
+        return source.value;
+      }
+      return this.refContent.style.display !== "none" ? this.refContent.innerHTML : this.refTextarea.value;
+    }
+    ln(key, vars = void 0) {
+      if (this.lnFunc)
+        return this.lnFunc(key) || key;
+      let translated = typeof _SubEditor.langList[this.lang] !== "undefined" && typeof _SubEditor.langList[this.lang][key] !== "undefined" ? _SubEditor.langList[this.lang][key] : key;
+      if (vars && vars.length) {
+        vars.forEach((v, idx) => {
+          translated = translated.replace(new RegExp("{%" + (idx + 1) + "}", "g"), v.toString());
+        });
+      }
+      return translated;
+    }
+    registerCallback(key, fn) {
+      this.callbackList[key] = fn;
+    }
+    getCallback(key, args = void 0) {
+      if (typeof this.callbackList[key] === "undefined")
+        return;
+      if (typeof this.callbackList[key] === "function")
+        return this.callbackList[key].apply(this, args);
+      else
+        return this.callbackList[key];
+    }
+    static presetToolbarItem(name, item) {
+      Toolbar.presetItemList[name] = item;
+    }
+    static presetPlugin(pluginName, plugin) {
+      _SubEditor.presetPluginList[pluginName] = plugin;
+    }
+    initPlugins(plugins) {
+      plugins.forEach((plugin) => {
+        if (typeof plugin === "string") {
+          if (typeof _SubEditor.presetPluginList[plugin] !== "undefined") {
+            this.event.register(_SubEditor.presetPluginList[plugin]);
+          } else if (typeof _SubEditor.pluginList[plugin] !== "undefined") {
+            this.event.register(_SubEditor.pluginList[plugin]);
+          }
+        } else if (typeof plugin === "object" && plugin.length) {
+          this.event.register(plugin);
+        }
+      });
+    }
+    handleFeature() {
+      const sel = dom_default.getSelection();
+      if (!sel || !(sel == null ? void 0 : sel.focusNode) || !this.refContent.contains(sel.focusNode))
+        return;
+      const feature = feature_default(sel.focusNode, this.refContent);
+      if (this.feature === feature)
+        return;
+      this.feature = feature;
+      this.event.trigger("onFeatureChange", this.feature.nodeName, [this, this.feature]);
+    }
+    initEvents() {
+      this.debounceChange = debounce_default(() => {
+        this.handleChange(this.history.Next());
+      }, 300);
+      this.refContent.addEventListener("keyup", (e) => {
+        this.event.trigger("onKeyUp", e.target.tagName, [this, e]);
+        this.debounceChange();
+      });
+      this.refContent.addEventListener("keydown", (e) => {
+        this.event.trigger("onKeyDown", e.target.tagName, [this, e]);
+      });
+      this.refContent.addEventListener("click", (e) => {
+        this.event.trigger("onClick", e.target.tagName, [this, e]);
+      });
+      this.refContent.addEventListener("mouseup", (e) => {
+        this.event.trigger("onMouseUp", e.target.tagName, [this, e]);
+      });
+      this.refContent.addEventListener("blur", (e) => {
+        this.event.trigger("onBlur", e.target.tagName, [this, e]);
+      });
+      this.refContent.addEventListener("paste", (e) => {
+        this.event.trigger("onPaste", e.target.tagName, [this, e]);
+      });
+      this.docListener["selectionchange"] = [() => {
+        let x = dom_default.getSelection().focusNode;
+        let isIn = x === this.refContent;
+        if (!isIn && x && x !== this.refContent) {
+          while (x && x.parentElement) {
+            if (x.parentNode === this.refContent) {
+              isIn = true;
+              break;
+            }
+            x = x.parentElement;
+          }
+        }
+        if (!isIn) {
+          this.selection = void 0;
+          return;
+        }
+        const sel = import_selection_serializer2.default.saveSlim(this.refContent);
+        if (JSON.stringify(this.selection) !== JSON.stringify(sel)) {
+          this.selection = sel;
+          this.handleFeature();
+          this.event.trigger("onSelectionChange", "", [this, this.selection]);
+        }
+      }];
+      document.addEventListener("selectionchange", this.docListener["selectionchange"][0]);
+    }
+    resetSelection() {
+      this.selection = import_selection_serializer2.default.saveSlim(this.refContent);
+    }
+    restoreSelection(sel = void 0) {
+      import_selection_serializer2.default.restore(this.refContent, sel ? sel : this.selection);
+    }
+    getSelectionRange() {
+      if (!this.selection) {
+        this.resetSelection();
+      }
+      let selection = dom_default.getSelection();
+      const range = selection.getRangeAt(0);
+      return { selection, range: range.cloneRange() };
+    }
+    setCache(key, value) {
+      this.cachedList[key] = value;
+    }
+    getCache(key) {
+      return typeof this.cachedList[key] === "undefined" ? void 0 : this.cachedList[key];
+    }
+    setCfg(key, value) {
+      this.cfgList[key] = value;
+    }
+    getCfg(key) {
+      let ln = this.ln(key);
+      if (ln && ln !== key)
+        return ln;
+      return this.cfgList[key] || "";
+    }
+    command(cmd, value = []) {
+      if (!this.selection) {
+        this.selection = import_selection_serializer2.default.saveSlim(this.refContent);
+      }
+      import_selection_serializer2.default.restore(this.refContent, this.selection);
+      this.event.trigger("onCommand", cmd, [this, cmd, ...value]);
+    }
+    disableFooter() {
+      this.refFooter.style.display = "none";
+      this.fixStylePosition();
+    }
+    enableFooter(height = 15) {
+      this.refFooter.style.display = "block";
+      this.refFooter.style.height = height + "px";
+      this.fixStylePosition();
+    }
+    setAutoGrow(grow) {
+      if (this.autoGrow === grow)
+        return;
+      this.autoGrow = grow;
+      if (grow) {
+        this.refEditor.classList.add("AutoGrow");
+        this.refContent.addEventListener("input", this.growFn);
+        this.refEditor.style.height = "auto";
+        this.refContent.parentElement.style.height = "auto";
+      } else {
+        this.refEditor.classList.remove("AutoGrow");
+        this.refContent.removeEventListener("input", this.growFn);
+        this.refEditor.style.height = this.height + "px";
+      }
+      this.fixStylePosition();
+    }
+    growFn(ev4) {
+      ev4.target.parentElement.style.height = ev4.target.clientHeight + "px";
+    }
+    fixStylePosition() {
+      if (!this.autoGrow) {
+        this.refContent.parentElement.style.height = this.refEditor.clientHeight - this.refToolbar.clientHeight - this.refFooter.clientHeight + "px";
+      }
+    }
+    initToolbarItems(toolbarItemList) {
+      var _a;
+      (_a = this.toolbar) == null ? void 0 : _a.initItems(toolbarItemList);
+    }
+    destroy() {
+      var _a;
+      if (this.refEl.nodeName === "TEXTAREA") {
+        this.refEl.setAttribute("style", this.cacheTextareaStyle);
+        (_a = this.refEl.parentNode) == null ? void 0 : _a.removeChild(this.refEditor);
+        this.refEl.classList.remove("SubEditorTextarea");
+      } else {
+        this.refEl.removeChild(this.refEditor);
+        this.refEl.removeChild(this.refTextarea);
+      }
+      this.cachedList = [];
+      this.cfgList = [];
+      this.selection = void 0;
+      this.feature = null;
+      Object.keys(this.docListener).forEach((ev4) => {
+        this.docListener[ev4].forEach((i) => {
+          document.removeEventListener(ev4, i);
+        });
+      });
+      this.refEl._SubEditor = void 0;
+    }
+    static presetLang(langList) {
+      Object.keys(langList).forEach((ln) => {
+        _SubEditor.langList[ln] = Object.assign({}, _SubEditor.langList[ln] || {}, langList[ln]);
+      });
+    }
+    static initLang(langList) {
+      if (Object.keys(langList).length > 0)
+        _SubEditor.presetLang(langList);
+    }
+    static presetSvg(_svg) {
+      _SubEditor.svgList = Object.assign(_SubEditor.svgList, _svg);
+    }
+    static initSvg(userSvgList) {
+      _SubEditor.svgList = Object.assign({}, _SubEditor.svgList || {}, userSvgList);
+    }
+    static presetCss(cssString = "") {
+      _SubEditor.presetCssString = cssString;
+    }
+    static lastCss() {
+      return _SubEditor.lastCssString;
+    }
+    static initCss(cssString = "", skipCss = false) {
+      let pluginCss = "";
+      const SubEditorStyle = document.querySelector("#SubEditorStyle");
+      if (skipCss && SubEditorStyle)
+        return;
+      Object.keys(_SubEditor.pluginCSS).forEach((p) => pluginCss += _SubEditor.pluginCSS[p]);
+      const styleStr = _SubEditor.cssString + "\n" + pluginCss + "\n" + _SubEditor.presetCssString + "\n" + cssString;
+      _SubEditor.lastCssString = styleStr;
+      for (let i = 0; i < document.styleSheets.length; i++) {
+        if (document.styleSheets[i].title && document.styleSheets[i].title === "SubEditorStyle") {
+          if (styleStr !== SubEditorStyle.innerHTML) {
+            SubEditorStyle.innerHTML = styleStr;
+          }
+          return;
+        }
+      }
+      const style = window.document.createElement("style");
+      style.title = "SubEditorStyle";
+      style.setAttribute("id", "SubEditorStyle");
+      style.innerHTML = styleStr;
+      document.head.appendChild(style);
+    }
+    changeValue(str) {
+      if (this.refEditor) {
+        this.refContent.innerHTML = str;
+        this.resetSelection();
+        this.handleFeature();
+        this.handleChange(this.history.Next());
+      }
+    }
+    triggerChange() {
+      if (this.refEditor) {
+        this.handleFeature();
+        this.handleChange(this.history.Next());
+      }
+    }
+    handleChange(changed) {
+      this.event.trigger("onBeforeChange", "", [this, changed]);
+      if (this.refTextarea.style.display === "none") {
+        this.refTextarea.value = this.refContent.innerHTML;
+      }
+      if (changed && this.onChange)
+        this.onChange(changed);
+    }
+  };
+  var SubEditor = _SubEditor;
+  SubEditor.version = "0.6.0";
+  SubEditor.cssString = "";
+  SubEditor.svgList = {};
+  SubEditor.langList = {};
+  SubEditor.pluginList = {};
+  SubEditor.toolbarItemList = {};
+  SubEditor.presetPluginList = {};
+  SubEditor.presetCssString = "";
+  SubEditor.lastCssString = "";
+  SubEditor.pluginCSS = {};
 
   // src/plugins/fullscreen.ts
-  var fullscreen_default2 = [{
+  var fullscreen_default = [{
     event: "onCommand",
     target: ["fullscreen"],
     callback: (editor, type, value) => {
@@ -3179,7 +2640,7 @@
   }];
 
   // src/plugins/hr.ts
-  var hr_default2 = [{
+  var hr_default = [{
     event: "onCommand",
     target: ["hr"],
     callback: (editor, cmd, value) => {
@@ -3251,7 +2712,7 @@
   }];
 
   // src/plugins/color.ts
-  var color_default2 = [
+  var color_default = [
     {
       event: "onCommand",
       target: ["color", "backgroundcolor"],
@@ -3319,7 +2780,7 @@
   ];
 
   // src/plugins/source.ts
-  var source_default2 = [{
+  var source_default = [{
     event: "onCommand",
     target: ["source"],
     callback: (editor, type, value) => {
@@ -3341,7 +2802,7 @@
   }];
 
   // src/plugins/align.ts
-  var align_default2 = [{
+  var align_default = [{
     event: "onCommand",
     target: ["align"],
     callback: (editor, cmd, value) => {
@@ -3404,7 +2865,7 @@
     } while (n && isText(n.nodeName));
     return false;
   };
-  var text_default2 = [
+  var text_default = [
     {
       event: "onCommand",
       target: ["bold", "italic", "underline", "strikethrough", "subscript", "superscript"],
@@ -3499,7 +2960,7 @@
   };
 
   // src/plugins/undo.ts
-  var undo_default2 = [
+  var undo_default = [
     {
       event: "onCommand",
       target: ["undo"],
@@ -3522,7 +2983,7 @@
   ];
 
   // src/plugins/redo.ts
-  var redo_default2 = [
+  var redo_default = [
     {
       event: "onCommand",
       target: ["redo"],
@@ -3545,7 +3006,7 @@
   ];
 
   // src/plugins/indent.ts
-  var indent_default2 = [{
+  var indent_default = [{
     event: "onCommand",
     target: ["indent", "outdent"],
     callback: (editor, cmd, value) => {
@@ -3692,7 +3153,7 @@
     }
     return { action, node: action === "wrap" ? null : path_node };
   };
-  var format_default2 = [
+  var format_default = [
     {
       event: "onKeyDown",
       target: ["enter"],
@@ -4362,7 +3823,7 @@
   ];
 
   // src/plugins/remove_format.ts
-  var remove_format_default2 = [
+  var remove_format_default = [
     {
       event: "onCommand",
       target: ["remove_format"],
@@ -4395,7 +3856,7 @@
   ];
 
   // src/plugins/link.ts
-  var link_default2 = [
+  var link_default = [
     {
       event: "onCommand",
       target: ["link"],
@@ -4649,7 +4110,7 @@
     } while (editor.dom.nodeIsTextInlineOrVoid(node));
     return path;
   };
-  var list_default2 = [
+  var list_default = [
     {
       event: "onKeyDown",
       target: ["enter"],
@@ -5250,7 +4711,7 @@
       func[value]();
     editor.triggerChange();
   }
-  var table_default3 = [
+  var table_default2 = [
     {
       event: "registerLanguage",
       target: [],
@@ -5395,9 +4856,11 @@
       "image.library.per.page": 20,
       "image.library.allow.paging": true,
       "image.library.allow.search": true,
+      "image.drop.to.content.upload": true,
       "image.upload.url": "",
       "image.upload.max.size": 0,
       "image.upload.max.size.per.file": 0,
+      "image.upload.max.files": 0,
       "image.upload.accept.files": 0,
       "image.upload.handler": null,
       "image.url.rewrite.handler": (u) => {
@@ -5408,6 +4871,122 @@
       cfg[key] = editor.getCfg(key);
     });
     return cfg;
+  };
+  var renderUploadProgressBar = (editor, progress) => {
+    const container = editor.refContent.parentElement;
+    let bar = container.querySelector(".UploadProgressBar");
+    if (progress >= 100 && !bar) {
+      return;
+    }
+    if (bar && progress >= 100) {
+      container.removeChild(bar);
+      return;
+    }
+    if (!bar) {
+      bar = document.createElement("div");
+      bar.classList.add("UploadProgressBar");
+      container.appendChild(bar);
+    }
+    bar.setAttribute("style", "width:" + progress + "%");
+  };
+  var renderUploadProgressError = (editor, error) => {
+    const container = editor.refContent.parentElement;
+    let err = container.querySelector(".UploadProgressError");
+    if (!err) {
+      err = document.createElement("div");
+      err.innerHTML = editor.ln(error);
+      err.classList.add("UploadProgressError");
+      container.appendChild(err);
+      setTimeout(() => {
+        container.removeChild(err);
+      }, 5e3);
+    } else {
+      err.innerHTML = editor.ln(error);
+    }
+  };
+  var dropOnFiles = (editor, files) => {
+    const url = editor.getCfg("image.upload.url") || "";
+    if (!url)
+      return;
+    let cfgAcceptTypes = editor.getCfg("image.accept.types") || "";
+    const cfgUploadAcceptFiles = editor.getCfg("image.upload.accept.files") || 0, cfgMaxSize = editor.getCfg("image.upload.max.size") || 0, cfgMaxFiles = editor.getCfg("image.upload.max.files") || 0, cfgMaxSizePerFile = editor.getCfg("image.upload.max.size.per.file") || 0, cfgUploadHandler = editor.getCfg("image.upload.handler"), cfgUrlRewriteHandler = editor.getCfg("image.url.rewrite.handler");
+    if (typeof editor.cachedList["image.upload.insert.list"] === "undefined")
+      editor.cachedList["image.upload.insert.list"] = [];
+    let err_types = false, err_size = false, err_size_per_file = false, err_files = false, total_size = 0, size_to_upload = [], uploaded_files = 0;
+    editor.cachedList["image.upload.insert.list"].forEach((n) => {
+      if (n.status === "failed" || !n.domEl || !n.domEl.parentElement || !n.size)
+        return;
+      total_size += n.size;
+      uploaded_files++;
+    });
+    if (cfgMaxFiles && uploaded_files + Array.from(files).length > cfgMaxFiles)
+      err_files = true;
+    Array.from(files).forEach((file, idx) => {
+      if (cfgAcceptTypes.indexOf(file.type) === -1 && cfgAcceptTypes.indexOf(file.type.substring(0, file.type.indexOf("")) + "/*") === -1) {
+        err_types = true;
+      }
+      if (cfgMaxSizePerFile > 0 && file.size / 1048576 > cfgMaxSizePerFile) {
+        err_size_per_file = true;
+      }
+      size_to_upload[idx] = file.size;
+      total_size += file.size;
+    });
+    if (cfgMaxSize > 0 && total_size / 1048576 > cfgMaxSize) {
+      err_size = true;
+    }
+    if (err_files || err_size || err_size_per_file || err_types || cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles) {
+      let errText = "";
+      if (err_types)
+        errText += editor.ln("please select the appropriate file types:") + " " + cfgAcceptTypes + ". <br>";
+      if (err_files)
+        errText += editor.ln("Cannot upload more than {%1} files", [cfgMaxFiles]) + ". <br>";
+      else if (cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles)
+        errText += editor.ln("Cannot upload more than {%1} files", [cfgUploadAcceptFiles]) + ". <br>";
+      if (err_size)
+        errText += editor.ln("max allowed size of all files in total should be ") + " " + cfgMaxSize + "MB.  <br>";
+      if (err_size_per_file)
+        errText += editor.ln("max allowed size per file should be ") + " " + cfgMaxSizePerFile + "MB. <br>";
+      renderUploadProgressError(editor, errText);
+      return;
+    }
+    let count = 0, uploaded_size = [], completed = 0;
+    Array.from(files).forEach((file, idx) => {
+      if (cfgAcceptTypes.indexOf(file.type) === -1 && cfgAcceptTypes.indexOf(file.type.substring(0, file.type.indexOf("")) + "/*") === -1)
+        return;
+      count++;
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+      const fd = new FormData();
+      fd.append("file", file);
+      uploaded_size[idx] = 0;
+      xhr.upload.addEventListener("progress", (ev4) => {
+        uploaded_size[idx] = ev4.loaded;
+        size_to_upload[idx] = ev4.total;
+        renderUploadProgressBar(editor, Math.min(100, Math.floor(uploaded_size.reduce((a, b) => a + b, 0) / size_to_upload.reduce((a, b) => a + b, 0) * 1e4) / 100));
+      });
+      xhr.addEventListener("error", () => {
+        xhr.abort();
+        completed++;
+        renderUploadProgressBar(editor, 100);
+      });
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          completed++;
+          if (completed >= count) {
+            renderUploadProgressBar(editor, 100);
+          }
+          if (xhr.status === 0) {
+            return;
+          }
+          cfgUploadHandler(file, xhr.responseText, (_url, _thumb, _obj, _elFunc = void 0) => {
+            const url2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_url) : _url, thumb2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_thumb) : _thumb;
+            const _uploadObj = { status: "completed", name: file.name, type: file.type, size: file.size, url: url2, thumb: thumb2, obj: _obj, elFunc: _elFunc };
+            editor.command("image", ["upload", [_uploadObj]]);
+          });
+        }
+      };
+      xhr.send(fd);
+    });
   };
   var renderLibrary = (editor, content) => {
     const cfg = getCfg(editor);
@@ -5557,7 +5136,7 @@
     const url = editor.getCfg("image.upload.url") || "", cfgUploadHandler = editor.getCfg("image.upload.handler"), cfgUrlRewriteHandler = editor.getCfg("image.url.rewrite.handler");
     if (!url)
       return;
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open("POST", url);
     const fd = new FormData();
     fd.append("file", file);
@@ -5573,14 +5152,14 @@
         if (xhr.status === 0) {
           el.classList.add("failed");
           el.querySelector(".text").innerHTML = editor.ln("upload failed");
-          editor.cachedList["image.upload.result.list"][idx] = { status: "failed" };
+          el._uploadObj = { status: "failed" };
           completed(false);
           return;
         }
         cfgUploadHandler(file, xhr.responseText, (_url, _thumb, _obj, _elFunc = void 0) => {
           el.classList.add("completed");
           const url2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_url) : _url, thumb2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_thumb) : _thumb;
-          editor.cachedList["image.upload.result.list"][idx] = { status: "completed", name: file.name, type: file.type, url: url2, thumb: thumb2, obj: _obj, elFunc: _elFunc };
+          el._uploadObj = { status: "completed", name: file.name, type: file.type, size: file.size, url: url2, thumb: thumb2, obj: _obj, elFunc: _elFunc };
           if (isImage(file.type)) {
             const img = document.createElement("img");
             img.setAttribute("src", thumb2);
@@ -5600,7 +5179,7 @@
     var _a;
     content.classList.remove("horizontal");
     let cfgAcceptTypes = editor.getCfg("image.accept.types") || "";
-    const cfgUploadAcceptFiles = editor.getCfg("image.upload.accept.files") || 0, cfgMaxSize = editor.getCfg("image.upload.max.size") || 0, cfgMaxSizePerFile = editor.getCfg("image.upload.max.size.per.file") || 0;
+    const cfgUploadAcceptFiles = editor.getCfg("image.upload.accept.files") || 0, cfgMaxSize = editor.getCfg("image.upload.max.size") || 0, cfgMaxFiles = editor.getCfg("image.upload.max.files") || 0, cfgMaxSizePerFile = editor.getCfg("image.upload.max.size.per.file") || 0;
     content.innerHTML = "";
     editor.dom.appendString2Node('<div class="padding"><div class="uploadcontainer"><strong>' + editor.ln("drop or click to upload image") + '</strong><input type="file" name="file" ' + (cfgUploadAcceptFiles > 0 ? "multiple" : "") + "></div></div>", content);
     (_a = editor.toolbar) == null ? void 0 : _a.adjustContentPosition(content);
@@ -5608,7 +5187,6 @@
     const input = content.querySelector('input[type="file"]'), uploadContainer = input.parentElement;
     if (cfgAcceptTypes)
       input.setAttribute("accept", cfgAcceptTypes);
-    editor.cachedList["image.upload.result.list"] = [];
     let previewGrid, gridContainer, uploadAgainBtn, insertBtn;
     const onFiles = (files) => {
       uploadContainer.style.display = "none";
@@ -5644,7 +5222,13 @@
         insertBtn.addEventListener("click", (ev4) => {
           ev4.preventDefault();
           ev4.stopPropagation();
-          editor.command("image", ["upload"]);
+          const data = [];
+          Array.from(previewGrid.childNodes).forEach((e) => {
+            if (!e._uploadObj)
+              return;
+            data.push(e._uploadObj);
+          });
+          editor.command("image", ["upload", data]);
           editor.toolbar.hideDropdown();
           return false;
         });
@@ -5654,38 +5238,56 @@
         uploadAgainBtn = content.querySelector(".upload_again");
         insertBtn = content.querySelector(".insert");
       }
-      let count = previewGrid.querySelectorAll("button").length, completed = count, failed = 0;
-      if (cfgMaxSize > 0 || cfgMaxSizePerFile > 0) {
-        let err_size = false, err_size_per_file = false, total_size = 0;
-        Array.from(files).forEach((file) => {
-          if (cfgMaxSizePerFile > 0 && file.size / 1048576 > cfgMaxSizePerFile) {
-            err_size_per_file = true;
-          }
-          total_size += file.size;
-          if (cfgMaxSize > 0 && total_size / 1048576 > cfgMaxSize) {
-            err_size = true;
-          }
-        });
-        if (err_size || err_size_per_file) {
-          uploadContainer.style.display = "";
-          gridContainer.remove();
-          if (uploadContainer.parentElement.querySelector(".FileTileImageGridFooter")) {
-            uploadContainer.parentElement.removeChild(uploadContainer.parentElement.querySelector(".FileTileImageGridFooter"));
-          }
-          const text = uploadContainer.querySelector("strong");
-          const cachedText = text.innerHTML;
-          let errText = "";
-          if (err_size)
-            errText = "<small>" + editor.ln("max allowed size of all files in total should be ") + " " + cfgMaxSize + "MB. </small>";
-          if (err_size_per_file)
-            errText += "<small>" + editor.ln("max allowed size per file should be ") + " " + cfgMaxSizePerFile + "MB. </small>";
-          text.innerHTML = errText;
-          setTimeout(() => {
-            text.innerHTML = cachedText;
-          }, 5e3);
+      if (typeof editor.cachedList["image.upload.insert.list"] === "undefined")
+        editor.cachedList["image.upload.insert.list"] = [];
+      let err_size = false, err_size_per_file = false, err_files = false, total_size = 0, uploaded_files = 0;
+      editor.cachedList["image.upload.insert.list"].forEach((n) => {
+        if (n.status === "failed" || !n.domEl || !n.domEl.parentElement || !n.size)
           return;
+        total_size += n.size;
+        uploaded_files++;
+      });
+      if (cfgMaxFiles && uploaded_files + Array.from(files).length > cfgMaxFiles)
+        err_files = true;
+      Array.from(files).forEach((file) => {
+        if (cfgMaxSizePerFile > 0 && file.size / 1048576 > cfgMaxSizePerFile) {
+          err_size_per_file = true;
         }
+        total_size += file.size;
+      });
+      if (cfgMaxSize > 0 && total_size / 1048576 > cfgMaxSize) {
+        err_size = true;
       }
+      let err_upload_in_progress = false;
+      if (editor.refContent.parentElement.querySelector(".UploadProgressBar")) {
+        err_upload_in_progress = true;
+      }
+      if (err_upload_in_progress || err_files || err_size || err_size_per_file || cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles) {
+        uploadContainer.style.display = "";
+        gridContainer.remove();
+        if (uploadContainer.parentElement.querySelector(".FileTileImageGridFooter")) {
+          uploadContainer.parentElement.removeChild(uploadContainer.parentElement.querySelector(".FileTileImageGridFooter"));
+        }
+        const text = uploadContainer.querySelector("strong");
+        const cachedText = text.innerHTML;
+        let errText = "";
+        if (err_upload_in_progress)
+          errText += "<small>" + editor.ln("another upload is in progress") + ". </small>";
+        if (err_files)
+          errText += "<small>" + editor.ln("Cannot upload more than {%1} files", [cfgMaxFiles]) + ". </small>";
+        else if (cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles)
+          errText += "<small>" + editor.ln("Cannot upload more than {%1} files", [cfgUploadAcceptFiles]) + ". </small>";
+        if (err_size)
+          errText += "<small>" + editor.ln("max allowed size of all files in total should be ") + " " + cfgMaxSize + "MB. </small>";
+        if (err_size_per_file)
+          errText += "<small>" + editor.ln("max allowed size per file should be ") + " " + cfgMaxSizePerFile + "MB. </small>";
+        text.innerHTML = errText;
+        setTimeout(() => {
+          text.innerHTML = cachedText;
+        }, 5e3);
+        return;
+      }
+      let count = previewGrid.querySelectorAll("button.completed").length, completed = count, failed = previewGrid.querySelectorAll("button.failed").length;
       Array.from(files).forEach((file) => {
         if (cfgAcceptTypes.indexOf(file.type) === -1 && cfgAcceptTypes.indexOf(file.type.substring(0, file.type.indexOf("")) + "/*") === -1)
           return;
@@ -5700,7 +5302,6 @@
           return false;
         });
         previewGrid.appendChild(tile);
-        editor.cachedList["image.upload.result.list"].push({});
         processUpload(editor, count - 1, file, tile, (status) => {
           var _a2;
           completed++;
@@ -5802,7 +5403,50 @@
       return false;
     });
   };
+  var dragover = function(e) {
+    e.preventDefault();
+  };
   var image_default = [
+    {
+      event: "registerUI",
+      target: [],
+      callback: (editor) => {
+        if (!editor.getCfg("image.drop.to.content.upload"))
+          return;
+        editor.refContent.removeEventListener("dragover", dragover);
+        editor.refContent.addEventListener("dragover", dragover);
+        editor.refContent.addEventListener("drop", (e) => {
+          e.preventDefault();
+          if (!e.dataTransfer)
+            return;
+          const imageToolbar = editor.refToolbar.querySelector("#dropdown-menu-image");
+          if (imageToolbar && imageToolbar.parentElement.classList.contains("is-active")) {
+            renderUploadProgressError(editor, "cannot drop files to content when image upload toolbar is active");
+            return;
+          }
+          if (editor.refContent.parentElement.querySelector(".UploadProgressBar")) {
+            renderUploadProgressError(editor, "another upload is in progress");
+            return;
+          }
+          const files = [];
+          if (e.dataTransfer.items) {
+            for (let i = 0; i < e.dataTransfer.items.length; i++) {
+              if (e.dataTransfer.items[i].kind === "file") {
+                let file = e.dataTransfer.items[i].getAsFile();
+                if (file)
+                  files.push(file);
+              }
+            }
+          } else {
+            for (let i = 0; i < e.dataTransfer.files.length; i++) {
+              files.push(e.dataTransfer.files[i]);
+            }
+          }
+          dropOnFiles(editor, files);
+        });
+        editor.triggerChange();
+      }
+    },
     {
       event: "registerSvg",
       target: [],
@@ -5828,8 +5472,11 @@
           "upload failed": "upload failed",
           "drop or click to upload image": "drop or click to upload image",
           "insert": "insert",
+          "Cannot upload more than {%1} files": "Cannot upload more than {%1} files",
           "please select the appropriate file types:": "please select the appropriate file types:",
           "max allowed size per file should be ": "max allowed size per file should be ",
+          "cannot drop files to content when image upload toolbar is active": "cannot drop files to content when image upload toolbar is active",
+          "another upload is in progress": "another upload is in progress",
           "max allowed size of all files in total should be ": "max allowed size of all files in total should be ",
           "UPLOADING...": "UPLOADING...",
           "START OVER": "START OVER"
@@ -5841,6 +5488,15 @@
       event: "registerToolbarItem",
       target: [],
       callback: (editor) => {
+        editor.registerCallback("image.upload.total.size", function() {
+          let total_size = 0;
+          this.cachedList["image.upload.insert.list"].forEach((n) => {
+            if (n.status === "failed" || !n.domEl || !n.domEl.parentElement || !n.size)
+              return;
+            total_size += n.size;
+          });
+          return total_size;
+        });
         return {
           library: {
             command: "library",
@@ -5948,11 +5604,15 @@
         let nodes = [];
         if (action === "upload") {
           const _nodes = [];
-          editor.cachedList["image.upload.result.list"].forEach((n) => {
+          if (typeof editor.cachedList["image.upload.insert.list"] === "undefined")
+            editor.cachedList["image.upload.insert.list"] = [];
+          value.forEach((n, index) => {
             if (n.status === "failed")
               return;
             if (typeof n.elFunc === "function") {
-              _nodes.push(n.elFunc());
+              value[index]["domEl"] = n.elFunc();
+              _nodes.push(n.domEl);
+              editor.cachedList["image.upload.insert.list"].push(value[index]);
               return;
             }
             if (n.type.indexOf("image/") !== -1) {
@@ -5960,6 +5620,8 @@
               _node.setAttribute("data-action", action);
               _node.setAttribute("src", n.url);
               _node.setAttribute("style", "max-width:100%");
+              value[index]["domEl"] = _node;
+              editor.cachedList["image.upload.insert.list"].push(value[index]);
               _nodes.push(_node);
             } else {
               const _node = document.createElement("a");
@@ -5967,6 +5629,8 @@
               _node.setAttribute("href", n.url);
               _node.setAttribute("target", "_blank");
               _node.innerHTML = n.name;
+              value[index]["domEl"] = _node;
+              editor.cachedList["image.upload.insert.list"].push(value[index]);
               _nodes.push(_node);
             }
           });
@@ -6037,379 +5701,971 @@
 
   // src/plugins/index.ts
   var presetPlugins = {
-    fullscreen: fullscreen_default2,
-    hr: hr_default2,
-    color: color_default2,
-    source: source_default2,
-    align: align_default2,
-    text: text_default2,
-    undo: undo_default2,
-    redo: redo_default2,
-    indent: indent_default2,
-    format: format_default2,
-    remove_format: remove_format_default2,
-    link: link_default2,
+    fullscreen: fullscreen_default,
+    hr: hr_default,
+    color: color_default,
+    source: source_default,
+    align: align_default,
+    text: text_default,
+    undo: undo_default,
+    redo: redo_default,
+    indent: indent_default,
+    format: format_default,
+    remove_format: remove_format_default,
+    link: link_default,
     paste: paste_default,
-    list: list_default2,
-    table: table_default3,
+    list: list_default,
+    table: table_default2,
     image: image_default
   };
   var plugins_default = presetPlugins;
 
-  // src/subeditor.ts
-  "use strict";
-  var _SubEditor = class {
-    constructor(el, opts) {
-      this.cfgList = {};
-      this.cachedList = {};
-      this.lang = "en";
-      this.autoGrow = false;
-      this.height = 0;
-      this.cacheTextareaStyle = "";
-      this.debounceChange = () => {
-      };
-      this.onChange = () => {
-      };
-      this.event = new Event(this);
-      this.feature = null;
-      this.dom = dom_default;
-      this.docListener = {};
-      this.callbackList = {};
-      var _a;
-      _SubEditor.initSvg(opts.svgList || {});
-      _SubEditor.initLang(opts.langList || {});
-      if (typeof el._SubEditor !== "undefined") {
-        el._SubEditor.destroy();
-      }
-      if (opts.lang)
-        this.lang = opts.lang;
-      if (opts.ln)
-        this.lnFunc = opts.ln;
-      if (opts.cfgList)
-        this.cfgList = opts.cfgList;
-      if (opts.instance)
-        opts.instance(this);
-      this.refEl = el;
-      this.refEl._SubEditor = this;
-      this.refEditor = document.createElement("div");
-      this.refContent = document.createElement("div");
-      this.refFooter = document.createElement("div");
-      const contentContainer = document.createElement("div");
-      contentContainer.classList.add("SubEditorContentContainer");
-      contentContainer.appendChild(this.refContent);
-      this.refEditor.appendChild(contentContainer);
-      this.refEditor.appendChild(this.refFooter);
-      if (el.tagName === "TEXTAREA") {
-        this.refTextarea = el;
-        (_a = this.refTextarea.parentNode) == null ? void 0 : _a.insertBefore(this.refEditor, this.refTextarea);
-      } else {
-        this.refTextarea = document.createElement("textarea");
-        el.appendChild(this.refEditor);
-        el.appendChild(this.refTextarea);
-      }
-      this.refEditor.classList.add("SubEditor");
-      this.refContent.classList.add("SubEditorContent");
-      this.refFooter.classList.add("SubEditorFooter");
-      this.cacheTextareaStyle = this.refTextarea.getAttribute("style") || "";
-      this.refEditor.style.width = (opts.width ? opts.width : this.refTextarea.clientWidth) + "px";
-      this.height = opts.height ? opts.height : this.refTextarea.clientHeight;
-      this.refEditor.style.height = this.height + "px";
-      this.refTextarea.style.display = "none";
-      this.refTextarea.classList.add("SubEditorTextarea");
-      if (opts.value) {
-        this.refTextarea.value = opts.value;
-      }
-      this.refContent.innerHTML = this.refTextarea.value;
-      this.refContent.setAttribute("contenteditable", "true");
-      this.history = new history_default(this.refContent);
-      this.history.Next();
-      if (opts.onChange) {
-        this.onChange = opts.onChange;
-      }
-      this.toolbar = new Toolbar(this);
-      this.refToolbar = this.refEditor.querySelector(".SubEditorToolbar");
-      this.initPlugins(opts.pluginList || []);
-      this.initEvents();
-      this.event.trigger("registerCss", "", []);
-      _SubEditor.initCss(opts.css || "", opts.skipCss === true);
-      this.event.trigger("registerSvg", "", []);
-      this.event.trigger("registerLanguage", "", []);
-      this.event.trigger("registerToolbarItem", "", []);
-      this.initToolbarItems(opts.toolbarList || []);
-      if (typeof opts.autoGrow !== "undefined")
-        this.setAutoGrow(opts.autoGrow);
-      this.fixStylePosition();
-      this.event.trigger("registerUI", "", []);
-    }
-    value() {
-      const source = this.refEditor.querySelector(".SubEditorSource");
-      if (source) {
-        return source.value;
-      }
-      return this.refContent.style.display !== "none" ? this.refContent.innerHTML : this.refTextarea.value;
-    }
-    ln(key) {
-      if (this.lnFunc)
-        return this.lnFunc(key) || key;
-      return typeof _SubEditor.langList[this.lang] !== "undefined" && typeof _SubEditor.langList[this.lang][key] !== "undefined" ? _SubEditor.langList[this.lang][key] : key;
-    }
-    registerCallback(key, fn) {
-      this.callbackList[key] = fn;
-    }
-    getCallback(key, args = void 0) {
-      if (typeof this.callbackList[key] === "undefined")
-        return;
-      if (typeof this.callbackList[key] === "function")
-        return this.callbackList[key](args);
-      else
-        return this.callbackList[key];
-    }
-    static presetToolbarItem(name, item) {
-      Toolbar.presetItemList[name] = item;
-    }
-    static presetPlugin(pluginName, plugin) {
-      _SubEditor.presetPluginList[pluginName] = plugin;
-    }
-    initPlugins(plugins) {
-      plugins.forEach((plugin) => {
-        if (typeof plugin === "string") {
-          if (typeof _SubEditor.presetPluginList[plugin] !== "undefined") {
-            this.event.register(_SubEditor.presetPluginList[plugin]);
-          } else if (typeof plugins_default[plugin] !== "undefined") {
-            this.event.register(plugins_default[plugin]);
-          }
-        } else if (typeof plugin === "object" && plugin.length) {
-          this.event.register(plugin);
-        }
-      });
-    }
-    handleFeature() {
-      const sel = dom_default.getSelection();
-      if (!sel || !(sel == null ? void 0 : sel.focusNode) || !this.refContent.contains(sel.focusNode))
-        return;
-      const feature = feature_default(sel.focusNode, this.refContent);
-      if (this.feature === feature)
-        return;
-      this.feature = feature;
-      this.event.trigger("onFeatureChange", this.feature.nodeName, [this, this.feature]);
-    }
-    initEvents() {
-      this.debounceChange = debounce_default(() => {
-        this.handleChange(this.history.Next());
-      }, 300);
-      this.refContent.addEventListener("keyup", (e) => {
-        this.event.trigger("onKeyUp", e.target.tagName, [this, e]);
-        this.debounceChange();
-      });
-      this.refContent.addEventListener("keydown", (e) => {
-        this.event.trigger("onKeyDown", e.target.tagName, [this, e]);
-      });
-      this.refContent.addEventListener("click", (e) => {
-        this.event.trigger("onClick", e.target.tagName, [this, e]);
-      });
-      this.refContent.addEventListener("mouseup", (e) => {
-        this.event.trigger("onMouseUp", e.target.tagName, [this, e]);
-      });
-      this.refContent.addEventListener("blur", (e) => {
-        this.event.trigger("onBlur", e.target.tagName, [this, e]);
-      });
-      this.refContent.addEventListener("paste", (e) => {
-        this.event.trigger("onPaste", e.target.tagName, [this, e]);
-      });
-      this.docListener["selectionchange"] = [() => {
-        let x = dom_default.getSelection().focusNode;
-        let isIn = x === this.refContent;
-        if (!isIn && x && x !== this.refContent) {
-          while (x && x.parentElement) {
-            if (x.parentNode === this.refContent) {
-              isIn = true;
-              break;
+  // src/lang/en.ts
+  var en_default = {
+    "bold": "bold",
+    "italic": "italic",
+    "underline": "underline",
+    "blockquote": "blockquote",
+    "paragraph": "paragraph",
+    "Normal": "Normal",
+    "Heading 1": "Heading 1",
+    "Heading 2": "Heading 2",
+    "Heading 3": "Heading 3",
+    "Heading 4": "Heading 4",
+    "Heading 5": "Heading 5",
+    "Heading 6": "Heading 6",
+    "Code": "Code",
+    "text color": "text color",
+    "background color": "background color",
+    "SET TEXT COLOR": "SET COLOR",
+    "SET BACKGROUND COLOR": "SET COLOR",
+    "fullscreen": "fullscreen",
+    "exit fullscreen": "exit fullscreen",
+    "table": "table",
+    "align": "align",
+    "align left": "align left",
+    "align center": "align center",
+    "align right": "align right",
+    "align justify": "align justify",
+    "horizontal line": "horizontal line",
+    "view source": "view source",
+    "strikethrough": "strikethrough",
+    "superscript": "superscript",
+    "subscript": "subscript",
+    "indent": "indent",
+    "outdent": "outdent",
+    "format": "format",
+    "remove format": "remove format",
+    "link": "link",
+    "url": "URL",
+    "text": "TEXT",
+    "link target": "TARGET",
+    "remove": "REMOVE",
+    "insert": "INSERT",
+    "update": "UPDATE",
+    "open in new tab": " (open in new tab)",
+    "list": "list",
+    "ordered list": "ordered list",
+    "unordered list": "unordered list",
+    "remove list": "remove list",
+    "image": "image",
+    "uploading": "uploading",
+    "upload failed": "upload failed",
+    "drop or click to upload image": "drop or click to upload image",
+    "please select the appropriate file types:": "please select the appropriate file types:",
+    "max allowed size per file should be ": "max allowed size per file should be ",
+    "max allowed size of all files in total should be ": "max allowed size of all files in total should be ",
+    "cannot drop files to content when image upload toolbar is active": "cannot drop files to content when image upload toolbar is active",
+    "another upload is in progress": "another upload is in progress",
+    "Cannot upload more than {%1} files": "Cannot upload more than {%1} files",
+    "UPLOADING...": "UPLOADING...",
+    "START OVER": "START OVER"
+  };
+
+  // src/lang/zhCN.ts
+  var zhCN_default = {
+    "bold": "\u7C97\u4F53",
+    "italic": "\u659C\u4F53",
+    "underline": "\u4E0B\u5212\u7EBF",
+    "blockquote": "\u5F15\u7528",
+    "paragraph": "\u6BB5\u843D",
+    "Normal": "\u6B63\u5E38",
+    "Heading 1": "\u6807\u9898 1",
+    "Heading 2": "\u6807\u9898 2",
+    "Heading 3": "\u6807\u9898 3",
+    "Heading 4": "\u6807\u9898 4",
+    "Heading 5": "\u6807\u9898 5",
+    "Heading 6": "\u6807\u9898 6",
+    "Code": "\u4EE3\u7801",
+    "text color": "\u6587\u5B57\u989C\u8272",
+    "background color": "\u80CC\u666F\u989C\u8272",
+    "SET TEXT COLOR": "\u8BBE\u7F6E\u6587\u5B57\u989C\u8272",
+    "SET BACKGROUND COLOR": "\u8BBE\u7F6E\u80CC\u666F\u989C\u8272",
+    "fullscreen": "\u5168\u5C4F",
+    "exit fullscreen": "\u9000\u51FA\u5168\u5C4F",
+    "table": "\u8868\u683C",
+    "align": "\u5BF9\u9F50",
+    "align left": "\u9760\u5DE6",
+    "align center": "\u7F6E\u4E2D",
+    "align right": "\u9760\u53F3",
+    "align justify": "\u5DE6\u53F3\u5BF9\u9F50",
+    "horizontal line": "\u6C34\u5E73\u7EBF",
+    "view source": "\u67E5\u770B\u6E90\u4EE3\u7801",
+    "strikethrough": "\u5220\u9664\u7EBF",
+    "superscript": "\u4E0A\u6807",
+    "subscript": "\u4E0B\u6807",
+    "indent": "\u7F29\u8FDB",
+    "outdent": "\u51CF\u5C0F\u7F29\u8FDB",
+    "format": "\u683C\u5F0F",
+    "remove format": "\u5220\u9664\u683C\u5F0F",
+    "link": "\u94FE\u63A5",
+    "url": "\u7F51\u5740",
+    "text": "\u6587\u672C",
+    "link target": "\u94FE\u63A5\u76EE\u6807",
+    "remove": "\u5220\u9664",
+    "insert": "\u63D2\u5165",
+    "update": "\u66F4\u65B0",
+    "open in new tab": "\uFF08\u5728\u65B0\u6807\u7B7E\u4E2D\u6253\u5F00\uFF09",
+    "list": "\u5217\u8868",
+    "ordered list": "\u6570\u5B57\u5217\u8868",
+    "unordered list": "\u65E0\u5E8F\u5217\u8868",
+    "remove list": "\u5220\u9664\u5217\u8868",
+    "image": "\u56FE\u7247",
+    "uploading": "\u4E0A\u4F20\u4E2D",
+    "upload failed": "\u4E0A\u4F20\u5931\u8D25",
+    "drop or click to upload image": "\u62D6\u653E\u6216\u6D4F\u89C8\u6587\u4EF6\u4E0A\u4F20",
+    "please select the appropriate file types:": "\u8BF7\u9009\u62E9\u9002\u5F53\u7684\u6587\u4EF6\u7C7B\u578B\uFF1A",
+    "max allowed size per file should be ": "\u5355\u4E2A\u6587\u4EF6\u5141\u8BB8\u7684\u6700\u5927\u5927\u5C0F\u5E94\u8BE5\u662F ",
+    "max allowed size of all files in total should be ": "\u603B\u6587\u4EF6\u7684\u6700\u5927\u5141\u8BB8\u5927\u5C0F\u5E94\u4E3A ",
+    "cannot drop files to content when image upload toolbar is active": "\u5DE5\u5177\u5217\u4E0A\u4F20\u5F00\u542F\u65F6\u4E0D\u80FD\u62D6\u653E\u6587\u4EF6\u81F3\u6587\u672C\u5185\u5BB9",
+    "another upload is in progress": "\u8BF7\u7B49\u4E4B\u524D\u7684\u4E0A\u4F20\u4EFB\u52A1\u7ED3\u679C\u518D\u4E0A\u4F20",
+    "Cannot upload more than {%1} files": "\u4E0D\u80FD\u4E0A\u4F20\u8D85\u8FC7 {%1} \u4E2A\u6587\u4EF6",
+    "UPLOADING...": "\u4E0A\u4F20\u4E2D...",
+    "START OVER": "\u91CD\u65B0\u5F00\u59CB"
+  };
+
+  // src/lang/zhTW.ts
+  var zhTW_default = {
+    "bold": "\u7C97\u9AD4",
+    "italic": "\u659C\u9AD4",
+    "underline": "\u4E0B\u5283\u7DDA",
+    "blockquote": "\u5F15\u7528",
+    "paragraph": "\u6BB5\u843D",
+    "Normal": "\u6B63\u5E38",
+    "Heading 1": "\u6A19\u984C 1",
+    "Heading 2": "\u6A19\u984C 2",
+    "Heading 3": "\u6A19\u984C 3",
+    "Heading 4": "\u6A19\u984C 4",
+    "Heading 5": "\u6A19\u984C 5",
+    "Heading 6": "\u6A19\u984C 6",
+    "Code": "\u4EE3\u78BC",
+    "text color": "\u6587\u5B57\u984F\u8272",
+    "background color": "\u80CC\u666F\u984F\u8272",
+    "SET TEXT COLOR": "\u8A2D\u7F6E\u6587\u5B57\u984F\u8272",
+    "SET BACKGROUND COLOR": "\u8A2D\u7F6E\u80CC\u666F\u984F\u8272",
+    "fullscreen": "\u5168\u5C4F",
+    "exit fullscreen": "\u9000\u51FA\u5168\u5C4F",
+    "table": "\u8868\u683C",
+    "align": "\u5C0D\u9F4A",
+    "align left": "\u9760\u5DE6",
+    "align center": "\u7F6E\u4E2D",
+    "align right": "\u9760\u53F3",
+    "align justify": "\u5DE6\u53F3\u5C0D\u9F4A",
+    "horizontal line": "\u6C34\u5E73\u7DDA",
+    "view source": "\u67E5\u770B\u6E90\u4EE3\u78BC",
+    "strikethrough": "\u522A\u9664\u7DDA",
+    "superscript": "\u4E0A\u6A19",
+    "subscript": "\u4E0B\u6A19",
+    "indent": "\u7E2E\u9032",
+    "outdent": "\u6E1B\u5C0F\u7E2E\u9032",
+    "format": "\u683C\u5F0F",
+    "remove format": "\u522A\u9664\u683C\u5F0F",
+    "link": "\u93C8\u63A5",
+    "url": "\u7DB2\u5740",
+    "text": "\u6587\u672C",
+    "link target": "\u93C8\u63A5\u76EE\u6A19",
+    "remove": "\u522A\u9664",
+    "insert": "\u63D2\u5165",
+    "update": "\u66F4\u65B0",
+    "open in new tab": "\uFF08\u5728\u65B0\u6A19\u7C64\u4E2D\u6253\u958B\uFF09",
+    "list": "\u5217\u8868",
+    "ordered list": "\u6578\u5B57\u5217\u8868",
+    "unordered list": "\u7121\u5E8F\u5217\u8868",
+    "remove list": "\u522A\u9664\u5217\u8868",
+    "image": "\u5716\u7247",
+    "uploading": "\u4E0A\u50B3\u4E2D",
+    "upload failed": "\u4E0A\u50B3\u5931\u6557",
+    "drop or click to upload image": "\u62D6\u653E\u6216\u700F\u89BD\u6587\u4EF6\u4E0A\u50B3",
+    "please select the appropriate file types:": "\u8ACB\u9078\u64C7\u9069\u7576\u7684\u6587\u4EF6\u985E\u578B\uFF1A",
+    "max allowed size per file should be ": "\u55AE\u500B\u6587\u4EF6\u5141\u8A31\u7684\u6700\u5927\u5927\u5C0F\u61C9\u8A72\u662F ",
+    "max allowed size of all files in total should be ": "\u7E3D\u6587\u4EF6\u7684\u6700\u5927\u5141\u8A31\u5927\u5C0F\u61C9\u70BA ",
+    "Cannot upload more than {%1} files": "\u4E0D\u80FD\u4E0A\u50B3\u8D85\u904E {%1} \u500B\u6587\u4EF6",
+    "cannot drop files to content when image upload toolbar is active": "\u5DE5\u5177\u5217\u4E0A\u50B3\u958B\u555F\u6642\u4E0D\u80FD\u62D6\u653E\u6587\u4EF6\u81F3\u6587\u672C\u5167\u5BB9",
+    "another upload is in progress": "\u8ACB\u7B49\u4E4B\u524D\u7684\u4E0A\u50B3\u4EFB\u52D9\u7D50\u679C\u518D\u4E0A\u50B3",
+    "UPLOADING...": "\u4E0A\u50B3\u4E2D...",
+    "START OVER": "\u91CD\u65B0\u958B\u59CB"
+  };
+
+  // src/lang/index.ts
+  var lang_default = {
+    en: en_default,
+    zhCN: zhCN_default,
+    zhTW: zhTW_default
+  };
+
+  // src/svg/index.ts
+  var svg_default = {
+    "align_center": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5,6.3H19V8.37H5Zm0,9.33H19V17.7H5ZM7.33,11h9.34V13H7.33Z"></path></svg>',
+    "align_justify": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6.3H19V8.4H5ZM5 15.6H19V17.7H5ZM5 11H19V13H5Z"></path></svg>',
+    "align_left": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6.3H19V8.37H5ZM5 15.63H19V17.7H5ZM5 11H14.33V13H5Z"></path></svg>',
+    "align_right": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 6.3H19V8.37H5ZM5 15.63H19V17.7H5ZM9.67 11H19V13H9.67Z"></path></svg>',
+    "b": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 5v14h7A3.6 3.6 0 0017 16A3.6 3.6 0 0015 12A3.6 3.6 0 0017 8.5A3.6 3.6 0 0014 5h-7ZM9 7h4.5A2.1 2.1 0 0114.5 9A2.1 2.1 0 0113.5 11h-4.5v-4ZM9 13h4.5A2.1 2.1 0 0114.5 15.5A2.1 2.1 0 0113.5 17h-4.5v-4Z"></path></svg>',
+    "background_color": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.85 17.5 11.08 6.5H12.65L17.15 17.5H15.49L14.21 14.17H9.61L8.4 17.5ZM10 13H13.73L12.58 10Q12.06 8.61 11.8 7.72A13.8 13.8 0 0111.2 9.82ZM19 5H5V19H19Z"></path></svg>',
+    "blockquote": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.7 5 17.7 5A14 14 0 0012.7 15.5A3.2 3.2 0 0016.2 19A3.5 3.5 0 0019.7 15.5A3 3 0 0015.4 13A14 14 0 0119.7 5ZM11.3 5 9.3 5A14 14 0 004.3 15.5A3.2 3.2 0 007.8 19A3.5 3.5 0 0011.3 15.5A3 3 0 007 13A14 14 0 0111.3 5Z"></path></svg>',
+    "character": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.72 17.38H8.72A7.33 7.33 0 015.87 11.55A7.34 7.34 0 016.62 8.2A5.78 5.78 0 018.74 5.86A6.12 6.12 0 0112 5A5.91 5.91 0 0115.18 5.79A6.11 6.11 0 0117.27 8.05A7 7 0 0118.09 11.55A7.33 7.33 0 0115.24 17.38H18.24V19H12.93V17.48A5.68 5.68 0 0016.27 11.84A5.88 5.88 0 0015.09 8.05A3.69 3.69 0 0012 6.56A3.74 3.74 0 008.89 8.06A5.76 5.76 0 007.73 11.74C7.73 14.5 8.83 16.41 11.05 17.48V19H5.72Z"></path></svg>',
+    "close": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.91 9.94 12 5 7.06 7.1 5 12 9.9 16.91 5 19 7.09 14.1 12 19 16.9 16.93 19 12 14.06 7.09 19Z"></path></svg>',
+    "code": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 8.11 7.79 L 9.04 8.72 L 5.76 12 L 9 15.28 L 8.07 16.21 L 4 12 ZM 15.89 7.79 L 15 8.72 L 18.24 12 L 15 15.28 L 15.93 16.21 L 20 12 Z\nM 13 6.5 L 14 6.5 L 11 17 L 10 17  Z"></path></svg>',
+    "download": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.44 10.47V15.92H6.56V10.47H5V17.47H19V10.47ZM11.24 6.53H12.8V12.22H14.33L12 15 9.67 12.22H11.24Z"></path></svg>',
+    "fullscreen": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14H5V19H10V17H7ZM5 10H7V7H10V5H5ZM17 17H14V19H19V14H17ZM14 5V7H17V10H19V5Z"></path></svg>',
+    "fullscreen_close": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16H8V19H10V14H5ZM8 8H5V10H10V5H8ZM14 19H16V16H19V14H14ZM16 8V5H14V10H19V8Z"></path></svg>',
+    "h1": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 17V7.08H6.31V11.14H11.44V7.08H12.75V17H11.44V12.3H6.31V17ZM19 17H17.79V9.23A6.35 6.35 0 0116.64 10.07A9.14 9.14 0 0115.36 10.69V9.52A7.2 7.2 0 0017.14 8.36A4.42 4.42 0 0018.22 7H19Z"></path></svg>',
+    "h2": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.39V7.64H6.16V11.24H10.71V7.64H11.86V16.39H10.71V12.27H6.16V16.39ZM19 15.36V16.36H13.22A1.83 1.83 0 0113.34 15.62A4 4 0 0114.05 14.45A10.47 10.47 0 0115.46 13.13A11.44 11.44 0 0017.38 11.27A2.15 2.15 0 0017.88 9.98A1.44 1.44 0 0017.43 8.91A1.62 1.62 0 0016.24 8.47A1.67 1.67 0 0015 9A1.79 1.79 0 0014.52 10.29L13.42 10.18A2.72 2.72 0 0114.27 8.3A2.89 2.89 0 0116.27 7.65A2.75 2.75 0 0118.27 8.35A2.28 2.28 0 0119 10A2.51 2.51 0 0118.78 11A4 4 0 0118.07 12.07A17.75 17.75 0 0116.41 13.61C15.77 14.15 15.41 14.51 15.17 14.71A3.36 3.36 0 0014.72 15.29Z"></path></svg>',
+    "h3": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.29V7.59H6.15V11.16H10.67V7.59H11.82V16.29H10.67V12.19H6.15V16.29ZM13.31 14 14.37 13.86A2.47 2.47 0 0015 15.16A1.57 1.57 0 0016.08 15.56A1.76 1.76 0 0017.35 15A1.8 1.8 0 0017.87 13.7A1.64 1.64 0 0017.39 12.49A1.66 1.66 0 0016.17 12.01A3 3 0 0015.41 12.13L15.53 11.2H15.7A2.17 2.17 0 0016.93 10.84A1.23 1.23 0 0017.48 9.74A1.32 1.32 0 0017.08 8.74A1.41 1.41 0 0016.08 8.36A1.44 1.44 0 0015.08 8.75A2 2 0 0014.48 10L13.41 9.81A2.75 2.75 0 0114.3 8.15A2.61 2.61 0 0116 7.56A2.9 2.9 0 0117.31 7.86A2.34 2.34 0 0118.23 8.7A2.13 2.13 0 0118.54 9.82A1.82 1.82 0 0118.24 10.82A2.05 2.05 0 0117.35 11.56A2 2 0 0118.54 12.3A2.2 2.2 0 0118.97 13.7A2.58 2.58 0 0118.14 15.63A2.9 2.9 0 0116.04 16.42A2.75 2.75 0 0114.14 15.74A2.65 2.65 0 0113.31 14Z"></path></svg>',
+    "h4": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.36V7.64H6.15V11.22H10.68V7.64H11.84V16.36H10.68V12.25H6.15V16.36ZM16.75 16.36V14.27H13V13.27L17 7.62H17.87V13.27H19V14.27H17.82V16.36ZM16.75 13.29V9.36L14 13.29Z"></path></svg>',
+    "h5": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.25V7.6H6.15V11.15H10.64V7.6H11.79V16.25H10.64V12.17H6.15V16.25ZM13.26 14 14.38 13.9A2 2 0 0015 15.12A1.61 1.61 0 0016.09 15.53A1.72 1.72 0 0017.39 14.95A2.17 2.17 0 0017.92 13.41A2 2 0 0017.36 12A1.77 1.77 0 0016 11.45A1.79 1.79 0 0015.07 11.69A1.71 1.71 0 0014.42 12.29L13.42 12.16 14.26 7.72H18.56V8.72H15.14L14.67 11.05A2.84 2.84 0 0116.31 10.51A2.6 2.6 0 0118.22 11.29A2.74 2.74 0 0119 13.29A3.19 3.19 0 0118.32 15.29A2.76 2.76 0 0116.04 16.29A2.78 2.78 0 0114.12 15.63A2.58 2.58 0 0113.26 14Z"></path></svg>',
+    "h6": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16.29V7.6H6.15V11.17H10.67V7.6H11.82V16.29H10.67V12.19H6.15V16.29ZM18.85 9.73 17.78 9.81A2 2 0 0017.38 8.89A1.52 1.52 0 0015.38 8.72A2.51 2.51 0 0014.58 9.8A5.75 5.75 0 0014.28 11.8A2.43 2.43 0 0115.22 10.93A2.53 2.53 0 0116.39 10.64A2.41 2.41 0 0118.21 11.43A2.81 2.81 0 0118.96 13.43A3.43 3.43 0 0118.65 15A2.53 2.53 0 0116.28 16.45A2.75 2.75 0 0114.1 15.45A5 5 0 0113.26 12.21A5.78 5.78 0 0114.19 8.55A2.66 2.66 0 0116.38 7.55A2.34 2.34 0 0118.85 9.72ZM14.49 13.47A2.44 2.44 0 0014.72 14.53A1.73 1.73 0 0015.38 15.3A1.67 1.67 0 0016.26 15.56A1.5 1.5 0 0017.42 15A2.14 2.14 0 0017.91 13.51A2 2 0 0017.43 12.09A1.61 1.61 0 0016.22 11.57A1.69 1.69 0 0014.99 12.09A1.86 1.86 0 0014.49 13.47Z"></path></svg>',
+    "hr": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 11H19V13H5Z"></path></svg>',
+    "i": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9l-2 10h2l2-10Zm0.75-3a1 1 0 001 1a1 1 0 10-1-1Z"></path></svg>',
+    "image": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.3 7.1V17H4.7V7.1H19.3M21.3 5H2.7V19H21.3ZM7.2 8.4A1.2 1.2 0 108.4 9.5A1.2 1.2 0 007.2 8.4ZM6.8 15.7H13.8L10.3 11ZM12 12.1 14.3 9.9 18.3 15.7H14.6S11.9 12 12 12.1Z"></path></svg>',
+    "image_library": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 15.74 5.68 V 13.6 H 4.06 V 5.68 H 15.74 M 17.34 4 H 2.46 V 15.2 H 17.34 Z M 6.06 6.72 A 0.96 0.96 90 1 0 7.02 7.6 A 0.96 0.96 90 0 0 6.06 6.72 Z M 5.74 12.56 H 11.34 L 8.54 8.8 Z M 9.9 9.68 L 11.74 7.92 L 14.94 12.56 H 11.98 S 9.82 9.6 9.9 9.68 Z M 18.94 5.68 H 20.54 V 18.4 H 4.06 V 16.8 H 18.94 Z"></path></svg>',
+    "indent": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 9V15L7 12 4 9ZM4 19H20V17H4V19ZM4 7H20V5H4V7ZM9 11H20V9H9V11ZM9 15H20V13H9V15Z"></path></svg>',
+    "link": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 10.13 11.39 A 0.3 0.3 0 0 0 10.03 11.19 L 9.17 10.5 A 0.3 0.3 0 0 0 8.919 10.488 L 5.7 13.6 L 5.69 13.61 A 2.37 2.37 0 0 0 5.69 16.95 L 7.07 18.32 A 2.36 2.36 0 0 0 8.73 19 A 2.4 2.4 0 0 0 10.39 18.32 L 13.63 15 A 0.3 0.3 0 0 0 13.63 14.8 L 12.68 13.9 A 0.3 0.3 0 0 0 12.52 13.96 L 9.23 17.24 A 0.74 0.74 0 0 1 8.67 17.47 A 0.71 0.71 0 0 1 8.12 17.24 L 6.75 15.87 A 0.82 0.82 0 0 1 6.75 14.76 Z M 13.88 12.7 A 0.3 0.3 90 0 0 13.98 12.9 L 14.84 13.59 A 0.3 0.3 90 0 0 15.091 13.602 L 18.31 10.49 L 18.32 10.48 A 2.37 2.37 90 0 0 18.32 7.14 L 16.94 5.77 A 2.36 2.36 90 0 0 15.28 5.09 A 2.4 2.4 90 0 0 13.62 5.77 L 10.38 9.09 A 0.3 0.3 90 0 0 10.38 9.29 L 11.33 10.19 A 0.3 0.3 90 0 0 11.49 10.13 L 14.78 6.85 A 0.74 0.74 90 0 1 15.34 6.62 A 0.71 0.71 90 0 1 15.89 6.85 L 17.26 8.22 A 0.82 0.82 90 0 1 17.26 9.33 Z M 14.45 10.63 A 0.36 0.36 0 0 0 14.56 10.39 A 0.33 0.33 0 0 0 14.45 10.16 L 13.85 9.55 A 0.5 0.5 0 0 0 13.61 9.45 A 0.32 0.32 0 0 0 13.37 9.55 L 9.62 13.29 A 0.4 0.4 0 0 0 9.52 13.53 A 0.34 0.34 0 0 0 9.62 13.76 L 10.23 14.37 A 0.4 0.4 0 0 0 10.47 14.47 A 0.32 0.32 0 0 0 10.71 14.37 Z"></path></svg>',
+    "next": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 9.89 7.79 L 9 8.72 L 12.24 12 L 9 15.28 L 9.93 16.21 L 14 12 Z"></path></svg>',
+    "ol": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.55 6.21H19V8.31H9.55ZM9.55 15.66H19V17.76H9.55ZM9.55 10.94H19V13H9.55ZM6 8.31H5.62V6.84A1.34 1.34 0 015.12 7.14V6.78A1 1 0 005.45 6.59A.76.76 0 005.7 6.27H6ZM5 17.22 5.37 17.22A.3.3 0 005.47 17.44A.26.26 0 005.66 17.52A.28.28 0 005.86 17.43A.37.37 0 006 17.13A.36.36 0 005.92 16.9A.27.27 0 005.73 16.82L5.55 16.82 5.55 16.5A.33.33 0 005.79 16.44A.22.22 0 005.87 16.25A.24.24 0 005.81 16.08A.21.21 0 005.65 16.02A.24.24 0 005.49 16.09A.31.31 0 005.4 16.29L5.05 16.23A.7.7 0 015.16 16A.51.51 0 015.37 15.83A.73.73 0 015.67 15.77A.6.6 0 016.12 15.95A.49.49 0 016.26 16.28A.47.47 0 015.97 16.7A.48.48 0 016.25 16.87A.46.46 0 016.35 17.18A.58.58 0 016.16 17.63A.71.71 0 015.23 17.63A.63.63 0 015 17.22ZM6.35 12.66V13H5A1 1 0 015.13 12.61A3.18 3.18 0 015.57 12.12A2.38 2.38 0 005.9 11.79A.46.46 0 006 11.57A.32.32 0 005.93 11.37A.26.26 0 005.73 11.3A.29.29 0 005.54 11.37A.36.36 0 005.46 11.62L5.07 11.62A.63.63 0 015.28 11.16A.72.72 0 015.72 11A.68.68 0 016.2 11.16A.54.54 0 016.37 11.56A.81.81 0 016.37 11.83A1.08 1.08 0 016.21 12.09A2.59 2.59 0 015.96 12.35L5.72 12.57 5.64 12.68Z"></path></svg>',
+    "outdent": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 9V15L4 12 7 9ZM4 19H20V17H4V19ZM4 7H20V5H4V7ZM9 11H20V9H9V11ZM9 15H20V13H9V15Z"></path></svg>',
+    "p": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.53 19H10.71V11.16A3.21 3.21 0 018.53 10.24A3 3 0 017.76 8.1A3.44 3.44 0 018.07 6.66A2.7 2.7 0 018.9 5.66A3.21 3.21 0 0110.12 5.13A9.54 9.54 0 0111.76 5H16.24V7H15.39V19H13.62V7H12.53Z"></path></svg>',
+    "plus": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.8 5 13.2 5 13.2 10.8 19 10.8 19 13.2 13.2 13.2 13.2 19 10.8 19 10.8 13.2 5 13.2 5 10.8 10.8 10.8Z"></path></svg>',
+    "previous": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 14.11 7.79 L 15.04 8.72 L 11.76 12 L 15 15.28 L 14.07 16.21 L 10 12 Z"></path></svg>',
+    "redo": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.76 6.74 19 12.08 13.67 14.31 14.86 11.39A6.68 6.68 0 006.78 16.49A3.14 3.14 0 006.66 17.26L5 17.15A8.42 8.42 0 0111.41 9.8H11.41A8.22 8.22 0 0115.56 9.8Z"></path></svg>',
+    "remove_format": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5,17v2h13V17ZM7,13.51,10.53,10,7,6.47,8.5,5,12,8.5,15.51,5,17,6.49,13.5,10,17,13.5,15.52,15,12,11.47,8.49,15Z"></path></svg>',
+    "remove_link": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.13 11.35A.41.41 0 0010.03 11.14L9.17 10.45A.33.33 0 008.91 10.45L5.7 13.56H5.7A2.38 2.38 0 005.7 16.91L7.08 18.27A2.29 2.29 0 008.73 19A2.36 2.36 0 0010.39 18.32L13.63 15A.31.31 0 0013.63 14.81L12.63 13.9A.38.38 0 0012.47 13.96L9.23 17.19A.71.71 0 018.67 17.42A.68.68 0 018.12 17.19L6.75 15.82A.8.8 0 016.75 14.72ZM13.88 12.65A.26.26 0 0013.98 12.85L14.84 13.55A.31.31 0 0015.09 13.55L18.31 10.43H18.31A2.38 2.38 0 0018.31 7.09L16.94 5.72A2.39 2.39 0 0013.62 5.72L10.38 9.05A.21.21 0 0010.38 9.24L11.33 10.14A.33.33 0 0011.49 10.09L14.78 6.8A.75.75 0 0115.34 6.57A.78.78 0 0115.89 6.8L17.26 8.18A.83.83 0 0117.26 9.28ZM14.45 10.59A.44.44 0 0014.56 10.35A.41.41 0 0014.45 10.11L13.85 9.51A.58.58 0 0013.61 9.4A.3.3 0 0013.37 9.51L9.62 13.24A.39.39 0 009.52 13.48A.33.33 0 009.62 13.72L10.23 14.32A.41.41 0 0010.47 14.43A.34.34 0 0010.71 14.32ZM15 17.83 16.42 16.42 15 15 15.59 14.42 17 15.83 18.4 14.43 19 15 17.6 16.4 19 17.8 18.41 18.4 17 17 15.6 18.43Z"></path></svg>',
+    "remove_list": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 9.67 6.3 H 19 V 8.37 H 9.67 Z M 9.67 15.63 H 14 V 17.7 H 9.67 Z M 5 15.63 H 7.33 V 17.7 H 5 Z M 5 11 H 7.33 V 13 H 5 Z M 5 6.3 H 7.33 V 8.37 H 5 Z M 9.67 11 H 19 V 13 H 9.67 Z M 15 17.83 L 16.42 16.42 L 15 15 L 15.59 14.42 L 17 15.83 L 18.4 14.43 L 19 15 L 17.6 16.4 L 19 17.8 L 18.41 18.4 L 17 17 L 15.6 18.43 Z"></path></svg>',
+    "search": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 10.4 6.08 A 4.32 4.32 90 1 0 10.4 14.72 A 4.32 4.32 90 1 0 10.4 6.08 Z M 10.4 7.16 A 2.16 2.16 90 1 1 10.4 13.64 A 2.16 2.16 90 1 1 10.4 7.16 Z M 13.493 13.496 L 17.96 17.24 L 17.24 17.96 L 12.8015 14.033 Z"></path></svg>',
+    "strikethrough": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 3 11.3 H 21 v 1.5 H 3 Z M 16.63 13.7 A 3.51 3.51 0 0 1 17 15.29 A 3.25 3.25 0 0 1 15.67 18 a 5.56 5.56 0 0 1 -3.47 1 a 6.25 6.25 0 0 1 -2.62 -0.54 A 4.43 4.43 0 0 1 7.69 17 A 3.71 3.71 0 0 1 7 14.81 V 14.7 H 9 v 0.11 a 2.17 2.17 0 0 0 0.86 1.83 a 3.62 3.62 0 0 0 2.32 0.68 a 3.41 3.41 0 0 0 2.08 -0.54 a 1.76 1.76 0 0 0 0.7 -1.47 a 1.69 1.69 0 0 0 -0.65 -1.43 l -0.27 -0.18 Z M 16.34 7.06 a 4.19 4.19 0 0 0 -1.72 -1.51 A 5.71 5.71 0 0 0 12.11 5 A 5.16 5.16 0 0 0 8.75 6.07 a 3.34 3.34 0 0 0 -1.31 2.7 a 3.26 3.26 0 0 0 0.33 1.43 h 2.59 a 1.63 1.63 0 0 1 -0.65 -1.3 a 1.77 1.77 0 0 1 0.69 -1.51 a 3 3 0 0 1 2 -0.55 a 3.1 3.1 0 0 1 2.11 0.66 a 2.36 2.36 0 0 1 0.73 1.84 v 0.11 H 17 A 3.91 3.91 0 0 0 16.34 7.06 Z"></path></svg>',
+    "subscript": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.63 15.22 7.87 11 3.66 6.77 5.43 5 9.64 9.21 13.85 5 15.64 6.79 11.44 11 15.64 15.21 13.87 17 9.66 12.77 5.42 17ZM20.37 18.29V19H16.42A1.24 1.24 0 0116.5 18.49A2.83 2.83 0 0116.98 17.69A8.18 8.18 0 0117.98 16.79A8 8 0 0019.29 15.52A1.5 1.5 0 0019.64 14.64A1 1 0 0019.32 13.9A1.11 1.11 0 0018.51 13.6A1.16 1.16 0 0017.66 13.92A1.2 1.2 0 0017.34 14.8L16.58 14.72A1.86 1.86 0 0117.17 13.44A2 2 0 0118.5 13A1.9 1.9 0 0119.86 13.48A1.58 1.58 0 0120.36 14.66A1.78 1.78 0 0120.21 15.37A2.61 2.61 0 0119.73 16.1A11 11 0 0118.59 17.15A9 9 0 0017.75 17.91A2.12 2.12 0 0017.44 18.3Z"></path></svg>',
+    "superscript": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.63 17.21 7.87 13 3.66 8.76 5.43 7 9.64 11.2 13.85 7 15.64 8.8 11.44 13 15.64 17.21 13.87 19 9.66 14.76 5.42 19ZM20.37 10.3V11H16.42A1.3 1.3 0 0116.5 10.49A2.66 2.66 0 0117 9.7A8.15 8.15 0 0118 8.79A8 8 0 0019.31 7.53A1.55 1.55 0 0019.66 6.64A1 1 0 0019.34 5.91A1.11 1.11 0 0018.53 5.61A1.16 1.16 0 0017.68 5.92A1.22 1.22 0 0017.36 6.8L16.6 6.73A1.89 1.89 0 0117.19 5.44A2 2 0 0118.5 5A1.94 1.94 0 0119.86 5.47A1.6 1.6 0 0120.36 6.66A1.73 1.73 0 0120.21 7.36A2.48 2.48 0 0119.73 8.09A12.06 12.06 0 0118.59 9.15Q17.93 9.7 17.75 9.9A1.88 1.88 0 0017.44 10.3Z"></path></svg>',
+    "table": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 5H2V19H22ZM9.5 13.5V10.5H14.5V13.5ZM14.5 15V17.5H9.5V15ZM9.5 9V6.5H14.5V9ZM3.5 6.5H8V9H3.5ZM3.5 10.5H8V13.5H3.5ZM3.5 17.5V15H8V17.5ZM20.5 17.5H16V15H20.5ZM20.5 13.5H16V10.5H20.5ZM16 9V6.5H20.5V9Z"></path></svg>',
+    "text": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 3.905 17.1 L 8.747 4.5 H 10.547 L 15.704 17.1 H 13.796 L 12.329 13.284 H 7.1 L 5.678 17.1 Z M 7.505 11.925 H 11.771 L 10.493 8.433 C 10.097 7.38 9.8 6.507 9.593 5.823 A 16.479 16.479 90 0 1 8.9 8.226 Z M 17 5 a 1 1 0 1 1 2 0 a 1 1 0 1 1 -2 0 Z M 17 8 a 1 1 0 1 1 2 0 a 1 1 0 1 1 -2 0 Z M 17 11 a 1 1 0 1 1 2 0 a 1 1 0 1 1 -2 0 Z"></path></svg>',
+    "text_color": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 5.45 19 L 10.83 5 H 12.83 L 15.4 11.8 L 13 14.76 H 9 L 7.42 19 Z M 9.45 13.25 H 14.19 L 12.77 9.37 C 12.33 8.2 12 7.23 11.77 6.47 A 18.31 18.31 0 0 1 11 9.14 Z M 15.78 12.22 s -2.75 2.98 -2.75 4.82 a 2.79 2.79 90 0 0 5.58 0.08 v -0.08 C 18.61 15.21 15.78 12.22 15.78 12.22 Z"></path></svg>',
+    "u": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 3.5v8.5A6.5 6.5 0 0012.5 17.5A6.5 6.5 0 0019 12v-8.5h-2v8.5A4.5 4.5 0 0112.5 15.5A4.5 4.5 0 018 12v-8.5ZM6 18.5v2h13v-2Z"></path></svg>',
+    "ul": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.67 6.3H19V8.37H9.67ZM9.67 15.63H19V17.7H9.67ZM5 15.63H7.33V17.7H5ZM5 11H7.33V13H5ZM5 6.3H7.33V8.37H5ZM9.67 11H19V13H9.67Z"></path></svg>',
+    "undo": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.44 9.85A8.22 8.22 0 0112.59 9.85H12.59A8.42 8.42 0 0119 17.15L17.34 17.26A3.14 3.14 0 0017.22 16.49A6.68 6.68 0 009.14 11.39L10.33 14.31 5 12.08 7.24 6.74Z"></path></svg>',
+    "upload": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.44 10.47V15.92H6.56V10.47H5V17.47H19V10.47ZM12.76 15H11.2V9.25H9.67L12 6.53 14.33 9.25H12.76Z"></path></svg>',
+    "video": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.88 8.71V15.29H6.65V8.71H14.88M16.53 10.71V7.06H5V16.94H16.53V13.24L19 15.24V8.71Z"></path></svg>',
+    "view_source": '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.11 7.79 10.04 8.72 6.76 12 10 15.28 9.07 16.21 5 12ZM14.89 7.79 14 8.72 17.24 12 14 15.28 14.93 16.21 19 12Z"></path></svg>'
+  };
+
+  // src/css/index.ts
+  var css_default = ".SubEditor, .SubEditor  * {box-sizing: border-box;}.SubEditor {border:1px solid #dbdbdb;background-color: #fff;position: relative;}.SubEditorContentContainer {overflow-y: auto;padding:10px;position: relative;}.SubEditor.AutoGrow {height: auto;}.SubEditor.AutoGrow .SubEditorContentContainer{overflow-y: hidden;height: auto;}.SubEditorContent, .SubEditorSource {text-align: start;display:inline-block;min-height: 200px;width:100%;box-shadow: none;border:none;outline: none;}.SubEditorContent:focus, .SubEditorSource:focus{box-shadow: none;border:none;outline: none;}.SubEditorContent img {max-width: 100%;}.SubEditorTextarea {display:none;resize: none;width: 100%;min-height: 100px;padding:10px;overflow: hidden;box-sizing: border-box;}.SubEditor .SubEditorFooter {display: none;border-top: 1px solid #dbdbdb;}.SubEditor > .SubEditorTooltip{user-select: none;z-index: 9999;position: absolute;line-height: 1.2em;display: none;padding: 2px 10px;box-shadow:1px 1px 3px gray;border-radius:5px;background: #fff;white-space: nowrap;}.SubEditor .se-button {box-shadow:none}.SubEditorContent table {border: none;border-collapse: collapse;empty-cells: show;max-width: 100%;}.SubEditorContent table td,.SubEditorContent table th {min-width:20px;min-height: 20px;border: 1px solid #dedede;}.SubEditorContent table th {background-color: #efefef;}.SubEditorContent blockquote{border-left: solid 3px #dedede;margin: 5px;padding-left: 5px;color: #333;}.SubEditorContent h1,.SubEditorContent h2,.SubEditorContent h3,.SubEditorContent h4,.SubEditorContent h5,.SubEditorContent h6{font-size: revert;font-weight: revert;margin: revert;padding: revert;}.SubEditorContent ul, .SubEditorContent ol{display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;}.SubEditorContent ul {list-style-type: disc;}.SubEditorContent ol{list-style-type: decimal;}.SubEditorContent p{margin: revert;padding: revert;}.SubEditorToolbar {margin:0;border-bottom:1px solid #dbdbdb;align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;font-weight: 400;font-size: 1rem;line-height: 1.5;text-align: left;color: #363636;background-color: #fff;width:100%;position: relative;}.SubEditorToolbar, .SubEditorToolbar  * {user-select: none;}.SubEditorToolbar{ align-items: center;display: flex;flex-wrap: wrap;justify-content: flex-start;}.SubEditorToolbar .se-dropdown {display: inline-flex;position: relative;vertical-align: top;height: 2.25em;border-color: transparent; border-width: 1px; cursor: pointer; justify-content: center; padding: calc(0.375 em - 1 px)  0.75em;text-align: center;}    .SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-button{margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;border-radius: 3px;cursor: pointer;justify-content: center;padding: calc(.375em - 1px) .75em;text-align: center;white-space: nowrap;position: relative;overflow: hidden;transform: translate3d(0,0,0);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;box-shadow: none;}.SubEditorToolbar .se-button .se-icon{margin:0 calc(-.375em - 1px);height: 24px;width: 24px;align-items: center; display: inline-flex;justify-content: center;}.SubEditorToolbar .se-button .se-icon svg {height: 24px;width: 24px;}.SubEditorToolbar .se-dropdown-trigger .se-button * {pointer-events: none;}.SubEditorToolbar .se-dropdown-menu{min-width: unset;left: 0;padding-top: 4px;position: absolute;top: 100%;z-index: 20;display: none;background-color: #fff;}.SubEditorToolbar .se-ToolbarItem.is-active .se-dropdown-menu {display:block}.SubEditorToolbar .se-dropdown-content{border-radius: 4px;box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);padding: 0;transform-origin: top left;position:relative;background-color: #fff;}.SubEditorToolbar .se-dropdown-content .padding {padding: 15px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item {cursor: pointer;height:unset;margin-bottom:0;margin: 0;align-items: center;border: 1px solid transparent;display: inline-flex;vertical-align: top;justify-content: center;text-transform: uppercase;transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);white-space: nowrap;width: 100%;box-shadow: none;height: unset;margin-right: -1px;box-sizing: border-box;}.SubEditorToolbar .se-dropdown-content.se-control .se-dropdown-item {padding:10px 5px;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input {padding: calc(0.5em - 1px) calc(0.75em - 1px);transition: all 300ms;font-size: 1rem;height: 2.5em;line-height: 2.5em;border: solid 1px #ccc;width:200px;}.SubEditorToolbar .se-dropdown-content .se-button {height: 30px;line-height: 1;}.SubEditorToolbar .se-dropdown-content .se-button.close-dropdown {position: absolute;right:1px;top:1px;}.SubEditorToolbar .se-dropdown-content .se-button.alert {background-color: rgb(244,67,54,1);color: #fff;}.SubEditorToolbar .se-dropdown-content .se-button:hover {background-color: #dbdbdb;}.SubEditorToolbar .se-dropdown-content .se-button.alert:hover {background-color: rgb(244,67,54,0.7);}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input:focus {border: solid 1px #2196f3;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item input+label {position: absolute;top: -1px;left: 12px;padding:3px 2px;font-size: 0.8em;color: #333;transition: all 0.5s ease;z-index: 3;display: block;cursor: text;background-color: #fff;}.SubEditorToolbar .is-featured{border-color: transparent;color: #363636;background-color: #efefef;}.SubEditorToolbar .se-dropdown-content .se-dropdown-item > * {white-space:  nowrap;margin : 0}.SubEditorToolbar .se-dropdown-trigger{position: relative;}.SubEditorToolbar .se-dropdown-content.horizontal {display: flex;flex-wrap: nowrap;align-items: center;justify-content: flex-start;}.SubEditorToolbar > .se-button:hover, .SubEditorToolbar .se-dropdown-trigger .se-button:hover, .SubEditorToolbar .se-dropdown-content .se-dropdown-item.hover:hover,.SubEditorToolbar .se-dropdown-content .se-button.se-ToolbarItem:hover{background-color: #e0e0e0;}.SubEditorToolbar .se-dropdown-content .se-button.se-dropdown-item.borderbottom{border-bottom: 1px solid #dbdbdb;border-radius: 0px;}.SubEditorToolbar >.se-tips{z-index: 9999;position: absolute;top: -1.6em;left: 0px;line-height: 1.2em;display: none;padding: 2px 10px;border: 1px solid #dbdbdb;background: #fff;white-space: nowrap;pointer-events: none;user-select: none;}.SubEditorToolbar .se-Shadow {position:absolute;top:0;left:0;width:100%;height:100%;background-color: rgba(255,255,255,.6);z-index: 100;display: none;}.SubEditorToolbar.EnableShadow .se-Shadow{display: block;}.SubEditorToolbar .se-ToolbarItem.AboveShadow {z-index: 110;}.se-ToolbarItem.seperator {width:1px;height:100%;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;}.se-ToolbarItem.nextline {width:100%;height:1px;background-color: #dbdbdb;margin:0px;padding:0;border:none;cursor: default;transition: none;}.se-ToolbarItem.spacer {   cursor: default;transition: none;}.SubEditorToolbar > .se-button.se-ToolbarItem.spacer:hover{background-color: transparent;}.ToolbarTable td{padding-left: 5px;padding-right: 5px;width:10px; height:10px;border:1px solid #dbdbdb;margin:1px;}.ToolbarTable td.active,.ToolbarTable td:hover{background-color: #e0e0e0;}.ToolbarTable .title{text-align: center;font-size: 12px}.SubEditorDialog {box-sizing: border-box;align-items: center;display: none;flex-direction: column;justify-content: center;overflow: hidden;position: fixed;}.SubEditorDialog.is-active {display: flex;}.SubEditorDialog {z-index: 10000;}.SubEditorDialog .background {box-sizing: border-box;background-color: rgba(10,10,10,.6);}.background {bottom: 0;left: 0;position: absolute;right: 0;top: 0;}.SubEditorDialog .card {box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);}.card {display: flex;flex-direction: column;max-height: calc(100vh - 40px);overflow: hidden;}.card, .content {box-sizing: border-box;margin: 0 20px;position: relative;width: 100%;}.card-title {color: #363636;flex-grow: 1;flex-shrink: 0;font-size: 1.5rem;line-height: 1;}.delete, .close {user-select: none;background-color: rgba(10,10,10,.2);border: 0;border-radius: 290486px;cursor: pointer;pointer-events: auto;display: inline-block;flex-grow: 0;flex-shrink: 0;font-size: 0;height: 20px;max-height: 20px;max-width: 20px;min-height: 20px;min-width: 20px;outline: 0;position: relative;vertical-align: top;width: 20px;}.card-head, .card-foot {box-sizing: border-box;border: none;background: #fff;}.card-head {border-top-left-radius: 6px;border-top-right-radius: 6px;}.card-foot, .card-head {align-items: center;display: flex;flex-shrink: 0;justify-content: flex-start;padding: 20px;position: relative;}.card-foot {justify-content: flex-end;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;}.card-body {background-color: #fff;flex-grow: 1;flex-shrink: 1;overflow: auto;padding: 20px;display: block;}.SubEditorDialog .button{user-select: none;align-items: center;border: 1px solid transparent;box-shadow: none;display: inline-flex;font-size: 1rem;height: 2.25em;justify-content: flex-start;line-height: 1.5;padding: calc(.375em - 1px) calc(.625em - 1px);position: relative;vertical-align: top;background-color: #fff;border-color: transparent;border-width: 1px;color: #363636;cursor: pointer;justify-content: center;text-align: center;white-space: nowrap;border-radius: 3px;text-transform: uppercase;font-weight: 400;box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),background-color 300ms ease;position: relative;overflow: hidden;transform: translate3d(0,0,0);}.button.is-info, .button.is-info.is-hovered, .button.is-info:hover {border-color: transparent;color: #fff;}.button.is-info {background-color: #29b6f6;}.card-foot .button:not(:last-child) {margin-right: 10px;}@media screen and (min-width: 769px), print {.card, .body {    margin: 0 auto;    max-height: calc(100vh - 40px);    width: 100vw - 40px;}}.SubEditorToolbar .se-dropdown-content .uploadcontainer{position: relative;border: dashed 2px #bdbdbd;border-radius: 3px;width:250px;min-height: 100px;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer strong{position:absolute;top:50%;transform: translateY(-50%);display: block;width: 100%;text-align: center;}.SubEditorToolbar .se-dropdown-content .uploadcontainer input{position: absolute;top:0;left:0;width: 100%;height: 100%;opacity: 0;}.UploadProgressBar {position:absolute;top:0;left:0;background:rgb(244,67,54,0.7);width:0%;height:1px;border:none;}.UploadProgressError {position:absolute;top:0;left:0;width:100%;color:rgb(244,67,54,0.7);text-align: center;}.FileTileImageGridContainer {max-height: calc(100vh - 140px);margin-bottom:0px;position:relative;overflow-y: auto;}.FileTileImageGridFooter {width: 100%;padding-top: 5px;border-top:#ccc 1px solid;}.FileTileImageGridPagination {justify-content: center;margin-bottom: 0;margin-top: 0;align-items: center;display: flex;text-align: center;border-bottom:none;}.FileTileImageGridPagination > * {padding: 0 0.75em;white-space: nowrap;border: #dbdbdb 1px solid;color: #363636;font-size: 1em;justify-content: center;margin: 1px 5px;text-align: center;-webkit-appearance: none;line-height: 28px;height: 28px; } .FileTileImageGridPagination span.total {border:none;padding: 0;margin-left: 0; } .FileTileImageGridPagination input.current {width: 2.5em;border: none;text-align: center; } .FileTileImageGridPagination input.keyword {width: 6em; } .FileTileImageGridPagination > .se-button {border-radius: 9999px;border: #dbdbdb 1px solid;width: 30px; }.FileTileImageGrid {margin-top:18px;display: flex;flex-wrap: wrap;width:100%;min-width: 640px;max-height: calc(100vh - 140px);overflow-y: visible;}.FileTileImageGrid button {display: inline-block;margin-bottom: 8px;width: calc(20% - 9px);text-decoration: none;margin-right: 8px;padding:5px;background: #ffffff;cursor: pointer;user-select: none;border: 1px solid #eee;min-width: 55px;}.FileTileImageGrid button.upload {position:relative;cursor: pointer;}.FileTileImageGrid button.upload input {position: absolute;width: 100%;height: 100%;top: 0;left: 0;opacity: 0;}/* 4 per row */.FileTileImageGrid a:nth-of-type(5n) {margin-right: 0;}.FileTileImageGrid button > figure {position: relative;width: 100%;padding-top: 100%;margin:0;}.FileTileImageGrid button > figure > figure {position:  absolute;top: 0;left: 0;bottom: 0;right: 0;margin:0;overflow:hidden;}.FileTileImageGrid img{position:absolute;top : 0;left:0;min-width:100%;min-height:100%;width:100%;max-height:100%;border:none;}.FileTileImageGrid figure .text{text-align: center;word-break: break-all;margin: 0;position: absolute;top: 50%;transform: translateY(-50%);display: block;width: 100%;}.FileTileImageGrid button:hover {border: 1px solid #ccc;}.FileTileImageGrid .caption {display:block;margin-top: 6px;max-height:2.2em;overflow: hidden;text-align: center;font-size: 0.7em;}@media screen and (max-width: 768px){.FileTileImageGrid {max-width: 320px;min-width: 320px;}.FileTileImageGrid button {width: calc(25% - 6px);}.FileTileImageGrid button:nth-of-type(2n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(5n) {margin-right: 8px;}.FileTileImageGrid button:nth-of-type(4n) {margin-right: 0;}}#dropdown-menu-color .se-dropdown-content .padding > div,#dropdown-menu-background .se-dropdown-content .padding > div {display: flex;}#dropdown-menu-color .se-dropdown-content .padding > div > *,#dropdown-menu-background .se-dropdown-content .padding > div > * {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table,#dropdown-menu-background table {flex-grow: 1;flex-shrink: 1;border-spacing: 0;}#dropdown-menu-color table td div,#dropdown-menu-background table td div {cursor:pointer;width:16px;height:16px;padding: 2px;border: 1px solid #dbdbdb;}#dropdown-menu-color table td div:hover,#dropdown-menu-background table td div:hover{border-color:#999;}";
+
+  // src/toolbars/color.ts
+  var rgbToHex = (r, g, b) => "#" + [r, g, b].map((x) => {
+    if (x === "")
+      return "00";
+    const hex = parseInt(x, 10).toString(16);
+    return hex.length === 1 ? "0" + hex : hex;
+  }).join("");
+  var rgbStyleToHex = (rgb) => {
+    if (rgb.indexOf("rgb(") === -1)
+      return rgb;
+    let _rgb = rgb.replace("rgb(", "").replace(")", "").split(",");
+    return rgbToHex(_rgb[0], _rgb[1], _rgb[2]);
+  };
+  function color_default2(editor) {
+    const content = (type) => {
+      var _a, _b;
+      const v = type === "color" ? ["color", SubEditor.svgList["text_color"], ((_a = editor.feature) == null ? void 0 : _a.color) || "", editor.ln("text color"), editor.ln("SET COLOR"), "#000000"] : ["background", SubEditor.svgList["background_color"], ((_b = editor.feature) == null ? void 0 : _b.background) || "", editor.ln("background color"), editor.ln("SET BACKGROUND COLOR"), "#ffffff"];
+      return '<div class="se-ToolbarItem se-dropdown"><div class="se-dropdown-trigger"><button class="se-button"  data-command="' + v[0] + '" data-tips="' + v[3] + '" id="btn-dropdown-menu-' + v[0] + '" aria-haspopup="true" aria-controls="dropdown-menu-' + v[0] + '"><span></span><span class="se-icon">' + v[1] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-' + v[0] + '" role="menu"><div class="se-dropdown-content control"><div class="padding"><table><tbody><tr><td><div style="background-color: rgb(0, 0, 0);"></div></td><td><div style="background-color: rgb(68, 68, 68);"></div></td><td><div style="background-color: rgb(102, 102, 102);"></div></td><td><div style="background-color: rgb(153, 153, 153);"></div></td><td><div style="background-color: rgb(204, 204, 204);"></div></td><td><div style="background-color: rgb(238, 238, 238);"></div></td><td><div style="background-color: rgb(243, 243, 243);"></div></td><td><div style="background-color: rgb(255, 255, 255);"></div></td></tr><tr><td><div style="background-color: rgb(255, 0, 0);"></div></td><td><div style="background-color: rgb(255, 153, 0);"></div></td><td><div style="background-color: rgb(255, 255, 0);"></div></td><td><div style="background-color: rgb(0, 255, 0);"></div></td><td><div style="background-color: rgb(0, 255, 255);"></div></td><td><div style="background-color: rgb(0, 0, 255);"></div></td><td><div style="background-color: rgb(153, 0, 255);"></div></td><td><div style="background-color: rgb(255, 0, 255);"></div></td></tr><tr><td><div style="background-color: rgb(244, 204, 204);"></div></td><td><div style="background-color: rgb(252, 229, 205);"></div></td><td><div style="background-color: rgb(255, 242, 204);"></div></td><td><div style="background-color: rgb(217, 234, 211);"></div></td><td><div style="background-color: rgb(208, 224, 227);"></div></td><td><div style="background-color: rgb(207, 226, 243);"></div></td><td><div style="background-color: rgb(217, 210, 233);"></div></td><td><div style="background-color: rgb(234, 209, 220);"></div></td></tr><tr><td><div style="background-color: rgb(234, 153, 153);"></div></td><td><div style="background-color: rgb(249, 203, 156);"></div></td><td><div style="background-color: rgb(255, 229, 153);"></div></td><td><div style="background-color: rgb(182, 215, 168);"></div></td><td><div style="background-color: rgb(162, 196, 201);"></div></td><td><div style="background-color: rgb(159, 197, 232);"></div></td><td><div style="background-color: rgb(180, 167, 214);"></div></td><td><div style="background-color: rgb(213, 166, 189);"></div></td></tr><tr><td><div style="background-color: rgb(224, 102, 102);"></div></td><td><div style="background-color: rgb(246, 178, 107);"></div></td><td><div style="background-color: rgb(255, 217, 102);"></div></td><td><div style="background-color: rgb(147, 196, 125);"></div></td><td><div style="background-color: rgb(118, 165, 175);"></div></td><td><div style="background-color: rgb(111, 168, 220);"></div></td><td><div style="background-color: rgb(142, 124, 195);"></div></td><td><div style="background-color: rgb(194, 123, 160);"></div></td></tr><tr><td><div style="background-color: rgb(204, 0, 0);"></div></td><td><div style="background-color: rgb(230, 145, 56);"></div></td><td><div style="background-color: rgb(241, 194, 50);"></div></td><td><div style="background-color: rgb(106, 168, 79);"></div></td><td><div style="background-color: rgb(69, 129, 142);"></div></td><td><div style="background-color: rgb(61, 133, 198);"></div></td><td><div style="background-color: rgb(103, 78, 167);"></div></td><td><div style="background-color: rgb(166, 77, 121);"></div></td></tr><tr><td><div style="background-color: rgb(153, 0, 0);"></div></td><td><div style="background-color: rgb(180, 95, 6);"></div></td><td><div style="background-color: rgb(191, 144, 0);"></div></td><td><div style="background-color: rgb(56, 118, 29);"></div></td><td><div style="background-color: rgb(19, 79, 92);"></div></td><td><div style="background-color: rgb(11, 83, 148);"></div></td><td><div style="background-color: rgb(53, 28, 117);"></div></td><td><div style="background-color: rgb(116, 27, 71);"></div></td></tr><tr><td><div style="background-color: rgb(102, 0, 0);"></div></td><td><div style="background-color: rgb(120, 63, 4);"></div></td><td><div style="background-color: rgb(127, 96, 0);"></div></td><td><div style="background-color: rgb(39, 78, 19);"></div></td><td><div style="background-color: rgb(12, 52, 61);"></div></td><td><div style="background-color: rgb(7, 55, 99);"></div></td><td><div style="background-color: rgb(32, 18, 77);"></div></td><td><div style="background-color: rgb(76, 17, 48);"></div></td></tr></tbody></table><div><input class="Hex" type="color" value="' + (rgbStyleToHex(v[2]) || v[5]) + '"><button class="se-button">' + v[4] + "</button></div></div></div></div></div>";
+    };
+    return {
+      color: {
+        command: "color",
+        svg: SubEditor.svgList["text_color"],
+        tips: editor.ln("text color"),
+        dropdowncontent: content("color"),
+        onRender: (_editor, el) => {
+          var _a, _b;
+          const menu = el.querySelector(".se-dropdown-menu");
+          (_a = el.querySelector(".se-dropdown-trigger > button")) == null ? void 0 : _a.addEventListener("click", () => {
+            var _a2, _b2, _c, _d, _e;
+            if (!menu.classList.contains("is-active")) {
+              _editor.handleFeature();
+              el.querySelector("input").value = rgbStyleToHex(((_b2 = (_a2 = _editor.feature) == null ? void 0 : _a2.node) == null ? void 0 : _b2.style.color) || ((_e = (_d = (_c = _editor.feature) == null ? void 0 : _c.node) == null ? void 0 : _d.parentElement) == null ? void 0 : _e.style.color) || "");
             }
-            x = x.parentElement;
+          });
+          el.querySelectorAll("td > div").forEach((div) => {
+            div.addEventListener("click", (e) => {
+              el.querySelector("input").value = rgbStyleToHex(e.currentTarget.style.backgroundColor);
+            });
+          });
+          (_b = el.querySelector(".se-dropdown-content button")) == null ? void 0 : _b.addEventListener("click", (e) => {
+            var _a2, _b2;
+            e.preventDefault();
+            e.stopPropagation();
+            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
+            _editor.command("color", [(_b2 = el.querySelector("input")) == null ? void 0 : _b2.value]);
+            return false;
+          });
+        }
+      },
+      backgroundcolor: {
+        command: "backgroundcolor",
+        svg: SubEditor.svgList["background_color"],
+        tips: "background color",
+        dropdowncontent: content("background"),
+        onRender: (_editor, el) => {
+          var _a, _b;
+          const menu = el.querySelector(".se-dropdown-menu");
+          (_a = el.querySelector(".se-dropdown-trigger > button")) == null ? void 0 : _a.addEventListener("click", () => {
+            var _a2, _b2, _c, _d, _e;
+            if (!menu.classList.contains("is-active")) {
+              _editor.handleFeature();
+              el.querySelector("input").value = rgbStyleToHex(((_b2 = (_a2 = _editor.feature) == null ? void 0 : _a2.node) == null ? void 0 : _b2.style.backgroundColor) || ((_e = (_d = (_c = _editor.feature) == null ? void 0 : _c.node) == null ? void 0 : _d.parentElement) == null ? void 0 : _e.style.backgroundColor) || "");
+            }
+          });
+          el.querySelectorAll("td > div").forEach((div) => {
+            div.addEventListener("click", (e) => {
+              el.querySelector("input").value = rgbStyleToHex(e.currentTarget.style.backgroundColor);
+            });
+          });
+          (_b = el.querySelector(".se-dropdown-content button")) == null ? void 0 : _b.addEventListener("click", (e) => {
+            var _a2, _b2;
+            e.preventDefault();
+            e.stopPropagation();
+            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
+            _editor.command("backgroundcolor", [(_b2 = el.querySelector("input")) == null ? void 0 : _b2.value]);
+            return false;
+          });
+        }
+      }
+    };
+  }
+
+  // src/toolbars/blockquote.ts
+  function blockquote_default(editor) {
+    return {
+      blockquote: {
+        command: "blockquote",
+        svg: SubEditor.svgList["blockquote"],
+        tips: "blockquote"
+      }
+    };
+  }
+
+  // src/toolbars/format.ts
+  function format_default2(editor) {
+    const o = {
+      paragraph: {
+        command: "p",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="paragraph"><span class="se-icon">' + SubEditor.svgList["p"] + "</span></span>"
+      },
+      blockquote: {
+        command: "blockquote",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + "</span></span>"
+      },
+      code: {
+        command: "code",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span>"
+      },
+      format: {
+        command: "format",
+        svg: SubEditor.svgList["p"],
+        tips: "format",
+        dropdowncontent: '<div class="se-ToolbarItem se-dropdown" data-tips="' + editor.ln("paragraph") + '"><div class="se-dropdown-trigger"><button class="se-button"  data-command="paragraph" data-tips="paragraph" id="btn-dropdown-menu-paragraph" aria-haspopup="true" aria-controls="dropdown-menu-paragraph"><span></span><span class="se-icon" aria-hidden="true">' + SubEditor.svgList["p"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-paragraph" role="menu"><div class="se-dropdown-content horizontal"  aria-hidden="true"><span class="se-button se-ToolbarItem" data-command="p" data-featureformat="P" data-tips="Normal"><span class="se-icon">' + SubEditor.svgList["p"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h1" data-featureformat="H1" data-tips="Heading 1"><span class="se-icon">' + SubEditor.svgList["h1"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h2" data-featureformat="H2" data-tips="Heading 2"><span class="se-icon">' + SubEditor.svgList["h2"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h3" data-featureformat="H3" data-tips="Heading 3"><span class="se-icon">' + SubEditor.svgList["h3"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h4" data-featureformat="H4" data-tips="Heading 4"><span class="se-icon">' + SubEditor.svgList["h4"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h5" data-featureformat="H5" data-tips="Heading 5"><span class="se-icon">' + SubEditor.svgList["h5"] + '</span></span><span class="se-button se-ToolbarItem" data-command="h6" data-featureformat="H6" data-tips="Heading 6"><span class="se-icon">' + SubEditor.svgList["h6"] + '</span></span><span class="se-button se-ToolbarItem" data-command="blockquote" data-featureformat="BLOCKQUOTE" data-tips="blockquote"><span class="se-icon">' + SubEditor.svgList["blockquote"] + '</span></span><span class="se-button se-ToolbarItem" data-command="code" data-featureformat="CODE" data-tips="Code"><span class="se-icon">' + SubEditor.svgList["code"] + "</span></span></div></div></div>",
+        onRender: (_editor, el) => {
+          el.querySelectorAll(".se-button").forEach((elm) => {
+            elm.addEventListener("click", (e) => {
+              const cmd = elm.getAttribute("data-command");
+              _editor.command(cmd, []);
+            });
+          });
+        }
+      }
+    };
+    for (let i = 1; i < 7; i++) {
+      o["h" + i] = {
+        command: "h" + i,
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="h' + i + '" data-featureformat="H' + i + '" data-tips="Heading ' + i + '"><span class="se-icon">' + SubEditor.svgList["h" + i] + "</span></span>"
+      };
+    }
+    return o;
+  }
+
+  // src/toolbars/fullscreen.ts
+  function fullscreen_default2(editor) {
+    return {
+      fullscreen: {
+        command: "fullscreen",
+        svg: SubEditor.svgList["fullscreen"],
+        tips: "fullscreen",
+        onRender: (_editor, el) => {
+          el.setAttribute("data-value", "1");
+          el.addEventListener("click", (e) => {
+            _editor.command("fullscreen", [el.getAttribute("data-value")]);
+          });
+          _editor.event.register([{ event: "onFullscreenChange", target: [], callback: () => {
+            const isFullscreen = el.getAttribute("data-value");
+            if (isFullscreen === "") {
+              el.querySelector("span.se-icon").innerHTML = SubEditor.svgList["fullscreen"];
+              el.setAttribute("data-value", "1");
+              el.setAttribute("data-tips", "exit fullscreen");
+              el.classList.remove("is-featured");
+            } else {
+              el.querySelector("span.se-icon").innerHTML = SubEditor.svgList["fullscreen_close"];
+              el.setAttribute("data-value", "");
+              el.setAttribute("data-tips", "fullscreen");
+              el.classList.add("is-featured");
+            }
+            if (editor.refToolbar) {
+              const tips = editor.refToolbar.querySelector(".tips");
+              if (tips) {
+                tips.style.display = "none";
+                tips.style.top = "";
+              }
+            }
+          } }]);
+        }
+      }
+    };
+  }
+
+  // src/toolbars/align.ts
+  var ev = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="align left"],.se-ToolbarItem[data-tips="align right"],.se-ToolbarItem[data-tips="align center"],.se-ToolbarItem[data-tips="align justify"]').forEach((btn) => {
+      btn.classList.remove("is-featured");
+      if (btn.getAttribute("data-value") === _editor.feature.align) {
+        btn.classList.add("is-featured");
+      }
+    });
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="align"] .se-button[data-command]').forEach((btn) => {
+      btn.classList.remove("is-featured");
+      if (btn.getAttribute("data-value") === _editor.feature.align) {
+        btn.classList.add("is-featured");
+      }
+    });
+  } }];
+  function align_default2(editor) {
+    const o = {
+      align: {
+        command: "align",
+        svg: SubEditor.svgList["align_left"],
+        tips: "align",
+        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="align"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-align"><span></span><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-align" role="menu"><div class="se-dropdown-content horizontal"><span class="se-button se-ToolbarItem" data-command="align" data-value="left" data-tips="align left"><span class="se-icon">' + SubEditor.svgList["align_left"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="center" data-tips="align center"><span class="se-icon">' + SubEditor.svgList["align_center"] + '</span></span><span class="se-button se-ToolbarItem" data-command="align" data-value="right" data-tips="align right"><span class="se-icon">' + SubEditor.svgList["align_right"] + '</span></span><span class="se-button ToolbarItem" data-command="align" data-value="justify" data-tips="align justify"><span class="se-icon">' + SubEditor.svgList["align_justify"] + "</span></span></div></div></div>",
+        onRender: (_editor, el) => {
+          el.querySelectorAll(".se-button[data-command]").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              _editor.command("align", [btn.getAttribute("data-value")]);
+              return false;
+            });
+          });
+          _editor.event.register(ev);
+        }
+      }
+    };
+    ["align_right", "align_left", "align_center", "align_justify"].forEach((cmd) => {
+      const values = cmd.split("_");
+      o[cmd] = {
+        command: cmd,
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="' + cmd + '" data-value="' + values[1] + '" data-tips="' + cmd.replace("_", " ") + '"><span class="se-icon">' + SubEditor.svgList[cmd] + "</span></span>",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            _editor.command("align", [values[1]]);
+            return false;
+          });
+          _editor.event.register(ev);
+        }
+      };
+    });
+    return o;
+  }
+
+  // src/toolbars/table.ts
+  function createTableDropdown(editor, el) {
+    el.querySelector(".se-dropdown-content").innerHTML = '<div class="padding"><table class="ToolbarTable"><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><div class="title"></div></div>';
+    const table = el.querySelector("table");
+    const _mouseover = (e, row, col2) => {
+      let x = 0, y = 0;
+      table.querySelectorAll("tr").forEach((tr) => {
+        x++;
+        tr.querySelectorAll("td").forEach((td) => {
+          y++;
+          td.classList.remove("active");
+          if (row >= x && col2 >= y) {
+            td.classList.add("active");
           }
-        }
-        if (!isIn) {
-          this.selection = void 0;
-          return;
-        }
-        const sel = import_selection_serializer2.default.saveSlim(this.refContent);
-        if (JSON.stringify(this.selection) !== JSON.stringify(sel)) {
-          this.selection = sel;
-          this.handleFeature();
-          this.event.trigger("onSelectionChange", "", [this, this.selection]);
-        }
-      }];
-      document.addEventListener("selectionchange", this.docListener["selectionchange"][0]);
-    }
-    resetSelection() {
-      this.selection = import_selection_serializer2.default.saveSlim(this.refContent);
-    }
-    restoreSelection(sel = void 0) {
-      import_selection_serializer2.default.restore(this.refContent, sel ? sel : this.selection);
-    }
-    getSelectionRange() {
-      if (!this.selection) {
-        this.resetSelection();
-      }
-      let selection = dom_default.getSelection();
-      const range = selection.getRangeAt(0);
-      return { selection, range: range.cloneRange() };
-    }
-    setCache(key, value) {
-      this.cachedList[key] = value;
-    }
-    getCache(key) {
-      return typeof this.cachedList[key] === "undefined" ? void 0 : this.cachedList[key];
-    }
-    setCfg(key, value) {
-      this.cfgList[key] = value;
-    }
-    getCfg(key) {
-      let ln = this.ln(key);
-      if (ln && ln !== key)
-        return ln;
-      return this.cfgList[key] || "";
-    }
-    command(cmd, value = []) {
-      if (!this.selection) {
-        this.selection = import_selection_serializer2.default.saveSlim(this.refContent);
-      }
-      import_selection_serializer2.default.restore(this.refContent, this.selection);
-      this.event.trigger("onCommand", cmd, [this, cmd, ...value]);
-    }
-    disableFooter() {
-      this.refFooter.style.display = "none";
-      this.fixStylePosition();
-    }
-    enableFooter(height = 15) {
-      this.refFooter.style.display = "block";
-      this.refFooter.style.height = height + "px";
-      this.fixStylePosition();
-    }
-    setAutoGrow(grow) {
-      if (this.autoGrow === grow)
-        return;
-      this.autoGrow = grow;
-      if (grow) {
-        this.refEditor.classList.add("AutoGrow");
-        this.refContent.addEventListener("input", this.growFn);
-        this.refEditor.style.height = "auto";
-        this.refContent.parentElement.style.height = "auto";
-      } else {
-        this.refEditor.classList.remove("AutoGrow");
-        this.refContent.removeEventListener("input", this.growFn);
-        this.refEditor.style.height = this.height + "px";
-      }
-      this.fixStylePosition();
-    }
-    growFn(ev4) {
-      ev4.target.parentElement.style.height = ev4.target.clientHeight + "px";
-    }
-    fixStylePosition() {
-      if (!this.autoGrow) {
-        this.refContent.parentElement.style.height = this.refEditor.clientHeight - this.refToolbar.clientHeight - this.refFooter.clientHeight + "px";
-      }
-    }
-    initToolbarItems(toolbarItemList) {
-      var _a;
-      (_a = this.toolbar) == null ? void 0 : _a.initItems(toolbarItemList);
-    }
-    destroy() {
-      var _a;
-      if (this.refEl.nodeName === "TEXTAREA") {
-        this.refEl.setAttribute("style", this.cacheTextareaStyle);
-        (_a = this.refEl.parentNode) == null ? void 0 : _a.removeChild(this.refEditor);
-      } else {
-        this.refEl.removeChild(this.refEditor);
-        this.refEl.removeChild(this.refTextarea);
-      }
-      Object.keys(this.docListener).forEach((ev4) => {
-        this.docListener[ev4].forEach((i) => {
-          document.removeEventListener(ev4, i);
+          if (td === e.currentTarget) {
+            el.querySelector(".title").innerHTML = x + " x " + y;
+          }
+        });
+        y = 0;
+      });
+    };
+    const _mouseout = () => {
+      table.querySelectorAll("td").forEach((td) => {
+        td.classList.remove("active");
+        el.querySelector(".title").innerHTML = "&nbsp;";
+      });
+    };
+    let _row = 0, _col = 0;
+    table.querySelectorAll("tr").forEach((tr) => {
+      _row++;
+      tr.querySelectorAll("td").forEach((td) => {
+        _col++;
+        const __row = _row, __col = _col;
+        td.addEventListener("mouseover", (e) => {
+          _mouseover(e, __row, __col);
+        });
+        td.addEventListener("mouseout", _mouseout);
+        td.addEventListener("click", () => {
+          var _a;
+          (_a = editor.toolbar) == null ? void 0 : _a.hideDropdown();
+          editor.command("table", [__row + "," + __col]);
         });
       });
-      this.refEl._SubEditor = void 0;
+      _col = 0;
+    });
+  }
+  function inTableDropdown(editor, el) {
+    var _a, _b, _c, _d, _e;
+    const cell = editor.dom.nodeParent((_a = editor.feature) == null ? void 0 : _a.node, "TD") || editor.dom.nodeParent((_b = editor.feature) == null ? void 0 : _b.node, "TH");
+    const is_td = (_c = editor.feature) == null ? void 0 : _c.path.includes("TD"), table = editor.feature.pathNode[(_d = editor.feature) == null ? void 0 : _d.path.indexOf("TABLE")], tr = editor.dom.nodeParent((_e = editor.feature) == null ? void 0 : _e.node, "TR"), trs = table.querySelectorAll("tbody tr");
+    const has_header = table.querySelectorAll("th").length > 0;
+    const col2 = editor.dom.nodePosition(cell), row = editor.dom.nodePosition(tr);
+    const noderowspan = parseInt(cell.getAttribute("rowspan") || "1", 10), nodecolspan = parseInt(cell.getAttribute("colspan") || "1", 10);
+    const allow_unmerge = nodecolspan > 1 || noderowspan > 1;
+    let allow_mergeright = cell.parentElement.childNodes.length > col2 + 1;
+    let allow_mergedown = is_td && trs.length > row + 1;
+    const tableCellList = allow_mergedown || allow_mergeright ? editor.dom.table.cellList(table, false) : [];
+    if (allow_mergeright) {
+      const nodeList = tableCellList[row], idx = nodeList.indexOf(cell);
+      if (editor.dom.table.rowSpan(cell) !== editor.dom.table.rowSpan(nodeList[idx + 1])) {
+        allow_mergeright = false;
+      }
     }
-    static presetLang(langList) {
-      Object.keys(langList).forEach((ln) => {
-        _SubEditor.langList[ln] = Object.assign({}, lang_default[ln] || {}, _SubEditor.langList[ln] || {}, langList[ln]);
-      });
+    if (allow_mergedown) {
+      const nodeList = tableCellList[row], nextNodeList = tableCellList[row + 1], idx = nodeList.indexOf(cell);
+      if (editor.dom.table.colSpan(nodeList[idx]) !== editor.dom.table.colSpan(nextNodeList[idx])) {
+        allow_mergedown = false;
+      }
     }
-    static initLang(langList) {
-      Object.keys(lang_default).forEach((ln) => {
-        _SubEditor.langList[ln] = Object.assign({}, lang_default[ln], _SubEditor.langList[ln] || {}, langList[ln] || {});
-      });
-      if (Object.keys(langList).length > 0)
-        _SubEditor.presetLang(langList);
-    }
-    static presetSvg(_svg) {
-      _SubEditor.svgList = Object.assign(_SubEditor.svgList, _svg);
-    }
-    static initSvg(userSvgList) {
-      _SubEditor.svgList = Object.assign({}, svg_default, userSvgList);
-    }
-    static presetCss(cssString = "") {
-      _SubEditor.presetCssString = cssString;
-    }
-    static lastCss() {
-      return _SubEditor.lastCssString;
-    }
-    static initCss(cssString = "", skipCss = false) {
-      let pluginCss = "";
-      const SubEditorStyle = document.querySelector("#SubEditorStyle");
-      if (skipCss && SubEditorStyle)
-        return;
-      Object.keys(_SubEditor.pluginCSS).forEach((p) => pluginCss += _SubEditor.pluginCSS[p]);
-      const styleStr = css_default + "\n" + pluginCss + "\n" + _SubEditor.presetCssString + "\n" + cssString;
-      _SubEditor.lastCssString = styleStr;
-      for (let i = 0; i < document.styleSheets.length; i++) {
-        if (document.styleSheets[i].title && document.styleSheets[i].title === "SubEditorStyle") {
-          if (styleStr !== SubEditorStyle.innerHTML) {
-            SubEditorStyle.innerHTML = styleStr;
+    el.querySelector(".se-dropdown-content").innerHTML = '<button class="se-button se-dropdown-item hover borderbottom" data-command="table_style" >' + editor.ln("TABLE STYLE") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="cell_style">' + editor.ln("CELL STYLE") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_header" style="' + (has_header ? "display: none;" : "") + '">' + editor.ln("INSERT HEADER") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="delete_header" style="' + (is_td ? "display: none;" : "") + '">' + editor.ln("DELETE HEADER") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_row_above" style="' + (!is_td ? "display: none;" : "") + '">' + editor.ln("INSERT ROW ABOVE") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_row_below" style="' + (!is_td ? "display: none;" : "") + '">' + editor.ln("INSERT ROW BELOW") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_column_left">' + editor.ln("INSERT COLUMN LEFT") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="insert_column_right">' + editor.ln("INSERT COLUMN RIGHT") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="delete_row" style="' + (!is_td ? "display: none;" : "") + '">' + editor.ln("DELETE ROW") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="delete_column">' + editor.ln("DELETE COLUMN") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="merge_down" style="' + (!allow_mergedown ? "display: none;" : "") + '">' + editor.ln("MERGE DOWN") + '</button><button class="se-button se-dropdown-item hover borderbottom" data-command="merge_right" style="' + (!allow_mergeright ? "display: none;" : "") + '">' + editor.ln("MERGE RIGHT") + '</button><button class="se-button se-dropdown-item hover" data-command="unmerge" style="' + (!allow_unmerge ? "display: none;" : "") + '">' + editor.ln("UNMERGE") + "</button>";
+    el.querySelectorAll(".se-dropdown-item").forEach((i) => {
+      i.addEventListener("click", (e) => {
+        var _a2;
+        e.preventDefault();
+        e.stopPropagation();
+        const cmd = i.getAttribute("data-command") || "";
+        if (cmd === "table_style") {
+          const style = table.hasAttribute("style") ? table.getAttribute("style") : editor.getCfg("table.default.table.style");
+          el.querySelector(".se-dropdown-content").innerHTML = '<div class="padding"><div class="se-dropdown-item"><input type="text" name="style"><label>' + editor.ln("TABLE STYLE") + '</label></div><div style="text-align: right;margin-right:5px"><button class="se-button apply">' + editor.ln("Apply") + "</button></div></div>";
+          el.querySelector(".se-dropdown-content input[name=style]").value = style;
+          el.querySelector(".se-dropdown-content .se-button.apply").addEventListener("click", (ev4) => {
+            var _a3;
+            ev4.preventDefault();
+            ev4.stopPropagation();
+            editor.restoreSelection(editor.getCache("currentSelection"));
+            editor.command("table", ["table_style", el.querySelector(".se-dropdown-content input[name=style]").value]);
+            (_a3 = editor.toolbar) == null ? void 0 : _a3.hideDropdown();
+            return false;
+          });
+          return false;
+        }
+        if (cmd === "cell_style") {
+          const style = cell.hasAttribute("style") ? cell.getAttribute("style") : editor.getCfg(is_td ? "table.default.cell.style" : "table.default.header.cell.style");
+          let str = '<div class="padding"><div class="se-dropdown-item"><input type="text" name="style"><label>' + editor.ln("CELL STYLE") + '</label></div><div style="text-align:right;display:flex"><button disabled style="    border: none;background: #fff;">' + editor.ln("Apply To") + "</button>";
+          if (is_td) {
+            str += '<button class="se-button apply" data-value="all">' + editor.ln("All") + '</button><button class="se-button apply" data-value="row">' + editor.ln("Row") + '</button><button class="se-button apply" data-value="cell">' + editor.ln("Cell") + "</button></div></div>";
+          } else {
+            str += '<button class="se-button apply" data-value="row">' + editor.ln("Row") + '</button><button class="se-button apply" data-value="cell">' + editor.ln("Cell") + "</button></div></div>";
           }
-          return;
+          el.querySelector(".se-dropdown-content").innerHTML = str;
+          el.querySelector(".se-dropdown-content input[name=style]").value = style;
+          Array.from(el.querySelectorAll(".se-dropdown-content .se-button.apply")).forEach((btn) => btn.addEventListener("click", (ev4) => {
+            var _a3;
+            ev4.preventDefault();
+            ev4.stopPropagation();
+            editor.restoreSelection(editor.getCache("currentSelection"));
+            editor.command("table", ["cell_style", el.querySelector(".se-dropdown-content input[name=style]").value, ev4.target.getAttribute("data-value") || ""]);
+            (_a3 = editor.toolbar) == null ? void 0 : _a3.hideDropdown();
+            return false;
+          }));
+          return false;
+        }
+        editor.restoreSelection(editor.getCache("currentSelection"));
+        editor.command("table", [cmd]);
+        (_a2 = editor.toolbar) == null ? void 0 : _a2.hideDropdown();
+        return false;
+      });
+    });
+  }
+  function table_default3(editor) {
+    return {
+      table: {
+        command: "table",
+        svg: SubEditor.svgList["table"],
+        tips: editor.ln("table"),
+        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="' + editor.ln("table") + '"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-table"><span></span><span class="se-icon">' + SubEditor.svgList["table"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-table" role="menu"><div class="se-dropdown-content se-control"><div class="title"></div></div></div></div>',
+        onRender: (_editor, table) => {
+          const menu = table.querySelector(".se-dropdown-menu");
+          table.querySelector(".se-dropdown-trigger > button").addEventListener("click", () => {
+            var _a;
+            if (!menu.classList.contains("is-active")) {
+              editor.setCache("currentSelection", _editor.selection);
+              _editor.handleFeature();
+              const path = (_a = _editor.feature) == null ? void 0 : _a.path;
+              if (path.includes("TD") || path.includes("TH")) {
+                inTableDropdown(_editor, table);
+              } else {
+                createTableDropdown(_editor, table);
+              }
+            }
+          });
         }
       }
-      const style = window.document.createElement("style");
-      style.title = "SubEditorStyle";
-      style.setAttribute("id", "SubEditorStyle");
-      style.innerHTML = styleStr;
-      document.head.appendChild(style);
-    }
-    changeValue(str) {
-      if (this.refEditor) {
-        this.refContent.innerHTML = str;
-        this.resetSelection();
-        this.handleFeature();
-        this.handleChange(this.history.Next());
+    };
+  }
+
+  // src/toolbars/hr.ts
+  function hr_default2(editor) {
+    return {
+      hr: {
+        command: "hr",
+        svg: SubEditor.svgList["hr"],
+        tips: "horizontal line"
       }
-    }
-    triggerChange() {
-      if (this.refEditor) {
-        this.handleFeature();
-        this.handleChange(this.history.Next());
+    };
+  }
+
+  // src/toolbars/source.ts
+  function source_default2(editor) {
+    return {
+      source: {
+        command: "source",
+        svg: SubEditor.svgList["view_source"],
+        tips: "view source",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", () => {
+            var _a;
+            if (!((_a = _editor.toolbar) == null ? void 0 : _a.hasShadow())) {
+              _editor.toolbar.enableShadow(["source", "fullscreen"]);
+            } else {
+              _editor.toolbar.disableShadow();
+            }
+            const cmd = el.getAttribute("data-command");
+            _editor.command(cmd, []);
+          });
+        }
       }
-    }
-    handleChange(changed) {
-      this.event.trigger("onBeforeChange", "", [this, changed]);
-      if (this.refTextarea.style.display === "none") {
-        this.refTextarea.value = this.refContent.innerHTML;
+    };
+  }
+
+  // src/toolbars/text.ts
+  var ev2 = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-tips="text"] .se-button[data-command]').forEach((btn) => {
+      btn.classList.remove("is-featured");
+      const cmd = btn.getAttribute("data-command");
+      if (_editor.feature[cmd]) {
+        btn.classList.add("is-featured");
       }
-      if (changed && this.onChange)
-        this.onChange(changed);
-    }
+    });
+  } }];
+  function text_default2(editor) {
+    const o = {
+      text: {
+        command: "text",
+        svg: SubEditor.svgList["text"],
+        tips: "text",
+        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="text"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-align"><span></span><span class="se-icon">' + SubEditor.svgList["text"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-align" role="menu"><div class="se-dropdown-content horizontal"><span class="se-button se-ToolbarItem" data-command="bold" data-tips="bold"><span class="se-icon">' + SubEditor.svgList["b"] + '</span></span><span class="se-button se-ToolbarItem" data-command="italic" data-tips="italic"><span class="se-icon">' + SubEditor.svgList["i"] + '</span></span><span class="se-button se-ToolbarItem" data-command="underline" data-tips="underline"><span class="se-icon">' + SubEditor.svgList["u"] + '</span></span><span class="se-button se-ToolbarItem" data-command="strikethrough" data-tips="strikethrough"><span class="se-icon">' + SubEditor.svgList["strikethrough"] + '</span></span><span class="se-button se-ToolbarItem" data-command="superscript" data-tips="superscript"><span class="se-icon">' + SubEditor.svgList["superscript"] + '</span></span><span class="se-button se-ToolbarItem" data-command="subscript" data-tips="subscript"><span class="se-icon">' + SubEditor.svgList["subscript"] + "</span></span></div></div></div>",
+        onRender: (_editor, el) => {
+          el.querySelectorAll(".se-button[data-command]").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              _editor.command(btn.getAttribute("data-command"));
+              return false;
+            });
+          });
+          _editor.event.register(ev2);
+        }
+      }
+    };
+    const x = { b: "bold", i: "italic", u: "underline", strikethrough: "strikethrough", subscript: "subscript", superscript: "superscript" };
+    Object.keys(x).forEach((key) => {
+      const cmd = x[key];
+      o[cmd] = {
+        command: cmd,
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem" data-command="' + cmd + '" data-tips="' + cmd + '"><span class="se-icon">' + SubEditor.svgList[key] + "</span></span>",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            _editor.command(el.getAttribute("data-command"));
+            return false;
+          });
+        }
+      };
+    });
+    return o;
+  }
+
+  // src/toolbars/undo.ts
+  function undo_default2(editor) {
+    return {
+      undo: {
+        command: "undo",
+        svg: SubEditor.svgList["undo"],
+        tips: "undo"
+      }
+    };
+  }
+
+  // src/toolbars/redo.ts
+  function redo_default2(editor) {
+    return {
+      redo: {
+        command: "redo",
+        svg: SubEditor.svgList["redo"],
+        tips: "redo"
+      }
+    };
+  }
+
+  // src/toolbars/indent.ts
+  function indent_default2(editor) {
+    return {
+      indent: {
+        command: "indent",
+        svg: SubEditor.svgList["indent"],
+        tips: "indent"
+      },
+      outdent: {
+        command: "outdent",
+        svg: SubEditor.svgList["outdent"],
+        tips: "outdent"
+      }
+    };
+  }
+
+  // src/toolbars/remove_format.ts
+  function remove_format_default2(editor) {
+    return {
+      remove_format: {
+        command: "remove_format",
+        svg: SubEditor.svgList["remove_format"],
+        tips: "remove format"
+      }
+    };
+  }
+
+  // src/toolbars/link.ts
+  function link_default2(editor) {
+    return {
+      link: {
+        command: "link",
+        svg: SubEditor.svgList["link"],
+        tips: "link",
+        dropdowncontent: '<div class="se-dropdown se-ToolbarItem" data-tips="' + editor.ln("link") + '"><div class="se-dropdown-trigger"><button class="se-button" aria-haspopup="true" aria-controls="dropdown-menu-link"><span></span><span class="se-icon">' + SubEditor.svgList["link"] + '</span></button></div><div class="se-dropdown-menu" id="dropdown-menu-link" role="menu"><div class="se-dropdown-content control"><div class="padding"><div class="se-dropdown-item"><input type="text" name="url"><label>' + editor.ln("url") + '</label></div><div class="se-dropdown-item"><input type="text" name="text"><label>' + editor.ln("text") + '</label></div><div class="se-dropdown-item"><input type="text" name="target"><label>' + editor.ln("link target") + ' <u style="cursor:pointer">' + editor.ln("open in new tab") + '</u></label></div><div style="text-align: right;margin-right:5px"><button class="se-button alert">' + editor.ln("remove") + '</button><button class="se-button insert">' + editor.ln("insert") + "</button></div></div></div></div></div>",
+        onRender: (_editor, el) => {
+          var _a, _b;
+          const btnAlert = el.querySelector(".se-dropdown-content .se-button.alert"), btnInsert = el.querySelector(".se-dropdown-content .se-button.insert"), inputURL = el.querySelector(".se-dropdown-content input[name=url]"), inputText = el.querySelector(".se-dropdown-content input[name=text]"), inputTarget = el.querySelector(".se-dropdown-content input[name=target]");
+          editor.setCache("currentSelection", _editor.selection);
+          (_a = el.querySelector("u")) == null ? void 0 : _a.addEventListener("click", () => {
+            el.querySelector("input[name=target]").value = "_blank";
+          });
+          btnInsert.addEventListener("click", (e) => {
+            var _a2;
+            e.preventDefault();
+            e.stopPropagation();
+            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
+            _editor.restoreSelection(editor.getCache("currentSelection"));
+            _editor.command("link", [btnInsert.innerHTML === editor.ln("insert") ? "insert" : "update", inputURL.value, inputText.value, inputTarget.value]);
+            return false;
+          });
+          btnAlert.addEventListener("click", (e) => {
+            var _a2;
+            e.preventDefault();
+            e.stopPropagation();
+            (_a2 = _editor.toolbar) == null ? void 0 : _a2.hideDropdown();
+            _editor.command("link", ["remove"]);
+            return false;
+          });
+          const menu = el.querySelector(".se-dropdown-menu");
+          (_b = el.querySelector(".se-dropdown-trigger > button")) == null ? void 0 : _b.addEventListener("click", () => {
+            var _a2, _b2, _c, _d, _e;
+            if (!menu.classList.contains("is-active")) {
+              editor.setCache("currentSelection", _editor.selection);
+              if ((_a2 = _editor.feature) == null ? void 0 : _a2.a.node) {
+                btnInsert.innerHTML = editor.ln("update");
+                inputURL.value = ((_b2 = _editor.feature) == null ? void 0 : _b2.a.href) || "";
+                inputTarget.value = ((_c = _editor.feature) == null ? void 0 : _c.a.target) || "";
+                inputText.value = ((_e = (_d = _editor.feature) == null ? void 0 : _d.a.node) == null ? void 0 : _e.textContent) || "";
+                btnAlert.style.display = "";
+              } else {
+                inputURL.value = "";
+                inputTarget.value = "";
+                inputText.value = "";
+                btnInsert.innerHTML = editor.ln("insert");
+                btnAlert.style.display = "none";
+              }
+            }
+          });
+        }
+      }
+    };
+  }
+
+  // src/toolbars/remove_link.ts
+  function remove_link_default(editor) {
+    return {
+      remove_link: {
+        command: "remove_link",
+        svg: SubEditor.svgList["remove_link"],
+        tips: "remove link"
+      }
+    };
+  }
+
+  // src/toolbars/list.ts
+  var ev3 = [{ event: "onFeatureChange", target: [], callback: function(_editor) {
+    _editor.refToolbar.querySelectorAll('.se-ToolbarItem[data-command="ol"],.se-ToolbarItem[data-command="ul"]').forEach((btn) => {
+      var _a;
+      btn.classList.remove("is-featured");
+      const cmd = btn.getAttribute("data-command");
+      if ((_a = _editor.feature) == null ? void 0 : _a.path.includes(cmd.toUpperCase())) {
+        btn.classList.add("is-featured");
+      }
+    });
+  } }];
+  function list_default2(editor) {
+    return {
+      ol: {
+        command: "ol",
+        svg: SubEditor.svgList["ol"],
+        tips: "ordered list",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", (e) => {
+            const cmd = el.getAttribute("data-command");
+            _editor.command(cmd, []);
+          });
+          _editor.event.register(ev3);
+        }
+      },
+      ul: {
+        command: "ul",
+        svg: SubEditor.svgList["ul"],
+        tips: "unordered list",
+        onRender: (_editor, el) => {
+          el.addEventListener("click", (e) => {
+            const cmd = el.getAttribute("data-command");
+            _editor.command(cmd, []);
+          });
+          _editor.event.register(ev3);
+        }
+      }
+    };
+  }
+
+  // src/toolbars/seperator.ts
+  function seperator_default(editor) {
+    const o = {
+      command: "",
+      svg: "",
+      tips: "",
+      dropdowncontent: '<span class="se-button se-ToolbarItem seperator"><span class="se-icon"><span></span>'
+    };
+    return {
+      "|": o,
+      "seperator": o
+    };
+  }
+
+  // src/toolbars/nextline.ts
+  function nextline_default(editor) {
+    return {
+      "nextline": {
+        command: "",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem nextline"><span class="se-icon"><span></span>'
+      }
+    };
+  }
+
+  // src/toolbars/spacer.ts
+  function spacer_default(editor) {
+    return {
+      "spacer": {
+        command: "",
+        svg: "",
+        tips: "",
+        dropdowncontent: '<span class="se-button se-ToolbarItem spacer"><span class="se-icon"><span></span>'
+      }
+    };
+  }
+
+  // src/toolbars/index.ts
+  var toolbars_default = {
+    color: color_default2,
+    blockquote: blockquote_default,
+    format: format_default2,
+    fullscreen: fullscreen_default2,
+    align: align_default2,
+    table: table_default3,
+    hr: hr_default2,
+    source: source_default2,
+    text: text_default2,
+    undo: undo_default2,
+    redo: redo_default2,
+    indent: indent_default2,
+    remove_format: remove_format_default2,
+    link: link_default2,
+    remove_link: remove_link_default,
+    list: list_default2,
+    seperator: seperator_default,
+    nextline: nextline_default,
+    spacer: spacer_default
   };
-  var SubEditor = _SubEditor;
-  SubEditor.svgList = {};
-  SubEditor.langList = {};
-  SubEditor.presetPluginList = {};
-  SubEditor.lastCssString = "";
-  SubEditor.presetCssString = "";
-  SubEditor.pluginCSS = {};
+
+  // src/main.ts
+  "use strict";
+  Object.keys(plugins_default).forEach((name) => {
+    SubEditor.pluginList[name] = plugins_default[name];
+  });
+  SubEditor.langList = Object.assign({}, lang_default);
+  SubEditor.svgList = Object.assign({}, svg_default);
+  SubEditor.cssString = css_default;
+  SubEditor.toolbarItemList = Object.assign({}, toolbars_default);
+  var main_default = SubEditor;
 
   // src/browser.js
   "use strict";
   if (typeof window !== "undefined") {
-    window.SubEditor = SubEditor;
+    window.SubEditor = main_default;
   }
 })();

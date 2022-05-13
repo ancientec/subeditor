@@ -27,9 +27,11 @@ const getCfg = (editor) => {
         "image.library.per.page": 20,
         "image.library.allow.paging": true,
         "image.library.allow.search": true,
+        "image.drop.to.content.upload": true,
         "image.upload.url": "",
         "image.upload.max.size": 0,
         "image.upload.max.size.per.file": 0,
+        "image.upload.max.files": 0,
         "image.upload.accept.files": 0,
         "image.upload.handler": null,
         "image.url.rewrite.handler": (u) => { return u.replace('http://', '//').replace('https://', '//'); },
@@ -38,6 +40,126 @@ const getCfg = (editor) => {
         cfg[key] = editor.getCfg(key);
     });
     return cfg;
+};
+const renderUploadProgressBar = (editor, progress) => {
+    const container = editor.refContent.parentElement;
+    let bar = container.querySelector(".UploadProgressBar");
+    if (progress >= 100 && !bar) {
+        return;
+    }
+    if (bar && progress >= 100) {
+        container.removeChild(bar);
+        return;
+    }
+    if (!bar) {
+        bar = document.createElement("div");
+        bar.classList.add("UploadProgressBar");
+        container.appendChild(bar);
+    }
+    bar.setAttribute("style", "width:" + progress + "%");
+};
+const renderUploadProgressError = (editor, error) => {
+    const container = editor.refContent.parentElement;
+    let err = container.querySelector(".UploadProgressError");
+    if (!err) {
+        err = document.createElement("div");
+        err.innerHTML = editor.ln(error);
+        err.classList.add("UploadProgressError");
+        container.appendChild(err);
+        setTimeout(() => {
+            container.removeChild(err);
+        }, 5000);
+    }
+    else {
+        //user react too soon here
+        err.innerHTML = editor.ln(error);
+    }
+};
+const dropOnFiles = (editor, files) => {
+    const url = editor.getCfg("image.upload.url") || "";
+    if (!url)
+        return;
+    let cfgAcceptTypes = editor.getCfg("image.accept.types") || "";
+    const cfgUploadAcceptFiles = editor.getCfg("image.upload.accept.files") || 0, cfgMaxSize = editor.getCfg("image.upload.max.size") || 0, cfgMaxFiles = editor.getCfg("image.upload.max.files") || 0, cfgMaxSizePerFile = editor.getCfg("image.upload.max.size.per.file") || 0, cfgUploadHandler = editor.getCfg("image.upload.handler"), cfgUrlRewriteHandler = editor.getCfg("image.url.rewrite.handler");
+    if (typeof editor.cachedList["image.upload.insert.list"] === "undefined")
+        editor.cachedList["image.upload.insert.list"] = [];
+    let err_types = false, err_size = false, err_size_per_file = false, err_files = false, total_size = 0, size_to_upload = [], uploaded_files = 0;
+    //calcuate uploaded files & size in content:
+    editor.cachedList["image.upload.insert.list"].forEach((n) => {
+        if (n.status === "failed" || !n.domEl || !n.domEl.parentElement || !n.size)
+            return;
+        total_size += n.size;
+        uploaded_files++;
+    });
+    if (cfgMaxFiles && uploaded_files + Array.from(files).length > cfgMaxFiles)
+        err_files = true;
+    Array.from(files).forEach((file, idx) => {
+        if (cfgAcceptTypes.indexOf(file.type) === -1 && cfgAcceptTypes.indexOf(file.type.substring(0, file.type.indexOf("")) + "/*") === -1) {
+            err_types = true;
+        }
+        if (cfgMaxSizePerFile > 0 && file.size / 1048576 > cfgMaxSizePerFile) {
+            err_size_per_file = true;
+        }
+        size_to_upload[idx] = file.size;
+        total_size += file.size;
+    });
+    if (cfgMaxSize > 0 && total_size / 1048576 > cfgMaxSize) {
+        err_size = true;
+    }
+    if (err_files || err_size || err_size_per_file || err_types || (cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles)) {
+        let errText = "";
+        if (err_types)
+            errText += editor.ln("please select the appropriate file types:") + " " + cfgAcceptTypes + ". <br>";
+        if (err_files)
+            errText += editor.ln("Cannot upload more than {%1} files", [cfgMaxFiles]) + ". <br>";
+        else if (cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles)
+            errText += editor.ln("Cannot upload more than {%1} files", [cfgUploadAcceptFiles]) + ". <br>";
+        if (err_size)
+            errText += editor.ln("max allowed size of all files in total should be ") + " " + cfgMaxSize + "MB.  <br>";
+        if (err_size_per_file)
+            errText += editor.ln("max allowed size per file should be ") + " " + cfgMaxSizePerFile + "MB. <br>";
+        renderUploadProgressError(editor, errText);
+        return;
+    }
+    let count = 0, uploaded_size = [], completed = 0;
+    Array.from(files).forEach((file, idx) => {
+        //test type and universal type, such as image/*:
+        if (cfgAcceptTypes.indexOf(file.type) === -1 && cfgAcceptTypes.indexOf(file.type.substring(0, file.type.indexOf("")) + "/*") === -1)
+            return;
+        count++;
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        const fd = new FormData();
+        fd.append("file", file);
+        uploaded_size[idx] = 0;
+        xhr.upload.addEventListener("progress", (ev) => {
+            uploaded_size[idx] = ev.loaded;
+            size_to_upload[idx] = ev.total;
+            renderUploadProgressBar(editor, Math.min(100, Math.floor(uploaded_size.reduce((a, b) => a + b, 0) / size_to_upload.reduce((a, b) => a + b, 0) * 10000) / 100));
+        });
+        xhr.addEventListener("error", () => {
+            xhr.abort();
+            completed++;
+            renderUploadProgressBar(editor, 100);
+        });
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                completed++;
+                if (completed >= count) {
+                    renderUploadProgressBar(editor, 100);
+                }
+                if (xhr.status === 0) {
+                    return;
+                }
+                cfgUploadHandler(file, xhr.responseText, (_url, _thumb, _obj, _elFunc = undefined) => {
+                    const url2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_url) : _url, thumb2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_thumb) : _thumb;
+                    const _uploadObj = { status: "completed", name: file.name, type: file.type, size: file.size, url: url2, thumb: thumb2, obj: _obj, elFunc: _elFunc };
+                    editor.command("image", ["upload", [_uploadObj]]);
+                });
+            }
+        };
+        xhr.send(fd);
+    });
 };
 const renderLibrary = (editor, content) => {
     const cfg = getCfg(editor);
@@ -190,7 +312,7 @@ const processUpload = (editor, idx, file, el, completed) => {
     const url = editor.getCfg("image.upload.url") || "", cfgUploadHandler = editor.getCfg("image.upload.handler"), cfgUrlRewriteHandler = editor.getCfg("image.url.rewrite.handler");
     if (!url)
         return;
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     const fd = new FormData();
     fd.append("file", file);
@@ -207,14 +329,14 @@ const processUpload = (editor, idx, file, el, completed) => {
             if (xhr.status === 0) {
                 el.classList.add("failed");
                 el.querySelector(".text").innerHTML = editor.ln("upload failed");
-                editor.cachedList["image.upload.result.list"][idx] = { status: "failed" };
+                el._uploadObj = { status: "failed" };
                 completed(false);
                 return;
             }
             cfgUploadHandler(file, xhr.responseText, (_url, _thumb, _obj, _elFunc = undefined) => {
                 el.classList.add("completed");
                 const url2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_url) : _url, thumb2 = typeof cfgUrlRewriteHandler === "function" ? cfgUrlRewriteHandler(_thumb) : _thumb;
-                editor.cachedList["image.upload.result.list"][idx] = { status: "completed", name: file.name, type: file.type, url: url2, thumb: thumb2, obj: _obj, elFunc: _elFunc };
+                el._uploadObj = { status: "completed", name: file.name, type: file.type, size: file.size, url: url2, thumb: thumb2, obj: _obj, elFunc: _elFunc };
                 if (isImage(file.type)) {
                     const img = document.createElement("img");
                     img.setAttribute("src", thumb2);
@@ -235,7 +357,7 @@ const renderUpload = (editor, content) => {
     var _a;
     content.classList.remove("horizontal");
     let cfgAcceptTypes = editor.getCfg("image.accept.types") || "";
-    const cfgUploadAcceptFiles = editor.getCfg("image.upload.accept.files") || 0, cfgMaxSize = editor.getCfg("image.upload.max.size") || 0, cfgMaxSizePerFile = editor.getCfg("image.upload.max.size.per.file") || 0;
+    const cfgUploadAcceptFiles = editor.getCfg("image.upload.accept.files") || 0, cfgMaxSize = editor.getCfg("image.upload.max.size") || 0, cfgMaxFiles = editor.getCfg("image.upload.max.files") || 0, cfgMaxSizePerFile = editor.getCfg("image.upload.max.size.per.file") || 0;
     content.innerHTML = '';
     editor.dom.appendString2Node('<div class="padding"><div class="uploadcontainer"><strong>' + editor.ln("drop or click to upload image") + '</strong><input type="file" name="file" ' + (cfgUploadAcceptFiles > 0 ? "multiple" : "") + '></div></div>', content);
     (_a = editor.toolbar) === null || _a === void 0 ? void 0 : _a.adjustContentPosition(content);
@@ -243,8 +365,6 @@ const renderUpload = (editor, content) => {
     const input = content.querySelector('input[type="file"]'), uploadContainer = input.parentElement;
     if (cfgAcceptTypes)
         input.setAttribute("accept", cfgAcceptTypes);
-    //reset cache for store upload result data
-    editor.cachedList["image.upload.result.list"] = [];
     let previewGrid, gridContainer, uploadAgainBtn, insertBtn;
     const onFiles = (files) => {
         uploadContainer.style.display = "none";
@@ -283,8 +403,13 @@ const renderUpload = (editor, content) => {
             insertBtn.addEventListener("click", (ev) => {
                 ev.preventDefault();
                 ev.stopPropagation();
-                //variables are stored in cache
-                editor.command("image", ["upload"]);
+                const data = [];
+                Array.from(previewGrid.childNodes).forEach(e => {
+                    if (!e._uploadObj)
+                        return;
+                    data.push(e._uploadObj);
+                });
+                editor.command("image", ["upload", data]);
                 editor.toolbar.hideDropdown();
                 return false;
             });
@@ -295,39 +420,58 @@ const renderUpload = (editor, content) => {
             uploadAgainBtn = content.querySelector(".upload_again");
             insertBtn = content.querySelector(".insert");
         }
-        let count = previewGrid.querySelectorAll("button").length, completed = count, failed = 0;
-        //check size:
-        if (cfgMaxSize > 0 || cfgMaxSizePerFile > 0) {
-            let err_size = false, err_size_per_file = false, total_size = 0;
-            Array.from(files).forEach(file => {
-                if (cfgMaxSizePerFile > 0 && file.size / 1048576 > cfgMaxSizePerFile) {
-                    err_size_per_file = true;
-                }
-                total_size += file.size;
-                if (cfgMaxSize > 0 && total_size / 1048576 > cfgMaxSize) {
-                    err_size = true;
-                }
-            });
-            if (err_size || err_size_per_file) {
-                uploadContainer.style.display = "";
-                gridContainer.remove();
-                if (uploadContainer.parentElement.querySelector(".FileTileImageGridFooter")) {
-                    uploadContainer.parentElement.removeChild(uploadContainer.parentElement.querySelector(".FileTileImageGridFooter"));
-                }
-                const text = uploadContainer.querySelector("strong");
-                const cachedText = text.innerHTML; //drop or upload..
-                let errText = "";
-                if (err_size)
-                    errText = "<small>" + editor.ln("max allowed size of all files in total should be ") + " " + cfgMaxSize + "MB. </small>";
-                if (err_size_per_file)
-                    errText += "<small>" + editor.ln("max allowed size per file should be ") + " " + cfgMaxSizePerFile + "MB. </small>";
-                text.innerHTML = errText;
-                setTimeout(() => {
-                    text.innerHTML = cachedText;
-                }, 5000);
+        if (typeof editor.cachedList["image.upload.insert.list"] === "undefined")
+            editor.cachedList["image.upload.insert.list"] = [];
+        let err_size = false, err_size_per_file = false, err_files = false, total_size = 0, uploaded_files = 0;
+        //check uploaded files & size in content:
+        editor.cachedList["image.upload.insert.list"].forEach((n) => {
+            if (n.status === "failed" || !n.domEl || !n.domEl.parentElement || !n.size)
                 return;
+            total_size += n.size;
+            uploaded_files++;
+        });
+        if (cfgMaxFiles && uploaded_files + Array.from(files).length > cfgMaxFiles)
+            err_files = true;
+        Array.from(files).forEach(file => {
+            if (cfgMaxSizePerFile > 0 && file.size / 1048576 > cfgMaxSizePerFile) {
+                err_size_per_file = true;
             }
+            total_size += file.size;
+        });
+        if (cfgMaxSize > 0 && total_size / 1048576 > cfgMaxSize) {
+            err_size = true;
         }
+        let err_upload_in_progress = false;
+        if (editor.refContent.parentElement.querySelector(".UploadProgressBar")) {
+            //another upload is in progress
+            err_upload_in_progress = true;
+        }
+        if (err_upload_in_progress || err_files || err_size || err_size_per_file || (cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles)) {
+            uploadContainer.style.display = "";
+            gridContainer.remove();
+            if (uploadContainer.parentElement.querySelector(".FileTileImageGridFooter")) {
+                uploadContainer.parentElement.removeChild(uploadContainer.parentElement.querySelector(".FileTileImageGridFooter"));
+            }
+            const text = uploadContainer.querySelector("strong");
+            const cachedText = text.innerHTML; //drop or upload..
+            let errText = "";
+            if (err_upload_in_progress)
+                errText += "<small>" + editor.ln("another upload is in progress") + ". </small>";
+            if (err_files)
+                errText += "<small>" + editor.ln("Cannot upload more than {%1} files", [cfgMaxFiles]) + ". </small>";
+            else if (cfgUploadAcceptFiles > 0 && files.length > cfgUploadAcceptFiles)
+                errText += "<small>" + editor.ln("Cannot upload more than {%1} files", [cfgUploadAcceptFiles]) + ". </small>";
+            if (err_size)
+                errText += "<small>" + editor.ln("max allowed size of all files in total should be ") + " " + cfgMaxSize + "MB. </small>";
+            if (err_size_per_file)
+                errText += "<small>" + editor.ln("max allowed size per file should be ") + " " + cfgMaxSizePerFile + "MB. </small>";
+            text.innerHTML = errText;
+            setTimeout(() => {
+                text.innerHTML = cachedText;
+            }, 5000);
+            return;
+        }
+        let count = previewGrid.querySelectorAll("button.completed").length, completed = count, failed = previewGrid.querySelectorAll("button.failed").length;
         Array.from(files).forEach(file => {
             //test type and universal type, such as image/*:
             if (cfgAcceptTypes.indexOf(file.type) === -1 && cfgAcceptTypes.indexOf(file.type.substring(0, file.type.indexOf("")) + "/*") === -1)
@@ -339,7 +483,6 @@ const renderUpload = (editor, content) => {
             editor.dom.appendString2Node('<figure><figure><span class="text">uploading 0%</span></figure></figure><span class="caption">' + file.name + '</span>', tile);
             tile.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); return false; });
             previewGrid.appendChild(tile);
-            editor.cachedList["image.upload.result.list"].push({});
             processUpload(editor, count - 1, file, tile, (status) => {
                 var _a;
                 completed++;
@@ -446,7 +589,54 @@ const renderURL = (editor, content) => {
         return false;
     });
 };
+const dragover = function (e) {
+    e.preventDefault();
+};
 exports.default = [
+    {
+        event: "registerUI",
+        target: [],
+        callback: (editor) => {
+            if (!editor.getCfg("image.drop.to.content.upload"))
+                return;
+            editor.refContent.removeEventListener('dragover', dragover);
+            editor.refContent.addEventListener('dragover', dragover);
+            editor.refContent.addEventListener('drop', e => {
+                e.preventDefault();
+                if (!e.dataTransfer)
+                    return;
+                const imageToolbar = editor.refToolbar.querySelector("#dropdown-menu-image");
+                if (imageToolbar && imageToolbar.parentElement.classList.contains('is-active')) {
+                    //do not allow drop when image toolbar is active
+                    renderUploadProgressError(editor, "cannot drop files to content when image upload toolbar is active");
+                    return;
+                }
+                if (editor.refContent.parentElement.querySelector(".UploadProgressBar")) {
+                    //another upload is in progress
+                    renderUploadProgressError(editor, "another upload is in progress");
+                    return;
+                }
+                const files = [];
+                if (e.dataTransfer.items) {
+                    for (let i = 0; i < e.dataTransfer.items.length; i++) {
+                        if (e.dataTransfer.items[i].kind === 'file') {
+                            let file = e.dataTransfer.items[i].getAsFile();
+                            if (file)
+                                files.push(file);
+                        }
+                    }
+                }
+                else {
+                    // Use DataTransfer interface to access the file(s)
+                    for (let i = 0; i < e.dataTransfer.files.length; i++) {
+                        files.push(e.dataTransfer.files[i]);
+                    }
+                }
+                dropOnFiles(editor, files);
+            });
+            editor.triggerChange();
+        }
+    },
     {
         event: "registerSvg",
         target: [],
@@ -473,8 +663,11 @@ exports.default = [
                 "upload failed": "upload failed",
                 "drop or click to upload image": "drop or click to upload image",
                 "insert": "insert",
+                "Cannot upload more than {%1} files": "Cannot upload more than {%1} files",
                 "please select the appropriate file types:": "please select the appropriate file types:",
                 "max allowed size per file should be ": "max allowed size per file should be ",
+                "cannot drop files to content when image upload toolbar is active": "cannot drop files to content when image upload toolbar is active",
+                "another upload is in progress": "another upload is in progress",
                 "max allowed size of all files in total should be ": "max allowed size of all files in total should be ",
                 "UPLOADING...": "UPLOADING...",
                 "START OVER": "START OVER"
@@ -486,6 +679,16 @@ exports.default = [
         event: "registerToolbarItem",
         target: [],
         callback: (editor) => {
+            editor.registerCallback("image.upload.total.size", function () {
+                let total_size = 0;
+                //@ts-ignore
+                this.cachedList["image.upload.insert.list"].forEach((n) => {
+                    if (n.status === "failed" || !n.domEl || !n.domEl.parentElement || !n.size)
+                        return;
+                    total_size += n.size;
+                });
+                return total_size;
+            });
             return {
                 library: {
                     command: "library",
@@ -594,11 +797,15 @@ exports.default = [
             let nodes = [];
             if (action === "upload") {
                 const _nodes = [];
-                editor.cachedList["image.upload.result.list"].forEach((n) => {
+                if (typeof editor.cachedList["image.upload.insert.list"] === "undefined")
+                    editor.cachedList["image.upload.insert.list"] = [];
+                value.forEach((n, index) => {
                     if (n.status === "failed")
                         return;
                     if (typeof n.elFunc === "function") {
-                        _nodes.push(n.elFunc());
+                        value[index]['domEl'] = n.elFunc();
+                        _nodes.push(n.domEl);
+                        editor.cachedList["image.upload.insert.list"].push(value[index]);
                         return;
                     }
                     //determine if it is image or file:
@@ -607,6 +814,8 @@ exports.default = [
                         _node.setAttribute("data-action", action);
                         _node.setAttribute("src", n.url);
                         _node.setAttribute("style", "max-width:100%");
+                        value[index]['domEl'] = _node;
+                        editor.cachedList["image.upload.insert.list"].push(value[index]);
                         _nodes.push(_node);
                     }
                     else {
@@ -615,6 +824,8 @@ exports.default = [
                         _node.setAttribute("href", n.url);
                         _node.setAttribute("target", "_blank");
                         _node.innerHTML = n.name;
+                        value[index]['domEl'] = _node;
+                        editor.cachedList["image.upload.insert.list"].push(value[index]);
                         _nodes.push(_node);
                     }
                 });

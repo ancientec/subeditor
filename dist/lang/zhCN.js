@@ -54,6 +54,9 @@ exports.default = {
     "please select the appropriate file types:": "请选择适当的文件类型：",
     "max allowed size per file should be ": "单个文件允许的最大大小应该是 ",
     "max allowed size of all files in total should be ": "总文件的最大允许大小应为 ",
+    "cannot drop files to content when image upload toolbar is active": "工具列上传开启时不能拖放文件至文本内容",
+    "another upload is in progress": "请等之前的上传任务结果再上传",
+    "Cannot upload more than {%1} files": "不能上传超过 {%1} 个文件",
     "UPLOADING...": "上传中...",
     "START OVER": "重新开始"
 };

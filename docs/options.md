@@ -128,7 +128,10 @@ var imageCfg = {
         "image.library.per.page" : 20,
         "image.library.allow.paging" : true,
         "image.library.allow.search" : true,
+        "image.drop.to.content.upload" : true,
         "image.upload.url" : "",
+        //limit total number of uploaded files in content, 0: no limit
+        "image.upload.max.files" : 0,
         //number in mb, 0: no limit
         "image.upload.max.size" : 0,
         //number in mb, 0: no limit
