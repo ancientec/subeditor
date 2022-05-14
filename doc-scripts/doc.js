@@ -54,8 +54,8 @@ function preview() {
             lang = languages[0];
         }
         file += url.pathname;
-    
-        if(file.indexOf(".js") !== -1 || file.indexOf(".css") !== -1 && fs.existsSync(dir+file)){
+        
+        if((file.indexOf(".js") !== -1 || file.indexOf(".css") !== -1) && fs.existsSync(dir+file)){
             //serve the resource:
             fs.readFile(dir+file, function(err, data){
                 if(err){
