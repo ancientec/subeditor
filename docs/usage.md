@@ -41,7 +41,7 @@ var _subeditor =
 new SubEditor(document.querySelector('#editorDiv'),  
     {
         width : 450, 
-        height:250,
+        height: 250,
         value : '',
         autoGrow : true,
         onChange : function(changeValue) { 

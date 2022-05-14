@@ -9,6 +9,7 @@
     <meta name="description" content="An alternative wysiwyg html editor designed to bridge the gap between modern and old javascript" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/docs.js"></script>
 <script>
 
 </script>
@@ -434,27 +435,5 @@ subeditor.<span class="hljs-title function_">triggerChange</span>();
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
   </a>
-<script>
-  function inEditor(el) {
-    var p = el;
-    while(p = p.parentElement) {
-      if(p.classList.contains("SubEditor")) return true;
-    }
-    return false;
-  }
-  document.querySelectorAll("aside ul li a").forEach(s => {
-    s.classList.remove("is-active");
-    if(s.getAttribute("href") === location.pathname) s.classList.add("is-active");
-  });
-  document.querySelectorAll("table").forEach(t => {
-    if(!inEditor(t) && !t.classList.contains("table")) t.classList.add("table");
-  });
-  document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(t => {
-    if(!inEditor(t) && !t.classList.contains("title")) {
-      t.classList.add("title");
-      t.classList.add("is-"+t.nodeName.replace("H",""));
-    }
-  });
-</script>
 </body>
 </html>

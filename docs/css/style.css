@@ -1,27 +1,88 @@
 *{box-sizing: border-box;}
-    html {height:100%} 
-    body {min-height:100%;position:relative;}
-    nav {border-bottom: 2px solid #f5f5f5;}
-    .translation{display: none;}
-    .translation.has-translation{display: block;}
-    main{position: relative;max-width: 100%;}
-    main,.content {min-height: calc(100vh - 54px);max-width: 100%;}
-   .maincontent{padding: 3em 5em 5em 5em;margin-left:200px;transition: margin 1s;}
-   #sidebar_toggle_button {position: fixed; bottom:0px;left:0px;display: flex;width:50px;height: 50px;}
-   aside{position: absolute;top:0px;left:0px;border-right:1px solid #dedede;width:200px;transition: transform 1s;}
-   aside ul{padding-left: 10px;}
-   .github[href="#"] {display: none;}
-   main.sidebar_close aside{transform: translateX(-100%);}
-   main.sidebar_close .maincontent {margin-left: 0px;}
-   .maincontent pre{white-space: break-spaces;word-wrap: break-word;}
-   .foot_paging {display: flex;margin-top:3em}
-   .foot_paging .next {text-align: right;}
-   .foot_paging .prev a[href="#"],.foot_paging .next a[href="#"] {display:none}
-   .foot_paging .button {padding:30px 10px}
-   .foot_paging .button span{padding-left: 5px;padding-right: 5px;text-align: left;} 
-   .foot_paging em,.foot_paging strong {display: block;}
-   ul,ol,p{margin: revert;padding: revert;}
-   h1,h2,h3,h4,h5,h6{font-size: revert;font-weight: revert;margin-top:10px}
-   @media only screen and (max-width: 768px) {
-    .content{padding: 1em 2em 3em 2em;margin-left:200px;}
-  }
+html {height:100%} 
+body {min-height:100%;position:relative;}
+nav {border-bottom: 2px solid #f5f5f5;}
+.translation{display: none;}
+.translation.has-translation{display: block;}
+main{position: relative;max-width: 100%;}
+main,.content {min-height: calc(100vh - 54px);max-width: 100%;}
+.maincontent{padding: 3em 5em 5em 5em;margin-left:200px;transition: margin 1s;}
+#sidebar_toggle_button {position: fixed; bottom:0px;left:0px;display: flex;width:50px;height: 50px;}
+aside{position: absolute;top:0px;left:0px;border-right:1px solid #dedede;width:200px;transition: transform 1s;}
+aside ul{padding-left: 10px;}
+.github[href="#"] {display: none;}
+main.sidebar_close aside{transform: translateX(-100%);}
+main.sidebar_close .maincontent {margin-left: 0px;}
+.maincontent pre{white-space: break-spaces;word-wrap: break-word;}
+.foot_paging {display: flex;margin-top:3em}
+.foot_paging .next {text-align: right;}
+.foot_paging .prev a[href="#"],.foot_paging .next a[href="#"] {display:none}
+.foot_paging .button {padding:30px 10px}
+.foot_paging .button span{padding-left: 5px;padding-right: 5px;text-align: left;} 
+.foot_paging em,.foot_paging strong {display: block;}
+ul,ol,p{margin: revert;padding: revert;}
+h1,h2,h3,h4,h5,h6{font-size: revert;font-weight: revert;margin-top:10px}
+
+@media only screen and (max-width: 768px) {
+.content{padding: 1em 2em 3em 2em;margin-left:200px;}
+}
+
+body.darkmode, body.darkmode .navbar{background-color: hsl(0, 0%, 4%);}
+body.darkmode pre, body.darkmode .table{background-color: hsl(0, 0%, 29%);}
+body.darkmode * {color:rgb(245, 245, 247);}
+body.darkmode nav,body.darkmode aside {border-color:hsl(0, 0%, 29%);}
+body.darkmode .table th{color:rgb(245, 245, 247);}
+
+body.darkmode div.SubEditor * {color:#000}
+
+body.darkmode .hljs-name { color: #ff79c6;}
+body.darkmode .hljs-string,
+body.darkmode .hljs-meta,
+body.darkmode .hljs-type,
+body.darkmode .hljs-symbol,
+body.darkmode .hljs-bullet,
+body.darkmode .hljs-addition,
+body.darkmode .hljs-variable,
+body.darkmode .hljs-template-tag,
+body.darkmode .hljs-template-variable {
+  color: #f1fa8c;
+}
+
+body.darkmode .hljs-title,
+body.darkmode .hljs-attr,
+body.darkmode .hljs-meta-keyword {
+  color: #50fa7b;
+}
+
+body.darkmode .hljs-built_in,
+body.darkmode .hljs-selector-tag,
+body.darkmode .hljs-section,
+body.darkmode .hljs-link {
+  color: #8be9fd;
+}
+
+body.darkmode .hljs-keyword {
+  color: #ff79c6;
+}
+
+body.darkmode .hljs,
+body.darkmode .hljs-subst {
+  color: #f8f8f2;
+}
+
+body.darkmode .hljs-title,
+body.darkmode .hljs-attr,
+body.darkmode .hljs-meta-keyword {
+  color: #50fa7b;
+}
+
+body.darkmode .hljs-comment,
+body.darkmode .hljs-quote,
+body.darkmode .hljs-deletion {
+  color: #6272a4;
+}
+
+body.darkmode .hljs-literal,
+body.darkmode .hljs-number {
+  color: #bd93f9;
+}
