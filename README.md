@@ -51,6 +51,17 @@ Plugins are a group of event listeners design specifically for alternating conte
 ```shell
 > npm install subeditor
 ```
+## React Wrapper
+
+```shell
+> npm install react-subeditor
+```
+
+```js
+import SubEditorComponent,{ SubEditor, ChangeEntry, SubEditorEvent, ToolbarItem, SelectionSlimState, SubEditorHTMLElement, SubEditorOption } from 'react-subeditor';
+
+```
+
 ## Develop & Unit Test
 
 ```shell
