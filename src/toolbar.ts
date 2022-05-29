@@ -19,6 +19,8 @@ export default class Toolbar {
   public static presetItemList : {[key: string]: Function} = {};
   //toolbarItem defined in plugins:
   public pluginItemList : {[key: string]: ToolbarItem} = {};
+  // array holding rendered items by various orders
+  private preparedItemList : {[key: string]:  Function | ToolbarItem} = {};
   public renderButton = (item : ToolbarItem) => {
     if(!item.command || !item.svg) return "";
     return '<span class="se-button se-ToolbarItem" data-command="'+item.command+'" data-tips="'+this.editor.ln(item.tips || "")+'"><span class="se-icon">'+item.svg+'</span></span>';
@@ -44,17 +46,39 @@ export default class Toolbar {
     const ToolbarItem : {[key: string]: ToolbarItem} = typeof item === "function" ? item(this.editor) : item;
     this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem);
   }
+  public prepareItemList() {
+    this.preparedItemList = {};
+    //render all functions into toolbar:
+    Object.keys(SubEditor.toolbarItemList).forEach((key : string)  => {
+      if(typeof SubEditor.toolbarItemList[key] === "function") {
+        this.preparedItemList = Object.assign(this.preparedItemList, SubEditor.toolbarItemList[key](this.editor));
+      } else {
+        this.preparedItemList[key] = SubEditor.toolbarItemList[key];
+      }
+     });
+     Object.keys(this.pluginItemList).forEach((key : string)  => {
+      this.preparedItemList[key] = this.pluginItemList[key];
+     });
+     Object.keys(Toolbar.presetItemList).forEach((key : string)  => {
+      if(typeof Toolbar.presetItemList[key] === "function") {
+        this.preparedItemList = Object.assign(this.preparedItemList, Toolbar.presetItemList[key](this.editor));
+      } else {
+        this.preparedItemList[key] = Toolbar.presetItemList[key];
+      }
+     });
+  }
   public addItem(item : ToolbarItem | string | Function) {
     
     let barItem : ToolbarItem | undefined = undefined;
     if(typeof item === "string") {
-      if(typeof Toolbar.presetItemList[item] === "function") barItem = Toolbar.presetItemList[item](this.editor) as ToolbarItem;
+      if(typeof this.preparedItemList[item] !== "undefined") barItem = this.preparedItemList[item] as ToolbarItem;
+      /*if(typeof Toolbar.presetItemList[item] === "function") barItem = Toolbar.presetItemList[item](this.editor) as ToolbarItem;
       else if(typeof this.pluginItemList[item] !== "undefined") barItem = this.pluginItemList[item];
       else if(typeof SubEditor.toolbarItemList[item] !== "undefined") {
         const defaultItem = SubEditor.toolbarItemList[item](this.editor);
         if(typeof defaultItem[item] !== "undefined") barItem = defaultItem[item];
         else return;//plugin function failed to return the correct format
-      }
+      }*/
       else return;
     } else if(typeof item === "function") barItem = item(this.editor);
 
@@ -102,6 +126,7 @@ export default class Toolbar {
     });
   }
   public initItems(items : (ToolbarItem | string | Function)[]) {
+    this.prepareItemList();
     items.forEach(item => this.addItem(item));
     
     //toolbar tips
