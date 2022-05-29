@@ -140,7 +140,7 @@ export default class SubEditor {
         //cache style attribute
         this.cacheTextareaStyle = this.refTextarea.getAttribute("style") || "";
         //match width height position
-        this.refEditor.style.width = (opts.width ? opts.width : this.refTextarea.clientWidth)+"px";
+        if(opts.width) this.refEditor.style.width = opts.width+"px";
         this.height =  (opts.height ? opts.height : this.refTextarea.clientHeight);
         this.refEditor.style.height = this.height+"px";
 
