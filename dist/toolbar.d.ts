@@ -17,10 +17,12 @@ export default class Toolbar {
     pluginItemList: {
         [key: string]: ToolbarItem;
     };
+    private preparedItemList;
     renderButton: (item: ToolbarItem) => string;
     constructor(editor: SubEditor);
     private prepareUI;
     registerPluginItem(item: Function | ToolbarItem): void;
+    prepareItemList(): void;
     addItem(item: ToolbarItem | string | Function): void;
     private initEventTips;
     initItems(items: (ToolbarItem | string | Function)[]): void;

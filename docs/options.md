@@ -2,7 +2,7 @@
 
 | key      | type | Description |
 | ----------- | ----------- | ----------- |
-| width      | number       | width of editor, require if the supplied element is div. default use the width of the supplied textarea      |
+| width      | number       | width of editor, optional      |
 | height   | number        | height of editor, require if the supplied element is div. default use the height of the supplied textarea       |
 | autoGrow      | boolean       | the height of editor will grow along with content change if this value is true     |
 | value   | string        | the default content value of editor      |

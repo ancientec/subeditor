@@ -138,7 +138,7 @@ function default_1(editor) {
                         _editor.handleFeature();
                         //check if we are in table
                         const path = (_a = _editor.feature) === null || _a === void 0 ? void 0 : _a.path;
-                        if (path.includes("TD") || path.includes("TH")) {
+                        if (_editor.feature !== null && (path.includes("TD") || path.includes("TH"))) {
                             inTableDropdown(_editor, table);
                         }
                         else {

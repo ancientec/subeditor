@@ -2053,6 +2053,7 @@
       this.refShadow = document.createElement("div");
       this.refTips = document.createElement("div");
       this.pluginItemList = {};
+      this.preparedItemList = {};
       this.renderButton = (item) => {
         if (!item.command || !item.svg)
           return "";
@@ -2093,20 +2094,32 @@
       const ToolbarItem2 = typeof item === "function" ? item(this.editor) : item;
       this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem2);
     }
+    prepareItemList() {
+      this.preparedItemList = {};
+      Object.keys(SubEditor.toolbarItemList).forEach((key) => {
+        if (typeof SubEditor.toolbarItemList[key] === "function") {
+          this.preparedItemList = Object.assign(this.preparedItemList, SubEditor.toolbarItemList[key](this.editor));
+        } else {
+          this.preparedItemList[key] = SubEditor.toolbarItemList[key];
+        }
+      });
+      Object.keys(this.pluginItemList).forEach((key) => {
+        this.preparedItemList[key] = this.pluginItemList[key];
+      });
+      Object.keys(_Toolbar.presetItemList).forEach((key) => {
+        if (typeof _Toolbar.presetItemList[key] === "function") {
+          this.preparedItemList = Object.assign(this.preparedItemList, _Toolbar.presetItemList[key](this.editor));
+        } else {
+          this.preparedItemList[key] = _Toolbar.presetItemList[key];
+        }
+      });
+    }
     addItem(item) {
       let barItem = void 0;
       if (typeof item === "string") {
-        if (typeof _Toolbar.presetItemList[item] === "function")
-          barItem = _Toolbar.presetItemList[item](this.editor);
-        else if (typeof this.pluginItemList[item] !== "undefined")
-          barItem = this.pluginItemList[item];
-        else if (typeof SubEditor.toolbarItemList[item] !== "undefined") {
-          const defaultItem = SubEditor.toolbarItemList[item](this.editor);
-          if (typeof defaultItem[item] !== "undefined")
-            barItem = defaultItem[item];
-          else
-            return;
-        } else
+        if (typeof this.preparedItemList[item] !== "undefined")
+          barItem = this.preparedItemList[item];
+        else
           return;
       } else if (typeof item === "function")
         barItem = item(this.editor);
@@ -2154,6 +2167,7 @@
       });
     }
     initItems(items) {
+      this.prepareItemList();
       items.forEach((item) => this.addItem(item));
       this.refToolbar.querySelectorAll("[data-tips]").forEach((el) => this.initEventTips(el));
     }
@@ -2315,7 +2329,8 @@
       this.refContent.classList.add("SubEditorContent");
       this.refFooter.classList.add("SubEditorFooter");
       this.cacheTextareaStyle = this.refTextarea.getAttribute("style") || "";
-      this.refEditor.style.width = (opts.width ? opts.width : this.refTextarea.clientWidth) + "px";
+      if (opts.width)
+        this.refEditor.style.width = opts.width + "px";
       this.height = opts.height ? opts.height : this.refTextarea.clientHeight;
       this.refEditor.style.height = this.height + "px";
       this.refTextarea.style.display = "none";
@@ -2612,7 +2627,7 @@
     }
   };
   var SubEditor = _SubEditor;
-  SubEditor.version = "0.6.0";
+  SubEditor.version = "0.6.1";
   SubEditor.cssString = "";
   SubEditor.svgList = {};
   SubEditor.langList = {};

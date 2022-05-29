@@ -11,6 +11,8 @@ class Toolbar {
         this.refTips = document.createElement("div");
         //toolbarItem defined in plugins:
         this.pluginItemList = {};
+        // array holding rendered items by various orders
+        this.preparedItemList = {};
         this.renderButton = (item) => {
             if (!item.command || !item.svg)
                 return "";
@@ -52,20 +54,41 @@ class Toolbar {
         const ToolbarItem = typeof item === "function" ? item(this.editor) : item;
         this.pluginItemList = Object.assign(this.pluginItemList, ToolbarItem);
     }
+    prepareItemList() {
+        this.preparedItemList = {};
+        //render all functions into toolbar:
+        Object.keys(subeditor_1.default.toolbarItemList).forEach((key) => {
+            if (typeof subeditor_1.default.toolbarItemList[key] === "function") {
+                this.preparedItemList = Object.assign(this.preparedItemList, subeditor_1.default.toolbarItemList[key](this.editor));
+            }
+            else {
+                this.preparedItemList[key] = subeditor_1.default.toolbarItemList[key];
+            }
+        });
+        Object.keys(this.pluginItemList).forEach((key) => {
+            this.preparedItemList[key] = this.pluginItemList[key];
+        });
+        Object.keys(Toolbar.presetItemList).forEach((key) => {
+            if (typeof Toolbar.presetItemList[key] === "function") {
+                this.preparedItemList = Object.assign(this.preparedItemList, Toolbar.presetItemList[key](this.editor));
+            }
+            else {
+                this.preparedItemList[key] = Toolbar.presetItemList[key];
+            }
+        });
+    }
     addItem(item) {
         let barItem = undefined;
         if (typeof item === "string") {
-            if (typeof Toolbar.presetItemList[item] === "function")
-                barItem = Toolbar.presetItemList[item](this.editor);
-            else if (typeof this.pluginItemList[item] !== "undefined")
-                barItem = this.pluginItemList[item];
-            else if (typeof subeditor_1.default.toolbarItemList[item] !== "undefined") {
-                const defaultItem = subeditor_1.default.toolbarItemList[item](this.editor);
-                if (typeof defaultItem[item] !== "undefined")
-                    barItem = defaultItem[item];
-                else
-                    return; //plugin function failed to return the correct format
-            }
+            if (typeof this.preparedItemList[item] !== "undefined")
+                barItem = this.preparedItemList[item];
+            /*if(typeof Toolbar.presetItemList[item] === "function") barItem = Toolbar.presetItemList[item](this.editor) as ToolbarItem;
+            else if(typeof this.pluginItemList[item] !== "undefined") barItem = this.pluginItemList[item];
+            else if(typeof SubEditor.toolbarItemList[item] !== "undefined") {
+              const defaultItem = SubEditor.toolbarItemList[item](this.editor);
+              if(typeof defaultItem[item] !== "undefined") barItem = defaultItem[item];
+              else return;//plugin function failed to return the correct format
+            }*/
             else
                 return;
         }
@@ -117,6 +140,7 @@ class Toolbar {
         });
     }
     initItems(items) {
+        this.prepareItemList();
         items.forEach(item => this.addItem(item));
         //toolbar tips
         this.refToolbar.querySelectorAll("[data-tips]").forEach(el => this.initEventTips(el));

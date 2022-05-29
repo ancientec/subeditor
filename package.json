@@ -1,7 +1,7 @@
 {
     "name": "subeditor",
     "description": "An alternative wysiwyg html editor designed for modern and old javascript",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "keywords": [
         "wysiwyg",
         "html",

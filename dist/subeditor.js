@@ -79,7 +79,8 @@ class SubEditor {
         //cache style attribute
         this.cacheTextareaStyle = this.refTextarea.getAttribute("style") || "";
         //match width height position
-        this.refEditor.style.width = (opts.width ? opts.width : this.refTextarea.clientWidth) + "px";
+        if (opts.width)
+            this.refEditor.style.width = opts.width + "px";
         this.height = (opts.height ? opts.height : this.refTextarea.clientHeight);
         this.refEditor.style.height = this.height + "px";
         //hide textarea:
@@ -395,7 +396,7 @@ class SubEditor {
     }
 }
 exports.default = SubEditor;
-SubEditor.version = "0.6.0";
+SubEditor.version = "0.6.1";
 //default and official values:
 SubEditor.cssString = "";
 SubEditor.svgList = {};
