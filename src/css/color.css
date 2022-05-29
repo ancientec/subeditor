@@ -11,6 +11,7 @@ flex-grow: 1;
 flex-shrink: 1;
 border-spacing: 0;
 }
+#dropdown-menu-color table td {padding : 2px}
 #dropdown-menu-color table td div,#dropdown-menu-background table td div {
     cursor:pointer;
     width:16px;

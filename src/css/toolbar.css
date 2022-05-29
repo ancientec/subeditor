@@ -26,11 +26,8 @@
     display: inline-flex;
     position: relative;
     vertical-align: top;
-    height: 2.25em;
-    border-color: transparent; 
-    border-width: 1px; 
     cursor: pointer; 
-    justify-content: center; padding: calc(0.375 em - 1 px)  0.75em;
+    justify-content: center;
     text-align: center;
 }    
 .SubEditorToolbar .se-dropdown-trigger{
