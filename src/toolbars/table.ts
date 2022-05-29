@@ -43,7 +43,6 @@ function createTableDropdown(editor : SubEditor, el : HTMLElement) {
 }
 
 function inTableDropdown(editor :SubEditor, el : HTMLElement) {
-
     const cell = (editor.dom.nodeParent(editor.feature?.node as Node, "TD") || editor.dom.nodeParent(editor.feature?.node as Node, "TH")) as HTMLElement;
     const is_td = editor.feature?.path.includes("TD"), table = editor.feature!.pathNode[editor.feature?.path.indexOf("TABLE")!], tr = editor.dom.nodeParent(editor.feature?.node as Node, "TR"), trs = table.querySelectorAll("tbody tr");
 
@@ -147,7 +146,7 @@ export default function(editor : SubEditor) {
                     _editor.handleFeature();
                     //check if we are in table
                     const path = _editor.feature?.path!;
-                    if(path.includes("TD") || path.includes("TH")) {
+                    if(_editor.feature !== null && (path.includes("TD") || path.includes("TH"))) {
                         inTableDropdown(_editor, table);
                     } else {
                         createTableDropdown(_editor, table);
