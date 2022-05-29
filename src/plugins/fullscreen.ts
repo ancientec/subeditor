@@ -7,11 +7,10 @@ export default [{
     callback : (editor :SubEditor, type : string, value : any) => {
         if(value) {
             //backup style:
-            editor.refEditor.setAttribute("data-backupstyle", editor.refEditor.getAttribute("style") || "");
-            editor.refEditor.setAttribute("style", "position:fixed;z-index:100500;height:100%;width:100%;top:0;left:0;");
+            editor.refEditor.classList.add("fullscreen");
         }
         else {
-            editor.refEditor.setAttribute("style", editor.refEditor.getAttribute("data-backupstyle") || "");
+            editor.refEditor.classList.remove("fullscreen");
         }
 
         editor.event.trigger("onFullscreenChange","",[editor, value]);
